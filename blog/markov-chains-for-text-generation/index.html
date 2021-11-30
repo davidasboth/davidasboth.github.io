@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Markov Chains for Text Generation | David Asboth | Data Science
+</title>
+  <link rel="canonical" href="/blog/markov-chains-for-text-generation/index.html">
+
+  <link rel="alternate" type="application/atom+xml" href="/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="/feeds/category.slug.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/style.css">
+
+
+<meta name="description" content="Markov chains are a popular way to model sequential data. They form the basis of more complex ideas, such as Hidden Markov Models, which are used for speech recognition and have applications in bioinformatics. Today I want to run through an implementation of Markov chains for generating text based on …">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="/">David Asboth | Data Science</a></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>Markov Chains for Text Generation
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+<!--
+      <li class="list-inline-item text-muted" title="2016-11-12T22:09:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Sat 12 November 2016
+      </li>
+-->
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/category/machine-learning.html">machine learning</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="/tag/featured.html">#featured</a>,         <a href="/tag/python.html">#python</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>Markov chains are a popular way to model sequential data. They form the
+basis of more complex ideas, such as Hidden Markov Models, which are
+used for speech recognition and have applications in bioinformatics.</p>
+<p>Today I want to run through an implementation of Markov chains for
+generating text based on an existing corpus. First of course we need to
+understand what Markov chains are before we can implement one.</p>
+<h1>The Intuition</h1>
+<p>I've talked about <a href="/blog/intuition-first-machine-learning/">intuition-first machine learning</a>
+before, so I'll start with the intuition. The first thing we need to
+know about is what a Markov chain consists of, then we need to define
+the Markov assumption.</p>
+<h2>States and Transitions</h2>
+<p>In a Markov chain we are assuming our sequence is made up of <strong>discrete states</strong>. That is, every item in the sequence is one of a finite set of
+possible values. In text, the states could be every letter of the
+alphabet and our punctuation marks.</p>
+<p>We assume that for every item in the sequence, there is a probability
+associated with what the next value will be or, more formally, what
+state we will transition to. This is called the <strong>transition probability</strong>.</p>
+<p>This is different between pairs of states, so the probability of going
+from state A to state B might be different than going from B to A. There
+is also a probability of staying in the same state.</p>
+<p>However, it would be too difficult to attempt to model the transition
+probabilities if we always used the entire sequence. This would be like
+trying to predict the last word in War and Peace and having to take into
+account every single word that came before it.</p>
+<p>To make this easier, we make what's called the Markov assumption.</p>
+<h2>The Markov Assumption</h2>
+<p>The Markov assumption is when we assume the Markov property to be true.</p>
+<p>The Markov property (of a sequence) is typically formulated like so:</p>
+<blockquote>
+<p>The future is independent of the past, given the present.</p>
+</blockquote>
+<p>That sounds a bit like an old proverb but it's a simple concept.</p>
+<p>If a sequence has the Markov property it means that the value of the
+sequence at the next step <strong>depends only on the value at the past <span class="math">\(n\)</span> steps</strong>. The value of <span class="math">\(n\)</span> (how far back we assume we need to go) is
+called the <strong>order</strong> of a Markov chain.</p>
+<p>So a second-order Markov chain is one where we use the current and the
+previous value to predict the next value. We are assuming that it does
+not matter what the rest of the text was before the previous word, we
+only need the current word and the one before it.</p>
+<p>In effect, the Markov chain has no "memory" beyond the last <span class="math">\(n\)</span> steps.</p>
+<p>The Markov assumption simply states that we believe this Markov property
+to hold for a given sequence.</p>
+<p>This is a simplifying assumption that means it is much easier to compute
+these Markov chains at the cost of some complexity and accuracy. However
+simple this assumption may feel, it performs remarkably well.</p>
+<h2>The Markov Assumption in Text</h2>
+<p>Let's look at an example. What does this Markov assumption look like for
+text? We'll work with second-order Markov chains, as defined above.</p>
+<p>Let's imagine that our sequence is this string of animals:</p>
+<p>cat cat cat dog cat cat cat fish cat dog fish cat dog dog cat</p>
+<p>What we say if we assume the Markov property is that our prediction of
+the next word in the sequence depends only on the last two words: dog
+cat.</p>
+<p>How do we use that for predicting?</p>
+<p>We need to calculate the transition probabilities based on the text that
+we have, then assume that going forward those probabilities are what
+decide our next words.</p>
+<p>Because we are using second-order Markov chains, we calculate the
+probabilities of each word following a two-word pair. To do this, we
+simply count what percentage of the time a word appeared after each
+possible pair.</p>
+<p>If we take a single example, "cat cat", we'll see that this pair was
+followed by "cat" twice, "dog" once and "fish" also once. That means if
+we're in the state "cat cat" the next word will be "cat" with a 50%
+probability, or "dog" or "fish" with 25% probability each.</p>
+<h1>The Code</h1>
+<p>That's enough intuition, let's get into the code.</p>
+<p>I've scraped the lyrics to all songs written by <a href="http://muse.mu/">Muse</a>
+and we'll use this as our corpus. We'll use it to generate some more
+text, specifically a new Muse song.</p>
+<h2>Preparation</h2>
+<p>The first step is to read the file in and clean it so we have a sequence
+of words and new lines. I won't go into the details, you can see how the
+cleaning is done in the accompanying Jupyter notebook. I also included
+the code I wrote to scrape the lyrics in the first place, but going
+through that is optional as I'll also include the final source file.</p>
+<h2>Training</h2>
+<p>When we do the "learning" for a Markov chain, we're just identifying all
+unique triplets of words, and creating our transition probabilities
+using the first two words as the current state and the third as the next
+state.</p>
+<p>As an implementation detail, I've made the transition probabilities a
+Python dictionary where each key is a unique word pair, and the value is
+a list of all the words that have ever followed that pair. I haven't
+even explicitly calculated the probabilities, but instead included each
+word as many times as it appears.</p>
+<p>Our "cat cat" example above would look like an entry in a Python
+dictionary like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span> <span class="s2">&quot;cat cat&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;fish&quot;</span> <span class="p">]</span> <span class="p">}</span>
+</code></pre></div>
+
+<p>To generate our transition probabilities we use a helper function:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_triples</span><span class="p">(</span><span class="n">word_list</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># loop through the text and generate triples</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word_list</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">d</span><span class="p">[(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">d</span>
+</code></pre></div>
+
+<p>So given a list of words (our entire text) we go through it word by
+word, creating dictionary entries for every pair we encounter, and
+adding the next word into the list associated with that pair.</p>
+<p>To then simulate the probability of choosing a word given a pair of
+words, we randomly sample from the list associated with that pair.</p>
+<p>This function gives us the next word each time. This is part of a Markov
+class, where self.words is our previously trained dictionary.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_random_word</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phrase</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">phrase</span><span class="p">:</span>
+        <span class="c1"># find a phrase from the list of words associated with the last two words in the supplied phrase</span>
+        <span class="n">phrase_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">phrase</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">phrase_words</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">:</span>
+                <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[(</span><span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">()))]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">()))]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># no phrase supplied, return a word from our dict at random</span>
+        <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">()))]</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">past</span><span class="p">)</span>
+</code></pre></div>
+
+<p>The function will look at a phrase, check if it is at least two words
+long and for the last two words, it finds the appropriate dictionary
+entry and samples from the list associated with that pair.</p>
+<p>So if we gave it "banana cat cat" it would look up "cat cat" in the
+dictionary and sample from the list.</p>
+<p><strong>Remember</strong>: the words in the list implicitly represent the transition
+probabilities. Because we have "cat" twice out of four words in our list
+we've defined the transition probability as 50%.</p>
+<p>To generate the text we can then either give it some text to start it
+off, or let it start with a random pair.</p>
+<p>I've added some structure so that the code creates a song title, a
+chorus and a couple of verses.</p>
+<p>It came up with this:</p>
+<blockquote>
+<p>hear me moan</p>
+<p>Verse 1</p>
+<p>you are just<br>
+too much attention<br>
+and its gonna be<br>
+show me mercy can someone rescue me<br>
+make me agitated</p>
+<p>Chorus</p>
+<p>escaped your world<br>
+no one is crying alone<br>
+i wont let them hurt<br>
+hurting you no</p>
+<p>Verse 2</p>
+<p>you know what youve done<br>
+bring me peace and wash away my dirt<br>
+spin me round and have me to</p>
+<p>Chorus</p>
+<p>escaped your world<br>
+no one is crying alone<br>
+i wont let them hurt<br>
+hurting you no</p>
+</blockquote>
+<p>I dare say Matt Bellamy couldn't have written it better himself.</p>
+<p>Here's the <a href="https://github.com/davidasboth/blog-notebooks/blob/master/markov-chain-muse-lyrics/Markov%20Chain%20Muse%20Lyrics.ipynb">associated Jupyter notebook</a>.
+I've also previously published the code as more of a plug and play
+library, which <a href="https://github.com/davidasboth/markov-chain-for-text">you can find here</a>.</p>
+<h2>Next Steps</h2>
+<p>We could improve this code by doing any of the following:</p>
+<ul>
+<li>Experiment with different orders for the Markov chain</li>
+<li>Giving it more data is never a bad idea, you could mash Muse's
+    lyrics up with another artist</li>
+<li>You could try a character-level Markov chain to see if it would
+    generate meaningful text that way, although for that you might want
+    a <a href="https://github.com/karpathy/char-rnn">Recurrent Neural Network</a></li>
+<li>Adding support for punctuation</li>
+</ul>
+<h1>Further Reading</h1>
+<p>If you want to learn more about Markov chains, and even see them 'in
+action', this is <a href="http://setosa.io/ev/markov-chains/">a great resource</a>
+to start with.</p>
+<p>I glossed over a lot of the maths behind the algorithm, but if you're
+interested you could <a href="https://www.youtube.com/watch?v=WUjt98HcHlk">start here</a>.</p>
+<p>Footnote: This is the 12<sup>th</sup> entry in my <a href="/blog/30-posts-in-30-days/">30 day blog challenge</a>.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <div class="col-sm-6"></div>
+       <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+       </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

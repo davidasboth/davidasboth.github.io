@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Visualising the Hacker News Salary Survey(Take 1) | David Asboth | Data Science
+</title>
+  <link rel="canonical" href="/blog/visualising-the-hacker-news-salary-survey-take-1/index.html">
+
+  <link rel="alternate" type="application/atom+xml" href="/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="/feeds/category.slug.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/style.css">
+
+
+<meta name="description" content="A few months ago, before starting a Masters in Data Science, I experimented with a bit of data visualisation. I am an avid reader of Hacker News, which is a great site for programmers to frequent. If you don't already know it, I can't recommend it highly enough if you …">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="/">David Asboth | Data Science</a></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>Visualising the Hacker News Salary Survey(Take 1)
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+<!--
+      <li class="list-inline-item text-muted" title="2015-11-06T19:15:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Fri 06 November 2015
+      </li>
+-->
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/category/projects.html">projects</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="/tag/datavis.html">#datavis</a>,         <a href="/tag/featured.html">#featured</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>A few months ago, before starting a Masters in Data Science, I
+experimented with a bit of data visualisation. I am an avid reader of
+<a href="https://news.ycombinator.com">Hacker News</a>, which is a great site for
+programmers to frequent. If you don't already know it, I can't recommend
+it highly enough if you feel like you want to spend your procrastinating
+time more wisely (that's my main motivation for visiting, anyway...). It
+was an ad-hoc survey on there that led me to make this little
+visualisation and I'd like to share the end result, as well as the
+process that went into it, for two reasons. The first reason is that it
+could give some interesting insight into how an amateur would approach a
+data science problem using nothing but programming knowledge and some
+common sense. The second reason is that in a few months I will revisit
+this exact data set and analyse/visualise it again, to see how I can
+apply what I learned on my course to improve upon my first attempt.</p>
+<p>All I can say is: I anticipate the second attempt will be
+recognisably... better.</p>
+<p>So, without further ado I present:</p>
+<h2>The (sort of) layman's guide to a basic data visualisation</h2>
+<h3>The Data</h3>
+<p>About the dataset: this was an anonymous survey run on Hacker News of
+around 400 developers and designers, with data gathered about their job
+title, seniority, location and salary. The dataset is inherently 'dirty'
+as it contains some of the usual suspects: it has values in different
+currencies, seniority levels and job titles aren't standardised and
+there are multiple different entries for the same location.</p>
+<p>The dataset I used is available
+<a href="https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/htmlview?usp=sharing&amp;sle=true">here</a>
+(credit to <a href="http://twitter.com/cameronmoll">@cameronmoll</a> for making it
+happen).</p>
+<p>The original Hacker News discussion for those interested is
+<a href="https://news.ycombinator.com/item?id=8573221">here</a>.</p>
+<h3>The Hypothesis</h3>
+<p>As with any data science task, I needed to start with a hypothesis or a
+purpose. Essentially I wanted to use this mini-project to find a nice
+way to plot data on a map, so the purpose was to clean the data and find
+a good library to visualise it geographically. I'll be honest, being a
+data science layman I didn't even have a hypothesis about the data.</p>
+<p>I just wanted to make a pretty map.</p>
+<h3>The Process</h3>
+<h4>Data Wrangling</h4>
+<p>Data wrangling is my favourite of the many phrases (closely followed by
+'data jiu-jitsu') used to describe the act of 'cleaning' a dataset, i.e.
+getting it into a shape that's suitable for analysis. It is apparently
+what data scientists spend most of their time doing, so it's an
+important step. This includes dealing with missing values, correcting
+duplicate values (e.g. making sure we treat "London" and "London,
+England" as the same location) and so on.</p>
+<p>Let's have a look at some of the issues with the dataset after an
+initial inspection:</p>
+<ul>
+<li>The figures are in different currencies, this will need to be
+    rectified</li>
+<li>The job titles need to be merged into one column</li>
+<li>The locations contain duplicates (e.g. 'US', 'USA', 'United States'
+    all appear) </li>
+</ul>
+<p>Before I can do any meaningful analysis or visualisation, these issues
+need to be ironed out. Being a data layman at the time, my data
+wrangling tool of choice was Excel and I did most of my work manually.
+My data wrangling consisted of:</p>
+<ul>
+<li>Looking up the most up-to-date exchange rates online and converting
+    all figures to USD (yes, I did this manually...)</li>
+<li>Merging the job titles into one column</li>
+<li>Manually merging duplicate locations (on the country column only)</li>
+</ul>
+<p>Doing this all by hand was a pretty tedious method to use, and one I
+don't wish to repeat in future. It's also an implausible method for
+larger datasets, so when I revisit this dataset I'll look at what I
+could have automated using something like Python or R.</p>
+<p>You can download my final version of the dataset here (hopefully you'll agree it's better!): <a href="http://davidasboth.com/wp-content/uploads/2015/10/SalaryData.csv">Salary Data</a></p>
+<h4>Summarisation and Aggregation</h4>
+<p>Now was the time to do some basic statistics and aggregation to be able
+to see the average salary by country on a map.</p>
+<p>To do this, I used some basic <a href="https://en.wikipedia.org/wiki/R_%28programming_language%29">R, a popular data science
+language</a>. I
+recommend it as a good starting point for aspiring data scientists. My R
+script was quite simple, the only real important line was the one that
+took the salaries and averaged them by location:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># load the data</span>
+<span class="n">SalaryData</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;SalaryData.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># get mean values in a table</span>
+<span class="n">byCountry</span> <span class="o">&lt;-</span> <span class="nf">aggregate</span><span class="p">(</span><span class="n">SalaryUSD</span><span class="o">~</span><span class="n">Country</span><span class="p">,</span> <span class="n">SalaryData</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+
+<span class="c1"># write new data to csv</span>
+<span class="nf">write.csv</span><span class="p">(</span><span class="n">byCountry</span><span class="p">,</span> <span class="s">&quot;ByCountry.csv&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Once this was done, it was time to get this onto a map!</p>
+<h4>Visualisation</h4>
+<p>I used <a href="http://jsdatav.is/chap06.html">this excellent tutorial</a> to
+visualise my data on a map using a map font and some Javascript. I
+cheated a bit and manually entered the figures into a Javascript array
+(one of the enhancements I'll do is to actually read that in from a
+file). I won't go into depth about what I did differently, because I
+pretty much followed the tutorial step by step, tweaking things like
+colours as I went. I recommend following along, it's a very well-written
+tutorial.</p>
+<p>If you want to view it in the browser, here's <a href="/hn-map/">the final product</a>, otherwise, you can see it in
+all its glory below.</p>
+<p><img alt="Hacker News Salary Map" src="/images/visualising-the-hacker-news-salary-survey-take-1/hn-salary-map.png"></p>
+<p>The survey proved Norway is practically radioactive due to high tech salaries</p>
+<p>All the data I wrangled and code I wrote is <a href="https://github.com/davidasboth/HN-Survey-Analysis">available on GitHub</a>.</p>
+<h4>Conclusion</h4>
+<p>If you're interested in data analysis but have no idea where to start, I
+hope this post will inspire you to try and attempt your own
+visualisation without fear of getting it wrong. Data science is all
+about trial and error, so I say just go for it! I used nothing but my
+own intuition to come up with the process for what I did, there wasn't
+any knowledge of best practices behind it, and I still came up with a
+colourful visual that communicates something about the data.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <div class="col-sm-6"></div>
+       <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+       </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

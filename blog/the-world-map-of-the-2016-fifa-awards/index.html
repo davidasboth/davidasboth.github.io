@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>The World Map of the 2016 FIFA Awards | David Asboth | Data Science
+</title>
+  <link rel="canonical" href="/blog/the-world-map-of-the-2016-fifa-awards/index.html">
+
+  <link rel="alternate" type="application/atom+xml" href="/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="/feeds/category.slug.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/style.css">
+
+
+<meta name="description" content="The "Best FIFA Football Awards" took place recently and while the final outcome was not surprising, I've always wanted to know which countries vote for which players. The way the voting works is that the captain and coach of every national team in FIFA, as well as a member of …">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="/">David Asboth | Data Science</a></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>The World Map of the 2016 FIFA Awards
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+<!--
+      <li class="list-inline-item text-muted" title="2017-01-13T15:06:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Fri 13 January 2017
+      </li>
+-->
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/category/projects.html">projects</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="/tag/datavis.html">#datavis</a>,         <a href="/tag/featured.html">#featured</a>,         <a href="/tag/python.html">#python</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>The "<a href="http://www.fifa.com/the-best-fifa-football-awards/best-fifa-mens-player/index.html">Best FIFA Football Awards</a>"
+took place recently and while the final outcome was not surprising, I've
+always wanted to know which countries vote for which players.</p>
+<p>The way the voting works is that the captain and coach of every national
+team in FIFA, as well as a member of the media for each country, gets to
+vote for their top 3 players, giving them 5, 3, and 1 point(s)
+respectively. Like I said, the result was not surprising:</p>
+<p><img alt="Top players in the FIFA awards" src="/images/the-world-map-of-the-2016-fifa-awards/fifa_topplayers.png"></p>
+<p>The top 5 highest scoring players in the FIFA awards</p>
+<p>FIFA routinely release all the votes, and I wanted to explore the data
+further. Specifically, I thought there might be some interesting
+geographic patterns (e.g. all of South America voting for South American
+players and so on), so this was a map plot waiting to happen.
+ </p>
+<h1>The Data</h1>
+<p>FIFA weren't going to make this easy; the dataset is <a href="http://resources.fifa.com/mm/Document/the-best/PlayeroftheYear-Men/02/86/27/05/faward_MenPlayer2016_Neutral.pdf">a PDF</a>
+with tables in it. While there appear to be a few ways to extract tables
+in Python, none of them worked for extracting these tables, and neither
+did highlighting it and trying to paste it into Excel.</p>
+<p><a href="http://tabula.technology/">Tabula</a> to the rescue! Tabula is a great
+open source tool for automatically finding tables in PDFs and it worked
+perfectly.</p>
+<p>To save anyone else this trouble, here's <a href="https://github.com/davidasboth/blog-notebooks/blob/master/fifa-awards/player_votes.csv">the final csv file</a>.</p>
+<p>Not all countries had all three vote types (captain, coach, media) and I
+wanted to use a single vote for each country, so I used the priority
+order of coach -&gt; captain -&gt; media. This is why for example the
+vote for Argentina isn't for Messi, because the coach vote was missing
+and Messi himself is the captain who couldn't vote for himself.</p>
+<h1>The Tools</h1>
+<p>I wanted this to be a chance to explore
+<a href="https://github.com/python-visualization/folium">folium</a>, a great Python
+package for making maps.</p>
+<p>Folium supports choropleths, but you have to provide a JSON file with
+topological information. I used data from <a href="https://gist.github.com/markmarkoh/2969317">this gist</a> but had to match each
+country to the countries in the FIFA tables, because they didn't always
+match and there are a few countries that weren't present in both data
+sources.</p>
+<p>One modification I had to make is that it's not currently possible to
+add an ad hoc legend into a folium map, so I built an HTML legend and
+injected it myself. I knew that HTML knowledge would come in handy for
+data science!</p>
+<p>The code (hopefully) speaks for itself, you can view <a href="https://github.com/davidasboth/blog-notebooks/blob/master/fifa-awards/FIFA%20Awards%20data.ipynb">the Jupyter notebook on GitHub</a>.</p>
+<h1>The Map</h1>
+<p>Here's a little preview of the final map, although <a href="/fifa-awards/">the HTML version</a> is better for exploring
+different regions.</p>
+<p><img alt="FIFA Awards World Map" src="/images/the-world-map-of-the-2016-fifa-awards/fifa_awards_finalmap.png"></p>
+<p>That Griezmann sure is popular in Mongolia </p>
+<h1>Wrap-up</h1>
+<p>Unsurprisingly, a lot of countries vote for their own players where they
+have players good enough. I'm looking at Sweden, Germany, or Poland
+here. I'm unsure if this is out of national pride or whether they
+believe their players are genuinely better than Messi or Ronaldo,
+probably the former. Brazil interestingly bit the bullet and voted for
+someone else despite having Neymar as a reasonable option.</p>
+<p>Folium doesn't currently support hover actions, but a nice addition
+would be to be able to hover over a country to see who they voted for,
+especially for the "Other" category. It might be in a future version of
+folium, as it seems to be actively under development. Realistically, a
+tool like Tableau would be better suited to a visualisation like this,
+but the ability to embed maps in Jupyter notebooks makes folium a really
+good addition to my data science toolkit.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <div class="col-sm-6"></div>
+       <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+       </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

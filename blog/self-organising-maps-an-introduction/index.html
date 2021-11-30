@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Self-Organising Maps: An Introduction | David Asboth | Data Science
+</title>
+  <link rel="canonical" href="/blog/self-organising-maps-an-introduction/index.html">
+
+  <link rel="alternate" type="application/atom+xml" href="/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="/feeds/category.slug.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/style.css">
+
+
+<meta name="description" content="Introduction When you learn about machine learning techniques, you usually get a selection of the usual suspects. Something like: Support Vector Machines, decision trees/random forests, and logistic regression for classification, linear regression for regression, k-means for clustering and perhaps PCA for dimensionality reduction. In fact, KDNuggets has a good …">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="/">David Asboth | Data Science</a></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>Self-Organising Maps: An Introduction
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+<!--
+      <li class="list-inline-item text-muted" title="2016-11-05T18:26:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Sat 05 November 2016
+      </li>
+-->
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/category/machine-learning.html">machine learning</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="/tag/featured.html">#featured</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <h1>Introduction</h1>
+<p>When you learn about machine learning techniques, you usually get a
+selection of the usual suspects. Something like: Support Vector
+Machines, decision trees/random forests, and logistic regression for
+classification, linear regression for regression, k-means for clustering
+and perhaps PCA for dimensionality reduction.</p>
+<p>In fact, KDNuggets has a good post about <a href="http://www.kdnuggets.com/2016/08/10-algorithms-machine-learning-engineers.html">the 10 machine learning algorithms you should know</a>.</p>
+<p>If you want to learn about machine learning techniques, you should start
+there. The point is, on the subject of these algorithms the internet has
+you covered.</p>
+<p>In this post I want to talk about a less prevalent algorithm, but one
+that I like and that can be useful for different purposes.</p>
+<p>It's called a Self-Organising Map (SOM).</p>
+<h1>Brief History</h1>
+<p>SOMs are a type of artificial neural network. Some of the concepts date
+back further, but SOMs were proposed and became widespread in the 1980s,
+by a Finnish professor named Teuvo Kohonen. Unsurprisingly SOMs are also
+referred to as Kohonen maps.</p>
+<h2>Artificial Neural Networks</h2>
+<p>Artifical neural networks (ANNs) were designed initially to be a
+computational representation of what is believed to happen in the brain.
+The way signals are passed along an ANN is based on how signals pass
+between neurons in the brain.</p>
+<p>ANNs are constructed as a series of <strong>layers</strong> of connected nodes. The
+first layer consists of your inputs, the last layer consists of your
+outputs, and there are any number of so-called <em>hidden</em> layers in
+between.</p>
+<p><img alt="Simple neural network architecture" src="/images/self-organising-maps-an-introduction/296px-Colored_neural_network.png"></p>
+<p><small>By <a href="//commons.wikimedia.org/wiki/User_talk:Glosser.ca" title="User talk:Glosser.ca">Glosser.ca</a> - [Own work], Derivative of <a href="//commons.wikimedia.org/wiki/File:Artificial_neural_network.svg" title="File:Artificial neural network.svg">File:Artificial neural network.svg</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=24913461">Link</a></small>
+ </p>
+<p>The broad idea of an ANN is that you give it a dataset and a set of
+desired outputs, and it learns to map the inputs to the outputs. A
+classic example is teaching an ANN to recognise handwritten characters
+by giving it pixel values as inputs and the correct digit (say a number
+from 0-9) as the output.</p>
+<p>During the <strong>training phase</strong> it learns the associations between pixel
+values and the digits. Then, you can give it a new set of inputs, digits
+it hasn't seen before, and it will be able to recognise them.</p>
+<p>Here is <a href="http://yann.lecun.com/exdb/lenet/">such a system</a> recognising
+characters in real time. It was built by Yann LeCun in the 1990s.</p>
+<p>The way most ANNs "learn" a particular problem is by error-correcting.
+That is, during the training phase they adapt and improve based on the
+errors they make, and incrementally get better at solving the problem.</p>
+<p>This is a <strong>supervised</strong> machine learning problem because you are
+telling the algorithm the desired answer for each set of inputs it's
+trained on, so it knows if it makes errors.</p>
+<h2>The SOM as an ANN</h2>
+<p>There are three main ways in which a Self-Organising Map is different
+from a "standard" ANN:</p>
+<ul>
+<li>A SOM is not a series of layers, but typically a 2D grid of neurons</li>
+<li>They don't learn by error-correcting, they implement something
+    called <strong>competitive learning</strong></li>
+<li>They deal with <strong>unsupervised</strong> machine learning problems</li>
+</ul>
+<p>Competitive learning in the case of a SOM refers to the fact that when
+an input is "presented" to the network, only one of the neurons in the
+grid will be activated. In a way the neurons on the grid "compete" for
+each input.</p>
+<p>The unsupervised aspect of a SOM refers to the idea that you present
+your inputs to it without associating them with an output. Instead, a
+SOM is used to find structure in your data.
+ </p>
+<h1>What is a SOM used for?</h1>
+<p>This last point about unsupervised learning brings me to an important
+question, because abstract concepts like neural networks are great to
+talk about but I'm a practical kind of guy.</p>
+<p>In that spirit then, what is a SOM used for?</p>
+<h2>Finding Structure</h2>
+<p>A classic example of what clustering algorithms are used for is finding
+similar customers in your customer base. SOMs can also do this. In fact,
+a SOM is meant to be <strong>a 2D representation of your multi-dimensional
+dataset</strong>. In this 2D representation, each of your original inputs, e.g.
+each of your customers, maps to one of the nodes on the 2D grid. Most
+importantly, <strong>similar (high-dimensional) inputs will map to the same 2D
+node,</strong> or at least the same region in 2D space. This is how the SOM
+finds and groups similar inputs together.</p>
+<h2>Dimensionality Reduction</h2>
+<p>Related to finding structure is the fact that by finding this structure
+a SOM finds a lower-dimensional representation of your dataset <strong>while
+preserving the similarity between your records</strong>.</p>
+<p>That is, data points that are "nearby" in high-dimensional space will
+also be nearby in the SOM.</p>
+<h2>Visualisation</h2>
+<p>By creating a (typically) 2D representation of your dataset you can also
+more easily visualise it, which you can't do if your data has more than
+3 dimensions.</p>
+<h1>Summary</h1>
+<p>To summarise, I'll quote an answer I gave on StackOverflow to a question
+about SOMs:</p>
+<blockquote>
+<p>The idea behind a SOM is that you're mapping high-dimensional vectors
+onto a smaller dimensional (typically 2D) space. You can think of it
+as clustering, like in K-means, with the added difference that vectors
+that are close in the high-dimensional space also end up being mapped
+to nodes that are close in 2D space.</p>
+<p>SOMs therefore are said to "preserve the topology" of the original
+data, because the distances in 2D space reflect those in the
+high-dimensional space. K-means also clusters similar data points
+together, but its final "representation" is hard to visualise because
+it's not in a convenient 2D format.</p>
+<p>A typical example is with colours, where each of the data points are
+3D vectors that represent R,G,B colours. When mapped to a 2D SOM you
+can see regions of similar colours begin to develop, which is the
+topology of the colour space.</p>
+</blockquote>
+<h2>Colours</h2>
+<p>I hope that sounds interesting, because in Part 2 of this post I'll
+discuss some concrete examples and walk through a Python implementation
+of Self-Organising Maps.</p>
+<p>The example we'll be working with is using a 3D dataset of colours
+(where the 3 dimensions are R, G and B) and producing a 2D SOM where we
+visualise the "topology" of the 3D colour space.</p>
+<p>Something like this:</p>
+<p><img alt="som" src="/images/self-organising-maps-an-introduction/som.png"></p>
+<p>A Self-Organising Colourmap </p>
+<p>In <a href="/blog/self-organising-maps-in-depth/">Part 2</a>, we'll look at an in-depth implementation of SOMs.</p>
+<p>Footnote: This was the 5<sup>th</sup> entry in my <a href="/blog/30-posts-in-30-days/">30 day blog challenge</a>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <div class="col-sm-6"></div>
+       <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+       </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

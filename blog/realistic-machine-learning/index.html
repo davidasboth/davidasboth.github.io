@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Realistic Machine Learning | David Asboth | Data Science
+</title>
+  <link rel="canonical" href="/blog/realistic-machine-learning/index.html">
+
+  <link rel="alternate" type="application/atom+xml" href="/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="/feeds/category.slug.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/style.css">
+
+
+<meta name="description" content="As I'm sure most data scientists quickly realise, there's a difference between the kind of data science you do while learning about it, and the kind you do at a real job. This is especially true of university degrees, and isn't unique to data science. However much you learn during …">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="/">David Asboth | Data Science</a></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>Realistic Machine Learning
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+<!--
+      <li class="list-inline-item text-muted" title="2016-11-10T15:41:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Thu 10 November 2016
+      </li>
+-->
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/category/machine-learning.html">machine learning</a>
+      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>As I'm sure most data scientists quickly realise, there's a difference
+between the kind of data science you do while learning about it, and the
+kind you do at a real job.</p>
+<p>This is especially true of university degrees, and isn't unique to data
+science. However much you learn during your degree, reality will always
+be different in a way you weren't prepared for. I don't mean this in a
+scary way, just as a matter-of-fact appraisal of how things are.</p>
+<p>This is equally true of data cleaning/wrangling and machine learning.</p>
+<p>The "ML Hipster" <a href="https://twitter.com/ML_Hipster/status/633954383542128640">summed this up very well.</a></p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">… and that concludes Machine Learning 101. Now, go forth and apply what you&#39;ve learned to real data! <a href="http://t.co/D6wSKgdjeM">pic.twitter.com/D6wSKgdjeM</a></p>&mdash; ML Hipster (@ML_Hipster) <a href="https://twitter.com/ML_Hipster/status/633954383542128640?ref_src=twsrc%5Etfw">August 19, 2015</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>There's also this quote I've seen (source unknown):</p>
+<blockquote>
+<p>In data science, 80% of time is spent preparing data, and 20% of time
+is spent complaining about the need to prepare data</p>
+</blockquote>
+<p>What are the main reasons for this disconnect?</p>
+<h3>Real Data is Messy</h3>
+<p>Yes some data science courses cover this and talk about what sorts of
+things you'd need to do to clean a dataset.</p>
+<p>However, this usually amounts to converting strings to dates or dealing
+with missing values. These are important skills to have, but only make
+up 10% of the kind of data cleaning you might encounter.</p>
+<p>Human-generated data is messy because people are not consistent, and
+often data entry systems allow multiple ways of entering data or simply
+free text.</p>
+<p>Computer/machine-generated data is messy because things can go wrong,
+log files from systems can have weird values in them, etc.</p>
+<p>Not only does this have an impact on your data cleaning efforts (by
+requiring 10x more work than anticipated) but also machine learning.</p>
+<p>Scikit-learn random forests are not designed to deal with someone
+putting "next Tuesday" in a free-type date field.</p>
+<h3>The Question is Unclear</h3>
+<p>An underappreciated quality of a data scientist is the ability to frame
+the question.</p>
+<p>Converting a business requirement, which is often nebulous and
+unquantifiable, into a machine learning problem is a difficult task.
+There's usually more than one way to approach it, but it boils down to
+making a human problem into a concrete, measurable task for an
+algorithm.</p>
+<p>This means a shift from your studies where you're given the question. No
+longer are you identifying types of iris - you need to start with
+identifying what to identify!</p>
+<h3>A Difference of Purpose</h3>
+<p>This is the big one. The moment you're doing data science for a
+business, your aims are different.</p>
+<p>Previously you were solving problems for the sake of it. Now, the focus
+is on <strong>adding value</strong>.</p>
+<p>That means that at any point in a project the next step will depend on
+what makes sense for the business, not what is academically most
+interesting. The kind of work you do will by definition be different to
+what you're used to.</p>
+<h1>How can we better prepare?</h1>
+<p>The obvious way to smooth the transition between academia (or "learning"
+in general) and industry is to teach more realistic problems.</p>
+<p>That's not to say you should <strong>start</strong> with solving a business problem,
+but you should certainly <strong>end</strong> on one.</p>
+<p>As <a href="/blog/5-data-science-book-recommendations/">I've already mentioned</a>,
+the book Data Science from Scratch gives realistic-sounding problems
+when introducing various data science concepts.</p>
+<p>I think we need more of that.</p>
+<p>A more rounded way of teaching data science would be to start with toy
+problems and gradually build up to more complex ones. Something like
+this scale of four difficulties:</p>
+<h4>Difficulty 1</h4>
+<p>You're given an "academic" dataset with perhaps some cleaning to do
+(date formats, missing values). There is an explicit target value so
+once the cleaning is done you know exactly what to do for machine
+learning (e.g. predict the type of iris).</p>
+<h4>Difficulty 2</h4>
+<p>You're given a "real" dataset obtained from some real system or somehow
+produced by real humans. There is not just some cleaning to do, but
+questions of interpretation, data transformations, maybe even some
+feature engineering. The machine learning task is still clear though.</p>
+<h4>Difficulty 3</h4>
+<p>A real dataset but with a less well-defined machine learning task. This
+could be an unsupervised problem, where part of the work is in
+interpreting the outcomes, or it could just be unclear whether you want
+a classification or a regression approach. For example, a dataset with
+sales figures where it's unclear if you should predict sales to the
+nearest unit or just which group the sales belong to (in terms of size).</p>
+<h4>Difficulty 4</h4>
+<p>The "real world problem". You're given a broad task to solve but no
+data, or a dataset that clearly needs enhancing somehow. This task would
+involve scraping or just trawling the net for open data, then defining
+your features and deciding on how best to frame it as a machine learning
+problem.</p>
+<p>For the last type of task to work though, I'd argue the teaching has to
+be interactive. It's much easier to evaluate your approach by getting
+qualitative feedback, unlike the first 2-3 tasks where you can
+objectively measure your success.</p>
+<p>This isn't always a practical way to teach, but it would go a long way
+in preparing people for the reality of data science in the wild.</p>
+<p>Footnote: This was the 10<sup>th</sup> entry in my <a href="/blog/30-posts-in-30-days/">30 day blog challenge</a>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <div class="col-sm-6"></div>
+       <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+       </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>"Intuition First" Machine Learning | David Asboth | Data Science
+</title>
+  <link rel="canonical" href="/blog/intuition-first-machine-learning/index.html">
+
+  <link rel="alternate" type="application/atom+xml" href="/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="/feeds/category.slug.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/style.css">
+
+
+<meta name="description" content="I read an article on Machine Learning Mastery recently about getting started with machine learning. The reason it stuck in my mind was that it discussed a way of learning that I always felt was closer to me and a better way for me to learn, yet I hadn't encountered …">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="/">David Asboth | Data Science</a></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>"Intuition First" Machine Learning
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+<!--
+      <li class="list-inline-item text-muted" title="2016-11-07T09:34:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Mon 07 November 2016
+      </li>
+-->
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/category/machine-learning.html">machine learning</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="/tag/featured.html">#featured</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>I read <a href="http://machinelearningmastery.com/4-steps-to-get-started-in-machine-learning/">an article on Machine Learning Mastery</a>
+recently about getting started with machine learning.</p>
+<p>The reason it stuck in my mind was that it discussed a way of learning
+that I always felt was closer to me and a better way for me to learn,
+yet I hadn't encountered many resources that teach machine learning that
+way.</p>
+<p>The article calls this approach "top down". I refer to the same approach
+as "intuition first".</p>
+<p>The problem is that most books and online courses, while technically
+aimed at people with no background in machine learning, are usually too
+maths-heavy too soon. Andrew Ng's excellent <a href="https://www.coursera.org/learn/machine-learning">Coursera machine learning course</a> does a good job
+of introducing the intuition behind the algorithms without getting into
+too much detail about the underlying mathematics. However, especially in
+the chapter about support vector machines, I felt there was still a need
+to step away from the technical details a bit more.</p>
+<p>There is a time and a place for deep dives into algorithms and maths,
+but it's not at the start of your learning.</p>
+<p>I know from experience that if I want to learn a new concept, and the
+first thing I see is equations I'll be discouraged, because there's too
+much to understand too soon. By teaching the ideas in an abstract way
+first, you get a "feel" for the concept before you get into the
+nitty-gritty implementation details.</p>
+<p>Here's the idea of top down machine learning, quoted straight from the
+article:</p>
+<blockquote>
+<p>We can summarize this top-down approach as follows:</p>
+<ol>
+<li>Learn the high-level process of applied machine learning.</li>
+<li>Learn how to use a tool enough to be able to work through
+    problems.</li>
+<li>Practice on datasets, a lot.</li>
+<li>Transition into the details and theory of machine learning
+    algorithms.</li>
+</ol>
+</blockquote>
+<p>I wholeheartedly agree with step 1 being the high-level process. You
+want to know exactly what you're trying to achieve before you need to
+formalise it mathematically.</p>
+<p>The part I don't agree with is the order of steps 3 and 4. There is a
+slight danger in doing things that way around.</p>
+<p>If you learn the intuition and start practising on datasets without
+knowing some more details you can get derailed, and it might be
+difficult to "debug" any problems you encounter. As with any new
+technique, superficial knowledge of it is fine at the start, but you
+need to understand it in more depth if you want to actually use it on a
+real problem.</p>
+<p>This is what I propose instead, for an amended version of "top down"
+machine learning.</p>
+<blockquote>
+<ol>
+<li>Learn the high-level process of applied machine learning.</li>
+<li>Try some toy examples, get your hands dirty.</li>
+<li>Transition into the details and theory of machine learning
+    algorithms.</li>
+<li>Practise on lots of datasets.</li>
+</ol>
+</blockquote>
+<p>Not a big change, but the key difference is that you should understand
+the theory in more detail before you spend lots of time practising.
+Trying some toy problems before diving into the theory will help you put
+the theoretical concepts into context.</p>
+<p>Getting exposed to more theory is mostly for practical reasons, so you
+understand things like:</p>
+<ul>
+<li><strong>Normalisation</strong> - does my data need to be normalised? If you
+    understand the inner workings of a machine learning algorithm you'll
+    intuitively know the answer rather than having to resort to trial
+    and error.</li>
+<li><strong>Metrics</strong> - measuring success in machine learning is an important
+    topic and you don't want to be using the wrong metrics to judge how
+    well your algorithm is performing.</li>
+<li><strong>Cross-validation</strong> - this might be covered in the high-level
+    process but the idea of training and test sets needs to be drilled
+    home before you start getting too deep.</li>
+</ul>
+<p>This might not work for everyone, the mathematically-minded could well
+prefer an approach where they're given the equations first, but I
+suspect they're the minority. If the imbalance is the way I perceive it,
+then there does seem to be a disconnect between the way people learn and
+the way machine learning is often taught.</p>
+<p>Footnote: This was the 7<sup>th</sup> entry in my <a href="/blog/30-posts-in-30-days/">30 day blog challenge</a>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <div class="col-sm-6"></div>
+       <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+       </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

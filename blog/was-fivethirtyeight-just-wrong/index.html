@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Was FiveThirtyEight Just Wrong? | David Asboth | Data Science
+</title>
+  <link rel="canonical" href="/blog/was-fivethirtyeight-just-wrong/index.html">
+
+  <link rel="alternate" type="application/atom+xml" href="/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="/feeds/category.slug.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/style.css">
+
+
+<meta name="description" content="I have some brief thoughts about the outcome of the US election from an entirely data science perspective. It's hard to remain objective and have a scientific hat on when it comes to political events, but I never intended this blog to be a place to discuss political opinion. Instead …">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="/">David Asboth | Data Science</a></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>Was FiveThirtyEight Just Wrong?
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+<!--
+      <li class="list-inline-item text-muted" title="2016-11-09T15:44:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Wed 09 November 2016
+      </li>
+-->
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/category/data-science.html">data science</a>
+      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>I have some brief thoughts about the outcome of the US election from an
+entirely data science perspective. It's hard to remain objective and
+have a scientific hat on when it comes to political events, but I never
+intended this blog to be a place to discuss political opinion. Instead,
+I want to look at this election outcome as an opportunity to talk about
+probabilistic forecasts.</p>
+<p><a href="http://fivethirtyeight.com/">FiveThirtyEight</a> tracked many polls over
+time to forecast the probability of the two candidates. These fluctuated
+quite a bit, but in the end their final forecast was an over 70%
+probability of a Clinton win.</p>
+<p>So was their model <em>wrong</em>?</p>
+<p>Funnily enough it was Nate Silver himself who, in his book, talked about
+how we evaluate a probabilistic forecast, his example being the weather.
+In the case of the weather, this is the question:</p>
+<p>Someone makes a forecast that tomorrow it will rain with a probability
+of 30%. It rains tomorrow. Was the forecast correct?</p>
+<p>The key idea here is that in instances like this the standard notion of
+"accurate" doesn't hold. You simply can't evaluate the model based on a
+single data point, unless its prediction was a 100% probability. That's
+because the model isn't designed to make a single prediction. In the
+case of the weather, forecasts are made multiple times a day, so very
+quickly you have a whole set of "predictions" and true outcomes.</p>
+<p>From that you now <strong>can</strong> evaluate the model.</p>
+<p>When they say the probability of rain is 30% it doesn't just mean that
+it's unlikely to rain. It also means that out of all the times they
+predict 30% it will end up raining 30% of the time; to evaluate it
+therefore requires multiple similar predictions. For example, after a
+hundred 30% predictions, if it only rained on two occasions it's obvious
+the model was too pessimistic (assuming you treat rain as a negative
+outcome).</p>
+<p>Then what about an event as rare as a general election?</p>
+<p>That's a harder question and one where <a href="https://twitter.com/nntaleb/status/762033443932934144">there are disagreements</a>.</p>
+<p>Clinton lost the electoral vote but appears to have won the popular vote
+- an outcome FiveThirtyEight estimated to be around 10% likely. It was
+explicitly covered by the forecast, which simply said that it's a rare
+event, but still not an implausible one. Again, it is hard to quantify
+whether that 10% was correct or not.</p>
+<p>Ultimately in cases like this there are too many variables to be able to
+make a definitive prediction. It is more worthwhile to think of it as a
+statement of the probability distribution of all possible outcomes
+rather than a means to actually predict who will be President. Of course
+this probability distribution can be wrong, it's just not apparent how
+to evaluate this.</p>
+<p>I must admit I don't know that much about the technical details of such
+an evaluation.</p>
+<p>However, I am interested in finding out, so I will go away and do some
+research and report back later this month in a future blog article.</p>
+<p>Footnote: This was the 9<sup>th</sup> entry in my <a href="/blog/30-posts-in-30-days/">30 day blog challenge</a>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <div class="col-sm-6"></div>
+       <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+       </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

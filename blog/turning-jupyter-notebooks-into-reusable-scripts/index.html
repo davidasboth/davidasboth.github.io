@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Turning Jupyter Notebooks into Reusable Scripts | David Asboth | Data Science
+</title>
+  <link rel="canonical" href="/blog/turning-jupyter-notebooks-into-reusable-scripts/index.html">
+
+  <link rel="alternate" type="application/atom+xml" href="/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="/feeds/category.slug.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/style.css">
+
+
+<meta name="description" content="I read an article today called Data Scientists Need More Automation. No prizes for guessing what it was about. A lot of the specifics were focused on sysadmin-type work like using SSH, but the main idea is one that applies to all data science tasks. The thrust of the article …">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="/">David Asboth | Data Science</a></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>Turning Jupyter Notebooks into Reusable Scripts
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+<!--
+      <li class="list-inline-item text-muted" title="2016-11-17T19:56:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Thu 17 November 2016
+      </li>
+-->
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/category/programming-for-data-scientists.html">programming for data scientists</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="/tag/python.html">#python</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>I read an article today called Data Scientists Need More Automation. No
+prizes for guessing what it was about.</p>
+<p>A lot of the specifics were focused on sysadmin-type work like using
+SSH, but the main idea is one that applies to all data science tasks.</p>
+<p>The thrust of the article was:</p>
+<blockquote>
+<p>Someone please help data scientists be lazier, do less work, and
+reduce the mental overhead of dealing with computers!</p>
+<p><small>From <a href="http://stiglerdiet.com/blog/2016/Nov/15/data-scientists-need-more-automation/">Data Scientists Need More Automation</a></small></p>
+</blockquote>
+<p>As part of my commitment to occasionally talk about "programming for
+data scientists", I want to share ideas that will facilitate this to
+help data scientists focus on important stuff.</p>
+<p>Laziness is a virtue when it comes to programming.</p>
+<p>Always thinking "how can I do the same thing with less effort?" is a
+great way to be more productive and focus on the hard parts of data
+science.</p>
+<p>For example, it's clear that you want to speed up and automate your data
+cleaning. That's not the important stuff you want to focus on. So in
+this post I want to share some thoughts on how to make your Jupyter
+notebooks easier to "productionise".</p>
+<p>When you do data cleaning, notebooks are a great way to experiment with
+your code in an interactive way before you can create a script that runs
+on gigabytes of data. These thoughts are mostly concerned with how you
+take a notebook that can clean a specific file, and make it into a
+Python script you could run in the background to process many similar
+files automatically.</p>
+<h2>Start Small</h2>
+<p>If your datasets are big enough that processing them takes longer than a
+few seconds, you are going to lose a lot of time if don't you test your
+code on a smaller subset first.</p>
+<p>If you are cleaning your data, you shouldn't be using your entire
+dataset until you can prove that your script will run on a smaller
+version of it. That might be as easy as just restricting your dataframe
+to its first N rows:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;my_huge_file.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># delete this line later, but only when you&#39;re ready!</span>
+</code></pre></div>
+
+<p>This might sound obvious but it's important to get into the habit of
+doing it.</p>
+<h3>Brief Digression: Subsets of Data for Machine Learning</h3>
+<p>For machine learning, if you're just testing your code to make sure it
+runs, you can do the same thing and take the first few hundred rows.
+Obviously if you're training predictive models you want to use your
+entire dataset.</p>
+<p><em>However</em>, if you want to just get a sense of which models are more
+accurate than others, in the case of classification problems you can use
+a <strong>stratified</strong> subset of your data. Instead of taking a random sample
+you can sample based on the frequencies of your classes, so that your
+smaller sample has the same class proportions. In scikit-learn you can
+use
+<a href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedShuffleSplit.html">StratifiedShuffleSplit</a>
+for example.</p>
+<h3>Back to Notebooks...</h3>
+<p>Once you've experimented enough with your code so that you know it works
+on your small subset, you'll want to ensure your code is general enough
+that it would run with any file you give it.</p>
+<p>For example, if you have a dataset that covers one day's of data you
+might eventually want to let it loose and process months of data one day
+at a time.</p>
+<p>The obvious way to do this is parametrisation.</p>
+<h2>Use Parameters</h2>
+<p>Stop hard-coding things.</p>
+<p>Seriously, whenever you have a value that is likely to change when you
+run the script multiple times, make it a variable.</p>
+<p>Turn this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;my_data_2016-01-01.csv&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Into this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;my_data_2016-01-01.csv&quot;</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</code></pre></div>
+
+<p>It's an extra line but you're going to have to do it if you want to
+automate your script, so get in the habit of starting out like this.</p>
+<p>Even better, create a separate cell at the top of your notebook <strong>just
+for parameters</strong>. That way you won't forget which things will need to
+change for each file.</p>
+<h2>Converting Parameters to Command Line Arguments</h2>
+<p>If you've created the right variables for automation, you can convert
+them to command line arguments.</p>
+<p>This can be as simple as exporting your notebook to a Python file (File
+-&gt; Download as -&gt; Python) and replacing your parameters with
+command line arguments.</p>
+<p>Assuming your notebook looks something like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">date</span> <span class="o">=</span> <span class="s2">&quot;2016-01-01&quot;</span>
+<span class="n">other_parameter</span> <span class="o">=</span> <span class="mi">16</span>
+
+<span class="c1"># rest of your code here...</span>
+<span class="c1"># ...</span>
+<span class="c1"># ...</span>
+</code></pre></div>
+
+<p>Export it to Python, then amend the script slightly:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">other_parameter</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># the rest of your code from the notebook</span>
+    <span class="c1"># can be pasted here UNEDITED</span>
+</code></pre></div>
+
+<p>All we've done is replace the hard-coded parameter values with arguments
+from the command line (remember <a href="http://stackoverflow.com/a/2626634/2039162">sys.argv[0] is the name of the script</a>), so now you can do
+this on the command line:</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">my_automated_script</span><span class="o">.</span><span class="n">py</span> <span class="s2">&quot;2016-01-01&quot;</span> <span class="s2">&quot;15&quot;</span>
+</code></pre></div>
+
+<p>This is the "quick and dirty" way of doing it. For more robustness and
+better documentation of your arguments, use
+<a href="https://docs.python.org/3/library/argparse.html">argparse</a> or
+<a href="https://pypi.python.org/pypi/begins/0.9">begins</a>.</p>
+<p>To make this workflow possible, you also need to make sure your notebook
+doesn't do too much.</p>
+<h2>Single-Purpose Notebooks</h2>
+<p>There might be a lot of code involved in cleaning your data. You might
+need to deal with things like missing values, but then perform
+transformations and computations.</p>
+<p>Eventually your notebook might be hundreds of lines of code.</p>
+<p>If you ever get to that point, break the notebook into multiple smaller
+ones. You could even make the first notebook output a semi-cleaned
+version of your data which your second notebook picks up.</p>
+<p>You can then still combine your notebooks into one Python script by
+exporting them, and just removing the intermediate files that you were
+creating when experimenting.</p>
+<p>Say your notebook workflow is like this:</p>
+<ol>
+<li>Notebook 1 reads raw csv</li>
+<li>Notebook 1 does some data cleaning</li>
+<li>Notebook 1 exports semi-cleaned data (intermediate csv)</li>
+<li>Notebook 2 reads in intermediate csv</li>
+<li>Notebook 2 does data transformations</li>
+<li>Notebook 2 exports final csv</li>
+</ol>
+<p>You can see that if we export both notebooks, combine them into a single
+file and <strong>remove steps 3 and 4</strong>, we get our final automated script. In
+fact, if we encounter problems later on we can always go back and debug
+them using our notebooks, and re-export them to get an updated version
+of the script. As long as you make all your changes in the notebooks and
+not the final script, this will be a valuable approach.</p>
+<p>Hopefully I've given you some ideas about how you can design your
+notebooks from the start with a view to future automation.</p>
+<p>Now go forth and be lazy!</p>
+<p>Footnote: This was the 17<sup>th</sup> entry in my <a href="/blog/30-posts-in-30-days/">30 day blog challenge</a>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <div class="col-sm-6"></div>
+       <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+       </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
