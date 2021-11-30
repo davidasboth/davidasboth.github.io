@@ -47,11 +47,11 @@ DAY_ARCHIVE_SAVE_AS = ''
 RELATIVE_URLS = True
 
 # Tags and Categories
-CATEGORY_URL = 'category/{slug}'
-CATEGORY_SAVE_AS = 'category/{slug}/index.html'
-TAG_URL = 'tag/{slug}'
-TAG_SAVE_AS = 'tag/{slug}/index.html'
-AUTHOR_SAVE_AS = ''
+#CATEGORY_URL = 'category/{slug}'
+#CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+#TAG_URL = 'tag/{slug}'
+#TAG_SAVE_AS = 'tag/{slug}/index.html'
+#AUTHOR_SAVE_AS = ''
 
 LOAD_CONTENT_CACHE = False
 
