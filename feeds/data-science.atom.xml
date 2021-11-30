@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth | Data Science - data science</title><link href="/" rel="alternate"></link><link href="/feeds/data-science.atom.xml" rel="self"></link><id>/</id><updated>2016-11-27T17:54:00+00:00</updated><entry><title>London Meetups for Data Scientists</title><link href="/blog/london-meetups-for-data-scientists" rel="alternate"></link><published>2016-11-27T17:54:00+00:00</published><updated>2016-11-27T17:54:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-27:/blog/london-meetups-for-data-scientists</id><summary type="html">&lt;p&gt;London is full of tech-related meetups. As I said before, you could
+probably find an interesting meetup to attend &lt;em&gt;every night&lt;/em&gt; if you
+wanted to.&lt;/p&gt;
+&lt;p&gt;Meetups are great for speaking to like-minded people, hearing
+interesting talks and getting an idea of what other people in the field
+are up to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;London is full of tech-related meetups. As I said before, you could
+probably find an interesting meetup to attend &lt;em&gt;every night&lt;/em&gt; if you
+wanted to.&lt;/p&gt;
+&lt;p&gt;Meetups are great for speaking to like-minded people, hearing
+interesting talks and getting an idea of what other people in the field
+are up to.&lt;/p&gt;
+&lt;p&gt;But there are so many of them that I thought I'd list a few that I've
+personally attended and would recommend for those interested in data
+science.&lt;/p&gt;
+&lt;p&gt;For most of these meetups, places get filled up pretty fast, so it's
+worth signing up to them so you're notified when the (free) tickets
+become available.&lt;/p&gt;
+&lt;h1&gt;PyData London&lt;/h1&gt;
+&lt;p&gt;You can guess what the focus of this meetup is: data and Python. It's a
+regular, monthly meetup with a central location, interesting
+Python-related talks, and free beer/pizza!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.meetup.com/PyData-London-Meetup/"&gt;https://www.meetup.com/PyData-London-Meetup/&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;DataKind UK&lt;/h1&gt;
+&lt;p&gt;The UK chapter of DataKind, which is aimed at using data science for
+social good. The meetups are less frequent, but always very inspiring.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.meetup.com/DataKind-UK/"&gt;https://www.meetup.com/DataKind-UK/&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Databeers&lt;/h1&gt;
+&lt;p&gt;A meetup all about data and beer. Talks are limited to 6 minutes, which
+is a format that works really well. You get a good flavour of each
+project, and the strict time limit means you can hear more talks than at
+a usual meetup. Did I mention there's beer?&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://databeersldn.tumblr.com/"&gt;http://databeersldn.tumblr.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;London Data Science ODSC&lt;/h1&gt;
+&lt;p&gt;In recent months the folks at the London Data Science were busy
+organising ODSC, a massive data science conference, and there are no new
+meetups announced at the moment, but it's one to keep an eye out for.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.meetup.com/London-ODSC/"&gt;https://www.meetup.com/London-ODSC/&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;HN London&lt;/h1&gt;
+&lt;p&gt;This is a less data-focused meetup, more aimed at startups. However,
+there are always good talks and plenty of networking opportunities.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.meetup.com/HNLondon/"&gt;https://www.meetup.com/HNLondon/&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Data Bites&lt;/h1&gt;
+&lt;p&gt;Last, but not least, there is Data Bites. Organised by City, University
+of London (where I happen to be doing my MSc) Data Bites is a series of
+talks from people in the industry presenting how they use data science
+and machine learning to solve their problems. A good complement to one's
+data science studies, as it's always good to see what "real life" data
+science looks like.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.city.ac.uk/machine-learning/data-bites"&gt;http://www.city.ac.uk/machine-learning/data-bites&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;MK Geek Night&lt;/h1&gt;
+&lt;p&gt;OK one more. Technically not a London meetup because it's in Milton
+Keynes, and not a data science meetup because it covers all technology
+topics, but MK Geek Night is a blast, so I couldn't not mention it. It's
+a quarterly event and if you can make it out to Milton Keynes on a
+Thursday evening, it'll be worth your time!&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://mkgeeknight.co.uk/"&gt;http://mkgeeknight.co.uk/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This was just a flavour of what's out there. Some meetups are more
+specific than others, but there's something for everyone and I'd
+encourage everyone to try attending some!&lt;/p&gt;
+&lt;p&gt;Footnote: This was the 27&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category></entry><entry><title>Maths Concepts You Should Know for Data Science</title><link href="/blog/maths-concepts-you-should-know-for-data-science" rel="alternate"></link><published>2016-11-22T18:31:00+00:00</published><updated>2016-11-22T18:31:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-22:/blog/maths-concepts-you-should-know-for-data-science</id><summary type="html">&lt;p&gt;If you're interested in data science, I have some potentially bad news -
+you need to know some maths.&lt;/p&gt;
+&lt;p&gt;The good news is that despite what some resources might suggest, you
+don't need &lt;em&gt;that much.&lt;/em&gt; You still need more than zero, but chances are
+you'll have seen a lot of it …&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you're interested in data science, I have some potentially bad news -
+you need to know some maths.&lt;/p&gt;
+&lt;p&gt;The good news is that despite what some resources might suggest, you
+don't need &lt;em&gt;that much.&lt;/em&gt; You still need more than zero, but chances are
+you'll have seen a lot of it in high/secondary school.&lt;/p&gt;
+&lt;p&gt;Here's an overview of what topics you should brush up on.&lt;/p&gt;
+&lt;h1&gt;Linear Algebra&lt;/h1&gt;
+&lt;h2&gt;What?&lt;/h2&gt;
+&lt;p&gt;I've always thought the words "linear algebra" sound more intimidating
+than they need to.&lt;/p&gt;
+&lt;p&gt;Basically, you need to know what a vector and a matrix are, the notation
+to represent them, and how to do basic operations with them (addition,
+multiplication, transposing, dot products, that sort of thing).&lt;/p&gt;
+&lt;h2&gt;Why?&lt;/h2&gt;
+&lt;p&gt;Datasets are usually represented as matrices where each rows is a data
+point and each column is a feature. When you talk about single data
+points or parameters to machine learning algorithms, they're typically
+vectors. You can avoid a lot of confusion by having your vector/matrix
+knowledge up to date.&lt;/p&gt;
+&lt;h1&gt;Statistics&lt;/h1&gt;
+&lt;h2&gt;What?&lt;/h2&gt;
+&lt;p&gt;Arguably if you don't brush up on anything else it should be this.&lt;/p&gt;
+&lt;p&gt;You should know your means from your medians, your Gaussian distribution
+from your multinomial, and you should know about the &lt;a href="http://www.jeannicholashould.com/the-theorem-every-data-scientist-should-know.html"&gt;Central Limit Theorem&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Understanding sampling and hypothesis testing is also important.&lt;/p&gt;
+&lt;h2&gt;Why?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"Data scientists are statisticians because being a statistician is
+awesome and anyone who does cool things with data is a statistician."&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Robert Rodriguez, President, American Statistical Association&lt;/small&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;OK so the head of the American Statistical Association might not be the
+most reliable source on how useful statistics is.&lt;/p&gt;
+&lt;p&gt;Overlooking that, the point is that data science is in many ways
+computational statistics. You can't get away from the fact that
+understanding fundamental statistical concepts is essential to make any
+sense of data.&lt;/p&gt;
+&lt;h1&gt;Probability&lt;/h1&gt;
+&lt;h2&gt;What?&lt;/h2&gt;
+&lt;p&gt;Being comfortable with representations of probability and seeing
+probability distributions is enough to cover your bases. You shouldn't
+be thrown off by phrases like "conditional probability" or "random
+variable".&lt;/p&gt;
+&lt;p&gt;Oh, also &lt;a href="https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/"&gt;learn and understand Bayes' Theorem&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Why?&lt;/h2&gt;
+&lt;p&gt;Understanding probabilities is a useful life skill anyway. Humans are
+typically not wired to intuitively understand probabilities (I recommend
+&lt;a href="https://en.wikipedia.org/wiki/The_Drunkard's_Walk"&gt;The Drunkard's Walk&lt;/a&gt;
+on this subject). Being able to do it is a good skill for a data
+scientist. Also, many machine learning algorithms deal with
+probabilities and probability distributions one way or another.&lt;/p&gt;
+&lt;h1&gt;Calculus (optional)&lt;/h1&gt;
+&lt;p&gt;The word "optional" might be controversial among some data scientists.
+I'd argue that you can go a long way in data science without ever
+calculating a partial derivative.&lt;/p&gt;
+&lt;p&gt;Having said that, knowing &lt;strong&gt;what&lt;/strong&gt; a partial derivative is and what it's
+used for can't hurt. Some machine learning algorithms (neural networks,
+linear regression) require that understanding if you want to go into the
+details. Don't go anywhere near "gradient descent" until you understand
+why you'd want to set a partial derivative to zero.&lt;/p&gt;
+&lt;p&gt;So high school level calculus (derivatives, integrals, the 'chain rule')
+are useful concepts to know, but don't start there. The other things
+I've mentioned above are more important.&lt;/p&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.khanacademy.org/"&gt;Khan Academy&lt;/a&gt; has been my favourite
+resource for brushing up on maths subjects. Something about Sal Khan's
+teaching style really resonates with me.&lt;/p&gt;
+&lt;p&gt;For more advanced topics, the YouTube channel
+&lt;a href="https://www.youtube.com/user/mathematicalmonk"&gt;mathematicalmonk&lt;/a&gt; is
+also excellent.&lt;/p&gt;
+&lt;p&gt;For linear algebra, getting familiar with the numpy library is also a
+good idea if you already know some Python, as numpy encourages you to
+deal with vectorised operations.&lt;/p&gt;
+&lt;p&gt;If you already have programming experience, check out &lt;a href="https://projecteuler.net/"&gt;Project Euler&lt;/a&gt; - it's a series of mathematical
+challenges you solve by writing code. It might not be immediately
+related to data science, but it's a great way to get a bit more
+motivated about maths.&lt;/p&gt;
+&lt;p&gt;Hopefully I've convinced you that you don't need a PhD in maths to
+embark on the road to data science!&lt;/p&gt;
+&lt;p&gt;Footnote: This was the 22&lt;sup&gt;nd&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category><category term="featured"></category></entry><entry><title>6 Data Visualisations You Might Also Like</title><link href="/blog/6-data-visualisations-you-might-also-like" rel="alternate"></link><published>2016-11-21T18:59:00+00:00</published><updated>2016-11-21T18:59:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-21:/blog/6-data-visualisations-you-might-also-like</id><summary type="html">&lt;p&gt;I love a good data visualisation.&lt;/p&gt;
+&lt;p&gt;My talents most certainly don't lie in the visual arts, but I can
+appreciate something nice when I see it.&lt;/p&gt;
+&lt;p&gt;So today I thought I'd share some data visualisations that I've seen
+recently and particularly liked. They all show some creative and/or
+powerful …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I love a good data visualisation.&lt;/p&gt;
+&lt;p&gt;My talents most certainly don't lie in the visual arts, but I can
+appreciate something nice when I see it.&lt;/p&gt;
+&lt;p&gt;So today I thought I'd share some data visualisations that I've seen
+recently and particularly liked. They all show some creative and/or
+powerful ways to display data.&lt;/p&gt;
+&lt;p&gt;Most of them are interactive or too big to embed so they're links, but
+I'll write a bit about them to convince you to click them and check them
+out.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://xkcd.com/1732/"&gt;A Timeline of Earth's Temperature&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is a long visualisation showing how the Earth's temperature has
+changed over time, starting in 20,000 BC. Randall Munroe's typical
+stickman drawings add some humour to an otherwise serious message. You
+know what to expect to see after around 1850...&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.bloomberg.com/graphics/2015-whats-warming-the-world/"&gt;What's Really Warming the World?&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I promise that's the last climate change one, but it tells a very good
+story. The write-up at the end is informative too. Honesty is important
+when you're presenting data!&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://joeycloud.net/v/pianogram/"&gt;Pianogram&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Something completely different. A piano bar chart showing the frequency
+of each key appearing in various classical piano pieces. Chopin's "Black
+Keys Etude" isn't called that for nothing.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.nytimes.com/interactive/2016/08/01/us/elections/nine-percent-of-america-selected-trump-and-clinton.html"&gt;Only 9% of America Chose Trump and Clinton as Nominees&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you've seen enough data visualisations you'll know that the folks at
+the New York Times excel at creating them. I'm quite partial to a
+datavis that shows percentages with blocks so you get a &lt;em&gt;feel&lt;/em&gt; for what
+they look like.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="https://www.theguardian.com/society/ng-interactive/2015/sep/02/unaffordable-country-where-can-you-afford-to-buy-a-house"&gt;Where Can You Afford to Buy a House?&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;None of the individual elements are groundbreaking, but this is a well
+put-together datavis. It highlights how unaffordable the UK is becoming,
+and it doesn't even include more recent data. It takes a stellar salary
+for London to be affordable, but that's no surprise.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/"&gt;A Visual Introduction to Machine Learning&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This final one isn't a datavis per se, but it's one of the best
+"introduction to machine learning" resources I've ever seen. It follows
+through a concrete example with great visuals and it still manages to be
+densely packed with information.&lt;/p&gt;
+&lt;p&gt;Let me know in the comments if you have any data visualisations you'd
+like to share! &lt;/p&gt;
+&lt;p&gt;Footnote: This was the 21&lt;sup&gt;st&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category></entry><entry><title>How to Connect to Google Sheets in Python</title><link href="/blog/connecting-to-google-sheets-in-python" rel="alternate"></link><published>2016-11-13T13:54:00+00:00</published><updated>2016-11-13T13:54:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-13:/blog/connecting-to-google-sheets-in-python</id><summary type="html">&lt;p&gt;In most data science and machine learning tutorials you typically
+encounter csv files. Either you connect to them locally, something like
+this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_local_data.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or you access them via a direct url like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In most data science and machine learning tutorials you typically
+encounter csv files. Either you connect to them locally, something like
+this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_local_data.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or you access them via a direct url like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://www.lotsofdata.com/hosted_data.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;What I rarely see though is connecting to slightly more obscure data
+sources. You will probably end up doing this once you go out into the
+real world of data science.&lt;/p&gt;
+&lt;p&gt;One useful data source is Google Sheets. If you have a spreadsheet
+hosted on Google Drive, which is made available for public access, and
+want to access it, it's not immediately clear how to do that.&lt;/p&gt;
+&lt;p&gt;Let's go through an example of how to connect to one. I'll use a
+spreadsheet that has the &lt;a href="https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/htmlview?usp=sharing&amp;amp;sle=true"&gt;Hacker News salary survey results&lt;/a&gt;
+from a couple of years ago.&lt;/p&gt;
+&lt;p&gt;You can't use the url directly, because the url isn't just pointing to
+the data, it's pointing to the entire Google Sheets interface.&lt;/p&gt;
+&lt;p&gt;Instead you need the sheet's export link.&lt;/p&gt;
+&lt;p&gt;To do this simply take the url until the /d/ part, and the unique ID
+that comes after, so this much:&lt;/p&gt;
+&lt;p&gt;https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A&lt;/p&gt;
+&lt;p&gt;and add &lt;strong&gt;/export&lt;/strong&gt; at the end with some parameters.&lt;/p&gt;
+&lt;p&gt;You can specify the sheet number (zero-indexed) using &lt;strong&gt;gid&lt;/strong&gt;, and the
+format to be csv using &lt;strong&gt;format&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The full url then becomes:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/export?gid=0&amp;amp;format=csv"&gt;https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/&lt;strong&gt;export?gid=0&amp;amp;format=csv&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Try that in your browser and it will download the csv file directly.&lt;/p&gt;
+&lt;p&gt;You can then read it into pandas and it will be treated as a regular csv
+file.&lt;/p&gt;
+&lt;p&gt;Here is the &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/connecting-to-google-sheets/Connecting%20to%20a%20Google%20Sheet.ipynb"&gt;associated Jupyter notebook&lt;/a&gt;
+to see it all in action.&lt;/p&gt;
+&lt;p&gt;Footnote: This was the 13th entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Was FiveThirtyEight Just Wrong?</title><link href="/blog/was-fivethirtyeight-just-wrong" rel="alternate"></link><published>2016-11-09T15:44:00+00:00</published><updated>2016-11-09T15:44:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-09:/blog/was-fivethirtyeight-just-wrong</id><summary type="html">&lt;p&gt;I have some brief thoughts about the outcome of the US election from an
+entirely data science perspective. It's hard to remain objective and
+have a scientific hat on when it comes to political events, but I never
+intended this blog to be a place to discuss political opinion. Instead …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have some brief thoughts about the outcome of the US election from an
+entirely data science perspective. It's hard to remain objective and
+have a scientific hat on when it comes to political events, but I never
+intended this blog to be a place to discuss political opinion. Instead,
+I want to look at this election outcome as an opportunity to talk about
+probabilistic forecasts.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://fivethirtyeight.com/"&gt;FiveThirtyEight&lt;/a&gt; tracked many polls over
+time to forecast the probability of the two candidates. These fluctuated
+quite a bit, but in the end their final forecast was an over 70%
+probability of a Clinton win.&lt;/p&gt;
+&lt;p&gt;So was their model &lt;em&gt;wrong&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;Funnily enough it was Nate Silver himself who, in his book, talked about
+how we evaluate a probabilistic forecast, his example being the weather.
+In the case of the weather, this is the question:&lt;/p&gt;
+&lt;p&gt;Someone makes a forecast that tomorrow it will rain with a probability
+of 30%. It rains tomorrow. Was the forecast correct?&lt;/p&gt;
+&lt;p&gt;The key idea here is that in instances like this the standard notion of
+"accurate" doesn't hold. You simply can't evaluate the model based on a
+single data point, unless its prediction was a 100% probability. That's
+because the model isn't designed to make a single prediction. In the
+case of the weather, forecasts are made multiple times a day, so very
+quickly you have a whole set of "predictions" and true outcomes.&lt;/p&gt;
+&lt;p&gt;From that you now &lt;strong&gt;can&lt;/strong&gt; evaluate the model.&lt;/p&gt;
+&lt;p&gt;When they say the probability of rain is 30% it doesn't just mean that
+it's unlikely to rain. It also means that out of all the times they
+predict 30% it will end up raining 30% of the time; to evaluate it
+therefore requires multiple similar predictions. For example, after a
+hundred 30% predictions, if it only rained on two occasions it's obvious
+the model was too pessimistic (assuming you treat rain as a negative
+outcome).&lt;/p&gt;
+&lt;p&gt;Then what about an event as rare as a general election?&lt;/p&gt;
+&lt;p&gt;That's a harder question and one where &lt;a href="https://twitter.com/nntaleb/status/762033443932934144"&gt;there are disagreements&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Clinton lost the electoral vote but appears to have won the popular vote
+- an outcome FiveThirtyEight estimated to be around 10% likely. It was
+explicitly covered by the forecast, which simply said that it's a rare
+event, but still not an implausible one. Again, it is hard to quantify
+whether that 10% was correct or not.&lt;/p&gt;
+&lt;p&gt;Ultimately in cases like this there are too many variables to be able to
+make a definitive prediction. It is more worthwhile to think of it as a
+statement of the probability distribution of all possible outcomes
+rather than a means to actually predict who will be President. Of course
+this probability distribution can be wrong, it's just not apparent how
+to evaluate this.&lt;/p&gt;
+&lt;p&gt;I must admit I don't know that much about the technical details of such
+an evaluation.&lt;/p&gt;
+&lt;p&gt;However, I am interested in finding out, so I will go away and do some
+research and report back later this month in a future blog article.&lt;/p&gt;
+&lt;p&gt;Footnote: This was the 9&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category></entry><entry><title>5 Data Science Book Recommendations</title><link href="/blog/5-data-science-book-recommendations" rel="alternate"></link><published>2016-11-08T14:58:00+00:00</published><updated>2016-11-08T14:58:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-08:/blog/5-data-science-book-recommendations</id><summary type="html">&lt;p&gt;Data science is a hugely growing field.&lt;/p&gt;
+&lt;p&gt;That means there is an incredible amount of material out there about it,
+from non-technical guides for the casually interested, all the way to
+in-depth technical books and articles. There is also lots of "aggregate
+content" - collections of books and articles to help …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Data science is a hugely growing field.&lt;/p&gt;
+&lt;p&gt;That means there is an incredible amount of material out there about it,
+from non-technical guides for the casually interested, all the way to
+in-depth technical books and articles. There is also lots of "aggregate
+content" - collections of books and articles to help you find the right
+handful of resources, rather than be overwhelmed by all that's out
+there.&lt;/p&gt;
+&lt;p&gt;In today's post I thought I'd add my own recommendations to the ether.
+These are strictly books, because I find it's nice to do some learning
+away from the screen in book form every now and again. I've tried to go
+for a mix of technical and non-technical, so there's something for
+everyone.&lt;/p&gt;
+&lt;p&gt;These aren't in any particular order, so it's not a Top 5, just a... 5.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.nytimes.com/2013/06/11/books/big-data-by-viktor-mayer-schonberger-and-kenneth-cukier.html"&gt;Big Data - Viktor Mayer-Schönberger &amp;amp; Kenneth Cukier&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I have to say I was skeptical about reading a book simply entitled "Big Data" because of &lt;a href="http://dilbert.com/strip/2012-07-29"&gt;the meaningless hype&lt;/a&gt; that comes with that phrase.
+I was pleasantly surprised of course, otherwise the book wouldn't be on
+the list. This is the least technical and complex book on the list, and
+it is aimed at a much wider audience. The authors highlight the power
+that enormous datasets possess, as well as covering difficult issues
+such as data privacy.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="https://en.wikipedia.org/wiki/The_Signal_and_the_Noise"&gt;The Signal and the Noise - Nate Silver&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It might feel "too easy" to include this one, but it's also too good to
+leave out. Nate Silver and his prediction skills are very topical what
+with the US election happening as we speak. His website
+&lt;a href="http://projects.fivethirtyeight.com/2016-election-forecast/"&gt;FiveThirtyEight&lt;/a&gt;
+is arguably the number one source for election forecasts.&lt;/p&gt;
+&lt;p&gt;I like the breadth of topics covered in this book. Silver tackles the
+difficulties, failures, and successes of forecasting the weather,
+baseball, earthquakes and the economy. The book is very dense with
+information, so it's definitely not a light read, but it's very much
+recommended for anyone with more than a passing interest in forecasting
+with data.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.john-foreman.com/data-smart-book.html"&gt;Data Smart - John Foreman&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Not a book I ever expected to see, but this one teaches you data science
+fundamentals &lt;strong&gt;in Excel&lt;/strong&gt;. This
+actually makes a lot of sense, because that way you can focus on the
+concepts rather than the shiny tools that are available. The assumption
+is that everyone knows how to use Excel (although it turns out there was
+a lot I didn't know!) so the barrier for entry is near zero.&lt;/p&gt;
+&lt;p&gt;I like a well-written book, even if it's very technical, and this one
+ticks that box too.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://shop.oreilly.com/product/0636920033400.do"&gt;Data Science from Scratch - Joel Grus&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This was the first hands-on data science book I bought and I got lucky
+because it's a great way to start. It assumes no previous knowledge of
+data science or programming, although even a small previous background
+in Python will be helpful in getting off the ground. It teaches data
+science concepts from first principles, with Python implementations that
+avoid the use of in-built libraries such as scikit-learn.&lt;/p&gt;
+&lt;p&gt;As I mentioned &lt;a href="/blog/intuition-first-machine-learning"&gt;in a previous post&lt;/a&gt;,
+I'm a big fan of learning intuitions first and details later. This book
+does exactly that; it starts certain chapters with a real world data
+science task and then walks you through the solution. Once you've solved
+the problem using raw Python, Grus suggests the appropriate libraries to
+use in the real world.&lt;/p&gt;
+&lt;p&gt;On top of that, a large chunk of the book deals with the things you
+should know &lt;strong&gt;before&lt;/strong&gt; diving into data science, such as statistics and
+probability.&lt;/p&gt;
+&lt;p&gt;An all round valuable resource, and an enjoyable read.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://sebastianraschka.com/books.html"&gt;Python Machine Learning - Sebastian Raschka&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The title speaks for itself. This one is a technical dive into machine
+learning using Python. Concepts are all explained very well by an author
+whose website is &lt;a href="http://sebastianraschka.com/faq/index.html"&gt;a treasure trove&lt;/a&gt; of information about
+machine learning and data science.&lt;/p&gt;
+&lt;p&gt;It's always nice to see a book go beyond describing the algorithms -
+there's additional material around deploying your machine learning
+solutions to the web.&lt;/p&gt;
+&lt;p&gt;Python Machine Learning will remain a reference guide for me for a long
+time.&lt;/p&gt;
+&lt;p&gt;There's my two cents and I'm always on the look out for more
+recommendations, so send any my way! &lt;/p&gt;
+&lt;p&gt;Footnote: This was the 8&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category><category term="featured"></category></entry><entry><title>Pandas: Thinking in Vectors</title><link href="/blog/pandas-thinking-in-vectors" rel="alternate"></link><published>2016-11-04T20:35:00+00:00</published><updated>2016-11-04T20:35:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-04:/blog/pandas-thinking-in-vectors</id><summary type="html">&lt;p&gt;The more you use pandas to wrangle your data the more likely you'll come
+across something complicated that you won't be sure how to do. I found
+this quite quickly when trying to calculate metrics with time series
+data for example.&lt;/p&gt;
+&lt;p&gt;In these cases quite often the first solution that …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The more you use pandas to wrangle your data the more likely you'll come
+across something complicated that you won't be sure how to do. I found
+this quite quickly when trying to calculate metrics with time series
+data for example.&lt;/p&gt;
+&lt;p&gt;In these cases quite often the first solution that pops into my head
+will be the naive, brute force one. Something like "well we can loop
+through all the rows and perform a computation on each row one by one".&lt;/p&gt;
+&lt;p&gt;That is almost never the right approach, because it will be &lt;em&gt;slow&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The better solution is almost always to make use of vectorisation.&lt;/p&gt;
+&lt;p&gt;Pandas is built on top of numpy, which is built with vectors in mind -
+that is, manipulating entire arrays at once rather than the individual
+elements.&lt;/p&gt;
+&lt;p&gt;That way of thinking can be a hard to adjust to when the temptation is
+to use loops.&lt;/p&gt;
+&lt;p&gt;Sometimes it's not a bad idea to start with the brute force approach to
+be confident of the answer, and then move to a vectorised solution. For
+large datasets though, this move can easily be the difference between
+the script taking seconds or hours to run.&lt;/p&gt;
+&lt;h1&gt;Examples&lt;/h1&gt;
+&lt;h2&gt;Date Methods&lt;/h2&gt;
+&lt;p&gt;Applying methods to a column of date values is a common data
+manipulation task, for example when extracting the day as a new feature.
+There are (at least) two functionally identical ways of doing this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Method 1 - row by row&lt;/span&gt;
+&lt;span class="n"&gt;days&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;my_dataframe&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_date_column&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+    &lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;my_dataframe&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;days&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Method 2 - using the inbuilt and vectorised date functionality&lt;/span&gt;
+&lt;span class="n"&gt;my_dataframe&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;my_dataframe&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_date_column&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;They'll do exactly the same thing, but the second will be orders of
+magnitude faster.&lt;/p&gt;
+&lt;h2&gt;Subtracting Consecutive Values&lt;/h2&gt;
+&lt;p&gt;This is one of those problems where, if you don't know the pandas way to
+do it, it's easy to start thinking row by row.&lt;/p&gt;
+&lt;p&gt;Again, here are two functionally identical ways of doing it:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Method 1 - a function to loop through the elements one by one&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;naive_diff&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;series&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;diff_values&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;series&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
+        &lt;span class="c1"&gt;# first value needs to be NaN&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;diff_values&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NaN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;diff_values&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;series&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;series&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;diff_values&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;diff&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;naive_diff&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;measurement&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Method 2 - using the pandas shift() function&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;diff_2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;measurement&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;measurement&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shift&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As well as being shorter, the second method is again much faster.&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;This was just a &lt;em&gt;very&lt;/em&gt; brief introduction into thinking in vectors when
+using pandas.&lt;/p&gt;
+&lt;p&gt;The code is available &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/pandas-thinking-in-vectors/pandas-vector-examples.ipynb"&gt;as a Jupyter notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The take away message is that whenever you need to do something to each
+row, it's worth spending time doing some research to look for an
+appropriate, in built function, and thinking a bit harder about how to
+solve it in a vectorised way.&lt;/p&gt;
+&lt;h2&gt;Footnote: Apply and Itertuples&lt;/h2&gt;
+&lt;p&gt;If you absolutely must loop through the dataframe row by row, you should
+consider using apply and itertuples. They are two pandas functions that
+let you perform elementwise computation, but are faster than manually
+looping through the row indices.&lt;/p&gt;
+&lt;p&gt;There are further good tips &lt;a href="http://stackoverflow.com/questions/7837722/what-is-the-most-efficient-way-to-loop-through-dataframes-with-pandas"&gt;under this StackOverflow question&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Further Reading&lt;/h2&gt;
+&lt;p&gt;When doing some research for this post I came across &lt;a href="https://www.datascience.com/blog/straightening-loops-how-to-vectorize-data-aggregation-with-pandas-and-numpy/"&gt;this blog post&lt;/a&gt;,
+which is worth a read on the subject.&lt;/p&gt;
+&lt;p&gt;Footnote #2: This was the 4&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category><category term="pandas"></category><category term="python"></category></entry><entry><title>Pandas: a Quick Reference Guide</title><link href="/blog/pandas-quick-reference-guide" rel="alternate"></link><published>2015-12-22T18:58:00+00:00</published><updated>2015-12-22T18:58:00+00:00</updated><author><name>david</name></author><id>tag:None,2015-12-22:/blog/pandas-quick-reference-guide</id><summary type="html">&lt;p&gt;Before I start, to placate readers who were expecting a blog post about
+panda bears, here's a picture of pandas at play:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pandas at play" src="/images/pandas-quick-reference-guide/pandas-at-play-1174622-638x406.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Panda bears - more mysterious than the Python library? Certainly cuter.&lt;/p&gt;
+&lt;p&gt;From now on, 'pandas' will refer to the Python library, not the bears. &lt;/p&gt;
+&lt;h2&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Pandas is a Python …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Before I start, to placate readers who were expecting a blog post about
+panda bears, here's a picture of pandas at play:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pandas at play" src="/images/pandas-quick-reference-guide/pandas-at-play-1174622-638x406.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Panda bears - more mysterious than the Python library? Certainly cuter.&lt;/p&gt;
+&lt;p&gt;From now on, 'pandas' will refer to the Python library, not the bears. &lt;/p&gt;
+&lt;h2&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Pandas is a Python library designed to help with data wrangling. I've
+been using it for a few months now, and I can't shake the nagging
+feeling that I haven't quite got the hang of it yet. For all its power
+and obvious usefulness, there's something about it that I just find
+unintuitive. I've looked at a few step-by-step tutorials online about
+it, such as the &lt;a href="https://www.kaggle.com/c/titanic/details/getting-started-with-python-ii"&gt;one on Kaggle&lt;/a&gt;,
+and it still hadn't clicked, so I decided to create an IPython Notebook
+as a reference guide. Initially, I was going to make a rough one for
+myself, but then I thought I might as well share it considering other
+people have complained of similar difficulties.&lt;/p&gt;
+&lt;h2&gt;The Notebook&lt;/h2&gt;
+&lt;p&gt;As it's meant as a quick reference guide and not a tutorial, the
+notebook itself consists mainly of headers and code snippets, often
+without much explanation. Where there are caveats, gotchas, or general
+things to remember I've made additional notes.&lt;/p&gt;
+&lt;p&gt;I was considering pasting the text from the notebook into this post.
+However, it will evolve over time as I learn more about pandas, so
+instead, you can look at the most up-to-date version on NBViewer (an
+online IPython Notebook renderer) or grab it for yourself on GitHub.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://nbviewer.ipython.org/github/davidasboth/pandas-reference/blob/master/Pandas%20tutorial.ipynb"&gt;NBViewer version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/davidasboth/pandas-reference/blob/master/Pandas%20tutorial.ipynb"&gt;GitHub version&lt;/a&gt;
+    (or you can visit the &lt;a href="https://github.com/davidasboth/pandas-reference/"&gt;full repo&lt;/a&gt;, if you want
+    to download the notebook for yourself)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Also, I've seen notebooks with dynamic tables of contents at the top, so
+I'll try to figure out how to do that at some point, especially if the
+notebook gets unwieldy.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category><category term="featured"></category><category term="pandas"></category><category term="python"></category></entry></feed>

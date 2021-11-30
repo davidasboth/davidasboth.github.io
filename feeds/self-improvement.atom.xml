@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth | Data Science - self improvement</title><link href="/" rel="alternate"></link><link href="/feeds/self-improvement.atom.xml" rel="self"></link><id>/</id><updated>2016-11-30T19:03:00+00:00</updated><entry><title>Lessons Learned from Blogging for 30 Days</title><link href="/blog/30-day-blog-challenge-complete" rel="alternate"></link><published>2016-11-30T19:03:00+00:00</published><updated>2016-11-30T19:03:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-30:/blog/30-day-blog-challenge-complete</id><summary type="html">&lt;p&gt;I did it!&lt;/p&gt;
+&lt;p&gt;I wrote 30 blog posts in 30 days (including this one).&lt;/p&gt;
+&lt;p&gt;I'm including this one because I wanted to look back at what I got out
+of this little experiment in the hopes that it will be useful to others,
+so I intend this post to be …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I did it!&lt;/p&gt;
+&lt;p&gt;I wrote 30 blog posts in 30 days (including this one).&lt;/p&gt;
+&lt;p&gt;I'm including this one because I wanted to look back at what I got out
+of this little experiment in the hopes that it will be useful to others,
+so I intend this post to be a useful edition to my blog rather than some
+sort of self-backpatting (not a real word).&lt;/p&gt;
+&lt;h1&gt;The Positives&lt;/h1&gt;
+&lt;p&gt;Let's start with the positives.&lt;/p&gt;
+&lt;h2&gt;They turned out OK&lt;/h2&gt;
+&lt;p&gt;I did this little experiment in the spirit of NaNoWriMo, where people
+write a 50,000+ word novel in a month.&lt;/p&gt;
+&lt;p&gt;Now, I know that if I dedicated an entire month to nothing but writing
+and managed a 50,000+ word novel, it wouldn't be good. It feels like a
+goal so unrealistic that I'd lose the motivation very soon and write
+rubbish.&lt;/p&gt;
+&lt;p&gt;I was worried that this logic would carry over to this project; that
+after 30 days I'd be so fed up of writing blog posts that they'd start
+turning out terribly.&lt;/p&gt;
+&lt;p&gt;I'd like to think that there wasn't a visible drop in quality over the
+30 days. I mean, I managed to write them all in full sentences, stayed
+on-topic, and didn't resort to rambling about random subjects.&lt;/p&gt;
+&lt;h2&gt;I have 30 more blog posts than I started with&lt;/h2&gt;
+&lt;p&gt;Obviously this was the entire purpose of the exercise, but because I
+feel they turned out OK, I have 30 more &lt;strong&gt;usable&lt;/strong&gt; blog posts than I
+started with.&lt;/p&gt;
+&lt;p&gt;At my previous pace it would have taken me decades to generate this much
+content.&lt;/p&gt;
+&lt;h2&gt;No time to overthink&lt;/h2&gt;
+&lt;p&gt;Having a daily deadline really got rid of all the distractions and
+self-doubt that plagued my blogging efforts before. I had no time to
+think about whether a topic was worth discussing - if it was related,
+and I felt I could write something useful about it, it was good enough.&lt;/p&gt;
+&lt;p&gt;"Good enough" is a concept I'm better friends with now.&lt;/p&gt;
+&lt;h2&gt;Putting yourself out there&lt;/h2&gt;
+&lt;p&gt;I tweeted about every blog post to make sure I was keeping myself
+honest. It created a habit that helped me focus on getting the next post
+written.&lt;/p&gt;
+&lt;h1&gt;The Negatives&lt;/h1&gt;
+&lt;p&gt;Obviously things weren't all rosy.&lt;/p&gt;
+&lt;h2&gt;Make it STOP!&lt;/h2&gt;
+&lt;p&gt;This was a &lt;strong&gt;long&lt;/strong&gt; month. Having even an hour commitment each evening
+was hard work sometimes.&lt;/p&gt;
+&lt;p&gt;Being an adult is hard.&lt;/p&gt;
+&lt;h2&gt;Do I even have 30 ideas?&lt;/h2&gt;
+&lt;p&gt;I'm not going to lie, there were some days I struggled to think of what
+to write about.&lt;/p&gt;
+&lt;p&gt;I had maybe 7-8 topics I knew I wanted to write about beforehand, and a
+few small machine learning tutorials I wanted to write up, but the other
+two thirds of the time the posts were conceived on the day or the day
+before.&lt;/p&gt;
+&lt;p&gt;If I were to do this for another 30 days I might simply run out of
+ideas.&lt;/p&gt;
+&lt;h2&gt;Big topics, small posts&lt;/h2&gt;
+&lt;p&gt;Sometimes I had the opposite problem. I thought of a good topic to
+tackle, but due to the time pressure probably didn't do it justice. Or I
+responded to a piece of news, such as &lt;a href="/blog/all-your-web-data-are-belong-to-us/"&gt;the UK's IP bill&lt;/a&gt;,
+but would have liked to write a more complete, well-researched view of
+it. I actually &lt;a href="/blog/more-on-the-snoopers-charter/"&gt;did that with the IP bill&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Conclusion and Advice to Future Bloggers (or past me)&lt;/h1&gt;
+&lt;p&gt;All in all, doing something like this forced me out of my comfort zone.&lt;/p&gt;
+&lt;p&gt;For a whole month I regularly had to create content and put it out there
+without the level of scrutiny and deliberation I normally would have
+subjected it to.&lt;/p&gt;
+&lt;p&gt;I'm now more comfortable with my posts being good &lt;em&gt;enough&lt;/em&gt; instead of
+always aiming for 'perfection'.&lt;/p&gt;
+&lt;p&gt;I realised I had lots of code snippets, Jupyter notebooks, and
+half-finished machine learning tutorials lying around that I never got
+around to writing up. Now they're out there.&lt;/p&gt;
+&lt;p&gt;I actually enjoy writing and, apart from a few days where I wished I
+didn't have this task looming over me, I'm glad I've been writing so
+much recently.&lt;/p&gt;
+&lt;p&gt;The momentum is with me, although I will almost certainly stop producing
+daily posts (I also have another writing challenge to finish in the near
+future, in the form of a Master's thesis). &lt;/p&gt;
+&lt;p&gt;So my advice to anyone reading this, including a past version of me,
+would be to &lt;strong&gt;&lt;a href="/blog/just-do-stuff/"&gt;do it&lt;/a&gt;&lt;/strong&gt;!&lt;/p&gt;
+&lt;p&gt;If you're struggling to add to your blog/portfolio, want a boost to help
+you complete half-finished code projects, or you want to get over your
+insistence on perfection (I'm looking at you, past me), start a similar
+challenge!&lt;/p&gt;
+&lt;p&gt;It doesn't have to be a whole month, start with less if you want. As
+I've alluded to before, starting is almost certainly always the hardest
+part.&lt;/p&gt;
+&lt;p&gt;To get you going, here's some text that you can copy-and-paste into a
+tweet to announce your challenge to the world. Fill in the gaps where
+appropriate:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I'm starting a blogging challenge: ___ posts in ___ days. My
+first topic will be ____, watch this space!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As silly and patronising as this might appear, the "secret" is to reduce
+the barrier to entry, to remove obstacles. I've reduced it now to almost
+just Ctrl+C, Ctrl+V. No excuses.&lt;/p&gt;
+&lt;p&gt;Once that tweet is out there, you'd be surprised at how much focus and
+discipline you can muster to make sure you actually complete your
+challenge.&lt;/p&gt;
+&lt;p&gt;Here's to more blogging!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="self improvement"></category><category term="featured"></category></entry><entry><title>Getting Started</title><link href="/blog/getting-started" rel="alternate"></link><published>2016-11-16T19:58:00+00:00</published><updated>2016-11-16T19:58:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-16:/blog/getting-started</id><summary type="html">&lt;p&gt;Following on from &lt;a href="/blog/just-do-stuff/"&gt;yesterday's post&lt;/a&gt; about getting
+stuff done I want to address what I think is the hardest part about it:
+getting started.&lt;/p&gt;
+&lt;p&gt;That may sound obvious, so let me explain.&lt;/p&gt;
+&lt;h2&gt;Starting is Hard&lt;/h2&gt;
+&lt;p&gt;Based on my observations, I'm more likely to sit down and work on a side …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Following on from &lt;a href="/blog/just-do-stuff/"&gt;yesterday's post&lt;/a&gt; about getting
+stuff done I want to address what I think is the hardest part about it:
+getting started.&lt;/p&gt;
+&lt;p&gt;That may sound obvious, so let me explain.&lt;/p&gt;
+&lt;h2&gt;Starting is Hard&lt;/h2&gt;
+&lt;p&gt;Based on my observations, I'm more likely to sit down and work on a side
+project or blog post if I've already got something to work on. That's
+either something that I started previously, or just an idea that's been
+bouncing around my head long enough for me to want to act on it.&lt;/p&gt;
+&lt;p&gt;I'm also typically unlikely to cut my work short once I've started it.
+Programming is a &lt;a href="https://en.wikipedia.org/wiki/Flow_(psychology)"&gt;flow&lt;/a&gt;
+activity and, unlike say &lt;em&gt;doing your taxes&lt;/em&gt;, once you get started it's
+rare to feel like stopping after 10 minutes.&lt;/p&gt;
+&lt;p&gt;That means if you're like me, the hardest part is the initial hurdle.&lt;/p&gt;
+&lt;p&gt;Getting started.
+ &lt;/p&gt;
+&lt;h2&gt;Why Starting is Hard&lt;/h2&gt;
+&lt;p&gt;There are a few reasons why it takes considerable effort to sit down and
+start.&lt;/p&gt;
+&lt;h3&gt;Fear of Wasting Time&lt;/h3&gt;
+&lt;p&gt;This ties in with the point about it being easier to continue working on
+something than starting something completely new. I often worry about
+how productively I'm spending my free time. If I start working on
+Project X, that will mean I'm not progressing with Project Y and working
+on Project Z would also be a good use of my time.&lt;/p&gt;
+&lt;p&gt;All this does is stop me from working on any of them.&lt;/p&gt;
+&lt;h3&gt;"I Don't Have Any Free Time"&lt;/h3&gt;
+&lt;p&gt;The biggest lie we tell ourselves.&lt;/p&gt;
+&lt;p&gt;There are obviously days or weeks when it's true, but isn't it funny how
+I can &lt;strong&gt;always&lt;/strong&gt; find time for another Netflix episode?&lt;/p&gt;
+&lt;h3&gt;Too Many Ideas&lt;/h3&gt;
+&lt;p&gt;A variant of previous points, but it's worth mentioning that sometimes
+you just can't decide which of your ideas to work on, only to give up
+working on any of them. Yes it sounds like a laughable excuse, but we're
+all great at fooling ourselves.&lt;/p&gt;
+&lt;h3&gt;Perfectionism&lt;/h3&gt;
+&lt;p&gt;In one of my favourite posts on the topic of procrastination, David Cain
+talks about perfectionism.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For a procrastinator of my kind, perfection (or something negligibly
+close to it) thereby becomes the only result that allows one to be
+comfortable with him&lt;em&gt;self&lt;/em&gt;. A procrastinator becomes
+disproportionately motivated by the pain of failure.
+&lt;small&gt;From: &lt;a href="http://www.raptitude.com/2011/05/procrastination-is-not-laziness"&gt;Procrastination Is Not Laziness&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is especially true of work that you will inevitably share somehow,
+be it on a blog or Github, or just by showing it to your friends. If
+you're a certain kind of person, this can be a very powerful deterrent
+indeed.&lt;/p&gt;
+&lt;h3&gt;Impostor Syndrome&lt;/h3&gt;
+&lt;p&gt;Related to the above. If you are too concerned with how good your work
+is compared to everyone else's (especially that of experts in the field)
+you can end up convincing yourself that there's no point even starting.&lt;/p&gt;
+&lt;h2&gt;Tips on Getting Started&lt;/h2&gt;
+&lt;p&gt;So I realise that all sounds insurmountable. I've found that the key is
+to use these mind games to your advantage and effectively try to trick
+yourself into starting.&lt;/p&gt;
+&lt;p&gt;Based on my own experience I have some suggestions.&lt;/p&gt;
+&lt;h3&gt;Artificial Deadlines&lt;/h3&gt;
+&lt;p&gt;In some cases, pressure can be a good thing. With side projects, there's
+rarely any pressure to get things done, so creating an artificial
+deadline for yourself is a good way to focus.&lt;/p&gt;
+&lt;p&gt;That begs the question of how you avoid procrastinating over this new
+artificial deadline.&lt;/p&gt;
+&lt;p&gt;My suggestion for that is to &lt;strong&gt;externalise&lt;/strong&gt; the pressure.&lt;/p&gt;
+&lt;p&gt;Tell a friend that you're working on Project X and you'd like to show it
+to them next Tuesday. Or tweet about it, saying a blog post is coming on
+Friday. It's critical that you set a specific time for this, otherwise
+you can keep pushing it back.&lt;/p&gt;
+&lt;p&gt;By doing this, you're making yourself accountable to &lt;em&gt;other people.&lt;/em&gt;
+Sure there's probably no consequence if you miss the deadline, but it
+might still be enough to help you push through the first step.&lt;/p&gt;
+&lt;p&gt;You're also putting your future self in a situation where &lt;strong&gt;not&lt;/strong&gt; doing
+stuff is the worse outcome, because you'd have to go through the shame
+of going back on your word.&lt;/p&gt;
+&lt;p&gt;A cheap trick, but it works.&lt;/p&gt;
+&lt;h3&gt;Unrealistic Goals&lt;/h3&gt;
+&lt;p&gt;It might sound odd, but actually aiming higher than what you think is
+reasonable could help get started.&lt;/p&gt;
+&lt;p&gt;Let me explain.&lt;/p&gt;
+&lt;p&gt;I've been putting off writing on my blog for months. Then one evening I
+thought "I know, I'll write 30 blog posts in 30 days". Bear in mind that
+previously I'd barely written one every 2-3 months! It was a hugely
+ambitious mini-project considering my track record.&lt;/p&gt;
+&lt;p&gt;Suddenly it was clear that to make this work I'd have to ensure I have
+enough time every day to write a blog post. That's on average an hour a
+day I'd have to commit to this.&lt;/p&gt;
+&lt;p&gt;Interestingly though, it gave me a focus I never had when I was just
+casually contemplating writing my next post. There was no time to second
+guess myself because I had no more than an hour a day to get something
+done.&lt;/p&gt;
+&lt;p&gt;It was &lt;em&gt;almost easy&lt;/em&gt; to sit down and get cracking because there was
+literally no time to waste.&lt;/p&gt;
+&lt;p&gt;I also made use of my other trick of external pressure by immediately
+tweeting about it. Then there was no going back, and I'm already halfway
+through a content-creating marathon.&lt;/p&gt;
+&lt;p&gt;Thanks for that, Past Me.&lt;/p&gt;
+&lt;h3&gt;A Rousing Speech&lt;/h3&gt;
+&lt;p&gt;You know how in films there's often a point where a character says a
+rousing speech and everyone around them just goes "yeah, let's do
+this!"?&lt;/p&gt;
+&lt;p&gt;Sometimes you need it.&lt;/p&gt;
+&lt;p&gt;In my case, it was this one: &lt;a href="http://www.cracked.com/blog/6-harsh-truths-that-will-make-you-better-person/"&gt;6 Harsh Truths That Will Make You a Better Person&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you ever feel you're struggling with getting stuff done, read that.&lt;/p&gt;
+&lt;p&gt;Maybe it will make you go "yeah, let's do stuff!".&lt;/p&gt;
+&lt;h3&gt;Be Forgiving&lt;/h3&gt;
+&lt;p&gt;Like I said at the end of my previous post, it's important not to take
+failure too seriously.&lt;/p&gt;
+&lt;p&gt;We don't have to be productive all the time. In fact, we're probably too
+obsessed with it. I know I can be.&lt;/p&gt;
+&lt;p&gt;If you take it too seriously, procrastination can cause a lot of
+distress and productivity becomes a burden.&lt;/p&gt;
+&lt;p&gt;So sometimes, choose &lt;strong&gt;not&lt;/strong&gt; to do stuff.&lt;/p&gt;
+&lt;p&gt;Just make sure it's a choice you're actively making, not an excuse to
+procrastinate.&lt;/p&gt;
+&lt;p&gt;Footnote: This was the 16&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="self improvement"></category><category term="featured"></category></entry><entry><title>Just Do Stuff</title><link href="/blog/just-do-stuff" rel="alternate"></link><published>2016-11-15T16:44:00+00:00</published><updated>2016-11-15T16:44:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-15:/blog/just-do-stuff</id><summary type="html">&lt;p&gt;Yesterday I read an article called &lt;a href="https://medium.com/&amp;64;bgilham/making-time-for-side-projects-22fbee546b45#.8f9myvkmq"&gt;Making Time for Side Projects&lt;/a&gt;
+and its associated &lt;a href="https://news.ycombinator.com/item?id=12949469"&gt;Hacker News discussion&lt;/a&gt;. It got me
+thinking about all the advice I've read over the years about
+productivity, about how best to use your time, and how to stop
+procrastinating over side projects and just get …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yesterday I read an article called &lt;a href="https://medium.com/&amp;64;bgilham/making-time-for-side-projects-22fbee546b45#.8f9myvkmq"&gt;Making Time for Side Projects&lt;/a&gt;
+and its associated &lt;a href="https://news.ycombinator.com/item?id=12949469"&gt;Hacker News discussion&lt;/a&gt;. It got me
+thinking about all the advice I've read over the years about
+productivity, about how best to use your time, and how to stop
+procrastinating over side projects and just get stuff done.&lt;/p&gt;
+&lt;p&gt;I don't know the answer to how you get stuff done; I'm still just slowly
+getting used to spending more time &lt;em&gt;actually doing things&lt;/em&gt;. I've written
+&lt;a href="/blog/procrastination-and-monkeys/"&gt;about procrastination&lt;/a&gt;
+before, and I'll likely return to this topic every now and again. Partly
+so that I can reread it later in case I forget what I've learned.&lt;/p&gt;
+&lt;p&gt;Today I'm just going to share the random thoughts I've had after reading
+that article. Which brings me onto my first point.&lt;/p&gt;
+&lt;h2&gt;Too Much Reading, Not Enough Doing&lt;/h2&gt;
+&lt;p&gt;There was one comment in particular from that HN thread that caught my
+eye and motivated this post.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I wonder how many hours that would have otherwise been productive
+have been spent reading about productivity.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Despite the tongue-in-cheek tone, there's a lot of truth there.&lt;/p&gt;
+&lt;p&gt;I've fallen into this trap many times - you read an insightful post,
+learn some home truths, get some clarity, and understand your situation
+better. You feel like something's clicked and you'll never look at the
+problem of procrastination the same way again.&lt;/p&gt;
+&lt;p&gt;Then you just go back to &lt;em&gt;not doing stuff&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;What "stuff"?&lt;/h2&gt;
+&lt;p&gt;At this point I want to clarify something. The problem I'm describing is
+related to procrastinating over things &lt;em&gt;no one is making you do&lt;/em&gt;. Maybe
+that's why it's hard, because you're not accountable to anyone, but I'm
+strictly only talking about working on these side projects.&lt;/p&gt;
+&lt;p&gt;You can easily get through life and have a decent career without
+spending time outside of work bettering yourself. You'll probably miss
+out on opportunities to meet people or learn things, but side projects
+are not essential in the way that, say, &lt;em&gt;going to work&lt;/em&gt; is. Again, maybe
+that's why it's easy to procrastinate over it.&lt;/p&gt;
+&lt;h2&gt;Unsolicited Advice&lt;/h2&gt;
+&lt;p&gt;I realise the irony of talking about this problem when I've just said
+that reading about it is one of the barriers to getting stuff done. I'm
+afraid the only advice that I can offer is, in my view, the only
+universally "good" advice on the subject:&lt;/p&gt;
+&lt;p&gt;Do stuff.&lt;/p&gt;
+&lt;p&gt;It doesn't matter what it is. Write a blog, learn a new framework, mess
+around with automating something on your computer, scrape a random
+website for data. Anything.&lt;/p&gt;
+&lt;p&gt;Overthinking and overcomplicating are the enemies of getting things
+done. For bigger projects, obviously make a plan but if you're ever
+stuck or feel overwhelmed that your side project is big, or you're not
+sure how to continue, just &lt;em&gt;do stuff&lt;/em&gt;. Don't think about how it will fit
+into the bigger picture. Don't think about how good a portfolio piece it
+will be. Just do stuff.&lt;/p&gt;
+&lt;p&gt;I've been following this maxim for about a year now, with what I thought
+was almost no success. When I decided to do this &lt;a href="/blog/30-posts-in-30-days/"&gt;30-day blogging challenge&lt;/a&gt; and
+had to get a list of ideas together to get started, that's when I
+realised how many almost-finished side projects I had. None of them were
+very big, but they were all the result of me just sitting down and
+&lt;em&gt;doing something&lt;/em&gt;. The structured nature of this challenge and the tight
+daily deadline finally brought me enough focus to start finishing them
+off by polishing the code and writing up blog posts.&lt;/p&gt;
+&lt;p&gt;Suddenly I started producing content.&lt;/p&gt;
+&lt;h2&gt;Stop Consuming&lt;/h2&gt;
+&lt;p&gt;The bigger picture version of the "too much reading" idea is one of the
+harsh truths pointed out in the Making Time for Side Projects article
+(and others).&lt;/p&gt;
+&lt;p&gt;It is that you should &lt;strong&gt;stop consuming&lt;/strong&gt;, and &lt;strong&gt;start creating&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;One of my favourite articles on the subject, which I will talk about in
+more depth in a later post, says this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You hate yourself because you don't do anything.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Harsh, but true. At least in my case it was.&lt;/p&gt;
+&lt;h2&gt;Final Musings&lt;/h2&gt;
+&lt;p&gt;I realise this all can come across as a bit preachy. Perhaps it is less
+so if I point out that I fail at this &lt;em&gt;all the time&lt;/em&gt;. This entire piece
+is mostly just aimed at a past version of me.&lt;/p&gt;
+&lt;p&gt;What I've come to understand is that yes, these points are all true;
+it's obviously better to do things than not do things. But you also have
+to understand that you will fail. You will sometimes inevitably spend a
+whole Sunday playing video games instead of working on stuff. We're all
+human after all.&lt;/p&gt;
+&lt;p&gt;If that happens, just forgive yourself and move on. We don't have to be
+"productive" all the time (I'll return to that idea).&lt;/p&gt;
+&lt;p&gt;If you're halfway through that Sunday and catch yourself
+procrastinating, then take some time and &lt;em&gt;do stuff&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Footnote: This is the 15&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="self improvement"></category><category term="featured"></category></entry><entry><title>Other People</title><link href="/blog/other-people" rel="alternate"></link><published>2016-11-02T18:11:00+00:00</published><updated>2016-11-02T18:11:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-02:/blog/other-people</id><summary type="html">&lt;p&gt;If you were applying for a new job and had a choice between working on a
+project alone or with other people, which would you choose?&lt;/p&gt;
+&lt;p&gt;Introverts might prefer a project where they minimise human interaction,
+and some people really do work better if they're left alone for long
+periods …&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you were applying for a new job and had a choice between working on a
+project alone or with other people, which would you choose?&lt;/p&gt;
+&lt;p&gt;Introverts might prefer a project where they minimise human interaction,
+and some people really do work better if they're left alone for long
+periods of time.&lt;/p&gt;
+&lt;p&gt;I'm not one of those people. I do my best work with others.&lt;/p&gt;
+&lt;h2&gt;Working with Others&lt;/h2&gt;
+&lt;p&gt;When I wanted to start moving from web development to data science, I
+could have spent my free time doing various online courses to learn the
+material, working on side projects to sharpen my skills and eventually
+getting good enough to apply for jobs. However, that would have involved
+me doing most of it alone. Without the ability to exchange ideas with
+people, get feedback on my work and get that feeling of "we're in this
+together" I wouldn't have made enough progress. In the end I bit the
+bullet and enrolled on a Master's programme, and it was the right
+decision (for me).&lt;/p&gt;
+&lt;p&gt;The benefits of collaborating with others is probably higher in data
+science than other professions, because it's often so exploratory in
+nature. Even in software engineering it's plausible to be the only
+developer on a project and still create a perfectly good product. I'd
+speculate that the gains in adding a second data scientist to your team,
+though, are much higher.&lt;/p&gt;
+&lt;p&gt;I might be wrong, and there will almost certainly be amazing data
+scientists out there who are working on their own and wouldn't gain much
+from a second team member, but my feeling is they're the minority.
+Certainly you need to work with other, non-technical people from the
+business to make sure you're solving the right problems and in the right
+way, so you can't be completely in isolation anyway.&lt;/p&gt;
+&lt;h2&gt;Others Outside of Work&lt;/h2&gt;
+&lt;p&gt;What about outside of work?&lt;/p&gt;
+&lt;p&gt;I'm quite an extroverted person and I'm probably not alone in feeling
+energised by the presence of like-minded people who are motivated by the
+same things, e.g. data science. Hit Reply, a podcast I listen to,
+dedicated &lt;a href="https://hitreply.co/ep/6/surround-yourself/"&gt;an entire episode&lt;/a&gt; to the benefits of
+surrounding yourself with others if you're a startup founder, or just
+working on a side project with the view to making it into a startup.&lt;/p&gt;
+&lt;p&gt;I can feel myself being a lot more motivated to work on a side project
+even if I just talk about it for a bit with other people.&lt;/p&gt;
+&lt;p&gt;So if you're like me, what can &lt;strong&gt;you&lt;/strong&gt; do to be around the right kind of
+"other people"?&lt;/p&gt;
+&lt;h2&gt;Meetups&lt;/h2&gt;
+&lt;p&gt;The meetup scene in London is particularly big and diverse. You wouldn't
+have to go too much outside of your interests to find a meetup to attend
+&lt;em&gt;every single day&lt;/em&gt;. Just searching for the word "data" on
+&lt;a href="https://www.meetup.com/"&gt;meetup.com&lt;/a&gt; gives me a list where I could
+easily pick a daily meetup.&lt;/p&gt;
+&lt;p&gt;I often joke that if you want to save money on food, go to a meetup that
+has free pizza every night. On top of getting dinner for free you'll
+also learn loads and meet new people!&lt;/p&gt;
+&lt;p&gt;You shouldn't do that.&lt;/p&gt;
+&lt;p&gt;But you could.&lt;/p&gt;
+&lt;h2&gt;Online Communities&lt;/h2&gt;
+&lt;p&gt;Sometimes you want to be part of a community without being physically
+present. Maybe you want to watch from the sidelines as people talk about
+topics of interest, or you just don't have the time to attend meetups
+all the time. Online communities are a great alternative. Just off the
+top of my head, you'll find plenty of content and discussion on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://reddit.com/"&gt;Reddit&lt;/a&gt; (e.g.
+    &lt;a href="https://www.reddit.com/r/MachineLearning/"&gt;/r/machinelearning&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://quora.com/"&gt;Quora&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://news.ycombinator.com/"&gt;Hacker News&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stats.stackexchange.com/"&gt;"Cross-Validated" on Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some of these are more geared towards general discussion, some are Q&amp;amp;A
+sites, but they're all communities where you can be surrounded
+(virtually) by the right kind of people. Being part of a Slack channel
+also helps - we (MSc students) use ours regularly.&lt;/p&gt;
+&lt;p&gt;What do you do to be surrounded by the right people?&lt;/p&gt;
+&lt;p&gt;Footnote: This was the 2&lt;sup&gt;nd&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="self improvement"></category></entry><entry><title>The Power of Podcasts</title><link href="/blog/the-power-of-podcasts" rel="alternate"></link><published>2016-11-01T21:12:00+00:00</published><updated>2016-11-01T21:12:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-01:/blog/the-power-of-podcasts</id><summary type="html">&lt;p&gt;I've been thinking about podcasts recently.&lt;/p&gt;
+&lt;p&gt;I spend a significant amount of my week doing necessary things that feel
+like lost time, like commuting or washing the dishes. When I commute I
+usually have my phone out, probably playing a pointless game just to
+pass the time. When I do …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been thinking about podcasts recently.&lt;/p&gt;
+&lt;p&gt;I spend a significant amount of my week doing necessary things that feel
+like lost time, like commuting or washing the dishes. When I commute I
+usually have my phone out, probably playing a pointless game just to
+pass the time. When I do the dishes I feel like "the dishes being done"
+is not enough of a return on the investment of time that I put in.&lt;/p&gt;
+&lt;p&gt;These pockets of time are perfect for listening to podcasts.&lt;/p&gt;
+&lt;p&gt;In general I feel like it's probably worthwhile putting my attention
+into what I'm doing rather than letting my mind wander, but in these
+cases I make a conscious decision to put my attention elsewhere. I want
+to hear about new ideas, keep up with the latest technology news or
+machine learning research, and if I can do it while I'm doing something
+that needs to be done anyway, I feel like I'm &lt;em&gt;winning&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;I also find podcasts a good tool for learning.&lt;/p&gt;
+&lt;p&gt;Everyone learns differently, but I find I retain more information that I
+&lt;em&gt;hear&lt;/em&gt; than I read. I only have limited time to dedicate to learning new
+things, so again podcasts seem like the right kind of resource. It also
+helps that there are some great podcasts out there for data science and
+technology.&lt;/p&gt;
+&lt;p&gt;I want to share a few of the podcasts I listen to, specifically for
+those interested in data science.&lt;/p&gt;
+&lt;h1&gt;Data Science Podcasts&lt;/h1&gt;
+&lt;h2&gt;&lt;a href="http://dataskeptic.com/"&gt;Data Skeptic&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I like Data Skeptic because of the way they alternate between episodes
+dedicated to single concepts in data science, and interesting
+interviews. Recommended both from a learning perspective, and for the
+inspiration of hearing people talk about their cool projects.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://partiallyderivative.com/"&gt;Partially Derivative&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A lighthearted (but sometimes serious) alternative to the more
+learning-heavy podcasts out there. The hosts are entertaining and
+alternate between talking about data news to talking to interesting data
+people. This is definitely the most "beginner-friendly" podcast on the
+list because it's more about the data &lt;em&gt;stories&lt;/em&gt; rather than the
+technical details. I like it because it adds variety to a list that's
+otherwise quite technical.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.becomingadatascientist.com/category/podcast/"&gt;Becoming a Data Scientist Podcast&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Host Renee Teate documents her path to becoming a data scientist,
+interviewing plenty of inspiring data science people along the way. The
+podcast is accompanied by an excellent &lt;a href="http://www.becomingadatascientist.com/learningclub/"&gt;learning club&lt;/a&gt; for aspiring
+data scientists. I was a contributor for a while and a guest on &lt;a href="http://www.becomingadatascientist.com/2016/06/15/becoming-a-data-scientist-podcast-episode-12-data-science-learning-club-members/"&gt;one of the episodes&lt;/a&gt;,
+but that's not why you should check it out. Also season 2 is coming
+soon!&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.thetalkingmachines.com/"&gt;Talking Machines&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Arguably the most advanced and technical data science/machine learning
+podcast out there. The hosts interview academics, including machine
+learning greats Geoff Hinton and Yann LeCun, and discuss advanced topics
+in machine learning. This one is harder to listen to while doing the
+dishes because it requires my full attention, but it's always useful and
+educational.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="https://talkpython.fm/"&gt;Talk Python to Me&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Not limited to data science, this one is all about Python. I've only
+recently started listening to it, and already I've heard gems like &lt;a href="https://talkpython.fm/episodes/show/77/20-python-libraries-you-aren-t-using-but-should"&gt;20 Python Libraries You Aren't Using But Should.&lt;/a&gt;
+Recommended for all Python programmers and anyone interested in the
+Python ecosystem.&lt;/p&gt;
+&lt;h1&gt;Other Podcasts&lt;/h1&gt;
+&lt;h2&gt;&lt;a href="https://hitreply.co/"&gt;Hit Reply&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A recently-launched podcasts about startups. The hosts have experience
+launching software products and each episode is dedicated to advice on a
+different matter, like competition or productivity. I'm enjoying it so
+far!&lt;/p&gt;
+&lt;h2&gt;&lt;a href="https://youarenotsosmart.com/podcast/"&gt;You Are Not So Smart&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;"A celebration of self delusion", this one's all about human behaviour,
+hidden biases, logical fallacies, that kind of thing. The podcast also
+contains &lt;a href="https://youarenotsosmart.com/cookie-recipes/"&gt;cookies&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What podcasts do you listen to? I'm always looking for recommendations! &lt;/p&gt;
+&lt;p&gt;Footnote: This was the first entry in my &lt;a href="http://davidasboth.com/2016/11/01/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="self improvement"></category></entry><entry><title>30 Posts in 30 Days</title><link href="/blog/30-posts-in-30-days" rel="alternate"></link><published>2016-11-01T19:24:00+00:00</published><updated>2016-11-01T19:24:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-01:/blog/30-posts-in-30-days</id><summary type="html">&lt;p&gt;Today marks the start of November. That's usually not particularly
+interesting, but November happens to be &lt;a href="http://nanowrimo.org/"&gt;National Novel Writing Month&lt;/a&gt; (or NaNoWriMo for short - just rolls of
+the tongue). The idea behind NaNoWriMo is simple;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"&lt;em&gt;writing a 50,000-word novel by 11:59 PM on November 30&lt;/em&gt;"&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As an aside …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today marks the start of November. That's usually not particularly
+interesting, but November happens to be &lt;a href="http://nanowrimo.org/"&gt;National Novel Writing Month&lt;/a&gt; (or NaNoWriMo for short - just rolls of
+the tongue). The idea behind NaNoWriMo is simple;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"&lt;em&gt;writing a 50,000-word novel by 11:59 PM on November 30&lt;/em&gt;"&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As an aside, there's a geekier version: &lt;a href="https://github.com/NaNoGenMo/2016"&gt;National Novel &lt;em&gt;Generation&lt;/em&gt; Month&lt;/a&gt;, where the goal is to write
+code that writes a 50,000 word novel. That's the only constraint - a
+minimum of 50,000 words. There have been some hilarious entries over the
+years, but I digress.&lt;/p&gt;
+&lt;p&gt;So why am I bringing up NaNoWriMo? At this point you might be half
+expecting me to announce that I'll participate and write a novel.&lt;/p&gt;
+&lt;p&gt;Let me quash that idea right now.&lt;/p&gt;
+&lt;p&gt;It's not happening.&lt;/p&gt;
+&lt;p&gt;However, in the spirit of NaNoWriMo I've decided to set myself a
+challenge:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Write 30 blog posts in 30 days.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Why?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;I like writing -  I need a way to get into the habit of writing
+    more, although it's entirely possible I'll hate writing by the end
+    of the month.&lt;/li&gt;
+&lt;li&gt;I've always wanted to maintain a blog - Well, more accurately, I've
+    always wanted to &lt;em&gt;be someone who maintains a blog&lt;/em&gt;. I just never got
+    around to the part where you actually do it.&lt;/li&gt;
+&lt;li&gt;I want to experiment with what it's like to release content which I
+    don't have too much time to curate. In the past I've been known to
+    spend hours on a single blog post agonising over tiny details in
+    pursuit of "perfection" - this needs to stop.&lt;/li&gt;
+&lt;li&gt;Also, I currently have a Master's thesis due in 2 months, so
+    spending a whole month writing thousands of words towards a
+    different thing somehow sounds like a good idea.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ironically it's also an experiment in &lt;em&gt;beating&lt;/em&gt; procrastination.
+External pressure can be helpful in forcing you to do stuff - &lt;a href="http://waitbutwhy.com/2013/11/how-to-beat-procrastination.html"&gt;as Tim Urban puts it&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you’re trying to write a consistent blog, put “new post every Tuesday” at the top of the page.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;The Rules&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;30 posts in 30 days, although not strictly one per day.&lt;/li&gt;
+&lt;li&gt;This post doesn't count.&lt;/li&gt;
+&lt;li&gt;Err, that's it!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I'll try and create a mix of small technical write-ups, targeted lists
+of resources and general musings about software, data, machine learning,
+AI and technology and life in general. I will try to make each post
+meaningful so I don't feel like I'm cheating.&lt;/p&gt;
+&lt;p&gt;I'll also &lt;a href="https://twitter.com/davidasboth"&gt;tweet&lt;/a&gt; about each blog post
+as I write them. If you want to attempt a similar thing (even just 5
+blog posts in 30 days) let me know!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="self improvement"></category></entry><entry><title>Procrastination and Monkeys</title><link href="/blog/procrastination-and-monkeys" rel="alternate"></link><published>2016-03-12T13:58:00+00:00</published><updated>2016-03-12T13:58:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-03-12:/blog/procrastination-and-monkeys</id><summary type="html">&lt;p&gt;Procrastination has always affected me as a tech professional. You can
+probably tell by the fact that this is my first blog post for a few
+months. Ideas have been brewing, but I never got around to writing them
+up. Not spending your time on side projects, blogs, learning new …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Procrastination has always affected me as a tech professional. You can
+probably tell by the fact that this is my first blog post for a few
+months. Ideas have been brewing, but I never got around to writing them
+up. Not spending your time on side projects, blogs, learning new things
+etc. can be harmful both to your career and your mental health, so it's
+a topic worth exploring. I've spent a lot of time over the years reading
+about it and wanted to share some of what I've read.&lt;/p&gt;
+&lt;p&gt;This post is a short reading list for those interested in the topic of
+procrastination, and it follows on from a talk I gave at the excellent
+&lt;a href="https://mkgeeknight.co.uk/"&gt;MK Geek Night&lt;/a&gt;. Here is the
+&lt;a href="https://soundcloud.com/mkgn/mkgn-16-david-asboth-procrastination-and-monkeys"&gt;audio&lt;/a&gt;
+and the &lt;a href="https://www.slideshare.net/secret/A9UhRGl7sWTqfH"&gt;accompanying slides&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you're reading this while you should be doing something else, I hope
+you appreciate the irony.&lt;/p&gt;
+&lt;h1&gt;Articles&lt;/h1&gt;
+&lt;h3&gt;&lt;a href="http://waitbutwhy.com/2013/10/why-procrastinators-procrastinate.html"&gt;Why Procrastinators Procrastinate&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;If you only read one thing from this list, it should be this. It's the
+daddy of all procrastination literature, and chiefly where the idea of
+procrastination linked to monkeys came from. The whole blog is
+fantastic, sadly also a great source of things to read when
+procrastinating...&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://www.raptitude.com/2011/05/procrastination-is-not-laziness/"&gt;Procrastination is not Laziness&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A post from &lt;a href="http://www.raptitude.com/"&gt;Raptitude&lt;/a&gt;, one of my favourite
+blogs. Reading this particular post was a real eye-opener, and it's what
+started me on my journey of trying to understand procrastination. It
+gave me a lot of insight into the procrastinating behaviour and really
+hit home. &lt;/p&gt;
+&lt;h1&gt;Books&lt;/h1&gt;
+&lt;h3&gt;&lt;em&gt;The Now Habit&lt;/em&gt; - Neil Fiore&lt;/h3&gt;
+&lt;p&gt;A classic book in the procrastination literature. David Cain mentions it
+in his Raptitude post, and I can only echo that a lot of it resonated
+with me too. Fiore's idea of an "Unschedule" is a particularly good
+thing to try. Disclaimer: no monkeys in this one.&lt;/p&gt;
+&lt;h3&gt;&lt;em&gt;The Chimp Paradox&lt;/em&gt; - Prof Steve Peters&lt;/h3&gt;
+&lt;p&gt;While not chiefly about procrastination, the whole book is centred on
+the "inner chimp" and what to do about it. The insights are definitely
+applicable to procrastinators.&lt;/p&gt;
+&lt;h3&gt;&lt;em&gt;War of Art&lt;/em&gt; - Steven Pressfield&lt;/h3&gt;
+&lt;p&gt;A book with short, sharp chapters dealing with Resistance, Pressfield's
+personification of procrastination. Again, no monkeys, just some real
+home truths.&lt;/p&gt;
+&lt;h1&gt;Hacker News Threads&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://news.ycombinator.com/item?id=10267564"&gt;"The cure for procrastination? Forgive yourself"&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://news.ycombinator.com/item?id=10156240"&gt;"To Stop Procrastinating, Start by Understanding the Emotions Involved"&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, I've bookmarked a couple of threads from Hacker News.
+Procrastination comes up quite often, as it's a topic that affects a lot
+of us in the tech industry, and I found it immensely helpful to see
+other people's perspectives. The underlying articles are good too, but
+it's the discussion that I think makes these particularly worthwhile
+reading. It's great to read a well-written article or book on the
+subject, but sometimes it helps to hear it directly from those affected
+by it, in a less edited, 'raw' form.&lt;/p&gt;
+&lt;p&gt;This is just a small slice of what's out there on the subject of
+procrastination, and I'd welcome some of your suggestions on resources
+that I haven't included but you feel are worth sharing.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="self improvement"></category><category term="featured"></category></entry></feed>
