@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+
+	<!-- Favicon stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/theme/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ SITEURL }}/theme/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ SITEURL }}/theme/images/favicon-16x16.png">
+	<link rel="manifest" href="{{ SITEURL }}/theme/images/site.webmanifest">
+
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+
+	<link rel="canonical" href="{{ SITEURL }}/{{ output_file }}">
+	<link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
+
+	{% block head %}{% endblock %}
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<a href="#"><img src="{{ SITEURL }}/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+			<nav>
+				<ul>
+					<li>
+						<a href="#solutions">Solutions</a>
+					</li>
+				<li>
+						<a href="#about">About</a>
+					</li>
+				<li>
+						<a href="articles-tutorials.html">Articles</a>
+					</li>
+				<li>
+				  <a href="#solutions" class="button button-filled">Contact</a>
+				  </li></ul>
+			</nav>
+		</div>
+	</header>
+
+    {% block content %}{% endblock %}
+
+	<footer>
+		<div class="container flex-container">
+			<p>© 2022 David Asboth.  All Rights Reserved.</p>
+			<p>hello@davidasboth.com</p>
+		</div>
+	</footer>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-68436188-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</body>
+
+</html>

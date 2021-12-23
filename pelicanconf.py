@@ -1,5 +1,5 @@
 AUTHOR = 'David Asboth'
-SITENAME = 'David Asboth | Data Science'
+SITENAME = 'David Asboth - Data Solutions &amp; Consultancy'
 SITEURL = ''
 
 PATH = 'content'
@@ -62,7 +62,7 @@ LOAD_CONTENT_CACHE = False
 #)
 
 # Set the theme
-THEME = "themes/alchemy"
+THEME = "themes/davidasboth-dot-com"
 
 # Static pages of the website that will be generated
 #TEMPLATE_PAGES = {

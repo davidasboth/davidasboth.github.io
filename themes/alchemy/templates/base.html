@@ -100,6 +100,26 @@
       <hr>
       {% block content %}{% endblock %}
     </div>
+	
+	<div class="container">
+	<h1>Contact me</h1>
+		<form action="https://getform.io/f/52ae8a4d-2945-416c-8cb1-78c321b13066" method="POST">
+			<input type="text" name="name" placeholder="Your name">
+			
+			<input type="email" name="email" placeholder="Your email">
+			
+			<label for="service-required">What service do you require?</label><select name="service-required">
+				<option value="consultancy">Consultancy</option>
+				<option value="training">Training</option>
+				<option value="mentoring">Mentoring</option>
+			</select>
+			
+			<label for="message">What can I help with?</label>
+			<textarea name="message" rows="10" cols="30" placeholder="What can I help with?"> </textarea>
+			
+			<button type="submit">Send</button>
+		</form>
+	</div>
   </div>
 
   <footer class="footer">

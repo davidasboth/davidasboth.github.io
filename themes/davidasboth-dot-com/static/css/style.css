@@ -1,0 +1,409 @@
+@charset "utf-8";
+/*** The new CSS Reset - version 1.4.2 (last updated 30.11.2021) ***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]){
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: 'Atkinson Hyperlegible', Arial, 'sans-serif';
+	font-size: 1.6rem;
+	background-color: #24262b;
+	color: #9da1b2;
+}
+section {
+	padding: 5rem 2rem;
+}
+.text-pre-heading {
+	text-transform: uppercase;
+	letter-spacing: 0.5rem;
+}
+.text-centered {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.padding-small {
+	padding: 1rem;
+}
+.padding-medium {
+	padding: 2rem;
+}
+.padding-large {
+	padding: 3rem;
+}
+@media (max-width : 767px) {
+	.padding-small {
+		padding: 0.5rem;
+	}
+	.padding-medium {
+		padding: 1.5rem;
+	}
+	.padding-large {
+		padding: 2.5rem;
+	}
+}
+h1 {
+	font-size: 5.6rem;
+	line-height: 6.4rem;
+	font-weight: 700;
+	color: #FFF;
+}
+@media (max-width : 767px) {
+	h1 {
+		font-size: 4.8rem;
+		line-height: 5rem;
+	}
+}
+h2 {
+	font-size: 3.2rem;
+	line-height: 3.8rem;
+	font-weight: 700;
+	margin-bottom: 3.5rem;
+	color: #FFF;
+}
+h3 {
+	font-size: 2.4rem;
+	line-height: 3rem;
+	font-weight: 700;
+	color: #FFF;
+}
+p, main ul, main ol, table {
+	line-height: 2.6rem;
+}
+p, h3 {
+	margin-bottom: 2rem;
+}
+blockquote {
+	max-width: 650px;
+	margin: 2rem auto 3rem;
+	text-align: center;
+}
+blockquote p {
+	font-size: 2.4rem;
+	line-height: 3.2rem;
+	color: #fff;
+	
+}
+section a, 
+section a:visited {
+	color: #fcd805;
+	font-weight: 700;
+	text-decoration: underline;
+	cursor: pointer;
+}
+section a:hover, 
+section a:active,
+section a:focus {
+	background-color: #fcd805;
+	color: #24262b;
+	transition: 0.1s linear;
+}
+.colour-highlight {
+	color: #fcd805;
+	font-weight: 700;
+}
+.colour-bottom-border::after {
+	display: block;
+	content: '';
+	margin: 3rem auto;
+	width: 80px;
+	height: 2px;
+	text-align: center;
+	background-color: #fcd805;
+}
+.button {
+	padding: 1.5rem 3.5rem;
+	font-weight: 700;
+	text-decoration: none;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+}
+.button-filled,
+.button-filled:visited {
+	color: #24262b;
+	background-color: #fcd805;
+	border: 2px solid rgba(0,0,0,0);
+	background-image: -webkit-linear-gradient(321deg,rgba(252,217,4,1.00) 0%,rgba(246,192,45,1.00) 100%);
+	background-image: -moz-linear-gradient(321deg,rgba(252,217,4,1.00) 0%,rgba(246,192,45,1.00) 100%);
+	background-image: -o-linear-gradient(321deg,rgba(252,217,4,1.00) 0%,rgba(246,192,45,1.00) 100%);
+	background-image: linear-gradient(129deg,rgba(252,217,4,1.00) 0%,rgba(246,192,45,1.00) 100%)
+}
+.button-outline {
+	border: 2px solid #FCD805;
+	color: #fcd805;
+}
+.button-filled:hover,
+.button-filled:active,
+.button-filled:focus {
+	border: 2px solid #FCD805;
+	color: #fcd805;
+	background: none;
+}
+.container {
+	max-width: 1200px;
+	margin: auto;
+}
+.tag {
+	color: #fcd805;
+	font-weight: 400;
+	text-decoration: none;
+	padding: 0.3rem 0.5rem 0.3rem 2rem;
+	display: inline-block;
+}
+.tag::before {
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M0,5.909V1.125A1.125,1.125,0,0,1,1.125,0H5.909a1.125,1.125,0,0,1,.8.33L11.67,5.3a1.125,1.125,0,0,1,0,1.591L6.886,11.67a1.125,1.125,0,0,1-1.591,0L.33,6.7a1.125,1.125,0,0,1-.33-.8ZM2.625,1.5A1.125,1.125,0,1,0,3.75,2.625,1.125,1.125,0,0,0,2.625,1.5Z' fill='%23fcd805'/%3E%3C/svg%3E");
+	margin-left: -2rem;
+	padding-right: 5px;
+}
+header {
+	padding: 2rem;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+}
+nav {
+	float:right;
+}
+nav li {
+	display: inline-block;
+}
+nav li a,
+nav li a:visited {
+	display: inline-block;
+	padding: 1rem 2rem;
+	border: none;
+	cursor: pointer;
+}
+nav li a:hover,
+nav li a:active,
+nav li a:focus {
+	color: #fcd805;
+	border-bottom: 2px solid;
+}
+#header-logo {
+	cursor: pointer;
+}
+#header-logo:hover,
+#header-logo:active,
+#header-logo:focus {
+	background-color: white;
+}
+main ul li::before {
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='12' viewBox='0 0 7 12'%3E%3Cpath d='M6,0l6,7H0Z' transform='translate(7) rotate(90)' fill='%23fcd805'/%3E%3C/svg%3E");
+	padding-right: 1rem;
+}
+#splash {
+	background-size: cover;
+	background-position: center center;
+	background-blend-mode: multiply;
+	background-attachment: fixed;
+	padding: 30vh 3rem 20vh;
+	text-align: center;
+	position: relative;
+	clip-path: polygon(0 0, 100% 0, 100% 93%, 0% 100%);
+}
+#homepage #splash {
+	background-image: 
+		linear-gradient(to bottom, rgba(36,38,43,0.83), rgba(36,38,43,0.83)),
+		url("../images/DataScienceFestival-01.jpg");
+}
+@media (max-width: 767px){
+	#homepage #splash {
+		background-position: 33% center;
+	}
+}
+#articles-tutorials #splash {
+	padding: 20vh 3rem 10vh;
+	background-image: 
+		linear-gradient(to bottom, rgba(36,38,43,0.83), rgba(36,38,43,0.83)),
+		url("../images/carlos-muza-hpjSkU2UYSU-unsplash.jpg");
+}
+#articles-tagpage #splash {
+	padding: 20vh 3rem 10vh;
+	background-image: 
+		linear-gradient(to bottom, rgba(36,38,43,0.83), rgba(36,38,43,0.83)),
+		url("../images/angele-kamp-_XlhZVsKykw-unsplash.jpg");
+}
+#splash .container {
+	max-width: 800px;
+}
+.flex-container {
+	display: flex;
+	justify-content: space-between;
+	align-content: stretch;
+}
+.col-33 {
+	flex-basis: 33.33%;
+}
+.col-40 {
+	flex-basis: 40%;
+	padding: 1rem;
+    align-items: stretch;
+	align-content: stretch;
+}
+.col-60 {
+	flex-basis: 60%;
+	padding: 1rem;
+    align-items: stretch;
+	align-content:space-between;
+}
+.col-66 {
+	flex-basis: 66.66%;
+	padding: 1rem;
+}
+@media (max-width : 767px) {
+	.flex-container {
+		display: block;
+	}
+}
+.highlight-box {
+	background-color: #fcd805;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48.928' height='71.169' viewBox='0 0 48.928 71.169'%3E%3Cpath id='Icon_awesome-lightbulb' data-name='Icon awesome-lightbulb' d='M13.352,63.155a4.45,4.45,0,0,0,.745,2.459l2.376,3.571a4.447,4.447,0,0,0,3.7,1.985h8.578a4.447,4.447,0,0,0,3.7-1.985l2.376-3.571a4.446,4.446,0,0,0,.745-2.459l.006-5.331H13.345ZM0,24.464A24.328,24.328,0,0,0,6.055,40.557a39.946,39.946,0,0,1,7.257,12.712c.006.036.01.072.015.108H35.6c.006-.036.01-.071.015-.108a39.945,39.945,0,0,1,7.257-12.712A24.459,24.459,0,1,0,0,24.464Zm24.464-11.12a11.133,11.133,0,0,0-11.12,11.12,2.224,2.224,0,0,1-4.448,0A15.585,15.585,0,0,1,24.464,8.9a2.224,2.224,0,1,1,0,4.448Z' transform='translate(0 0)' fill='%23d9bb09'/%3E%3C/svg%3E%0A");
+	background-repeat: no-repeat;
+	background-position: 1rem 1rem;
+	color: #24262b;
+	padding: 3rem;
+}
+.highlight-box * {
+	color: #24262b;
+}
+section .highlight-box a,
+section .highlight-box a:visited {
+	color: #24262b;
+	background: none;
+}
+section .highlight-box a:hover,
+section .highlight-box a:active,
+section .highlight-box a:focus {
+	color: #fcd805;
+	background-color: #24262b;
+}
+main .highlight-box ul li::before {
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='12' viewBox='0 0 7 12'%3E%3Cpath d='M6,0l6,7H0Z' transform='translate(7) rotate(90)' fill='%23000000'/%3E%3C/svg%3E");
+	padding-right: 1rem;
+}
+.lowlight-box {
+	background-color: #151515
+}
+.flex-container.wrap {
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+#trusted-logos .flex-container {
+	display: flex;
+	align-content: stretch;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+#trusted-logos img {
+	padding: 1rem 2rem;
+	max-width: 230px;
+	max-height: 90px;
+	flex-shrink: 1;
+	flex-grow: 1;
+}
+@media (max-width : 767px) {
+	#trusted-logos img {
+		display: block;
+		width: 48%;
+	}
+}
+.image-full {
+	align-self: stretch;
+	overflow: hidden;
+	padding-right: 3rem;
+}
+.image-full img {
+	min-height: 100%;
+	object-fit: cover;
+	object-position: 33% 33%;
+}
+input, select, textarea {
+	background-color: rgba(255,255,255,0.15);
+	padding: 1.5rem;
+	margin-bottom: 5px;
+}
+input[placeholder="Name"],
+input[placeholder="Email address"] {
+	display: inline-block;
+	width: calc(50% - 2.5px);
+}
+@media (max-width : 767px) {
+	input[placeholder="Name"],
+	input[placeholder="Email address"] {
+		display: block;
+		width: 100%;
+	}
+}
+select, textarea {
+	display: block;
+	width: 100%;
+}
+form .icon {
+	float: right;
+	align-self: center;
+}
+a.icon {
+	display: inline-block;
+	padding: 1rem;
+}
+footer {
+	background-color: #fcd805;
+	color: #24262b;
+}
+footer p {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+footer .flex-container {
+	padding: 2rem;
+	flex-direction: row;
+    align-items: stretch;
+	align-content:space-between;
+}
+

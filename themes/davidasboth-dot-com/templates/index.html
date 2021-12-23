@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<main id="homepage">
+		  <section id="splash">
+			  <div class="container">
+			<h1 class="text-centered"><span class="colour-highlight">Personalised</span> data science training, consultancy and mentoring</h1>
+			<p class="text-centered">Hi, I’m David Asboth, data scientist, educator, and a friendly and sometimes even funny human.</p>
+			<a href="#solutions" class="button button-outline">View solutions</a>
+				  </div>
+		</section>
+		  <section id="trusted-logos">
+			<div class="container">
+			  <p class="text-pre-heading text-centered">Trusted by</p>
+			  <div class="flex-container">
+					<img src="{{ SITEURL }}/theme/images/UAL logo.svg" alt="University of the Arts London"/>
+					<img src="{{ SITEURL }}/theme/images/barclays.svg" alt="Barclays"/>
+					<img src="{{ SITEURL }}/theme/images/general-assembly.svg" alt="General Assembly"/>
+					<img src="{{ SITEURL }}/theme/images/Lloyds Banking Group.svg" alt="Lloyds Banking Group"/>
+					<img src="{{ SITEURL }}/theme/images/McKinsey_Script_Mark_2019.svg" alt="McKinsey"/>
+					<img src="{{ SITEURL }}/theme/images/Novartis-Logo.svg" alt="Novartis"/>
+				  	<img src="{{ SITEURL }}/theme/images/DeutscheBank.svg" alt="Deutsche Bank"/>
+					<img src="{{ SITEURL }}/theme/images/Roland-Berger.svg" alt="Roland Berger" />
+				</div>	
+			  </div>
+			</section>
+		  <section id="solutions">
+			<div class="container">
+			  <h2 class="text-centered colour-bottom-border">Featured Solutions</h2>
+			<div class="flex-container">
+			  <div class="col-33 padding-medium">
+				<h3>Consultancy</h3>
+				<p><span class="colour-highlight">More companies need data science than they need data scientists.</span> Get help with a piece of research or one-off deep dive analysis by hiring a consultant instead. I can also help you create a bespoke job spec for a permanent data role, if you decide it’s something you want to take further.</p>
+				</div>
+			  <div class="col-33 padding-medium">
+				<h3>Training</h3>
+				<p><span class="colour-highlight">Upskill your employees with data skills for the 21st century.</span> I develop bespoke courses to teach you and your staff the tools, technical skills and general “data thinking” you need to analyse and leverage your data to make better, more efficient business decisions.</p>
+				</div>
+			  <div class="col-33 padding-medium">
+				<h3>Mentoring</h3>
+				<p><span class="colour-highlight">Just starting out in your data science career?</span>  I offer short (30m), medium (60m) and long (90m) slots for one-on-one mentoring where I can help with your learning objectives, project reviews, optimising your CV &amp; cover letter, and give you general industry advice.</p>
+				</div>
+			</div>
+			  <blockquote>
+				<p><span class="colour-highlight">"</span> David is very knowledgeable, experienced, and hard-working, with a vivid passion for performance, tooling, and productivity. We’ve received incredible feedback from his sessions and the insights he kindly shares. <span class="colour-highlight">"</span></p>
+				<cite>- Intro to Python student feedback</cite>
+				</blockquote>
+			  <div class=" text-centered"><a href="#contact" class="button button-filled">Let's talk!</a></div>
+			  </div>
+			</section>
+		  <section id="about">
+			<div class="container flex-container">
+			  <div class="col-40 image-full">
+					<img src="{{ SITEURL }}/theme/images/David-Asboth-profile-image.jpg">
+				</div>
+			  <div class="col-60">
+				<h2>About David</h2>
+				<p>I'm a freelance data scientist consultant and educator with an MSc. in Data Science and a background in software and web development. My previous roles have been a range of data science, software development, team management and software architecting jobs.</p>
+				<p class="text-pre-heading">Things I also do:</p>
+				<ul>
+				  <li>
+					I co-host the <a href="https://halfstackdatascience.com/">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
+					</li>
+				  <li>
+					I’ve written various <a href="articles.html">articles and tutorials</a> about data science
+					</li>
+				  <li>
+					I’ve given a selection of <a href="#">talks</a> at large conferences and universities, all on similar topics of “real world data science”
+					</li>
+				  <li>
+					I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
+					</li>
+				  </ul>
+				</div>
+			  </div>
+			</section>
+		  <section id="articles">
+			<div class="container">
+			  <h2 class="text-centered colour-bottom-border">Featured Articles &amp; Tutorials</h2>
+				<div class="flex-container">
+			  <div class="col-33 padding-medium">
+				  <h3><a href="#">Self-organising maps: An Introduction</a></h3>
+				<a class="tag" href="#">Category name</a>
+				<p>When you learn about machine learning techniques, you usually get a selection of the usual suspects. Something like: Support Vector Machine...</p>
+				</div>
+			  <div class="col-33 padding-medium">
+				<h3><a href="#">Machine learning haikus</a></h3>
+				<a class="tag" href="#">Category name</a>
+				<p>Forget “machine learning in plain English”. Instead, I present some of the most popular algorithms in haiku form. Consider it “machine learning for the busy”.</p>
+				</div>
+			  <div class="col-33 padding-medium">
+				<h3><a href="#">5 Programming Concepts for Data Scientists</a></h3>
+				<a class="tag" href="#">Category name</a>
+				<p>In this post I want to introduce some software development concepts that I think data scientists would benefit from. Specifically 5 of them.</p>
+				</div>
+					</div>
+			  <div class=" text-centered"><a href="articles" class="button button-filled">More articles</a></div>
+			  </div>
+			</section>
+	  
+	  {% include 'include/contact.html' %}
+	</main>
+
+{% endblock %}
