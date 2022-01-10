@@ -2,10 +2,10 @@ Title: 5 Programming Concepts for Data Scientists
 Date: 2016-11-23 20:17
 Author: david
 Tags: featured
-Slug: blog/5-programming-concepts-for-data-scientists
+Slug: 5-programming-concepts-for-data-scientists
 Status: published
-url: blog/5-programming-concepts-for-data-scientists
-save_as: blog/5-programming-concepts-for-data-scientists/index.html
+Summary: In this post I want to introduce some software development concepts that I think data scientists would benefit from. Specifically 5 of them.
+Alias: /2016/11/23/5-programming-concepts-for-data-scientists
 
 In a previous post I talked about maths you should know for data
 science, partly with programmers in mind who want to move towards data
@@ -118,5 +118,3 @@ to read and more maintainable.
 I hope you agree that data scientists can learn a lot of useful concepts
 from software development, even if they never end up having to build
 production-ready systems!
-
-Footnote: This was the 23<sup>rd</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

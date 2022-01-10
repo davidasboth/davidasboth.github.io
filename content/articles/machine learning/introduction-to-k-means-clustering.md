@@ -2,11 +2,10 @@ Title: Introduction to K-means Clustering
 Date: 2016-11-20 15:18
 Author: david
 Tags: featured, python
-Slug: blog/introduction-to-k-means-clustering
+Slug: introduction-to-k-means-clustering
 Status: published
-url: blog/introduction-to-k-means-clustering
-save_as: blog/introduction-to-k-means-clustering/index.html
-
+Summary: An introduction to the popular k-means clustering algorithm with intuition and Python code.
+Alias: /2016/11/20/introduction-to-k-means-clustering
 
 This is the first of a two-part post on K-means clustering.
 
@@ -226,6 +225,3 @@ Here is the [associated Jupyter notebook](https://github.com/davidasboth/blog-no
 In Part 2, I'll talk about another practical application of the k-means
 algorithm (using scikit-learn this time) as well as some implementation
 details such as how to pick the value of $k$.
-
-
-Footnote: This was the 19<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

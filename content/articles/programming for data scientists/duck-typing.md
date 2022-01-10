@@ -2,10 +2,10 @@ Title: Duck Typing
 Date: 2016-11-14 16:05
 Author: david
 Tags: python
-Slug: blog/duck-typing
+Slug: duck-typing
 Status: published
-url: blog/duck-typing
-save_as: blog/duck-typing/index.html
+Summary: My first attempt to bridge the gap between the two disciplines of programming and data science, by talking about programming concepts useful for data scientists, and vice versa. Today: duck typing.
+Alias: /2016/11/14/duck-typing
 
 In an attempt to bridge the gap between the two disciplines of
 programming and data science I will occasionally talk about programming
@@ -157,6 +157,3 @@ but the point is you can do a lot of it by duck typing.
 Here's [the associated notebook](https://github.com/davidasboth/blog-notebooks/blob/master/duck-typing/Duck%20Typing.ipynb).
 
 Happy quacking!
-
-
-Footnote: This was the 14<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

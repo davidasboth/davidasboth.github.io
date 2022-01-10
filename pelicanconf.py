@@ -1,3 +1,7 @@
+from datetime import date
+
+CURRENTYEAR = date.today().year
+
 AUTHOR = 'David Asboth'
 SITENAME = 'David Asboth - Data Solutions &amp; Consultancy'
 SITEURL = ''
@@ -28,11 +32,11 @@ TWITTER_USERNAME = "davidasboth"
 USE_FOLDER_AS_CATEGORY = True
 
 PLUGIN_PATHS = ['plugins/pelican-plugins/']
-PLUGINS = ['render_math', 'pelican.plugins.embed_tweet']
+PLUGINS = ['pelican_alias', 'jinja2content', 'render_math', 'pelican.plugins.embed_tweet']
 
 # Pages
 PAGE_URL = 'pages/{slug}'
-DEFAULT_PAGINATION = 5
+DEFAULT_PAGINATION = False
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 

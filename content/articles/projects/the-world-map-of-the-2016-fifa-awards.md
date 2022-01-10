@@ -2,10 +2,10 @@ Title: The World Map of the 2016 FIFA Awards
 Date: 2017-01-13 15:06
 Author: david
 Tags: datavis, featured, python
-Slug: blog/the-world-map-of-the-2016-fifa-awards
-url: blog/the-world-map-of-the-2016-fifa-awards
-save_as: blog/the-world-map-of-the-2016-fifa-awards/index.html
+Slug: the-world-map-of-the-2016-fifa-awards
 Status: published
+Summary: A mini project to visualise the votes for the 2016 FIFA Awards, to see which country voted for which player.
+Alias: /2017/01/13/the-world-map-of-the-2016-fifa-awards
 
 The "[Best FIFA Football Awards](http://www.fifa.com/the-best-fifa-football-awards/best-fifa-mens-player/index.html)"
 took place recently and while the final outcome was not surprising, I've
@@ -90,4 +90,3 @@ folium, as it seems to be actively under development. Realistically, a
 tool like Tableau would be better suited to a visualisation like this,
 but the ability to embed maps in Jupyter notebooks makes folium a really
 good addition to my data science toolkit.
-

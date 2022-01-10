@@ -2,10 +2,10 @@ Title: Visualising the Worldwide Win Percentage of the Hungarian National Footba
 Date: 2017-01-20 11:36
 Author: david
 Tags: datavis, featured, python
-Slug: blog/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team
-url: blog/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team
-save_as: blog/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team/index.html
+Slug: visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team
 Status: published
+Summary: I've often read the advice that side projects should be solving problems or answering questions that you yourself are interested in. To that end, I've always wanted to know how well the Hungarian national team have done against various countries worldwide and to explore this question, I scraped the matches played by the Hungarian national team and made an interactive world map.
+Alias: /2017/01/20/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team
 
 I've often read, and agreed with, the advice that side projects should
 be solving problems or answering questions that you yourself are

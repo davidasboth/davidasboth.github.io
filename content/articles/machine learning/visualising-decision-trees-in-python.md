@@ -2,10 +2,10 @@ Title: Visualising Decision Trees in Python
 Date: 2016-11-28 22:03
 Author: david
 Tags: featured, python
-Slug: blog/visualising-decision-trees-in-python
-url: blog/visualising-decision-trees-in-python
-save_as: blog/visualising-decision-trees-in-python/index.html
+Slug: visualising-decision-trees-in-python
 Status: published
+Summary: Having an accurate machine learning model may be enough in itself, but in some cases the only way to turn it into a business decision is if you can understand why it's getting the results it's getting. In this short tutorial I want to show a quick way to visualise a trained decision tree in Python.
+Alias: /2016/11/28/visualising-decision-trees-in-python
 
 Interpretability is often an important concern with a machine learning
 algorithm (despite spellcheck telling me it's not even a word). Having
@@ -89,5 +89,3 @@ its depth.
 
 For further visualisation options you can follow the instructions on
 [the official scikit-learn page](http://scikit-learn.org/dev/modules/tree.html#classification).
-
-Footnote: This was the 28<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

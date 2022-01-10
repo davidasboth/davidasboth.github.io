@@ -2,10 +2,10 @@ Title: Markov Chains for Text Generation
 Date: 2016-11-12 22:09
 Author: david
 Tags: featured, python
-Slug: blog/markov-chains-for-text-generation
-url: blog/markov-chains-for-text-generation
-save_as: blog/markov-chains-for-text-generation/index.html
+Slug: markov-chains-for-text-generation
 Status: published
+Summary: Markov chains are a popular way to model sequential data. I want to run through an implementation where I generate new songs based on lyrics by Muse.
+Alias: /2016/11/12/markov-chains-for-text-generation
 
 Markov chains are a popular way to model sequential data. They form the
 basis of more complex ideas, such as Hidden Markov Models, which are
@@ -259,7 +259,3 @@ to start with.
 
 I glossed over a lot of the maths behind the algorithm, but if you're
 interested you could [start here](https://www.youtube.com/watch?v=WUjt98HcHlk).
-
- 
-
-Footnote: This is the 12<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

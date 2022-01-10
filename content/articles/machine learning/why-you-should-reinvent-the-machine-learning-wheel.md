@@ -2,10 +2,10 @@ Title: Why You Should Reinvent the Machine Learning Wheel
 Date: 2016-11-11 17:17
 Author: david
 Tags: featured
-Slug: blog/why-you-should-reinvent-the-machine-learning-wheel
-url: blog/why-you-should-reinvent-the-machine-learning-wheel
-save_as: blog/why-you-should-reinvent-the-machine-learning-wheel/index.html
+Slug: why-you-should-reinvent-the-machine-learning-wheel
 Status: published
+Summary: As data scientists we spend a lot of our time using other people's implementations of machine learning algorithms. I suggest that as part of the learning process it's worthwhile to try to implement them ourselves from scratch, in order to fully understand them.
+Alias: /2016/11/11/why-you-should-reinvent-the-machine-learning-wheel
 
 When you're a data scientist, unless you're in a job that's very
 research-focused (and likely requires a PhD) you'll mostly be using
@@ -136,5 +136,3 @@ but it would be a good advanced programming challenge.
 Hopefully I've convinced you that implementing machine algorithms from
 scratch is a worthwhile endeavour. I'm always interested in seeing other
 people's implementations so let me know if you've done any!
-
-Footnote: This was the 11<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

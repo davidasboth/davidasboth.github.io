@@ -2,10 +2,10 @@ Title: How to Connect to Google Sheets in Python
 Date: 2016-11-13 13:54
 Author: david
 Tags: featured, python
-Slug: blog/connecting-to-google-sheets-in-python
+Slug: connecting-to-google-sheets-in-python
 Status: published
-url: blog/connecting-to-google-sheets-in-python
-save_as: blog/connecting-to-google-sheets-in-python/index.html
+Summary: A quick tutorial on how to connect to Google Sheets in Python, so you can access it like a regular CSV file.
+Alias: /2016/11/13/connecting-to-google-sheets-in-python
 
 In most data science and machine learning tutorials you typically
 encounter csv files. Either you connect to them locally, something like
@@ -61,5 +61,3 @@ file.
 
 Here is the [associated Jupyter notebook](https://github.com/davidasboth/blog-notebooks/blob/master/connecting-to-google-sheets/Connecting%20to%20a%20Google%20Sheet.ipynb)
 to see it all in action.
-
-Footnote: This was the 13th entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

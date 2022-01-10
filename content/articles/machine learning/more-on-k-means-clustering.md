@@ -2,11 +2,10 @@ Title: More on K-means Clustering
 Date: 2016-11-20 17:01
 Author: david
 Tags: featured, python
-Slug: blog/more-on-k-means-clustering
-url: blog/more-on-k-means-clustering
-save_as: blog/more-on-k-means-clustering/index.html
+Slug: more-on-k-means-clustering
 Status: published
-
+Summary: In this post I look at a practical example of k-means clustering in action, namely to draw puppies. I also touch on a couple of more general points to consider when using clustering.
+Alias: /2016/11/20/more-on-k-means-clustering
 
 In [Part 1](/blog/introduction-to-k-means-clustering/)
 I described the k-means clustering algorithm and some of its uses along
@@ -168,5 +167,3 @@ See more information on this in Sebastian Raschka's [machine learning FAQ](http:
 
 K-means and clustering in general have many more uses, and I hope these
 puppies have piqued your interest!
-
-Footnote: This was the 20<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

@@ -2,10 +2,10 @@ Title: SQL For Data Scientists
 Date: 2016-11-26 20:08
 Author: david
 Tags: featured
-Slug: blog/sql-for-data-scientists
-url: blog/sql-for-data-scientists
-save_as: blog/sql-for-data-scientists/index.html
+Slug: sql-for-data-scientists
 Status: published
+Summary: SQL is a useful part of a data scientist's toolkit and it can feel like an intimidatingly big area to try and learn alongside all the other data science concepts. I want to present a few key concepts that are enough to get you up and running with SQL!
+Alias: /2016/11/26/sql-for-data-scientists
 
 From what I can tell, the biggest difference between data science
 curricula and data science job postings is usually knowledge of SQL. I
@@ -167,6 +167,3 @@ shouldn't have to worry about it.
 
 I may write a post about database design in the future, but I'd strongly
 argue that it's an optional skill for most data scientists.
-
-
-Footnote: This is the 26<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

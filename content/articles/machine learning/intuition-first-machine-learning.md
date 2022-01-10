@@ -2,10 +2,10 @@ Title: "Intuition First" Machine Learning
 Date: 2016-11-07 09:34
 Author: david
 Tags: featured
-Slug: blog/intuition-first-machine-learning
-url: blog/intuition-first-machine-learning
+Slug: intuition-first-machine-learning
 Status: published
-save_as: blog/intuition-first-machine-learning/index.html
+Summary: I've often felt machine learning needs to be taught "intuition first, equations later", but this doesn't seem to be the norm with most learning sources.
+Alias: /2016/11/07/intuition-first-machine-learning
 
 I read [an article on Machine Learning Mastery](http://machinelearningmastery.com/4-steps-to-get-started-in-machine-learning/)
 recently about getting started with machine learning.
@@ -100,5 +100,3 @@ prefer an approach where they're given the equations first, but I
 suspect they're the minority. If the imbalance is the way I perceive it,
 then there does seem to be a disconnect between the way people learn and
 the way machine learning is often taught.
-
-Footnote: This was the 7<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

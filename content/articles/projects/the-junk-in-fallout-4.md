@@ -2,10 +2,10 @@ Title: The Junk in Fallout 4 - a Web Scraping Tutorial
 Date: 2016-11-03 22:36
 Author: david
 Tags: python
-Slug: blog/the-junk-in-fallout-4
-url: blog/the-junk-in-fallout-4
-save_as: blog/the-junk-in-fallout-4/index.html
+Slug: the-junk-in-fallout-4
 Status: published
+Summary: This is a short web scraping tutorial based on a script I wrote to fetch and analyse data about junk in the game Fallout 4.
+Alias: /2016/11/03/the-junk-in-fallout-4
 
 # Introduction
 
@@ -212,6 +212,3 @@ There you have it - data-driven video gaming. Here's the whole thing in
 [Jupyter notebook form](https://github.com/davidasboth/blog-notebooks/blob/master/fallout-junk/Fallout%20Junk%20Data.ipynb),
 and a direct link to [the csv file]({static}/files/fallout_junk.csv)
 if you want to analyse it yourself - if you do, let me know!
-
-
-Footnote: This was the 3<sup>rd</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

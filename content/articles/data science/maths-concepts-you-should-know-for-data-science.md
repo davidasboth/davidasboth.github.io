@@ -2,10 +2,10 @@ Title: Maths Concepts You Should Know for Data Science
 Date: 2016-11-22 18:31
 Author: david
 Tags: featured
-Slug: blog/maths-concepts-you-should-know-for-data-science
-url: blog/maths-concepts-you-should-know-for-data-science
-save_as: blog/maths-concepts-you-should-know-for-data-science/index.html
+Slug: maths-concepts-you-should-know-for-data-science
 Status: published
+Summary: If you're interested in data science, I have some potentially bad news – you need to know some maths. Here's an overview of what topics you should brush up on.
+Alias: /2016/11/22/maths-concepts-you-should-know-for-data-science
 
 If you're interested in data science, I have some potentially bad news -
 you need to know some maths.
@@ -127,6 +127,3 @@ motivated about maths.
 
 Hopefully I've convinced you that you don't need a PhD in maths to
 embark on the road to data science!
-
-
-Footnote: This was the 22<sup>nd</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

@@ -2,10 +2,10 @@ Title: Pandas: Thinking in Vectors
 Date: 2016-11-04 20:35
 Author: david
 Tags: pandas, python
-Slug: blog/pandas-thinking-in-vectors
-url: blog/pandas-thinking-in-vectors
-save_as: blog/pandas-thinking-in-vectors/index.html
+Slug: pandas-thinking-in-vectors
 Status: published
+Summary: Often when using pandas it pays to think about a faster, but perhaps less intuitive, vectorised way of doing things.
+Alias: /2016/11/04/pandas-thinking-in-vectors
 
 The more you use pandas to wrangle your data the more likely you'll come
 across something complicated that you won't be sure how to do. I found
@@ -104,6 +104,3 @@ There are further good tips [under this StackOverflow question](http://stackover
 
 When doing some research for this post I came across [this blog post](https://www.datascience.com/blog/straightening-loops-how-to-vectorize-data-aggregation-with-pandas-and-numpy/),
 which is worth a read on the subject.
-
-
-Footnote \#2: This was the 4<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

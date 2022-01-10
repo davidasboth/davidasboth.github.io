@@ -1,12 +1,12 @@
 Title: Realistic Machine Learning
 Date: 2016-11-10 15:41
 Author: david
-Slug: blog/realistic-machine-learning
-url: blog/realistic-machine-learning
-save_as: blog/realistic-machine-learning/index.html
+Slug: realistic-machine-learning
 Status: published
+Summary: As most data scientists quickly realise, there's a difference between the kind of data science you do while learning about it, and the kind you do at a real job. This is equally true of data cleaning/wrangling and machine learning.
+Alias: /2016/11/10/realistic-machine-learning
 
-As I'm sure most data scientists quickly realise, there's a difference
+As most data scientists quickly realise, there's a difference
 between the kind of data science you do while learning about it, and the
 kind you do at a real job.
 
@@ -136,6 +136,3 @@ objectively measure your success.
 
 This isn't always a practical way to teach, but it would go a long way
 in preparing people for the reality of data science in the wild.
-
-
-Footnote: This was the 10<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

@@ -2,10 +2,10 @@ Title: Turning Jupyter Notebooks into Reusable Scripts
 Date: 2016-11-17 19:56
 Author: david
 Tags: python
-Slug: blog/turning-jupyter-notebooks-into-reusable-scripts
-url: blog/turning-jupyter-notebooks-into-reusable-scripts
-save_as: blog/turning-jupyter-notebooks-into-reusable-scripts/index.html
+Slug: turning-jupyter-notebooks-into-reusable-scripts
 Status: published
+Summary: As part of my commitment to occasionally talk about "programming for data scientists", I want to share ideas that will facilitate this to help data scientists focus on important stuff. In this post I want to share some thoughts on how to make your Jupyter notebooks easier to "productionise".
+Alias: /2016/11/17/turning-jupyter-notebooks-into-reusable-scripts
 
 I read an article today called Data Scientists Need More Automation. No
 prizes for guessing what it was about.
@@ -197,5 +197,3 @@ Hopefully I've given you some ideas about how you can design your
 notebooks from the start with a view to future automation.
 
 Now go forth and be lazy!
-
-Footnote: This was the 17<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

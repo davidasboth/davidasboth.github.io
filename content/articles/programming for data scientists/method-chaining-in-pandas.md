@@ -2,10 +2,10 @@ Title: Method Chaining in Pandas
 Date: 2016-11-30 18:14
 Author: david
 Tags: featured, pandas, python
-Slug: blog/method-chaining-in-pandas
-url: blog/method-chaining-in-pandas
-save_as: blog/method-chaining-in-pandas/index.html
+Slug: method-chaining-in-pandas
 Status: published
+Summary: A discussion of "method chaining" in pandas. Used for better readability, or harder debugging, depending on how you look at it.
+Alias: /2016/11/30/method-chaining-in-pandas
 
 When you work with pandas, you'll often perform multiple operations on a
 DataFrame. Some data cleaning and basic plotting for example, something
@@ -142,5 +142,3 @@ The idea is that it helps future readability, so I can better understand
 my code if I look back on it later.
 
 This post was mostly inspired by the great [Modern Pandas series.](https://tomaugspurger.github.io/method-chaining.html)
-
-Footnote: This was the 29<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

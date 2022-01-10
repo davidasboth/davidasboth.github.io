@@ -2,10 +2,10 @@ Title: Analysis: Is Alan Davies Getting Better at QI?
 Date: 2017-02-15 12:06
 Author: david
 Tags: featured, python
-Slug: blog/analysis-is-alan-davies-getting-better-at-qi
+Slug: analysis-is-alan-davies-getting-better-at-qi
 Status: published
-url: blog/analysis-is-alan-davies-getting-better-at-qi
-save_as: blog/analysis-is-alan-davies-getting-better-at-qi/index.html
+Summary: I was watching a later series of QI recently and couldn't help but notice that Alan Davies was winning quite a few episodes. That prompted me to ask the question: is Alan Davies getting better at QI?
+Alias: /2017/02/15/analysis-is-alan-davies-getting-better-at-qi
 
 I'm a big fan of the quiz show [QI](https://en.wikipedia.org/wiki/QI). I
 was watching a later series of it recently on Netflix and I couldn't

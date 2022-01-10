@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+	<main id="articles-tagpage">
+		  <section id="splash">
+			<div class="container">
+				<p class="text-pre-heading text-centered">Articles tagged with</p>
+				<h1 class="text-centered">"{{ category.name }}"</h1>
+				
+				<div class="text-centered padding-medium"><a href="/articles" class="button button-outline">Back to all articles</a></div>
+			 </div>
+		</section>
+		<section id="articles">
+			<div class="container">
+				<div class="flex-container wrap">
+					{% for article in articles %}
+					
+						<div class="col-33 padding-medium">
+							<h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+							<a class="tag" href="{{ category.url }}"> {{ article.category }} </a>
+							<p> {{ article.summary }} </p>
+						</div>
+					
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+			
+		{% include 'include/contact.html' %}
+	</main>
+
+{% endblock %}

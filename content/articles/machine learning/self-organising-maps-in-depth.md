@@ -2,11 +2,10 @@ Title: Self-Organising Maps: In Depth
 Date: 2016-11-06 19:44
 Author: david
 Tags: featured, python
-Slug: blog/self-organising-maps-in-depth
-url: blog/self-organising-maps-in-depth
-save_as: blog/self-organising-maps-in-depth/index.html
+Slug: self-organising-maps-in-depth
 Status: published
-
+Summary: In Part 1, I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I want to step through the process of training and using a SOM – both the intuition and the Python code. At the end I'll also present a couple of real life use cases, not just the toy example we'll use for implementation.
+Alias: /2016/11/06/self-organising-maps-in-depth
 
 In [Part 1](/blog/self-organising-maps-an-introduction/),
 I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I
@@ -434,6 +433,3 @@ Mat Buckland's [excellent explanation and code walkthrough](http://www.ai-junkie
 instrumental in helping me learn. My code is more or less a Python port
 of his C++ implementation. Reading his posts should fill in any gaps I
 may have not covered.
-
-
-Footnote: This was the 6<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

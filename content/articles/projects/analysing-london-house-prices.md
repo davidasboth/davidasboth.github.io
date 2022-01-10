@@ -2,10 +2,10 @@ Title: Analysing London House Prices
 Date: 2016-10-23 16:33
 Author: david
 Tags: featured, python, tableau
-Slug: blog/analysing-london-house-prices
+Slug: analysing-london-house-prices
 Status: published
-url: blog/analysing-london-house-prices
-save_as: blog/analysing-london-house-prices/index.html
+Summary: London is expensive. So much so that it's a trope now for those of us who live here. But what does the data show? Are things getting better or worse? How did the 2008 recession affect behaviour for example? I wanted to find out. With data.
+Alias: /2016/10/23/analysing-london-house-prices
 
 # Introduction
 
@@ -191,4 +191,3 @@ coincidence.
 
 The next analysis on my list might be finding a new, more affordable
 city!
-

@@ -2,10 +2,10 @@ Title: Self-Organising Maps: An Introduction
 Date: 2016-11-05 18:26
 Author: david
 Tags: featured
-Slug: blog/self-organising-maps-an-introduction
-url: blog/self-organising-maps-an-introduction
-save_as: blog/self-organising-maps-an-introduction/index.html
+Slug: self-organising-maps-an-introduction
 Status: published
+Summary: When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.
+Alias: /2016/11/05/self-organising-maps-an-introduction/
 
 # Introduction
 
@@ -167,5 +167,3 @@ Something like this:
 A Self-Organising Colourmap 
 
 In [Part 2](/blog/self-organising-maps-in-depth/), we'll look at an in-depth implementation of SOMs.
-
-Footnote: This was the 5<sup>th</sup> entry in my [30 day blog challenge](/blog/30-posts-in-30-days/).

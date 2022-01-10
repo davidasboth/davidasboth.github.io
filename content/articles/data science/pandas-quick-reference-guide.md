@@ -2,10 +2,10 @@ Title: Pandas: a Quick Reference Guide
 Date: 2015-12-22 18:58
 Author: david
 Tags: featured, pandas, python
-Slug: blog/pandas-quick-reference-guide
-url: blog/pandas-quick-reference-guide
-save_as: blog/pandas-quick-reference-guide/index.html
+Slug: pandas-quick-reference-guide
 Status: published
+Summary: Just to be clear: this post is not about the cute, black-and-white bear. It is a brief overview of a Python library for data wrangling. Sorry to disappoint.
+Alias: /2015/12/22/pandas-quick-reference-guide
 
 Before I start, to placate readers who were expecting a blog post about
 panda bears, here's a picture of pandas at play:

@@ -2,10 +2,10 @@ Title: Machine Learning Haikus
 Date: 2017-04-17 13:48
 Author: david
 Tags: featured
-Slug: blog/machine-learning-haikus
-url: blog/machine-learning-haikus
-save_as: blog/machine-learning-haikus/index.html
+Slug: machine-learning-haikus
 Status: published
+Summary: Forget "machine learning in plain English". Instead, I present some of the most popular algorithms in haiku form. Consider it "machine learning for the busy".
+Alias: /2017/04/17/machine-learning-haikus
 
 You know how there are lots of blog posts out there about machine
 learning algorithms "in plain English"? They're popular because many
