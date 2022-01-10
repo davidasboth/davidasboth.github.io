@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth | Data Science - machine learning</title><link href="/" rel="alternate"></link><link href="/feeds/machine-learning.atom.xml" rel="self"></link><id>/</id><updated>2017-04-17T13:48:00+01:00</updated><entry><title>Machine Learning Haikus</title><link href="/blog/machine-learning-haikus" rel="alternate"></link><published>2017-04-17T13:48:00+01:00</published><updated>2017-04-17T13:48:00+01:00</updated><author><name>david</name></author><id>tag:None,2017-04-17:/blog/machine-learning-haikus</id><summary type="html">&lt;p&gt;You know how there are lots of blog posts out there about machine
-learning algorithms "in plain English"? They're popular because many
-people want to learn about machine learning, but don't want to be
-bombarded with heavy maths the moment they start. I agree, I think
-machine learning should be …&lt;/p&gt;</summary><content type="html">&lt;p&gt;You know how there are lots of blog posts out there about machine
+<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth - Data Solutions &amp; Consultancy - machine learning</title><link href="/" rel="alternate"></link><link href="/feeds/machine-learning.atom.xml" rel="self"></link><id>/</id><updated>2017-04-17T13:48:00+01:00</updated><entry><title>Machine Learning Haikus</title><link href="/machine-learning-haikus.html" rel="alternate"></link><published>2017-04-17T13:48:00+01:00</published><updated>2017-04-17T13:48:00+01:00</updated><author><name>david</name></author><id>tag:None,2017-04-17:/machine-learning-haikus.html</id><summary type="html">&lt;p&gt;Forget "machine learning in plain English". Instead, I present some of the most popular algorithms in haiku form. Consider it "machine learning for the busy".&lt;/p&gt;</summary><content type="html">&lt;p&gt;You know how there are lots of blog posts out there about machine
 learning algorithms "in plain English"? They're popular because many
 people want to learn about machine learning, but don't want to be
 bombarded with heavy maths the moment they start. I agree, I think
@@ -48,11 +44,7 @@ Gave us funny text.&lt;/p&gt;
 &lt;h2&gt;Naive Bayes&lt;/h2&gt;
 &lt;p&gt;We're gonna pretend&lt;br&gt;
 Features are independent,&lt;br&gt;
-Naive as that is.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry><entry><title>Visualising Decision Trees in Python</title><link href="/blog/visualising-decision-trees-in-python" rel="alternate"></link><published>2016-11-28T22:03:00+00:00</published><updated>2016-11-28T22:03:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-28:/blog/visualising-decision-trees-in-python</id><summary type="html">&lt;p&gt;Interpretability is often an important concern with a machine learning
-algorithm (despite spellcheck telling me it's not even a word). Having
-an accurate predictive model may be enough in itself, but in some cases
-the only way to turn it into a business decision is if you can
-understand &lt;strong&gt;why …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Interpretability is often an important concern with a machine learning
+Naive as that is.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry><entry><title>Visualising Decision Trees in Python</title><link href="/visualising-decision-trees-in-python.html" rel="alternate"></link><published>2016-11-28T22:03:00+00:00</published><updated>2016-11-28T22:03:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-28:/visualising-decision-trees-in-python.html</id><summary type="html">&lt;p&gt;Having an accurate machine learning model may be enough in itself, but in some cases the only way to turn it into a business decision is if you can understand why it's getting the results it's getting. In this short tutorial I want to show a quick way to visualise a trained decision tree in Python.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Interpretability is often an important concern with a machine learning
 algorithm (despite spellcheck telling me it's not even a word). Having
 an accurate predictive model may be enough in itself, but in some cases
 the only way to turn it into a business decision is if you can
@@ -115,68 +107,7 @@ length and sepal length is enough to give us over 90% accuracy.&lt;/p&gt;
 if you want to keep the tree interpretable you probably want to limit
 its depth.&lt;/p&gt;
 &lt;p&gt;For further visualisation options you can follow the instructions on
-&lt;a href="http://scikit-learn.org/dev/modules/tree.html#classification"&gt;the official scikit-learn page&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Footnote: This was the 28&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Fun Uses of Deep Learning</title><link href="/blog/fun-uses-of-deep-learning" rel="alternate"></link><published>2016-11-24T20:25:00+00:00</published><updated>2016-11-24T20:25:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-24:/blog/fun-uses-of-deep-learning</id><summary type="html">&lt;p&gt;I was struggling to find inspiration for a topic to write about today,
-but then I remembered this guy.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;When I saw the Google's AlphaGo, I realized something really serious
-is happening here [...] That was the trigger for me to start
-developing the &lt;strong&gt;cucumber sorter with deep learning technology&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Makoto …&lt;/small&gt;&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;I was struggling to find inspiration for a topic to write about today,
-but then I remembered this guy.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;When I saw the Google's AlphaGo, I realized something really serious
-is happening here [...] That was the trigger for me to start
-developing the &lt;strong&gt;cucumber sorter with deep learning technology&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Makoto Koike, &lt;a href="https://cloud.google.com/blog/big-data/2016/08/how-a-japanese-cucumber-farmer-is-using-deep-learning-and-tensorflow"&gt;How a Japanese cucumber farmer is using deep learning and TensorFlow&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Makoto Koike's family own a cucumber farm and he was so impressed with
-the idea of deep learning, after seeing &lt;a href="https://deepmind.com/research/alphago/"&gt;AlphaGo's famous victory&lt;/a&gt; over Lee Sedol, that he
-decided to create an algorithm that &lt;strong&gt;sorts cucumbers&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;It's an incredibly intricate classification and computer vision problem,
-and just a cool use of deep learning. No doubt you've heard the term
-'deep learning' and the 'hype' that surrounds it.&lt;/p&gt;
-&lt;p&gt;I'm sure we're just at the surface of the amazing things that can be
-accomplished with deep learning, and I just wanted to share some of the
-(I think) really cool uses of deep learning out there.&lt;/p&gt;
-&lt;h1&gt;Image Processing&lt;/h1&gt;
-&lt;p&gt;Computer vision is a hard problem in itself, and AI research has been
-trying to solve various image recognition problems for decades. However,
-there are some offshoots of image-related deep learning projects that I
-think deserve a mention.&lt;/p&gt;
-&lt;h2&gt;Sketch Simplification&lt;/h2&gt;
-&lt;p&gt;Researchers have come up with an algorithm that can &lt;a href="http://hi.cs.waseda.ac.jp/~esimo/en/research/sketch/"&gt;take a sketch drawing and automatically create a "solid" line trace&lt;/a&gt; of it.
-Their results are incredible.&lt;/p&gt;
-&lt;h2&gt;Image Colorisation&lt;/h2&gt;
-&lt;p&gt;Taking black and white images and &lt;a href="http://hi.cs.waseda.ac.jp/~iizuka/projects/colorization/en/"&gt;drawing them in colour&lt;/a&gt;, in
-cases where a colour version doesn't even exist.&lt;/p&gt;
-&lt;p&gt;Or &lt;a href="https://github.com/cameronfabbri/Colorful-Image-Colorization"&gt;colouring in old black-and-white Pokemon games&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Artistic Style Transfer&lt;/h2&gt;
-&lt;p&gt;Taking an image and &lt;a href="https://blogs.nvidia.com/blog/2016/05/25/deep-learning-paints-videos/"&gt;redrawing it in the style of a famous painting&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Music&lt;/h1&gt;
-&lt;p&gt;Deep learning algorithms can also generate realistic-sounding music!&lt;/p&gt;
-&lt;h2&gt;&lt;a href="http://deepjazz.io/"&gt;Generating Jazz&lt;/a&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;a href="http://bachbot.com"&gt;Generating Original Bach Pieces&lt;/a&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;a href="https://swarbrickjones.wordpress.com/2016/11/07/deeprhyme-d-prime-generating-dope-rhymes-with-deep-learning/"&gt;Writing New Rap Lyrics&lt;/a&gt;&lt;/h2&gt;
-&lt;h1&gt;Text&lt;/h1&gt;
-&lt;p&gt;Some of my favourite AI-powered projects that I've seen relate to text
-generation.&lt;/p&gt;
-&lt;h2&gt;&lt;a href="https://medium.com/deep-writing/harry-potter-written-by-artificial-intelligence-8a9431803da6#.ywwzc78we"&gt;Writing New Chapters of Harry Potter&lt;/a&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;a href="https://twitter.com/_pandy/status/689209034143084547"&gt;Writing New Episodes of 'Friends'&lt;/a&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;a href="https://twitter.com/deepdrumpf"&gt;Tweeting Like Trump&lt;/a&gt;&lt;/h2&gt;
-&lt;h2&gt;&lt;a href="https://medium.com/&amp;64;samim/ted-rnn-machine-generated-ted-talks-3dd682b894c0#.46e1blsx1"&gt;Generating New TED Talks&lt;/a&gt;&lt;/h2&gt;
-&lt;h1&gt;Miscellaneous&lt;/h1&gt;
-&lt;h2&gt;&lt;a href="https://aiexperiments.withgoogle.com/"&gt;Interactive AI Experiments&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Footnote: This was the 24&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category></entry><entry><title>More on K-means Clustering</title><link href="/blog/more-on-k-means-clustering" rel="alternate"></link><published>2016-11-20T17:01:00+00:00</published><updated>2016-11-20T17:01:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-20:/blog/more-on-k-means-clustering</id><summary type="html">&lt;p&gt;In &lt;a href="/blog/introduction-to-k-means-clustering/"&gt;Part 1&lt;/a&gt;
-I described the k-means clustering algorithm and some of its uses along
-with a quick Python implementation. Going forward I recommend using the
-&lt;a href="http://scikit-learn.org/stable/modules/clustering.html#k-means"&gt;scikit-learn implementation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Now let's see k-means in action!
- &lt;/p&gt;
-&lt;h1&gt;Image Segmentation&lt;/h1&gt;
-&lt;p&gt;One use of clustering is to segment images:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;For example, in computer graphics, color …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="/blog/introduction-to-k-means-clustering/"&gt;Part 1&lt;/a&gt;
+&lt;a href="http://scikit-learn.org/dev/modules/tree.html#classification"&gt;the official scikit-learn page&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>More on K-means Clustering</title><link href="/more-on-k-means-clustering.html" rel="alternate"></link><published>2016-11-20T17:01:00+00:00</published><updated>2016-11-20T17:01:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-20:/more-on-k-means-clustering.html</id><summary type="html">&lt;p&gt;In this post I look at a practical example of k-means clustering in action, namely to draw puppies. I also touch on a couple of more general points to consider when using clustering.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="/blog/introduction-to-k-means-clustering/"&gt;Part 1&lt;/a&gt;
 I described the k-means clustering algorithm and some of its uses along
 with a quick Python implementation. Going forward I recommend using the
 &lt;a href="http://scikit-learn.org/stable/modules/clustering.html#k-means"&gt;scikit-learn implementation&lt;/a&gt;.&lt;/p&gt;
@@ -291,7 +222,6 @@ features will often be on different scales.&lt;/p&gt;
 &lt;p&gt;See more information on this in Sebastian Raschka's &lt;a href="http://sebastianraschka.com/faq/docs/when-to-standardize.html"&gt;machine learning FAQ&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;K-means and clustering in general have many more uses, and I hope these
 puppies have piqued your interest!&lt;/p&gt;
-&lt;p&gt;Footnote: This was the 20&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -353,13 +283,7 @@ puppies have piqued your interest!&lt;/p&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Introduction to K-means Clustering</title><link href="/blog/introduction-to-k-means-clustering" rel="alternate"></link><published>2016-11-20T15:18:00+00:00</published><updated>2016-11-20T15:18:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-20:/blog/introduction-to-k-means-clustering</id><summary type="html">&lt;p&gt;This is the first of a two-part post on K-means clustering.&lt;/p&gt;
-&lt;h1&gt;Introduction&lt;/h1&gt;
-&lt;h2&gt;Unsupervised Learning&lt;/h2&gt;
-&lt;p&gt;I've talked about unsupervised learning before when dealing with
-&lt;a href="/blog/self-organising-maps-an-introduction/"&gt;Self-Organising Maps&lt;/a&gt;,
-but just to recap. Unsupervised learning is when you have a dataset of
-features with no pre-defined outcomes. You give it to an algorithm to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first of a two-part post on K-means clustering.&lt;/p&gt;
+&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Introduction to K-means Clustering</title><link href="/introduction-to-k-means-clustering.html" rel="alternate"></link><published>2016-11-20T15:18:00+00:00</published><updated>2016-11-20T15:18:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-20:/introduction-to-k-means-clustering.html</id><summary type="html">&lt;p&gt;An introduction to the popular k-means clustering algorithm with intuition and Python code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first of a two-part post on K-means clustering.&lt;/p&gt;
 &lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;h2&gt;Unsupervised Learning&lt;/h2&gt;
 &lt;p&gt;I've talked about unsupervised learning before when dealing with
@@ -522,7 +446,6 @@ clusters.&lt;/p&gt;
 &lt;p&gt;In Part 2, I'll talk about another practical application of the k-means
 algorithm (using scikit-learn this time) as well as some implementation
 details such as how to pick the value of &lt;span class="math"&gt;\(k\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Footnote: This was the 19&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -584,11 +507,7 @@ details such as how to pick the value of &lt;span class="math"&gt;\(k\)&lt;/span
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Markov Chains for Text Generation</title><link href="/blog/markov-chains-for-text-generation" rel="alternate"></link><published>2016-11-12T22:09:00+00:00</published><updated>2016-11-12T22:09:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-12:/blog/markov-chains-for-text-generation</id><summary type="html">&lt;p&gt;Markov chains are a popular way to model sequential data. They form the
-basis of more complex ideas, such as Hidden Markov Models, which are
-used for speech recognition and have applications in bioinformatics.&lt;/p&gt;
-&lt;p&gt;Today I want to run through an implementation of Markov chains for
-generating text based on …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Markov chains are a popular way to model sequential data. They form the
+&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Markov Chains for Text Generation</title><link href="/markov-chains-for-text-generation.html" rel="alternate"></link><published>2016-11-12T22:09:00+00:00</published><updated>2016-11-12T22:09:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-12:/markov-chains-for-text-generation.html</id><summary type="html">&lt;p&gt;Markov chains are a popular way to model sequential data. I want to run through an implementation where I generate new songs based on lyrics by Muse.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Markov chains are a popular way to model sequential data. They form the
 basis of more complex ideas, such as Hidden Markov Models, which are
 used for speech recognition and have applications in bioinformatics.&lt;/p&gt;
 &lt;p&gt;Today I want to run through an implementation of Markov chains for
@@ -777,7 +696,6 @@ action', this is &lt;a href="http://setosa.io/ev/markov-chains/"&gt;a great reso
 to start with.&lt;/p&gt;
 &lt;p&gt;I glossed over a lot of the maths behind the algorithm, but if you're
 interested you could &lt;a href="https://www.youtube.com/watch?v=WUjt98HcHlk"&gt;start here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Footnote: This is the 12&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -839,11 +757,7 @@ interested you could &lt;a href="https://www.youtube.com/watch?v=WUjt98HcHlk"&gt
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Why You Should Reinvent the Machine Learning Wheel</title><link href="/blog/why-you-should-reinvent-the-machine-learning-wheel" rel="alternate"></link><published>2016-11-11T17:17:00+00:00</published><updated>2016-11-11T17:17:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-11:/blog/why-you-should-reinvent-the-machine-learning-wheel</id><summary type="html">&lt;p&gt;When you're a data scientist, unless you're in a job that's very
-research-focused (and likely requires a PhD) you'll mostly be using
-machine learning algorithms invented anywhere between say 5 and 30 years
-ago. Similar to being a programmer, you'll be using many libraries made
-by other people based on …&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you're a data scientist, unless you're in a job that's very
+&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Why You Should Reinvent the Machine Learning Wheel</title><link href="/why-you-should-reinvent-the-machine-learning-wheel.html" rel="alternate"></link><published>2016-11-11T17:17:00+00:00</published><updated>2016-11-11T17:17:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-11:/why-you-should-reinvent-the-machine-learning-wheel.html</id><summary type="html">&lt;p&gt;As data scientists we spend a lot of our time using other people's implementations of machine learning algorithms. I suggest that as part of the learning process it's worthwhile to try to implement them ourselves from scratch, in order to fully understand them.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you're a data scientist, unless you're in a job that's very
 research-focused (and likely requires a PhD) you'll mostly be using
 machine learning algorithms invented anywhere between say 5 and 30 years
 ago. Similar to being a programmer, you'll be using many libraries made
@@ -938,12 +852,7 @@ understand and &lt;a href="https://mattmazur.com/2015/03/17/a-step-by-step-backp
 but it would be a good advanced programming challenge.&lt;/p&gt;
 &lt;p&gt;Hopefully I've convinced you that implementing machine algorithms from
 scratch is a worthwhile endeavour. I'm always interested in seeing other
-people's implementations so let me know if you've done any!&lt;/p&gt;
-&lt;p&gt;Footnote: This was the 11&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry><entry><title>Realistic Machine Learning</title><link href="/blog/realistic-machine-learning" rel="alternate"></link><published>2016-11-10T15:41:00+00:00</published><updated>2016-11-10T15:41:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-10:/blog/realistic-machine-learning</id><summary type="html">&lt;p&gt;As I'm sure most data scientists quickly realise, there's a difference
-between the kind of data science you do while learning about it, and the
-kind you do at a real job.&lt;/p&gt;
-&lt;p&gt;This is especially true of university degrees, and isn't unique to data
-science. However much you learn during …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As I'm sure most data scientists quickly realise, there's a difference
+people's implementations so let me know if you've done any!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry><entry><title>Realistic Machine Learning</title><link href="/realistic-machine-learning.html" rel="alternate"></link><published>2016-11-10T15:41:00+00:00</published><updated>2016-11-10T15:41:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-10:/realistic-machine-learning.html</id><summary type="html">&lt;p&gt;As most data scientists quickly realise, there's a difference between the kind of data science you do while learning about it, and the kind you do at a real job. This is equally true of data cleaning/wrangling and machine learning.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As most data scientists quickly realise, there's a difference
 between the kind of data science you do while learning about it, and the
 kind you do at a real job.&lt;/p&gt;
 &lt;p&gt;This is especially true of university degrees, and isn't unique to data
@@ -1036,12 +945,7 @@ be interactive. It's much easier to evaluate your approach by getting
 qualitative feedback, unlike the first 2-3 tasks where you can
 objectively measure your success.&lt;/p&gt;
 &lt;p&gt;This isn't always a practical way to teach, but it would go a long way
-in preparing people for the reality of data science in the wild.&lt;/p&gt;
-&lt;p&gt;Footnote: This was the 10&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category></entry><entry><title>"Intuition First" Machine Learning</title><link href="/blog/intuition-first-machine-learning" rel="alternate"></link><published>2016-11-07T09:34:00+00:00</published><updated>2016-11-07T09:34:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-07:/blog/intuition-first-machine-learning</id><summary type="html">&lt;p&gt;I read &lt;a href="http://machinelearningmastery.com/4-steps-to-get-started-in-machine-learning/"&gt;an article on Machine Learning Mastery&lt;/a&gt;
-recently about getting started with machine learning.&lt;/p&gt;
-&lt;p&gt;The reason it stuck in my mind was that it discussed a way of learning
-that I always felt was closer to me and a better way for me to learn,
-yet I hadn't encountered …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I read &lt;a href="http://machinelearningmastery.com/4-steps-to-get-started-in-machine-learning/"&gt;an article on Machine Learning Mastery&lt;/a&gt;
+in preparing people for the reality of data science in the wild.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category></entry><entry><title>"Intuition First" Machine Learning</title><link href="/intuition-first-machine-learning.html" rel="alternate"></link><published>2016-11-07T09:34:00+00:00</published><updated>2016-11-07T09:34:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-07:/intuition-first-machine-learning.html</id><summary type="html">&lt;p&gt;I've often felt machine learning needs to be taught "intuition first, equations later", but this doesn't seem to be the norm with most learning sources.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I read &lt;a href="http://machinelearningmastery.com/4-steps-to-get-started-in-machine-learning/"&gt;an article on Machine Learning Mastery&lt;/a&gt;
 recently about getting started with machine learning.&lt;/p&gt;
 &lt;p&gt;The reason it stuck in my mind was that it discussed a way of learning
 that I always felt was closer to me and a better way for me to learn,
@@ -1120,12 +1024,7 @@ understand things like:&lt;/p&gt;
 prefer an approach where they're given the equations first, but I
 suspect they're the minority. If the imbalance is the way I perceive it,
 then there does seem to be a disconnect between the way people learn and
-the way machine learning is often taught.&lt;/p&gt;
-&lt;p&gt;Footnote: This was the 7&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry><entry><title>Self-Organising Maps: In Depth</title><link href="/blog/self-organising-maps-in-depth" rel="alternate"></link><published>2016-11-06T19:44:00+00:00</published><updated>2016-11-06T19:44:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-06:/blog/self-organising-maps-in-depth</id><summary type="html">&lt;p&gt;In &lt;a href="/blog/self-organising-maps-an-introduction/"&gt;Part 1&lt;/a&gt;,
-I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I
-want to step through the process of training and using a SOM - both the
-intuition and the Python code. At the end I'll also present a couple of
-real life use cases, not just …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="/blog/self-organising-maps-an-introduction/"&gt;Part 1&lt;/a&gt;,
+the way machine learning is often taught.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry><entry><title>Self-Organising Maps: In Depth</title><link href="/self-organising-maps-in-depth.html" rel="alternate"></link><published>2016-11-06T19:44:00+00:00</published><updated>2016-11-06T19:44:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-06:/self-organising-maps-in-depth.html</id><summary type="html">&lt;p&gt;In Part 1, I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I want to step through the process of training and using a SOM – both the intuition and the Python code. At the end I'll also present a couple of real life use cases, not just the toy example we'll use for implementation.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="/blog/self-organising-maps-an-introduction/"&gt;Part 1&lt;/a&gt;,
 I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I
 want to step through the process of training and using a SOM - both the
 intuition and the Python code. At the end I'll also present a couple of
@@ -1453,7 +1352,6 @@ for the colour map example.&lt;/p&gt;
 instrumental in helping me learn. My code is more or less a Python port
 of his C++ implementation. Reading his posts should fill in any gaps I
 may have not covered.&lt;/p&gt;
-&lt;p&gt;Footnote: This was the 6&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -1515,13 +1413,7 @@ may have not covered.&lt;/p&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Self-Organising Maps: An Introduction</title><link href="/blog/self-organising-maps-an-introduction" rel="alternate"></link><published>2016-11-05T18:26:00+00:00</published><updated>2016-11-05T18:26:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-05:/blog/self-organising-maps-an-introduction</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;When you learn about machine learning techniques, you usually get a
-selection of the usual suspects. Something like: Support Vector
-Machines, decision trees/random forests, and logistic regression for
-classification, linear regression for regression, k-means for clustering
-and perhaps PCA for dimensionality reduction.&lt;/p&gt;
-&lt;p&gt;In fact, KDNuggets has a good …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Self-Organising Maps: An Introduction</title><link href="/self-organising-maps-an-introduction.html" rel="alternate"></link><published>2016-11-05T18:26:00+00:00</published><updated>2016-11-05T18:26:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-05:/self-organising-maps-an-introduction.html</id><summary type="html">&lt;p&gt;When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;When you learn about machine learning techniques, you usually get a
 selection of the usual suspects. Something like: Support Vector
 Machines, decision trees/random forests, and logistic regression for
@@ -1637,5 +1529,4 @@ visualise the "topology" of the 3D colour space.&lt;/p&gt;
 &lt;p&gt;Something like this:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="som" src="/images/self-organising-maps-an-introduction/som.png"&gt;&lt;/p&gt;
 &lt;p&gt;A Self-Organising Colourmap &lt;/p&gt;
-&lt;p&gt;In &lt;a href="/blog/self-organising-maps-in-depth/"&gt;Part 2&lt;/a&gt;, we'll look at an in-depth implementation of SOMs.&lt;/p&gt;
-&lt;p&gt;Footnote: This was the 5&lt;sup&gt;th&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry></feed>
+&lt;p&gt;In &lt;a href="/blog/self-organising-maps-in-depth/"&gt;Part 2&lt;/a&gt;, we'll look at an in-depth implementation of SOMs.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry></feed>

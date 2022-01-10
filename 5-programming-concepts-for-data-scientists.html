@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+
+	<!-- Favicon stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/theme/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/theme/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/theme/images/favicon-16x16.png">
+	<link rel="manifest" href="/theme/images/site.webmanifest">
+
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>David Asboth - Data Solutions &amp; Consultancy - 5 Programming Concepts for Data Scientists</title>
+
+	<link rel="canonical" href="/5-programming-concepts-for-data-scientists.html">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
+	
+	<link rel="stylesheet" href="/theme/css/style.css">
+
+  
+
+
+
+    <meta name="tags" content="featured" />
+
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+			<nav>
+				<ul>
+					<li>
+						<a href="/#solutions">Solutions</a>
+					</li>
+				<li>
+						<a href="/#about">About</a>
+					</li>
+				<li>
+						<a href="/articles">Articles</a>
+					</li>
+				<li>
+				  <a href="#contact" class="button button-filled">Contact</a>
+				  </li></ul>
+			</nav>
+		</div>
+	</header>
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/5-programming-concepts-for-data-scientists.html" rel="bookmark"
+         title="Permalink to 5 Programming Concepts for Data Scientists">5 Programming Concepts for Data Scientists</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2016-11-23T20:17:00+00:00">
+      Wed 23 November 2016
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/david.html">david</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/programming-for-data-scientists.html">programming for data scientists</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/featured.html">featured</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>In a previous post I talked about maths you should know for data
+science, partly with programmers in mind who want to move towards data
+science.</p>
+<p>Today I want to do the opposite.</p>
+<p>I want to introduce some software development concepts that I think data
+scientists would benefit from, and which are maybe less talked about
+when discussing "what it takes" to be a data scientist.</p>
+<h2>Source Control</h2>
+<p>To be fair, I've seen more and more data science resources cover this
+topic, but it's still worth a mention.</p>
+<p>If you start programming without source control and then get introduced
+to it I guarantee you can't go back. It feels positively prehistoric
+that once upon a time my version of source control was as sophisticated
+as "code_20160101.zip", "code_20160104.zip" and so on (that's just an
+example, I want to make it clear that I wasn't still doing that in
+January 2016...).</p>
+<p>The ability to go back to previous versions with near-zero effort, as
+well as keep a log of what you've changed between versions is essential
+for something as fundamentally experimental as the data science process.</p>
+<p>Probably the most popular source control method these days is Git,
+specifically <a href="https://github.com/">GitHub</a> or
+<a href="https://bitbucket.org/">BitBucket</a>. There are others out there, such as
+subversion (using something like
+<a href="https://tortoisesvn.net/">TortoiseSVN</a>) or Microsoft's proprietary (and
+expensive) Team Foundation Server.</p>
+<p>You're probably better off using Git. Having a GitHub portfolio is
+pretty handy.</p>
+<p>If you don't want to learn the console commands (<a href="https://xkcd.com/1597/">obligatory related xkcd</a>), don't feel obliged to.</p>
+<p>I use <a href="https://www.sourcetreeapp.com/">SourceTree</a> and it's pretty great.</p>
+<h2>Automation</h2>
+<p>I've <a href="/blog/turning-jupyter-notebooks-into-reusable-scripts/">touched on this topic before</a>;
+I think data scientists should adopt a lazy, programmer's mindset.</p>
+<p>Automate everything you can.</p>
+<p>Let the computer do the boring things while you do the hard thinking.</p>
+<p>Have a script that automatically cleans your data, or even <a href="https://github.com/rhiever/tpot">does some of your machine learning for you</a>.</p>
+<h2>IDEs</h2>
+<p>Using something like IPython to test out programming snippets in an
+interactive way is a great idea. However, when you need more
+reproducible code or just a bit more functionality than typing single
+commands, use an IDE (Integrated Development Environment).</p>
+<p>The staple Python IDE is the <a href="http://jupyter.org">Jupyter notebook</a>
+environment, great for presentation and reproducibility, and therefore
+terrific for data science.</p>
+<p><a href="https://pythonhosted.org/spyder/">Spyder</a>,
+<a href="https://www.yhat.com/products/rodeo">Rodeo</a> and
+<a href="https://www.jetbrains.com/pycharm/">PyCharm</a> are all good alternatives.</p>
+<p>At the very least use a text editor with syntax highlighting.
+<a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="https://www.sublimetext.com/">Sublime Text</a>, <a href="https://atom.io/">Atom</a> or similar.</p>
+<h2>Relational Databases</h2>
+<p>One skill that is sometimes overlooked on data science courses is the
+use of SQL and relational databases. I might even do a separate post
+dedicated to this topic because I think it's a useful skill to have.</p>
+<p>Database design is an important aspect of creating a functioning
+application, so if you ever want to make your machine learning algorithm
+into a software product it's worth knowing how best to design a backend
+database.</p>
+<p>Codecademy do <a href="https://www.codecademy.com/learn/learn-sql">a SQL course</a>
+(in fact it looks like they do multiple). I haven't done them myself,
+but other Codecademy courses I've done were all excellent. My first SQL
+resource was <a href="http://www.w3schools.com/sql/">w3schools</a>, which is also
+worth a look.</p>
+<h2>D. R. Y. - Don't Repeat Yourself</h2>
+<p>I'm not usually a fan of teaching people programming best practices when
+they're starting out, and many people learning data science don't have a
+programming background, but if there's one concept that I'd recommend
+internalising it's this.</p>
+<p>Don't repeat yourself.</p>
+<p>If you have a few lines of code that do something that you'll need to do
+over and over again, or you find yourself copying and pasting the same
+code snippet multiple times, make it into a function.</p>
+<p>If you have a collection of related functions you call over and over
+again, make it into a class. At the very least move them into a separate
+file.</p>
+<p>These sound like little things but they add up and make your code easier
+to read and more maintainable.</p>
+<p>I hope you agree that data scientists can learn a lot of useful concepts
+from software development, even if they never end up having to build
+production-ready systems!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div><!-- /.entry-content -->
+</section>
+
+	<footer>
+		<div class="container flex-container">
+			<p>© 2022 David Asboth.  All Rights Reserved.</p>
+			<p>hello@davidasboth.com</p>
+		</div>
+	</footer>
+	
+	<script>
+	  /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-68436188-1', 'auto');
+	  ga('send', 'pageview');*/
+
+	</script>
+</body>
+
+</html>

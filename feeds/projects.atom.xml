@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth | Data Science - projects</title><link href="/" rel="alternate"></link><link href="/feeds/projects.atom.xml" rel="self"></link><id>/</id><updated>2017-02-15T12:06:00+00:00</updated><entry><title>Analysis: Is Alan Davies Getting Better at QI?</title><link href="/blog/analysis-is-alan-davies-getting-better-at-qi" rel="alternate"></link><published>2017-02-15T12:06:00+00:00</published><updated>2017-02-15T12:06:00+00:00</updated><author><name>david</name></author><id>tag:None,2017-02-15:/blog/analysis-is-alan-davies-getting-better-at-qi</id><summary type="html">&lt;p&gt;I'm a big fan of the quiz show &lt;a href="https://en.wikipedia.org/wiki/QI"&gt;QI&lt;/a&gt;. I
-was watching a later series of it recently on Netflix and I couldn't
-help but notice that Alan Davies was winning quite a few episodes. This
-felt odd, because I was sure that when I first watched the show he …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I'm a big fan of the quiz show &lt;a href="https://en.wikipedia.org/wiki/QI"&gt;QI&lt;/a&gt;. I
+<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth - Data Solutions &amp; Consultancy - projects</title><link href="/" rel="alternate"></link><link href="/feeds/projects.atom.xml" rel="self"></link><id>/</id><updated>2017-02-15T12:06:00+00:00</updated><entry><title>Analysis: Is Alan Davies Getting Better at QI?</title><link href="/analysis-is-alan-davies-getting-better-at-qi.html" rel="alternate"></link><published>2017-02-15T12:06:00+00:00</published><updated>2017-02-15T12:06:00+00:00</updated><author><name>david</name></author><id>tag:None,2017-02-15:/analysis-is-alan-davies-getting-better-at-qi.html</id><summary type="html">&lt;p&gt;I was watching a later series of QI recently and couldn't help but notice that Alan Davies was winning quite a few episodes. That prompted me to ask the question: is Alan Davies getting better at QI?&lt;/p&gt;</summary><content type="html">&lt;p&gt;I'm a big fan of the quiz show &lt;a href="https://en.wikipedia.org/wiki/QI"&gt;QI&lt;/a&gt;. I
 was watching a later series of it recently on Netflix and I couldn't
 help but notice that Alan Davies was winning quite a few episodes. This
 felt odd, because I was sure that when I first watched the show he
@@ -28,12 +25,7 @@ show Alan's win ratio over time. Here's the accompanying &lt;a href="https://git
 &lt;p&gt;So to answer the question: yes, Alan does appear to be getting better at
 QI, certainly since the first few series. It does however remain to be
 seen whether his win ratio will plateau at 25%, I guess we'll see in a
-few years' time.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Visualising the Worldwide Win Percentage of the Hungarian National Football Team</title><link href="/blog/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team" rel="alternate"></link><published>2017-01-20T11:36:00+00:00</published><updated>2017-01-20T11:36:00+00:00</updated><author><name>david</name></author><id>tag:None,2017-01-20:/blog/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team</id><summary type="html">&lt;p&gt;I've often read, and agreed with, the advice that side projects should
-be solving problems or answering questions that you yourself are
-interested in.&lt;/p&gt;
-&lt;p&gt;To that end, I've always wanted to know how well the Hungarian national
-team have done against various countries worldwide. Hungary has &lt;a href="https://en.wikipedia.org/wiki/Golden_Team"&gt;a
-glorious football past …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've often read, and agreed with, the advice that side projects should
+few years' time.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Visualising the Worldwide Win Percentage of the Hungarian National Football Team</title><link href="/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team.html" rel="alternate"></link><published>2017-01-20T11:36:00+00:00</published><updated>2017-01-20T11:36:00+00:00</updated><author><name>david</name></author><id>tag:None,2017-01-20:/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team.html</id><summary type="html">&lt;p&gt;I've often read the advice that side projects should be solving problems or answering questions that you yourself are interested in. To that end, I've always wanted to know how well the Hungarian national team have done against various countries worldwide and to explore this question, I scraped the matches played by the Hungarian national team and made an interactive world map.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've often read, and agreed with, the advice that side projects should
 be solving problems or answering questions that you yourself are
 interested in.&lt;/p&gt;
 &lt;p&gt;To that end, I've always wanted to know how well the Hungarian national
@@ -76,11 +68,7 @@ ability to customise the hover label meant I could make a much more
 useful visualisation, which you can explore.&lt;/p&gt;
 &lt;p&gt;There is &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/hungarian-national-team/Mapping%20Records%20vs%20Countries.ipynb"&gt;a Jupyter notebook&lt;/a&gt;
 where I aggregated the data, dealt with countries that don't exist
-anymore (the USSR, Yugoslavia, etc.) and made the final map.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="datavis"></category><category term="featured"></category><category term="python"></category></entry><entry><title>The World Map of the 2016 FIFA Awards</title><link href="/blog/the-world-map-of-the-2016-fifa-awards" rel="alternate"></link><published>2017-01-13T15:06:00+00:00</published><updated>2017-01-13T15:06:00+00:00</updated><author><name>david</name></author><id>tag:None,2017-01-13:/blog/the-world-map-of-the-2016-fifa-awards</id><summary type="html">&lt;p&gt;The "&lt;a href="http://www.fifa.com/the-best-fifa-football-awards/best-fifa-mens-player/index.html"&gt;Best FIFA Football Awards&lt;/a&gt;"
-took place recently and while the final outcome was not surprising, I've
-always wanted to know which countries vote for which players.&lt;/p&gt;
-&lt;p&gt;The way the voting works is that the captain and coach of every national
-team in FIFA, as well as a member of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The "&lt;a href="http://www.fifa.com/the-best-fifa-football-awards/best-fifa-mens-player/index.html"&gt;Best FIFA Football Awards&lt;/a&gt;"
+anymore (the USSR, Yugoslavia, etc.) and made the final map.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="datavis"></category><category term="featured"></category><category term="python"></category></entry><entry><title>The World Map of the 2016 FIFA Awards</title><link href="/the-world-map-of-the-2016-fifa-awards.html" rel="alternate"></link><published>2017-01-13T15:06:00+00:00</published><updated>2017-01-13T15:06:00+00:00</updated><author><name>david</name></author><id>tag:None,2017-01-13:/the-world-map-of-the-2016-fifa-awards.html</id><summary type="html">&lt;p&gt;A mini project to visualise the votes for the 2016 FIFA Awards, to see which country voted for which player.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The "&lt;a href="http://www.fifa.com/the-best-fifa-football-awards/best-fifa-mens-player/index.html"&gt;Best FIFA Football Awards&lt;/a&gt;"
 took place recently and while the final outcome was not surprising, I've
 always wanted to know which countries vote for which players.&lt;/p&gt;
 &lt;p&gt;The way the voting works is that the captain and coach of every national
@@ -140,13 +128,7 @@ especially for the "Other" category. It might be in a future version of
 folium, as it seems to be actively under development. Realistically, a
 tool like Tableau would be better suited to a visualisation like this,
 but the ability to embed maps in Jupyter notebooks makes folium a really
-good addition to my data science toolkit.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="datavis"></category><category term="featured"></category><category term="python"></category></entry><entry><title>The Junk in Fallout 4 - a Web Scraping Tutorial</title><link href="/blog/the-junk-in-fallout-4" rel="alternate"></link><published>2016-11-03T22:36:00+00:00</published><updated>2016-11-03T22:36:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-03:/blog/the-junk-in-fallout-4</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
-&lt;h2&gt;The Problem&lt;/h2&gt;
-&lt;p&gt;A few months ago I was playing one of my favourite games of 2015 -
-&lt;a href="https://en.wikipedia.org/wiki/Fallout_4"&gt;Fallout 4.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;If you haven't heard of it, it's an action-RPG set in a post-apocalyptic
-world. The story is engaging and you're sort of trying to rebuild
-civilisation after the world has been …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+good addition to my data science toolkit.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="datavis"></category><category term="featured"></category><category term="python"></category></entry><entry><title>The Junk in Fallout 4 - a Web Scraping Tutorial</title><link href="/the-junk-in-fallout-4.html" rel="alternate"></link><published>2016-11-03T22:36:00+00:00</published><updated>2016-11-03T22:36:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-03:/the-junk-in-fallout-4.html</id><summary type="html">&lt;p&gt;This is a short web scraping tutorial based on a script I wrote to fetch and analyse data about junk in the game Fallout 4.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;h2&gt;The Problem&lt;/h2&gt;
 &lt;p&gt;A few months ago I was playing one of my favourite games of 2015 -
 &lt;a href="https://en.wikipedia.org/wiki/Fallout_4"&gt;Fallout 4.&lt;/a&gt;&lt;/p&gt;
@@ -304,13 +286,7 @@ component to order them by rarity.&lt;/p&gt;
 &lt;p&gt;There you have it - data-driven video gaming. Here's the whole thing in
 &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/fallout-junk/Fallout%20Junk%20Data.ipynb"&gt;Jupyter notebook form&lt;/a&gt;,
 and a direct link to &lt;a href="/files/fallout_junk.csv"&gt;the csv file&lt;/a&gt;
-if you want to analyse it yourself - if you do, let me know!&lt;/p&gt;
-&lt;p&gt;Footnote: This was the 3&lt;sup&gt;rd&lt;/sup&gt; entry in my &lt;a href="/blog/30-posts-in-30-days/"&gt;30 day blog challenge&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="python"></category></entry><entry><title>Analysing London House Prices</title><link href="/blog/analysing-london-house-prices" rel="alternate"></link><published>2016-10-23T16:33:00+01:00</published><updated>2016-10-23T16:33:00+01:00</updated><author><name>david</name></author><id>tag:None,2016-10-23:/blog/analysing-london-house-prices</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;London is expensive. So much so that it's a trope now for those of us
-who live here. But what does the data show? Are things getting better or
-worse? How did the 2008 recession affect buying behaviour for example?&lt;/p&gt;
-&lt;p&gt;I wanted to find out. With data.&lt;/p&gt;
-&lt;p&gt;There are …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+if you want to analyse it yourself - if you do, let me know!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="python"></category></entry><entry><title>Analysing London House Prices</title><link href="/analysing-london-house-prices.html" rel="alternate"></link><published>2016-10-23T16:33:00+01:00</published><updated>2016-10-23T16:33:00+01:00</updated><author><name>david</name></author><id>tag:None,2016-10-23:/analysing-london-house-prices.html</id><summary type="html">&lt;p&gt;London is expensive. So much so that it's a trope now for those of us who live here. But what does the data show? Are things getting better or worse? How did the 2008 recession affect behaviour for example? I wanted to find out. With data.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;London is expensive. So much so that it's a trope now for those of us
 who live here. But what does the data show? Are things getting better or
 worse? How did the 2008 recession affect buying behaviour for example?&lt;/p&gt;
@@ -439,119 +415,4 @@ displaying a small peak in March (possibly for tax purposes). These
 boroughs are typically in East London, which may or may not be a
 coincidence.&lt;/p&gt;
 &lt;p&gt;The next analysis on my list might be finding a new, more affordable
-city!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="featured"></category><category term="python"></category><category term="tableau"></category></entry><entry><title>Visualising the Hacker News Salary Survey(Take 1)</title><link href="/blog/visualising-the-hacker-news-salary-survey-take-1" rel="alternate"></link><published>2015-11-06T19:15:00+00:00</published><updated>2015-11-06T19:15:00+00:00</updated><author><name>david</name></author><id>tag:None,2015-11-06:/blog/visualising-the-hacker-news-salary-survey-take-1</id><summary type="html">&lt;p&gt;A few months ago, before starting a Masters in Data Science, I
-experimented with a bit of data visualisation. I am an avid reader of
-&lt;a href="https://news.ycombinator.com"&gt;Hacker News&lt;/a&gt;, which is a great site for
-programmers to frequent. If you don't already know it, I can't recommend
-it highly enough if you …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A few months ago, before starting a Masters in Data Science, I
-experimented with a bit of data visualisation. I am an avid reader of
-&lt;a href="https://news.ycombinator.com"&gt;Hacker News&lt;/a&gt;, which is a great site for
-programmers to frequent. If you don't already know it, I can't recommend
-it highly enough if you feel like you want to spend your procrastinating
-time more wisely (that's my main motivation for visiting, anyway...). It
-was an ad-hoc survey on there that led me to make this little
-visualisation and I'd like to share the end result, as well as the
-process that went into it, for two reasons. The first reason is that it
-could give some interesting insight into how an amateur would approach a
-data science problem using nothing but programming knowledge and some
-common sense. The second reason is that in a few months I will revisit
-this exact data set and analyse/visualise it again, to see how I can
-apply what I learned on my course to improve upon my first attempt.&lt;/p&gt;
-&lt;p&gt;All I can say is: I anticipate the second attempt will be
-recognisably... better.&lt;/p&gt;
-&lt;p&gt;So, without further ado I present:&lt;/p&gt;
-&lt;h2&gt;The (sort of) layman's guide to a basic data visualisation&lt;/h2&gt;
-&lt;h3&gt;The Data&lt;/h3&gt;
-&lt;p&gt;About the dataset: this was an anonymous survey run on Hacker News of
-around 400 developers and designers, with data gathered about their job
-title, seniority, location and salary. The dataset is inherently 'dirty'
-as it contains some of the usual suspects: it has values in different
-currencies, seniority levels and job titles aren't standardised and
-there are multiple different entries for the same location.&lt;/p&gt;
-&lt;p&gt;The dataset I used is available
-&lt;a href="https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/htmlview?usp=sharing&amp;amp;sle=true"&gt;here&lt;/a&gt;
-(credit to &lt;a href="http://twitter.com/cameronmoll"&gt;@cameronmoll&lt;/a&gt; for making it
-happen).&lt;/p&gt;
-&lt;p&gt;The original Hacker News discussion for those interested is
-&lt;a href="https://news.ycombinator.com/item?id=8573221"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;The Hypothesis&lt;/h3&gt;
-&lt;p&gt;As with any data science task, I needed to start with a hypothesis or a
-purpose. Essentially I wanted to use this mini-project to find a nice
-way to plot data on a map, so the purpose was to clean the data and find
-a good library to visualise it geographically. I'll be honest, being a
-data science layman I didn't even have a hypothesis about the data.&lt;/p&gt;
-&lt;p&gt;I just wanted to make a pretty map.&lt;/p&gt;
-&lt;h3&gt;The Process&lt;/h3&gt;
-&lt;h4&gt;Data Wrangling&lt;/h4&gt;
-&lt;p&gt;Data wrangling is my favourite of the many phrases (closely followed by
-'data jiu-jitsu') used to describe the act of 'cleaning' a dataset, i.e.
-getting it into a shape that's suitable for analysis. It is apparently
-what data scientists spend most of their time doing, so it's an
-important step. This includes dealing with missing values, correcting
-duplicate values (e.g. making sure we treat "London" and "London,
-England" as the same location) and so on.&lt;/p&gt;
-&lt;p&gt;Let's have a look at some of the issues with the dataset after an
-initial inspection:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The figures are in different currencies, this will need to be
-    rectified&lt;/li&gt;
-&lt;li&gt;The job titles need to be merged into one column&lt;/li&gt;
-&lt;li&gt;The locations contain duplicates (e.g. 'US', 'USA', 'United States'
-    all appear) &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Before I can do any meaningful analysis or visualisation, these issues
-need to be ironed out. Being a data layman at the time, my data
-wrangling tool of choice was Excel and I did most of my work manually.
-My data wrangling consisted of:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Looking up the most up-to-date exchange rates online and converting
-    all figures to USD (yes, I did this manually...)&lt;/li&gt;
-&lt;li&gt;Merging the job titles into one column&lt;/li&gt;
-&lt;li&gt;Manually merging duplicate locations (on the country column only)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Doing this all by hand was a pretty tedious method to use, and one I
-don't wish to repeat in future. It's also an implausible method for
-larger datasets, so when I revisit this dataset I'll look at what I
-could have automated using something like Python or R.&lt;/p&gt;
-&lt;p&gt;You can download my final version of the dataset here (hopefully you'll agree it's better!): &lt;a href="http://davidasboth.com/wp-content/uploads/2015/10/SalaryData.csv"&gt;Salary Data&lt;/a&gt;&lt;/p&gt;
-&lt;h4&gt;Summarisation and Aggregation&lt;/h4&gt;
-&lt;p&gt;Now was the time to do some basic statistics and aggregation to be able
-to see the average salary by country on a map.&lt;/p&gt;
-&lt;p&gt;To do this, I used some basic &lt;a href="https://en.wikipedia.org/wiki/R_%28programming_language%29"&gt;R, a popular data science
-language&lt;/a&gt;. I
-recommend it as a good starting point for aspiring data scientists. My R
-script was quite simple, the only real important line was the one that
-took the salaries and averaged them by location:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# load the data&lt;/span&gt;
-&lt;span class="n"&gt;SalaryData&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="nf"&gt;read.csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;SalaryData.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="c1"&gt;# get mean values in a table&lt;/span&gt;
-&lt;span class="n"&gt;byCountry&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="nf"&gt;aggregate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SalaryUSD&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;Country&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;SalaryData&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="c1"&gt;# write new data to csv&lt;/span&gt;
-&lt;span class="nf"&gt;write.csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;byCountry&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;ByCountry.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Once this was done, it was time to get this onto a map!&lt;/p&gt;
-&lt;h4&gt;Visualisation&lt;/h4&gt;
-&lt;p&gt;I used &lt;a href="http://jsdatav.is/chap06.html"&gt;this excellent tutorial&lt;/a&gt; to
-visualise my data on a map using a map font and some Javascript. I
-cheated a bit and manually entered the figures into a Javascript array
-(one of the enhancements I'll do is to actually read that in from a
-file). I won't go into depth about what I did differently, because I
-pretty much followed the tutorial step by step, tweaking things like
-colours as I went. I recommend following along, it's a very well-written
-tutorial.&lt;/p&gt;
-&lt;p&gt;If you want to view it in the browser, here's &lt;a href="/hn-map/"&gt;the final product&lt;/a&gt;, otherwise, you can see it in
-all its glory below.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Hacker News Salary Map" src="/images/visualising-the-hacker-news-salary-survey-take-1/hn-salary-map.png"&gt;&lt;/p&gt;
-&lt;p&gt;The survey proved Norway is practically radioactive due to high tech salaries&lt;/p&gt;
-&lt;p&gt;All the data I wrangled and code I wrote is &lt;a href="https://github.com/davidasboth/HN-Survey-Analysis"&gt;available on GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h4&gt;Conclusion&lt;/h4&gt;
-&lt;p&gt;If you're interested in data analysis but have no idea where to start, I
-hope this post will inspire you to try and attempt your own
-visualisation without fear of getting it wrong. Data science is all
-about trial and error, so I say just go for it! I used nothing but my
-own intuition to come up with the process for what I did, there wasn't
-any knowledge of best practices behind it, and I still came up with a
-colourful visual that communicates something about the data.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="datavis"></category><category term="featured"></category></entry></feed>
+city!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="featured"></category><category term="python"></category><category term="tableau"></category></entry></feed>

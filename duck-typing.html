@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+
+	<!-- Favicon stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/theme/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/theme/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/theme/images/favicon-16x16.png">
+	<link rel="manifest" href="/theme/images/site.webmanifest">
+
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>David Asboth - Data Solutions &amp; Consultancy - Duck Typing</title>
+
+	<link rel="canonical" href="/duck-typing.html">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
+	
+	<link rel="stylesheet" href="/theme/css/style.css">
+
+  
+
+
+
+    <meta name="tags" content="python" />
+
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+			<nav>
+				<ul>
+					<li>
+						<a href="/#solutions">Solutions</a>
+					</li>
+				<li>
+						<a href="/#about">About</a>
+					</li>
+				<li>
+						<a href="/articles">Articles</a>
+					</li>
+				<li>
+				  <a href="#contact" class="button button-filled">Contact</a>
+				  </li></ul>
+			</nav>
+		</div>
+	</header>
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/duck-typing.html" rel="bookmark"
+         title="Permalink to Duck Typing">Duck Typing</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2016-11-14T16:05:00+00:00">
+      Mon 14 November 2016
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/david.html">david</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/programming-for-data-scientists.html">programming for data scientists</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/python.html">python</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>In an attempt to bridge the gap between the two disciplines of
+programming and data science I will occasionally talk about programming
+concepts useful for data scientists, and vice versa.</p>
+<p>Today I want to discuss <strong>duck typing</strong>.</p>
+<p>Duck typing is a concept that originated in the Python community. It is
+a way of checking an object's type not by testing its type directly, but
+testing its <strong>methods</strong>.</p>
+<p>The idea is based on something called <a href="https://en.wikipedia.org/wiki/Duck_test">the duck test</a>. You've probably heard it
+before:</p>
+<blockquote>
+<p>"If it looks like a duck, swims like a duck, and quacks like a duck,
+then it probably is a duck."</p>
+</blockquote>
+<p>How does this relate to programming?</p>
+<p>Well, Python is a dynamically-typed language. That means that the types
+of objects (whether they're integers, strings etc.) is checked at
+<strong>runtime, not compile time</strong>.</p>
+<p>A variable is allowed to have different types at different points of a
+program's execution. This is perfectly valid:</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_variable</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="c1"># do stuff with my_variable...</span>
+<span class="c1"># and later...</span>
+<span class="n">my_variable</span> <span class="o">=</span> <span class="s2">&quot;now it&#39;s a string!&quot;</span>
+</code></pre></div>
+
+<p>You can't do this in a statically-typed language. Once you declare a
+variable as a certain type, it stays that way. Take this example in C#:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">my_variable</span> <span class="p">=</span> <span class="m">42</span><span class="p">;</span> <span class="c1">// explicitly declare an integer</span>
+<span class="c1">// do stuff</span>
+<span class="n">my_variable</span> <span class="p">=</span> <span class="s">&quot;can I be a string?&quot;</span><span class="p">;</span> <span class="c1">// this will produce a compiler error</span>
+</code></pre></div>
+
+<p><em>Actually there are <a href="https://msdn.microsoft.com/en-us/library/dd264736.aspx">dynamic types in C#</a> but we'll just gloss over that.</em></p>
+<p>The point is you can be quite liberal with types in Python.</p>
+<p>You can take this one step further with duck typing.</p>
+<h2>Duck Typing in Python</h2>
+<p>Say you have a function that makes a duck quack, like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_it_quack</span><span class="p">(</span><span class="n">something_duck_like</span><span class="p">):</span>
+    <span class="n">something_duck_like</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span>
+</code></pre></div>
+
+<p>We've taken an object in and called its quack method. We don't care what
+type of object this is, only that it is able to quack. So if we had a
+"real" duck and an impostor, they'd both work with this method:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Duck</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack quack&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Ferret</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="c1"># ferrets can&#39;t normally quack, but this one&#39;s cunning</span>
+    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack quack&quot;</span><span class="p">)</span>
+
+<span class="n">donald</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Ferret</span><span class="p">()</span>
+
+<span class="n">make_it_quack</span><span class="p">(</span><span class="n">donald</span><span class="p">)</span>
+<span class="n">make_it_quack</span><span class="p">(</span><span class="n">fred</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Both of these will produce the output "Quack quack" because all we did
+was make it quack. If it can do that, then as far as we're concerned
+it's a duck.</p>
+<h2>Duck Typing in Data Science</h2>
+<p>This is a concept that can be quite useful in data science.</p>
+<p>For example, imagine that you have your own implementation of a machine
+learning algorithm but want to use a lot of the goodness built in to
+scikit-learn.</p>
+<p>Well, you know how all scikit-learn implementations have a fit and
+predict function?</p>
+<p>You can create your own object and make use of duck typing by "quacking
+like a scikit-learn duck".</p>
+<p>First, create a class that has fit and predict methods:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyFakeClassifier</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Working VERY HARD...&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="c1"># predict 0 no matter what</span>
+        <span class="k">return</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))]</span>
+</code></pre></div>
+
+<p>Now you can fit and predict the same way as you could with, say, a
+Random Forest.</p>
+<p>Imagine you already wrote a small function that takes in a machine
+learning classifier, does a train-test split and gets the accuracy and
+confusion matrix of the predictions.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+
+<span class="c1"># write a function to give us a train-test accuracy score</span>
+<span class="k">def</span> <span class="nf">get_accuracy</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy: </span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span>
+                                    <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span>
+</code></pre></div>
+
+<p>We can use this for a built-in classifier, but also our new estimator:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">random_model</span> <span class="o">=</span> <span class="n">MyFakeClassifier</span><span class="p">()</span>
+
+<span class="c1"># we can get the accuracy of our Random Forest</span>
+<span class="n">get_accuracy</span><span class="p">(</span><span class="n">rf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># and our new model!</span>
+<span class="n">get_accuracy</span><span class="p">(</span><span class="n">random_model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+
+<p>There you have it. All we had to do was create something that can "fit"
+and "predict" and Python doesn't need anything else for it to work.</p>
+<p>Note: to use the full range of scikit-learn functions with your own
+estimator, you should <a href="http://scikit-learn.org/stable/developers/contributing.html#rolling-your-own-estimator">do it properly</a>,
+but the point is you can do a lot of it by duck typing.</p>
+<p>Here's <a href="https://github.com/davidasboth/blog-notebooks/blob/master/duck-typing/Duck%20Typing.ipynb">the associated notebook</a>.</p>
+<p>Happy quacking!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div><!-- /.entry-content -->
+</section>
+
+	<footer>
+		<div class="container flex-container">
+			<p>© 2022 David Asboth.  All Rights Reserved.</p>
+			<p>hello@davidasboth.com</p>
+		</div>
+	</footer>
+	
+	<script>
+	  /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-68436188-1', 'auto');
+	  ga('send', 'pageview');*/
+
+	</script>
+</body>
+
+</html>

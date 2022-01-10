@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+
+	<!-- Favicon stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/theme/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/theme/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/theme/images/favicon-16x16.png">
+	<link rel="manifest" href="/theme/images/site.webmanifest">
+
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>David Asboth - Data Solutions &amp; Consultancy - Analysis: Is Alan Davies Getting Better at QI?</title>
+
+	<link rel="canonical" href="/analysis-is-alan-davies-getting-better-at-qi.html">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
+	
+	<link rel="stylesheet" href="/theme/css/style.css">
+
+  
+
+
+
+    <meta name="tags" content="featured" />
+    <meta name="tags" content="python" />
+
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+			<nav>
+				<ul>
+					<li>
+						<a href="/#solutions">Solutions</a>
+					</li>
+				<li>
+						<a href="/#about">About</a>
+					</li>
+				<li>
+						<a href="/articles">Articles</a>
+					</li>
+				<li>
+				  <a href="#contact" class="button button-filled">Contact</a>
+				  </li></ul>
+			</nav>
+		</div>
+	</header>
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/analysis-is-alan-davies-getting-better-at-qi.html" rel="bookmark"
+         title="Permalink to Analysis: Is Alan Davies Getting Better at QI?">Analysis: Is Alan Davies Getting Better at QI?</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2017-02-15T12:06:00+00:00">
+      Wed 15 February 2017
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/david.html">david</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/projects.html">projects</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/featured.html">featured</a>
+            <a href="/tag/python.html">python</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>I'm a big fan of the quiz show <a href="https://en.wikipedia.org/wiki/QI">QI</a>. I
+was watching a later series of it recently on Netflix and I couldn't
+help but notice that Alan Davies was winning quite a few episodes. This
+felt odd, because I was sure that when I first watched the show he
+routinely finished last, and certainly wasn't winning any shows.</p>
+<p>That prompted me to ask the question: <em>is Alan Davies getting better at
+QI?</em></p>
+<p>To sate my curiosity I tried to answer that question the best way I know
+how: with <strong>data</strong>.</p>
+<h1>The Data</h1>
+<p>The data comes from <a href="https://www.comedy.co.uk/">The British Comedy Guide</a>, which has an exhaustive list of
+everything related to British comedy, including every episode of QI.
+There was a lot of laborious data cleaning involved, which you can see
+for yourself in <a href="https://github.com/davidasboth/blog-notebooks/blob/master/qi-analysis/Scrape%20QI%20Episodes.ipynb">the associated Jupyter notebook</a>.</p>
+<p>The <a href="https://github.com/davidasboth/blog-notebooks/blob/master/qi-analysis/qi_episodes.csv">final dataset</a>
+includes every episode with its title, broadcast date and each
+contestant and their scores.</p>
+<h1>The Analysis</h1>
+<p>As with many data science projects, once the dataset was nice and clean
+the question was straightforward to answer. All it needed was a plot to
+show Alan's win ratio over time. Here's the accompanying <a href="https://github.com/davidasboth/blog-notebooks/blob/master/qi-analysis/QI%20Analysis.ipynb">Jupyter notebook</a>.</p>
+<p><img alt="Alan Davies's QI performance over time" src="/images/analysis-is-alan-davies-getting-better-at-qi/alan_davies_over_time.png"></p>
+<p>Alan's more or less consistently winning a quarter of shows now</p>
+<p>So to answer the question: yes, Alan does appear to be getting better at
+QI, certainly since the first few series. It does however remain to be
+seen whether his win ratio will plateau at 25%, I guess we'll see in a
+few years' time.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div><!-- /.entry-content -->
+</section>
+
+	<footer>
+		<div class="container flex-container">
+			<p>© 2022 David Asboth.  All Rights Reserved.</p>
+			<p>hello@davidasboth.com</p>
+		</div>
+	</footer>
+	
+	<script>
+	  /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-68436188-1', 'auto');
+	  ga('send', 'pageview');*/
+
+	</script>
+</body>
+
+</html>
