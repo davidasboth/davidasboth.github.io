@@ -205,6 +205,11 @@ header {
 	width: 100%;
 	z-index: 999;
 }
+
+header.sticky {
+	background: rgba(36, 38, 43, 0.9);
+}
+
 nav {
 	float:right;
 }
@@ -360,7 +365,7 @@ main .highlight-box ul li::before {
 .image-full img {
 	min-height: 100%;
 	object-fit: cover;
-	object-position: 33% 33%;
+	object-position: 60% 33%;
 }
 input, select, textarea {
 	background-color: rgba(255,255,255,0.15);
@@ -407,3 +412,12 @@ footer .flex-container {
 	align-content:space-between;
 }
 
+#contact-success~footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+#contact-success #splash {
+	min-height: 90vh;
+}

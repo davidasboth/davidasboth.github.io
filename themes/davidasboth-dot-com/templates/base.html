@@ -43,7 +43,7 @@
 </head>
 
 <body>
-	<header>
+	<header id="stickyHeader">
 		<div class="container">
 			<a href="/"><img src="{{ SITEURL }}/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
 			<nav>
@@ -75,6 +75,22 @@
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>
+	<script>
+	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+		
+	var header = document.getElementById("stickyHeader");
+
+	// Get the offset position of the navbar
+	var sticky = header.offsetTop + '180';
+	function toggleStickyHeader() {
+	  if (window.pageYOffset > sticky) {
+		header.classList.add("sticky");
+	  } else {
+		header.classList.remove("sticky");
+	  }
+	}
+	window.onscroll = function() {toggleStickyHeader()};
+	</script>
 </body>
 
 </html>
