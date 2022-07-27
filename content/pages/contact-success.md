@@ -6,7 +6,7 @@ url: contact-success
 save_as: contact-success/index.html
 Status: published
 
-<main id="contact-success">
+<main id="contact-success"> 
 		  <section id="splash">
 			<div class="container">
 				<h1 class="text-centered">Thanks for getting in touch!</h1>
