@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68436188-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-68436188-1');
+	</script>
+
+
+	<!-- Start cookieyes banner -->
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/2808e7a66d4c9b126f5d2ac9/script.js"></script>
+    <!-- End cookieyes banner --> 
+
+	<!-- Favicon stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/theme/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/theme/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/theme/images/favicon-16x16.png">
+	<link rel="manifest" href="/theme/images/site.webmanifest">
+
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>David Asboth - Data Solutions &amp; Consultancy - The World Map of the 2016 FIFA Awards</title>
+
+	<link rel="canonical" href="/the-world-map-of-the-2016-fifa-awards.html">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
+	
+	<link rel="stylesheet" href="/theme/css/style.css">
+
+  
+
+
+
+    <meta name="tags" content="datavis" />
+    <meta name="tags" content="featured" />
+    <meta name="tags" content="python" />
+
+</head>
+
+<body>
+	<header id="stickyHeader">
+		<div class="container">
+			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+			<nav>
+				<ul>
+					<li>
+						<a href="/#solutions">Solutions</a>
+					</li>
+					<li>
+							<a href="/#about">About</a>
+					</li>
+					<!--
+					<li>
+							<a href="/articles">Articles</a>
+					</li>
+					-->
+					<li>
+					  <a href="#contact" class="button button-filled">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/the-world-map-of-the-2016-fifa-awards.html" rel="bookmark"
+         title="Permalink to The World Map of the 2016 FIFA Awards">The World Map of the 2016 FIFA Awards</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2017-01-13T15:06:00+00:00">
+      Fri 13 January 2017
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/david.html">david</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/projects.html">projects</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/datavis.html">datavis</a>
+            <a href="/tag/featured.html">featured</a>
+            <a href="/tag/python.html">python</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>The "<a href="http://www.fifa.com/the-best-fifa-football-awards/best-fifa-mens-player/index.html">Best FIFA Football Awards</a>"
+took place recently and while the final outcome was not surprising, I've
+always wanted to know which countries vote for which players.</p>
+<p>The way the voting works is that the captain and coach of every national
+team in FIFA, as well as a member of the media for each country, gets to
+vote for their top 3 players, giving them 5, 3, and 1 point(s)
+respectively. Like I said, the result was not surprising:</p>
+<p><img alt="Top players in the FIFA awards" src="/images/the-world-map-of-the-2016-fifa-awards/fifa_topplayers.png"></p>
+<p>The top 5 highest scoring players in the FIFA awards</p>
+<p>FIFA routinely release all the votes, and I wanted to explore the data
+further. Specifically, I thought there might be some interesting
+geographic patterns (e.g. all of South America voting for South American
+players and so on), so this was a map plot waiting to happen.
+ </p>
+<h1>The Data</h1>
+<p>FIFA weren't going to make this easy; the dataset is <a href="http://resources.fifa.com/mm/Document/the-best/PlayeroftheYear-Men/02/86/27/05/faward_MenPlayer2016_Neutral.pdf">a PDF</a>
+with tables in it. While there appear to be a few ways to extract tables
+in Python, none of them worked for extracting these tables, and neither
+did highlighting it and trying to paste it into Excel.</p>
+<p><a href="http://tabula.technology/">Tabula</a> to the rescue! Tabula is a great
+open source tool for automatically finding tables in PDFs and it worked
+perfectly.</p>
+<p>To save anyone else this trouble, here's <a href="https://github.com/davidasboth/blog-notebooks/blob/master/fifa-awards/player_votes.csv">the final csv file</a>.</p>
+<p>Not all countries had all three vote types (captain, coach, media) and I
+wanted to use a single vote for each country, so I used the priority
+order of coach -&gt; captain -&gt; media. This is why for example the
+vote for Argentina isn't for Messi, because the coach vote was missing
+and Messi himself is the captain who couldn't vote for himself.</p>
+<h1>The Tools</h1>
+<p>I wanted this to be a chance to explore
+<a href="https://github.com/python-visualization/folium">folium</a>, a great Python
+package for making maps.</p>
+<p>Folium supports choropleths, but you have to provide a JSON file with
+topological information. I used data from <a href="https://gist.github.com/markmarkoh/2969317">this gist</a> but had to match each
+country to the countries in the FIFA tables, because they didn't always
+match and there are a few countries that weren't present in both data
+sources.</p>
+<p>One modification I had to make is that it's not currently possible to
+add an ad hoc legend into a folium map, so I built an HTML legend and
+injected it myself. I knew that HTML knowledge would come in handy for
+data science!</p>
+<p>The code (hopefully) speaks for itself, you can view <a href="https://github.com/davidasboth/blog-notebooks/blob/master/fifa-awards/FIFA%20Awards%20data.ipynb">the Jupyter notebook on GitHub</a>.</p>
+<h1>The Map</h1>
+<p>Here's a little preview of the final map, although <a href="/fifa-awards/">the HTML version</a> is better for exploring
+different regions.</p>
+<p><img alt="FIFA Awards World Map" src="/images/the-world-map-of-the-2016-fifa-awards/fifa_awards_finalmap.png"></p>
+<p>That Griezmann sure is popular in Mongolia </p>
+<h1>Wrap-up</h1>
+<p>Unsurprisingly, a lot of countries vote for their own players where they
+have players good enough. I'm looking at Sweden, Germany, or Poland
+here. I'm unsure if this is out of national pride or whether they
+believe their players are genuinely better than Messi or Ronaldo,
+probably the former. Brazil interestingly bit the bullet and voted for
+someone else despite having Neymar as a reasonable option.</p>
+<p>Folium doesn't currently support hover actions, but a nice addition
+would be to be able to hover over a country to see who they voted for,
+especially for the "Other" category. It might be in a future version of
+folium, as it seems to be actively under development. Realistically, a
+tool like Tableau would be better suited to a visualisation like this,
+but the ability to embed maps in Jupyter notebooks makes folium a really
+good addition to my data science toolkit.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div><!-- /.entry-content -->
+</section>
+
+	<footer>
+		<div class="container flex-container">
+			<p>© 2022 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>hello@davidasboth.com</p>
+		</div>
+	</footer>
+	<script>
+	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+		
+	var header = document.getElementById("stickyHeader");
+
+	// Get the offset position of the navbar
+	var sticky = header.offsetTop + '180';
+	function toggleStickyHeader() {
+	  if (window.pageYOffset > sticky) {
+		header.classList.add("sticky");
+	  } else {
+		header.classList.remove("sticky");
+	  }
+	}
+	window.onscroll = function() {toggleStickyHeader()};
+	</script>
+</body>
+
+</html>

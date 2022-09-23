@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68436188-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-68436188-1');
+	</script>
+
+
+	<!-- Start cookieyes banner -->
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/2808e7a66d4c9b126f5d2ac9/script.js"></script>
+    <!-- End cookieyes banner --> 
+
+	<!-- Favicon stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/theme/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/theme/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/theme/images/favicon-16x16.png">
+	<link rel="manifest" href="/theme/images/site.webmanifest">
+
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>David Asboth - Data Solutions &amp; Consultancy - Analysing London House Prices</title>
+
+	<link rel="canonical" href="/analysing-london-house-prices.html">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
+	
+	<link rel="stylesheet" href="/theme/css/style.css">
+
+  
+
+
+
+    <meta name="tags" content="featured" />
+    <meta name="tags" content="python" />
+    <meta name="tags" content="tableau" />
+
+</head>
+
+<body>
+	<header id="stickyHeader">
+		<div class="container">
+			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+			<nav>
+				<ul>
+					<li>
+						<a href="/#solutions">Solutions</a>
+					</li>
+					<li>
+							<a href="/#about">About</a>
+					</li>
+					<!--
+					<li>
+							<a href="/articles">Articles</a>
+					</li>
+					-->
+					<li>
+					  <a href="#contact" class="button button-filled">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/analysing-london-house-prices.html" rel="bookmark"
+         title="Permalink to Analysing London House Prices">Analysing London House Prices</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2016-10-23T16:33:00+01:00">
+      Sun 23 October 2016
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/david.html">david</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/projects.html">projects</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/featured.html">featured</a>
+            <a href="/tag/python.html">python</a>
+            <a href="/tag/tableau.html">tableau</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <h1>Introduction</h1>
+<p>London is expensive. So much so that it's a trope now for those of us
+who live here. But what does the data show? Are things getting better or
+worse? How did the 2008 recession affect buying behaviour for example?</p>
+<p>I wanted to find out. With data.</p>
+<p>There are many directions you could go with a dataset of London house
+prices, so I focused on answering specific questions. I wanted to know:</p>
+<ul>
+<li>Can the recession, centred around 2008, be seen in the house price
+    data?</li>
+<li>Which boroughs are on the rise economically, and which are
+    exhibiting a downward turn?</li>
+<li>How have housing prices changed over time overall?</li>
+<li>Does the overall trend match the individual trend in each borough?</li>
+<li>Which boroughs are similar in their economic trends?</li>
+</ul>
+<h2>The Data</h2>
+<p><a href="https://app.enigma.io/table/gov.uk.land-registry.price-paid">The dataset</a>
+was obtained from an online service called <a href="http://enigma.io/">Enigma</a>,
+which requires a free registration to access the data. It contained the
+address of each house and the postcode, but not latitude-longitude
+values. I could have geocoded each address individually to get accurate
+lat-long values, but life's too short and postcodes were granular
+enough. I added lat-long values by joining a <a href="https://www.freemaptools.com/download-uk-postcode-lat-lng.htm">geocoded postcode dataset</a>.</p>
+<p>The final housing price dataset consisted of 16 columns and around
+1,500,000 rows. The main columns of interest were:</p>
+<ul>
+<li>Date of Sale (to the nearest day)</li>
+<li>Postcode (now with latitudes and longitudes)</li>
+<li>Local Authority (i.e. borough)</li>
+<li>Price (in GBP)</li>
+<li>Property Type (Detached, Semi, Terraced, or Flat/Maisonette)</li>
+<li>Build (Old or New)</li>
+</ul>
+<p>The data covers the period between 1996 and 2014, so this post won't
+turn into a digression about Brexit, although that will be an
+interesting dataset in a few years.</p>
+<p>There were a few boroughs with only a handful of rows in the dataset.
+One of them for example was a Welsh address, incorrectly labelled as
+'London'. I removed 5 boroughs in total because they were either outside
+of London, or contained less than 20 examples.</p>
+<h2>The Tools</h2>
+<p>The data wrangling was done in Python and all the visualisations were
+created with <a href="http://www.tableau.com/">Tableau</a>.</p>
+<h1>The Analysis</h1>
+<h2>Price Distribution</h2>
+<p>The very first question I wanted to answer is what the distribution of
+prices is like.</p>
+<p>The median house price is £320,000 and the upper whisker of the box plot
+is £1.26million. After that there are over 39,000 outliers with the
+highest house price at over £50 million. This suggests there may be two
+tiers of house prices in London: one for the 'average' person and one
+for the more wealthy.</p>
+<p><img alt="Distribution of London house prices" src="/images/analysing-london-house-prices/Price-Box-Plot-and-Histogram.png"></p>
+<p>Heavy right tails make box plots look ridiculous</p>
+<p>At this point my hunch was that the buying patterns of people who can
+afford to pay millions for a house will be different to people buying
+houses for around the median price. To this end I created an "outliers"
+category and analysed those nearly 40,000 rows separately.</p>
+<h2>Prices over Time</h2>
+<p>So how have prices changed over the years in the "normal" and "outlier" categories?</p>
+<p><img alt="London house prices over time" src="/images/analysing-london-house-prices/Price-Over-Time.png"></p>
+<p>At this point it might be cheaper to invest in a time machine and go
+back to 1996 to buy a house</p>
+<p>It turns out prices have steadily been climbing for both categories, but
+the number of sales dipped during the 2008 recession, but only for the
+non-outlier category. That makes sense - you'd expect the most wealthy
+to be unaffected by a recession.</p>
+<h2>What about each borough?</h2>
+<p>Does this overall trend look the same in each borough? Let's find out.
+For borough-level figures I looked at the non-outlier category to make
+the analysis more relatable.</p>
+<p><img alt="Median prices over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Price-over-Time.png"></p>
+<p>Some boroughs have a small dip but even a recession couldn't make London more affordable</p>
+<p>There is a more noticeable, but still very small, dip during the
+recession years (highlighted in dark red) but prices are climbing in all
+London boroughs. The dip in sales during the recession is also present
+in each borough, echoing the overall trend.</p>
+<p><img alt="Sales over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Sales-over-Time.png"></p>
+<p>This graph would probably be a worrying EKG</p>
+<h2>Buying Behaviour</h2>
+<p>Is buying a house seasonal or do people buy with the same frequency
+throughout the year?</p>
+<p><img alt="Monthly sales histogram" src="/images/analysing-london-house-prices/Month-Histogram.png"></p>
+<p>Apparently people rarely buy houses as Christmas presents.</p>
+<p>The slight peak in March is interesting.</p>
+<p>After I showed this to a few people, someone suggested it's because the
+tax year in the UK ends in April so people might end up buying with some
+urgency to keep the spending in the previous tax year. This general
+seasonal behaviour is also apparent in each borough.</p>
+<p><img alt="Monthly sales heatmap by borough" src="/images/analysing-london-house-prices/Monthly-Heatmap-by-Borough.png"></p>
+<p>Is it still a heatmap if it's blue? </p>
+<p>It looks like some of the boroughs have a bigger peak in March than
+others. Can we quantify which boroughs have this behaviour and which
+don't?</p>
+<h2>Clustering</h2>
+<p>How do we find similar boroughs? We can make use of clustering.</p>
+<p>First, we aggregate each borough into a 12-dimensional vector, where
+each item corresponds to the median percentage of total sales in that
+particular month. So in a slightly extreme example, a borough with half
+of all its sales in January and the other half in July would look like
+this:</p>
+<p>[0.5, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0]</p>
+<p>We need to use the percentage rather than actual values to ensure all
+boroughs are on a common scale. Otherwise, we would end up clustering
+boroughs together simply on sales volume rather than buying behaviour.</p>
+<p>After trying multiple values of <strong>k</strong> in the k-means clustering
+algorithm, it looked like there were two distinct clusters with three
+outliers. Those outliers were boroughs that had much fewer rows in the
+dataset, so they're arguably not that representative.</p>
+<p>It appears then that there are really just two types of behaviour -
+boroughs that have a prominent peak in sales in March and those that
+don't. But which boroughs are which? Let's colour a map of London by
+cluster:</p>
+<p><img alt="Clustered boroughs" src="/images/analysing-london-house-prices/Cluster-Dashboard-4.png"></p>
+<p>London boroughs coloured by their buying behaviour</p>
+<p>Interestingly the different seasonal behaviour almost neatly splits
+London into East and West. The dataset unfortunately didn't have enough
+details to give any suggestions about whether this is a coincidence.</p>
+<h1>Conclusion</h1>
+<p>Unsurprisingly, the data confirms what we all complain about - buying in
+London is expensive and it is only getting worse.</p>
+<p>The recession impacted the average person; the number of sales dipped
+dramatically between 2007 and 2009. However, the rich were unaffected.</p>
+<p>Buying behaviour is seasonal peaking in July, with some boroughs
+displaying a small peak in March (possibly for tax purposes). These
+boroughs are typically in East London, which may or may not be a
+coincidence.</p>
+<p>The next analysis on my list might be finding a new, more affordable
+city!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div><!-- /.entry-content -->
+</section>
+
+	<footer>
+		<div class="container flex-container">
+			<p>© 2022 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>hello@davidasboth.com</p>
+		</div>
+	</footer>
+	<script>
+	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+		
+	var header = document.getElementById("stickyHeader");
+
+	// Get the offset position of the navbar
+	var sticky = header.offsetTop + '180';
+	function toggleStickyHeader() {
+	  if (window.pageYOffset > sticky) {
+		header.classList.add("sticky");
+	  } else {
+		header.classList.remove("sticky");
+	  }
+	}
+	window.onscroll = function() {toggleStickyHeader()};
+	</script>
+</body>
+
+</html>

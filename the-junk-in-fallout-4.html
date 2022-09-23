@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68436188-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-68436188-1');
+	</script>
+
+
+	<!-- Start cookieyes banner -->
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/2808e7a66d4c9b126f5d2ac9/script.js"></script>
+    <!-- End cookieyes banner --> 
+
+	<!-- Favicon stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/theme/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/theme/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/theme/images/favicon-16x16.png">
+	<link rel="manifest" href="/theme/images/site.webmanifest">
+
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>David Asboth - Data Solutions &amp; Consultancy - The Junk in Fallout 4 - a Web Scraping Tutorial</title>
+
+	<link rel="canonical" href="/the-junk-in-fallout-4.html">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
+	
+	<link rel="stylesheet" href="/theme/css/style.css">
+
+  
+
+
+
+    <meta name="tags" content="python" />
+
+</head>
+
+<body>
+	<header id="stickyHeader">
+		<div class="container">
+			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+			<nav>
+				<ul>
+					<li>
+						<a href="/#solutions">Solutions</a>
+					</li>
+					<li>
+							<a href="/#about">About</a>
+					</li>
+					<!--
+					<li>
+							<a href="/articles">Articles</a>
+					</li>
+					-->
+					<li>
+					  <a href="#contact" class="button button-filled">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/the-junk-in-fallout-4.html" rel="bookmark"
+         title="Permalink to The Junk in Fallout 4 - a Web Scraping Tutorial">The Junk in Fallout 4 - a Web Scraping Tutorial</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2016-11-03T22:36:00+00:00">
+      Thu 03 November 2016
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/david.html">david</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/projects.html">projects</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/python.html">python</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <h1>Introduction</h1>
+<h2>The Problem</h2>
+<p>A few months ago I was playing one of my favourite games of 2015 -
+<a href="https://en.wikipedia.org/wiki/Fallout_4">Fallout 4.</a></p>
+<p>If you haven't heard of it, it's an action-RPG set in a post-apocalyptic
+world. The story is engaging and you're sort of trying to rebuild
+civilisation after the world has been devastated by nuclear war. I mean
+"rebuild" quite literally - a lot of the game is spent scavenging for
+raw materials so you can build pretty shoddy housing for strangers. And
+that rebuilding requires raw materials, which is contained mostly in
+junk.</p>
+<p>Lots and lots of junk.</p>
+<p>You can end up spending a disproportionately long time looking for,
+buying and selling things like broken telephones, toy rocketships, teddy
+bears, and ashtrays all because they contain precious raw materials for
+your resettlement project, or for enhancing your guns and armour.</p>
+<p>If you play it long enough eventually you start remembering which items
+contain which raw material (information which then replaces more
+important things in your brain...). However, not all items contain the
+same amount of raw material. For example aluminium, which is quite
+useful but relatively rare, is in oil cans (which contain 1, erm, "unit"
+of aluminium) but it's better to get it from surgical trays, which
+contain 3.</p>
+<p>That means if you want to maximise your scavenging efforts you have to
+start remembering which item contains which material <em>and</em> how much it
+contains.</p>
+<p>So I thought: is there a more efficient way of scavenging?</p>
+<p>The answer is yes.</p>
+<p>With data.</p>
+<h2>The solution</h2>
+<p>What I really wanted to do is look at each material, and figure out
+which items it made sense to find to maximise the amount of the material
+I get. The plan was:</p>
+<ul>
+<li>Find a list of all the items in Fallout 4 and the materials they
+    contain</li>
+<li>Scrape and store the list</li>
+<li>Analyse it and make some plots</li>
+</ul>
+<h1>The Tutorial</h1>
+<h2>Prerequisites</h2>
+<p>First of all, we need some data and some Python libraries.</p>
+<p>The data comes from <a href="http://fallout.wikia.com/wiki/Fallout_4_junk_items">a webpage of all Fallout 4 junk items</a>, specifically
+the table marked "<a href="http://fallout.wikia.com/wiki/Fallout_4_junk_items#Other_junk_items">Other junk items</a>".</p>
+<p>The Python libraries we need are:</p>
+<ul>
+<li><a href="http://docs.python-requests.org">requests</a> - for fetching the
+    webpage content via HTTP</li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a> -
+    for reading, parsing and extracting data from the returned HTML</li>
+<li><a href="http://pandas.pydata.org/pandas-docs/stable/">pandas</a> - the usual
+    suspect for manipulating data</li>
+<li><a href="http://matplotlib.org/">matplotlib</a> - for plotting</li>
+</ul>
+<h2>Step 1 - Fetch the Data</h2>
+<p>Side note: This isn't a tutorial about HTML, CSS or Javascript, so I'll
+assume you know enough about them. However, if you want to learn/brush
+up, <a href="http://www.w3schools.com">w3schools</a> is a great resource.</p>
+<p>We've identified our data source and it's already in a table format,
+which will make things easier. What we want to do is isolate the table
+in the HTML so we can extract only that table.</p>
+<p>The easiest way to do this is directly on the website.</p>
+<p>Right click and choose "Inspect Element".</p>
+<p><img alt="inspect element" src="/images/the-junk-in-fallout-4/inspect_element.png"></p>
+<p>I'm using Firefox but this should be applicable to any browser.</p>
+<p>This will open the Inspector, or Chrome Dev Tools or the equivalent,
+where we can inspect the raw HTML. Then we want to look at the
+&lt;table&gt; element to see its ID.</p>
+<p><img alt="HTML table in the inspector" src="/images/the-junk-in-fallout-4/tablehtml.png"></p>
+<p>Unlucky, no ID. </p>
+<p>OK, well it doesn't have an ID, so we need to find a way to uniquely
+select that element. It has a class "va-table-center" - we can check if
+that's unique on the page. To do this, go into the Console tab of the
+Inspector (in the above screenshot it's the second tab, but your browser
+may differ). In the console you can type and evaluate arbitrary
+Javascript/jQuery expressions, so let's try selecting a table with the
+class <em>va-table-center</em>.</p>
+<p><img alt="Selecting the table in the console" src="/images/the-junk-in-fallout-4/junktable_selector.png"></p>
+<p>Apparently a script on the page finished "shamefully"... </p>
+<p>It looks like that class isn't unique, there are 5 tables that match it
+on the page. What we can do is then figure out which one of those 5 is
+the one we need. We can expand the output on the console to help us find
+it.</p>
+<p>You can highlight each of the 5 items and the corresponding table will
+be highlighted on the page. Doing this reveals we're after the second of
+those 5 tables.</p>
+<p><img alt="table highlight" src="/images/the-junk-in-fallout-4/table_highlight.png"></p>
+<p>Note the Halloween-themed adverts about The Exorcist </p>
+<p>Great, now we've identified the HTML element we want to load in, and we
+can do the rest of the wrangling in Python.</p>
+<h2>Step 2 - Clean and Wrangle</h2>
+<p>Using requests and BeautifulSoup we read in the HTML and grab just the
+table we need.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="c1"># load the entire page</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://fallout.wikia.com/wiki/Fallout_4_junk_items&#39;</span><span class="p">)</span>
+<span class="c1"># read the output as text</span>
+<span class="n">raw</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">text</span>
+<span class="c1"># load it into BeautifulSoup for parsing</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+<span class="c1"># select just the second table with the right class</span>
+<span class="n">junk_table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;table.va-table-center&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Next step is to iterate over the table rows and extract what we need.
+For now, we'll focus on the item name and its components.</p>
+<p>There are often multiple materials in a single item, so we need to
+extract them individually. What you'll notice in the table is that each
+new material starts with a capital letter, so we can split on that with
+some regex. Then we'll create a dictionary where the key is the item and
+the value is a list of its components.</p>
+<div class="highlight"><pre><span></span><code><span class="n">junk_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># start from the second table row (to skip the header)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">junk_table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="c1"># select all the table cells</span>
+    <span class="n">cells</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
+    <span class="c1"># get item name and components cells</span>
+    <span class="n">item_name</span> <span class="o">=</span> <span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">components_cell</span> <span class="o">=</span> <span class="n">cells</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="c1"># split components text at uppercase letters</span>
+    <span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[A-Z][^A-Z]*&#39;</span><span class="p">,</span> <span class="n">components_cell</span><span class="o">.</span><span class="n">text</span><span class="p">)]</span>
+    <span class="n">junk_dict</span><span class="p">[</span><span class="n">item_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">components</span>
+</code></pre></div>
+
+<p>Next we'll create a pandas DataFrame from the dictionary. The only quirk
+is some components have "x2" style additions if there are more than one
+units in the item, and the absence of this signifies 1 unit.</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;component&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">))</span>
+<span class="n">row_idx</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">junk_dict</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">junk_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
+        <span class="n">quantity</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># default unless otherwise specified</span>
+        <span class="c1"># extract the multiplier</span>
+        <span class="n">multiplier</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39; ?x ?([0-9]*)&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+        <span class="n">component_name</span> <span class="o">=</span> <span class="n">c</span>
+        <span class="c1"># if the multiplier is specified set the quantity to the right value</span>
+        <span class="k">if</span> <span class="n">multiplier</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">multiplier</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">quantity</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">multiplier</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+                <span class="n">component_name</span> <span class="o">=</span> <span class="n">c</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+        <span class="c1"># add as a row</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row_idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">component_name</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">quantity</span><span class="p">]</span>
+        <span class="n">row_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+
+<h2>Step 3 - Plot</h2>
+<p>We now have our very own Fallout 4 junk dataset that we can analyse to
+our heart's content. For example we can plot the frequencies of each
+component to order them by rarity.</p>
+<p><img alt="Rarity of junk components" src="/images/the-junk-in-fallout-4/junkplot.png"></p>
+<p>It's a strange world where concrete is so rare.</p>
+<h1>Conclusion</h1>
+<p>There you have it - data-driven video gaming. Here's the whole thing in
+<a href="https://github.com/davidasboth/blog-notebooks/blob/master/fallout-junk/Fallout%20Junk%20Data.ipynb">Jupyter notebook form</a>,
+and a direct link to <a href="/files/fallout_junk.csv">the csv file</a>
+if you want to analyse it yourself - if you do, let me know!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div><!-- /.entry-content -->
+</section>
+
+	<footer>
+		<div class="container flex-container">
+			<p>© 2022 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>hello@davidasboth.com</p>
+		</div>
+	</footer>
+	<script>
+	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+		
+	var header = document.getElementById("stickyHeader");
+
+	// Get the offset position of the navbar
+	var sticky = header.offsetTop + '180';
+	function toggleStickyHeader() {
+	  if (window.pageYOffset > sticky) {
+		header.classList.add("sticky");
+	  } else {
+		header.classList.remove("sticky");
+	  }
+	}
+	window.onscroll = function() {toggleStickyHeader()};
+	</script>
+</body>
+
+</html>

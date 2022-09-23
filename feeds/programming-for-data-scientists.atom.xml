@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth - Data Solutions &amp; Consultancy - programming for data scientists</title><link href="/" rel="alternate"></link><link href="/feeds/programming-for-data-scientists.atom.xml" rel="self"></link><id>/</id><updated>2016-11-30T18:14:00+00:00</updated><entry><title>Method Chaining in Pandas</title><link href="/method-chaining-in-pandas.html" rel="alternate"></link><published>2016-11-30T18:14:00+00:00</published><updated>2016-11-30T18:14:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-30:/method-chaining-in-pandas.html</id><summary type="html">&lt;p&gt;A discussion of "method chaining" in pandas. Used for better readability, or harder debugging, depending on how you look at it.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you work with pandas, you'll often perform multiple operations on a
+DataFrame. Some data cleaning and basic plotting for example, something
+like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_data.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;drop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;column_1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;column_2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;column_3&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="n"&gt;by_address&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;by_address&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That works fine, you're incrementally changing the DataFrame until
+you're ready for aggregation and plotting.&lt;/p&gt;
+&lt;p&gt;There is an alternative, which you might find more readable.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_data.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;drop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;column_1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  \  
+ &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;column_2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;column_3&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;  \  
+ &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  \  
+ &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Why can we keep chaining methods together like this?&lt;/p&gt;
+&lt;p&gt;In pandas, each of those functions returns a &lt;em&gt;copy&lt;/em&gt; of the modified
+DataFrame, which is why we were setting it back to the df variable each
+time. By chaining methods together we're just calling the next method on
+the modified DataFrame until we're done.&lt;/p&gt;
+&lt;p&gt;Notice we have to break lines with a backslash character to allow the
+chain to go over multiple lines. You can avoid that by putting the
+entire chain in brackets:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;drop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;column_1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;column_2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;column_3&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+  &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Logically and computationally these examples are equivalent, so this is
+mostly just a stylistic consideration.&lt;/p&gt;
+&lt;h1&gt;Benefits&lt;/h1&gt;
+&lt;h2&gt;Readability&lt;/h2&gt;
+&lt;p&gt;I'd argue the second method looks better, it actually reads
+right-to-left (or up-to-down I suppose) and you can understand logically
+what you're doing each time.&lt;/p&gt;
+&lt;h2&gt;No Intermediate Variables&lt;/h2&gt;
+&lt;p&gt;In the first example we had to either save back the modified DataFrame
+to the original df variable, or create a new one each time. This means
+you have to think about whether you want to store the DataFrame in each
+of its states &lt;em&gt;and&lt;/em&gt; come up with descriptive names for them, and as we
+all know...&lt;/p&gt;
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.&lt;/p&gt;&amp;mdash; Jeff Atwood (@codinghorror) &lt;a href="https://twitter.com/codinghorror/status/506010907021828096?ref_src=twsrc%5Etfw"&gt;August 31, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;h2&gt;Avoids "inplace" Confusion&lt;/h2&gt;
+&lt;p&gt;In my experience the fact that most DataFrame methods return a copy of
+the DataFrame is actually confusingly counterintuitive for pandas
+beginners. You either have to keep saving your DataFrame back to the
+same variable, or use the "inplace" keyword. Using method chaining means
+you only have to consider this problem once, i.e. set the final result
+to a variable, without ever accidentally throwing away any of your
+changes.&lt;/p&gt;
+&lt;h1&gt;Downsides&lt;/h1&gt;
+&lt;h2&gt;No Intermediate Variables&lt;/h2&gt;
+&lt;p&gt;Not having access to the intermediate states of the method can also be a
+downside. If you want to reuse any of the intermediate steps in the
+process, you need to keep a copy of it so you might not want to use
+method chaining all the time.&lt;/p&gt;
+&lt;h2&gt;Debugging is Hard&lt;/h2&gt;
+&lt;p&gt;Debugging a problem in a long method chain is hard. If your chain
+consists of many intermediate steps and the final output is wrong, or
+you get an error message, it can be hard to retrace your steps to see
+what went wrong. If you had each command line by line, like in the first
+example, you could step through the code with a debugger or simply run
+the commands one at a time until you find the problem.&lt;/p&gt;
+&lt;h2&gt;You Can Get Carried Away&lt;/h2&gt;
+&lt;p&gt;You can take method chaining to extremes...&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_time_series.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# take a deep breath...&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;drop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;column_1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;column_2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;column_3&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;price&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+   &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dropna&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fillna&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;price&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;price&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+   &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;date&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;resample&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;M&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+   &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Maybe that's a bit much.&lt;/p&gt;
+&lt;h1&gt;Best of Both Worlds&lt;/h1&gt;
+&lt;p&gt;There is a time and a place for method chaining.&lt;/p&gt;
+&lt;p&gt;If you don't care about intermediate steps, and just want a basic plot
+for example, it's a good option.&lt;/p&gt;
+&lt;p&gt;If you want to do complex operations that might need serious debugging,
+maybe it should be avoided.&lt;/p&gt;
+&lt;p&gt;What I tend to do is avoid using it while I'm still writing the code,
+and refactor to use method chaining when I'm confident the code works.
+The idea is that it helps future readability, so I can better understand
+my code if I look back on it later.&lt;/p&gt;
+&lt;p&gt;This post was mostly inspired by the great &lt;a href="https://tomaugspurger.github.io/method-chaining.html"&gt;Modern Pandas series.&lt;/a&gt;&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="programming for data scientists"></category><category term="featured"></category><category term="pandas"></category><category term="python"></category></entry><entry><title>SQL For Data Scientists</title><link href="/sql-for-data-scientists.html" rel="alternate"></link><published>2016-11-26T20:08:00+00:00</published><updated>2016-11-26T20:08:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-26:/sql-for-data-scientists.html</id><summary type="html">&lt;p&gt;SQL is a useful part of a data scientist's toolkit and it can feel like an intimidatingly big area to try and learn alongside all the other data science concepts. I want to present a few key concepts that are enough to get you up and running with SQL!&lt;/p&gt;</summary><content type="html">&lt;p&gt;From what I can tell, the biggest difference between data science
+curricula and data science job postings is usually knowledge of SQL. I
+assume most businesses want a data scientist who knows SQL because a lot
+of corporate data is stored in some sort of relational database. For
+some reason though, data science courses don't tend to teach it
+explicitly.&lt;/p&gt;
+&lt;p&gt;I wanted to collect some of the concepts which I think are useful for
+aspiring data scientists to learn about databases and SQL. I'll also
+link to appropriate parts of the &lt;a href="http://www.w3schools.com/sql/"&gt;w3schools SQL tutorials&lt;/a&gt; along the way.&lt;/p&gt;
+&lt;h1&gt;Query Syntax&lt;/h1&gt;
+&lt;p&gt;Obviously the first step is to understand how to write a SQL query.&lt;/p&gt;
+&lt;p&gt;SQL is a &lt;a href="https://en.wikipedia.org/wiki/Declarative_programming"&gt;declarative language&lt;/a&gt;. All
+that means is that when you write a SQL query, you're expressing &lt;strong&gt;what the result should look like, rather than how to achieve it&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Let's look at a basic SQL query and see how that's the case.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;people&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;job&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;data scientist&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;SQL is not case sensitive, but I capitalised the keywords (which is a
+typical thing to do anyway).&lt;/p&gt;
+&lt;p&gt;If you know that you have a table of data, called &lt;strong&gt;people&lt;/strong&gt;, you can
+pretty much work out what this query will do. The declarative syntax
+means you can specify the data source (the people table), what you want
+to extract (name, age and height) and any filters you want to apply
+(only get the data for people who are data scientists).&lt;/p&gt;
+&lt;p&gt;There is a lot going on under the hood in terms of the computer deciding
+how best to store and index the data, but when you write queries you
+don't want to have to care about that, you just want your results.&lt;/p&gt;
+&lt;p&gt;The main keywords you need to know are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_select.asp"&gt;SELECT...FROM&lt;/a&gt; (to select rows from a specific table)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_where.asp"&gt;WHERE&lt;/a&gt; (to filter
+    rows - &lt;em&gt;optional&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_insert.asp"&gt;INSERT&lt;/a&gt; (to insert new
+    rows)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_update.asp"&gt;UPDATE&lt;/a&gt; (to update
+    existing rows)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_delete.asp"&gt;DELETE&lt;/a&gt; (to remove
+    rows)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_groupby.asp"&gt;GROUP BY&lt;/a&gt; (to group
+    data into... well, groups)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_create_table.asp"&gt;CREATE TABLE&lt;/a&gt;
+    (to create new tables)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_alter.asp"&gt;ALTER TABLE&lt;/a&gt; (to make
+    changes to tables like adding new columns)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_join.asp"&gt;JOIN&lt;/a&gt; (to join multiple
+    tables together)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;The JOIN keyword&lt;/h1&gt;
+&lt;p&gt;I left the JOIN keyword until last in that list because it warrants its
+own section.&lt;/p&gt;
+&lt;p&gt;Merging multiple data sources is a staple data science operation, and
+that's no different when working with SQL. If you've used the merge
+function in pandas you'll have seen this already, but let's see how they
+compare.&lt;/p&gt;
+&lt;p&gt;Let's take the example of joining two data sources with pandas. One of
+them is a csv of people, with names, ages, heights and jobs. The other
+is a csv of phone numbers linked to people's names. The name column is
+common between both data sources.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;people.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;phone_numbers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;phone_numbers.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;merged&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;phone_numbers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;how&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;inner&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That &lt;em&gt;how&lt;/em&gt; keyword corresponds to the type of join in SQL. The same
+operation in SQL looks like this (assuming we have a people and
+phone_numbers table in a database, rather than csv files):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt;
+  &lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;phone_numbers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;number&lt;/span&gt;
+&lt;span class="k"&gt;FROM&lt;/span&gt;
+  &lt;span class="n"&gt;people&lt;/span&gt;
+  &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;phone_numbers&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;phone_numbers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I've specifically stated in the SELECT clause where the columns come
+from, because both tables have a name column and SQL would have gotten
+confused otherwise.&lt;/p&gt;
+&lt;p&gt;The types of SQL join correspond to the valid values of the "how"
+keyword in the pandas merge function. They are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_join_inner.asp"&gt;Inner Join&lt;/a&gt; - only
+    rows where both tables have a value are returned&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_join_left.asp"&gt;Left Outer Join&lt;/a&gt; -
+    only rows where the table on the left of the statement has a value
+    are returned&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_join_right.asp"&gt;Right Outer Join&lt;/a&gt; - only rows
+    where the table on the right of the statement has a value are
+    returned&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.w3schools.com/sql/sql_join_full.asp"&gt;Full Outer Join&lt;/a&gt; -
+    all rows are returned from both tables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The outer joins let you keep rows from either table if there are no
+corresponding rows in the other table.&lt;/p&gt;
+&lt;p&gt;So a left join in the previous statements would have shown all people,
+regardless of whether they had a phone number in the second data source.
+The rows of people who don't have a phone number would have shown a NULL
+value for the phone number. Using an inner join wouldn't have returned
+them at all.&lt;/p&gt;
+&lt;p&gt;It can be helpful to view this visually, and the w3schools pages do that
+already, but &lt;a href="https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/"&gt;here's another good example&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;SQL Tools for Data Science&lt;/h1&gt;
+&lt;p&gt;If you know the basic query syntax and the various join types, you're
+probably equipped enough to start pulling data out of any SQL database.
+Programmers working with SQL often use specific tools to access
+databases, such as Microsoft's SQL Server Management Studio.&lt;/p&gt;
+&lt;p&gt;However, as a data scientist you'll want to do this straight from your
+code instead. You have a few options for this.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You can &lt;a href="http://www.datacarpentry.org/python-ecology-lesson/08-working-with-sql"&gt;connect to sqlite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;You can use SQL queries in pandas &lt;a href="http://blog.yhat.com/posts/pandasql-sql-for-pandas-dataframes.html"&gt;using pandasql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;pandas also allows &lt;a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_sql.html"&gt;connecting to SQL sources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Also, if you're familiar with pandas but not with SQL, the pandas
+documentation has a section with &lt;a href="http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html"&gt;pandas commands and the associated SQL queries&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;I'd argue that's all you need to get up and running.&lt;/p&gt;
+&lt;p&gt;W3schools is a great interactive resource to test your sql queries, but
+there are plenty of other good learning resources like
+&lt;a href="https://www.codecademy.com/learn/learn-sql"&gt;Codecademy&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There is more to know of course about relational databases. I haven't
+covered the concepts of primary keys, foreign keys, or indexes because
+these are more important for database design rather than data retrieval.
+Designing a relational database has its own set of skills and required
+knowledge, but if your only interaction is retrieving data, you
+shouldn't have to worry about it.&lt;/p&gt;
+&lt;p&gt;I may write a post about database design in the future, but I'd strongly
+argue that it's an optional skill for most data scientists.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="programming for data scientists"></category><category term="featured"></category></entry><entry><title>5 Programming Concepts for Data Scientists</title><link href="/5-programming-concepts-for-data-scientists.html" rel="alternate"></link><published>2016-11-23T20:17:00+00:00</published><updated>2016-11-23T20:17:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-23:/5-programming-concepts-for-data-scientists.html</id><summary type="html">&lt;p&gt;In this post I want to introduce some software development concepts that I think data scientists would benefit from. Specifically 5 of them.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a previous post I talked about maths you should know for data
+science, partly with programmers in mind who want to move towards data
+science.&lt;/p&gt;
+&lt;p&gt;Today I want to do the opposite.&lt;/p&gt;
+&lt;p&gt;I want to introduce some software development concepts that I think data
+scientists would benefit from, and which are maybe less talked about
+when discussing "what it takes" to be a data scientist.&lt;/p&gt;
+&lt;h2&gt;Source Control&lt;/h2&gt;
+&lt;p&gt;To be fair, I've seen more and more data science resources cover this
+topic, but it's still worth a mention.&lt;/p&gt;
+&lt;p&gt;If you start programming without source control and then get introduced
+to it I guarantee you can't go back. It feels positively prehistoric
+that once upon a time my version of source control was as sophisticated
+as "code_20160101.zip", "code_20160104.zip" and so on (that's just an
+example, I want to make it clear that I wasn't still doing that in
+January 2016...).&lt;/p&gt;
+&lt;p&gt;The ability to go back to previous versions with near-zero effort, as
+well as keep a log of what you've changed between versions is essential
+for something as fundamentally experimental as the data science process.&lt;/p&gt;
+&lt;p&gt;Probably the most popular source control method these days is Git,
+specifically &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt; or
+&lt;a href="https://bitbucket.org/"&gt;BitBucket&lt;/a&gt;. There are others out there, such as
+subversion (using something like
+&lt;a href="https://tortoisesvn.net/"&gt;TortoiseSVN&lt;/a&gt;) or Microsoft's proprietary (and
+expensive) Team Foundation Server.&lt;/p&gt;
+&lt;p&gt;You're probably better off using Git. Having a GitHub portfolio is
+pretty handy.&lt;/p&gt;
+&lt;p&gt;If you don't want to learn the console commands (&lt;a href="https://xkcd.com/1597/"&gt;obligatory related xkcd&lt;/a&gt;), don't feel obliged to.&lt;/p&gt;
+&lt;p&gt;I use &lt;a href="https://www.sourcetreeapp.com/"&gt;SourceTree&lt;/a&gt; and it's pretty great.&lt;/p&gt;
+&lt;h2&gt;Automation&lt;/h2&gt;
+&lt;p&gt;I've &lt;a href="/blog/turning-jupyter-notebooks-into-reusable-scripts/"&gt;touched on this topic before&lt;/a&gt;;
+I think data scientists should adopt a lazy, programmer's mindset.&lt;/p&gt;
+&lt;p&gt;Automate everything you can.&lt;/p&gt;
+&lt;p&gt;Let the computer do the boring things while you do the hard thinking.&lt;/p&gt;
+&lt;p&gt;Have a script that automatically cleans your data, or even &lt;a href="https://github.com/rhiever/tpot"&gt;does some of your machine learning for you&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;IDEs&lt;/h2&gt;
+&lt;p&gt;Using something like IPython to test out programming snippets in an
+interactive way is a great idea. However, when you need more
+reproducible code or just a bit more functionality than typing single
+commands, use an IDE (Integrated Development Environment).&lt;/p&gt;
+&lt;p&gt;The staple Python IDE is the &lt;a href="http://jupyter.org"&gt;Jupyter notebook&lt;/a&gt;
+environment, great for presentation and reproducibility, and therefore
+terrific for data science.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://pythonhosted.org/spyder/"&gt;Spyder&lt;/a&gt;,
+&lt;a href="https://www.yhat.com/products/rodeo"&gt;Rodeo&lt;/a&gt; and
+&lt;a href="https://www.jetbrains.com/pycharm/"&gt;PyCharm&lt;/a&gt; are all good alternatives.&lt;/p&gt;
+&lt;p&gt;At the very least use a text editor with syntax highlighting.
+&lt;a href="https://notepad-plus-plus.org/"&gt;Notepad++&lt;/a&gt;, &lt;a href="https://www.sublimetext.com/"&gt;Sublime Text&lt;/a&gt;, &lt;a href="https://atom.io/"&gt;Atom&lt;/a&gt; or similar.&lt;/p&gt;
+&lt;h2&gt;Relational Databases&lt;/h2&gt;
+&lt;p&gt;One skill that is sometimes overlooked on data science courses is the
+use of SQL and relational databases. I might even do a separate post
+dedicated to this topic because I think it's a useful skill to have.&lt;/p&gt;
+&lt;p&gt;Database design is an important aspect of creating a functioning
+application, so if you ever want to make your machine learning algorithm
+into a software product it's worth knowing how best to design a backend
+database.&lt;/p&gt;
+&lt;p&gt;Codecademy do &lt;a href="https://www.codecademy.com/learn/learn-sql"&gt;a SQL course&lt;/a&gt;
+(in fact it looks like they do multiple). I haven't done them myself,
+but other Codecademy courses I've done were all excellent. My first SQL
+resource was &lt;a href="http://www.w3schools.com/sql/"&gt;w3schools&lt;/a&gt;, which is also
+worth a look.&lt;/p&gt;
+&lt;h2&gt;D. R. Y. - Don't Repeat Yourself&lt;/h2&gt;
+&lt;p&gt;I'm not usually a fan of teaching people programming best practices when
+they're starting out, and many people learning data science don't have a
+programming background, but if there's one concept that I'd recommend
+internalising it's this.&lt;/p&gt;
+&lt;p&gt;Don't repeat yourself.&lt;/p&gt;
+&lt;p&gt;If you have a few lines of code that do something that you'll need to do
+over and over again, or you find yourself copying and pasting the same
+code snippet multiple times, make it into a function.&lt;/p&gt;
+&lt;p&gt;If you have a collection of related functions you call over and over
+again, make it into a class. At the very least move them into a separate
+file.&lt;/p&gt;
+&lt;p&gt;These sound like little things but they add up and make your code easier
+to read and more maintainable.&lt;/p&gt;
+&lt;p&gt;I hope you agree that data scientists can learn a lot of useful concepts
+from software development, even if they never end up having to build
+production-ready systems!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="programming for data scientists"></category><category term="featured"></category></entry><entry><title>Turning Jupyter Notebooks into Reusable Scripts</title><link href="/turning-jupyter-notebooks-into-reusable-scripts.html" rel="alternate"></link><published>2016-11-17T19:56:00+00:00</published><updated>2016-11-17T19:56:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-17:/turning-jupyter-notebooks-into-reusable-scripts.html</id><summary type="html">&lt;p&gt;As part of my commitment to occasionally talk about "programming for data scientists", I want to share ideas that will facilitate this to help data scientists focus on important stuff. In this post I want to share some thoughts on how to make your Jupyter notebooks easier to "productionise".&lt;/p&gt;</summary><content type="html">&lt;p&gt;I read an article today called Data Scientists Need More Automation. No
+prizes for guessing what it was about.&lt;/p&gt;
+&lt;p&gt;A lot of the specifics were focused on sysadmin-type work like using
+SSH, but the main idea is one that applies to all data science tasks.&lt;/p&gt;
+&lt;p&gt;The thrust of the article was:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Someone please help data scientists be lazier, do less work, and
+reduce the mental overhead of dealing with computers!&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;From &lt;a href="http://stiglerdiet.com/blog/2016/Nov/15/data-scientists-need-more-automation/"&gt;Data Scientists Need More Automation&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As part of my commitment to occasionally talk about "programming for
+data scientists", I want to share ideas that will facilitate this to
+help data scientists focus on important stuff.&lt;/p&gt;
+&lt;p&gt;Laziness is a virtue when it comes to programming.&lt;/p&gt;
+&lt;p&gt;Always thinking "how can I do the same thing with less effort?" is a
+great way to be more productive and focus on the hard parts of data
+science.&lt;/p&gt;
+&lt;p&gt;For example, it's clear that you want to speed up and automate your data
+cleaning. That's not the important stuff you want to focus on. So in
+this post I want to share some thoughts on how to make your Jupyter
+notebooks easier to "productionise".&lt;/p&gt;
+&lt;p&gt;When you do data cleaning, notebooks are a great way to experiment with
+your code in an interactive way before you can create a script that runs
+on gigabytes of data. These thoughts are mostly concerned with how you
+take a notebook that can clean a specific file, and make it into a
+Python script you could run in the background to process many similar
+files automatically.&lt;/p&gt;
+&lt;h2&gt;Start Small&lt;/h2&gt;
+&lt;p&gt;If your datasets are big enough that processing them takes longer than a
+few seconds, you are going to lose a lot of time if don't you test your
+code on a smaller subset first.&lt;/p&gt;
+&lt;p&gt;If you are cleaning your data, you shouldn't be using your entire
+dataset until you can prove that your script will run on a smaller
+version of it. That might be as easy as just restricting your dataframe
+to its first N rows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_huge_file.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# delete this line later, but only when you&amp;#39;re ready!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This might sound obvious but it's important to get into the habit of
+doing it.&lt;/p&gt;
+&lt;h3&gt;Brief Digression: Subsets of Data for Machine Learning&lt;/h3&gt;
+&lt;p&gt;For machine learning, if you're just testing your code to make sure it
+runs, you can do the same thing and take the first few hundred rows.
+Obviously if you're training predictive models you want to use your
+entire dataset.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;However&lt;/em&gt;, if you want to just get a sense of which models are more
+accurate than others, in the case of classification problems you can use
+a &lt;strong&gt;stratified&lt;/strong&gt; subset of your data. Instead of taking a random sample
+you can sample based on the frequencies of your classes, so that your
+smaller sample has the same class proportions. In scikit-learn you can
+use
+&lt;a href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedShuffleSplit.html"&gt;StratifiedShuffleSplit&lt;/a&gt;
+for example.&lt;/p&gt;
+&lt;h3&gt;Back to Notebooks...&lt;/h3&gt;
+&lt;p&gt;Once you've experimented enough with your code so that you know it works
+on your small subset, you'll want to ensure your code is general enough
+that it would run with any file you give it.&lt;/p&gt;
+&lt;p&gt;For example, if you have a dataset that covers one day's of data you
+might eventually want to let it loose and process months of data one day
+at a time.&lt;/p&gt;
+&lt;p&gt;The obvious way to do this is parametrisation.&lt;/p&gt;
+&lt;h2&gt;Use Parameters&lt;/h2&gt;
+&lt;p&gt;Stop hard-coding things.&lt;/p&gt;
+&lt;p&gt;Seriously, whenever you have a value that is likely to change when you
+run the script multiple times, make it a variable.&lt;/p&gt;
+&lt;p&gt;Turn this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_data_2016-01-01.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Into this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;filepath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;my_data_2016-01-01.csv&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It's an extra line but you're going to have to do it if you want to
+automate your script, so get in the habit of starting out like this.&lt;/p&gt;
+&lt;p&gt;Even better, create a separate cell at the top of your notebook &lt;strong&gt;just
+for parameters&lt;/strong&gt;. That way you won't forget which things will need to
+change for each file.&lt;/p&gt;
+&lt;h2&gt;Converting Parameters to Command Line Arguments&lt;/h2&gt;
+&lt;p&gt;If you've created the right variables for automation, you can convert
+them to command line arguments.&lt;/p&gt;
+&lt;p&gt;This can be as simple as exporting your notebook to a Python file (File
+-&amp;gt; Download as -&amp;gt; Python) and replacing your parameters with
+command line arguments.&lt;/p&gt;
+&lt;p&gt;Assuming your notebook looks something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2016-01-01&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;other_parameter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;16&lt;/span&gt;
+
+&lt;span class="c1"&gt;# rest of your code here...&lt;/span&gt;
+&lt;span class="c1"&gt;# ...&lt;/span&gt;
+&lt;span class="c1"&gt;# ...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Export it to Python, then amend the script slightly:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;other_parameter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# the rest of your code from the notebook&lt;/span&gt;
+    &lt;span class="c1"&gt;# can be pasted here UNEDITED&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;All we've done is replace the hard-coded parameter values with arguments
+from the command line (remember &lt;a href="http://stackoverflow.com/a/2626634/2039162"&gt;sys.argv[0] is the name of the script&lt;/a&gt;), so now you can do
+this on the command line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;my_automated_script&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2016-01-01&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;15&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is the "quick and dirty" way of doing it. For more robustness and
+better documentation of your arguments, use
+&lt;a href="https://docs.python.org/3/library/argparse.html"&gt;argparse&lt;/a&gt; or
+&lt;a href="https://pypi.python.org/pypi/begins/0.9"&gt;begins&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To make this workflow possible, you also need to make sure your notebook
+doesn't do too much.&lt;/p&gt;
+&lt;h2&gt;Single-Purpose Notebooks&lt;/h2&gt;
+&lt;p&gt;There might be a lot of code involved in cleaning your data. You might
+need to deal with things like missing values, but then perform
+transformations and computations.&lt;/p&gt;
+&lt;p&gt;Eventually your notebook might be hundreds of lines of code.&lt;/p&gt;
+&lt;p&gt;If you ever get to that point, break the notebook into multiple smaller
+ones. You could even make the first notebook output a semi-cleaned
+version of your data which your second notebook picks up.&lt;/p&gt;
+&lt;p&gt;You can then still combine your notebooks into one Python script by
+exporting them, and just removing the intermediate files that you were
+creating when experimenting.&lt;/p&gt;
+&lt;p&gt;Say your notebook workflow is like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Notebook 1 reads raw csv&lt;/li&gt;
+&lt;li&gt;Notebook 1 does some data cleaning&lt;/li&gt;
+&lt;li&gt;Notebook 1 exports semi-cleaned data (intermediate csv)&lt;/li&gt;
+&lt;li&gt;Notebook 2 reads in intermediate csv&lt;/li&gt;
+&lt;li&gt;Notebook 2 does data transformations&lt;/li&gt;
+&lt;li&gt;Notebook 2 exports final csv&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can see that if we export both notebooks, combine them into a single
+file and &lt;strong&gt;remove steps 3 and 4&lt;/strong&gt;, we get our final automated script. In
+fact, if we encounter problems later on we can always go back and debug
+them using our notebooks, and re-export them to get an updated version
+of the script. As long as you make all your changes in the notebooks and
+not the final script, this will be a valuable approach.&lt;/p&gt;
+&lt;p&gt;Hopefully I've given you some ideas about how you can design your
+notebooks from the start with a view to future automation.&lt;/p&gt;
+&lt;p&gt;Now go forth and be lazy!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="programming for data scientists"></category><category term="python"></category></entry><entry><title>Duck Typing</title><link href="/duck-typing.html" rel="alternate"></link><published>2016-11-14T16:05:00+00:00</published><updated>2016-11-14T16:05:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-14:/duck-typing.html</id><summary type="html">&lt;p&gt;My first attempt to bridge the gap between the two disciplines of programming and data science, by talking about programming concepts useful for data scientists, and vice versa. Today: duck typing.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In an attempt to bridge the gap between the two disciplines of
+programming and data science I will occasionally talk about programming
+concepts useful for data scientists, and vice versa.&lt;/p&gt;
+&lt;p&gt;Today I want to discuss &lt;strong&gt;duck typing&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Duck typing is a concept that originated in the Python community. It is
+a way of checking an object's type not by testing its type directly, but
+testing its &lt;strong&gt;methods&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The idea is based on something called &lt;a href="https://en.wikipedia.org/wiki/Duck_test"&gt;the duck test&lt;/a&gt;. You've probably heard it
+before:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"If it looks like a duck, swims like a duck, and quacks like a duck,
+then it probably is a duck."&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;How does this relate to programming?&lt;/p&gt;
+&lt;p&gt;Well, Python is a dynamically-typed language. That means that the types
+of objects (whether they're integers, strings etc.) is checked at
+&lt;strong&gt;runtime, not compile time&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A variable is allowed to have different types at different points of a
+program's execution. This is perfectly valid:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;my_variable&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;42&lt;/span&gt;
+&lt;span class="c1"&gt;# do stuff with my_variable...&lt;/span&gt;
+&lt;span class="c1"&gt;# and later...&lt;/span&gt;
+&lt;span class="n"&gt;my_variable&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;now it&amp;#39;s a string!&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You can't do this in a statically-typed language. Once you declare a
+variable as a certain type, it stays that way. Take this example in C#:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;my_variable&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;42&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// explicitly declare an integer&lt;/span&gt;
+&lt;span class="c1"&gt;// do stuff&lt;/span&gt;
+&lt;span class="n"&gt;my_variable&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;can I be a string?&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// this will produce a compiler error&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Actually there are &lt;a href="https://msdn.microsoft.com/en-us/library/dd264736.aspx"&gt;dynamic types in C#&lt;/a&gt; but we'll just gloss over that.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The point is you can be quite liberal with types in Python.&lt;/p&gt;
+&lt;p&gt;You can take this one step further with duck typing.&lt;/p&gt;
+&lt;h2&gt;Duck Typing in Python&lt;/h2&gt;
+&lt;p&gt;Say you have a function that makes a duck quack, like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;make_it_quack&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;something_duck_like&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;something_duck_like&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quack&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We've taken an object in and called its quack method. We don't care what
+type of object this is, only that it is able to quack. So if we had a
+"real" duck and an impostor, they'd both work with this method:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Duck&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;quack&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Quack quack&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Ferret&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="c1"&gt;# ferrets can&amp;#39;t normally quack, but this one&amp;#39;s cunning&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;quack&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Quack quack&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;donald&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Duck&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;fred&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Ferret&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;make_it_quack&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;donald&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;make_it_quack&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fred&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Both of these will produce the output "Quack quack" because all we did
+was make it quack. If it can do that, then as far as we're concerned
+it's a duck.&lt;/p&gt;
+&lt;h2&gt;Duck Typing in Data Science&lt;/h2&gt;
+&lt;p&gt;This is a concept that can be quite useful in data science.&lt;/p&gt;
+&lt;p&gt;For example, imagine that you have your own implementation of a machine
+learning algorithm but want to use a lot of the goodness built in to
+scikit-learn.&lt;/p&gt;
+&lt;p&gt;Well, you know how all scikit-learn implementations have a fit and
+predict function?&lt;/p&gt;
+&lt;p&gt;You can create your own object and make use of duck typing by "quacking
+like a scikit-learn duck".&lt;/p&gt;
+&lt;p&gt;First, create a class that has fit and predict methods:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyFakeClassifier&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Working VERY HARD...&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="c1"&gt;# predict 0 no matter what&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now you can fit and predict the same way as you could with, say, a
+Random Forest.&lt;/p&gt;
+&lt;p&gt;Imagine you already wrote a small function that takes in a machine
+learning classifier, does a train-test split and gets the accuracy and
+confusion matrix of the predictions.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.datasets&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;load_iris&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.model_selection&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;train_test_split&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.metrics&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;accuracy_score&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;confusion_matrix&lt;/span&gt;
+
+&lt;span class="c1"&gt;# write a function to give us a train-test accuracy score&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_accuracy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_test&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;train_test_split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;test_size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stratify&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;y_pred&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Accuracy: &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;accuracy_score&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_pred&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+                                    &lt;span class="n"&gt;confusion_matrix&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_pred&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We can use this for a built-in classifier, but also our new estimator:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.datasets&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;load_iris&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.ensemble&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;RandomForestClassifier&lt;/span&gt;
+
+&lt;span class="n"&gt;iris&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;load_iris&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;
+
+&lt;span class="n"&gt;rf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;RandomForestClassifier&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;random_model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MyFakeClassifier&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="c1"&gt;# we can get the accuracy of our Random Forest&lt;/span&gt;
+&lt;span class="n"&gt;get_accuracy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# and our new model!&lt;/span&gt;
+&lt;span class="n"&gt;get_accuracy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;random_model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;There you have it. All we had to do was create something that can "fit"
+and "predict" and Python doesn't need anything else for it to work.&lt;/p&gt;
+&lt;p&gt;Note: to use the full range of scikit-learn functions with your own
+estimator, you should &lt;a href="http://scikit-learn.org/stable/developers/contributing.html#rolling-your-own-estimator"&gt;do it properly&lt;/a&gt;,
+but the point is you can do a lot of it by duck typing.&lt;/p&gt;
+&lt;p&gt;Here's &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/duck-typing/Duck%20Typing.ipynb"&gt;the associated notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Happy quacking!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="programming for data scientists"></category><category term="python"></category></entry></feed>

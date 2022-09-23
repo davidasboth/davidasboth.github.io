@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68436188-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-68436188-1');
+	</script>
+
+
+	<!-- Start cookieyes banner -->
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/2808e7a66d4c9b126f5d2ac9/script.js"></script>
+    <!-- End cookieyes banner --> 
+
+	<!-- Favicon stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/theme/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/theme/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/theme/images/favicon-16x16.png">
+	<link rel="manifest" href="/theme/images/site.webmanifest">
+
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>David Asboth - Data Solutions &amp; Consultancy - More on K-means Clustering</title>
+
+	<link rel="canonical" href="/more-on-k-means-clustering.html">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
+	
+	<link rel="stylesheet" href="/theme/css/style.css">
+
+  
+
+
+
+    <meta name="tags" content="featured" />
+    <meta name="tags" content="python" />
+
+</head>
+
+<body>
+	<header id="stickyHeader">
+		<div class="container">
+			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+			<nav>
+				<ul>
+					<li>
+						<a href="/#solutions">Solutions</a>
+					</li>
+					<li>
+							<a href="/#about">About</a>
+					</li>
+					<!--
+					<li>
+							<a href="/articles">Articles</a>
+					</li>
+					-->
+					<li>
+					  <a href="#contact" class="button button-filled">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/more-on-k-means-clustering.html" rel="bookmark"
+         title="Permalink to More on K-means Clustering">More on K-means Clustering</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2016-11-20T17:01:00+00:00">
+      Sun 20 November 2016
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/david.html">david</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/machine-learning.html">machine learning</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/featured.html">featured</a>
+            <a href="/tag/python.html">python</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>In <a href="/blog/introduction-to-k-means-clustering/">Part 1</a>
+I described the k-means clustering algorithm and some of its uses along
+with a quick Python implementation. Going forward I recommend using the
+<a href="http://scikit-learn.org/stable/modules/clustering.html#k-means">scikit-learn implementation</a>.</p>
+<p>Now let's see k-means in action!
+ </p>
+<h1>Image Segmentation</h1>
+<p>One use of clustering is to segment images:</p>
+<blockquote>
+<p>For example, in computer graphics, color quantization is the task of
+reducing the color palette of an image to a fixed number of colors
+<em>k</em>.</p>
+<p><small>From: <a href="https://en.wikipedia.org/wiki/K-means_clustering#Vector_quantization">k-means clustering (Wikipedia)</a></small></p>
+</blockquote>
+<p>Given an image, we can use k-means clustering to find similar colours in
+the image, and re-draw it with fewer colours. This has uses in data
+compression for example.</p>
+<p>This is the example I'll run through today.</p>
+<p>We'll take this image of a puppy:</p>
+<p><img alt="A puppy" src="/images/more-on-k-means-clustering/puppy.jpg"></p>
+<p>Puppy image from <a href="https://www.flickr.com/photos/gregcullen/250779651/in/photolist-oaj46-cTecd9-sHsHk-5WP7e-9jLY1e-dMrkp4-oak27-8LgQUd-72uozM-9N6oDE-4VoQq-fGnMUG-fkMAUo-hSg7Vm-9xukWa-7K3S2B-fz3KAH-aWe43R-HhRcz-4SZHdM-3d8eAm-Gh4ip-c3LHsG-y6YdK-e4Qn6h-y6U3M-48xfrF-qaZttJ-8MuTV2-aDsi2E-db1Ujw-oxFiuK-y6Ynf-oBGkqj-bVUar-5ft6bn-mwDdV-4BeWnC-itR65i-8d1bVK-5CSiqu-fNwmya-7kTing-7oySVC-boenVS-bBvADe-5fmmvh-4j3Q9U-53pHvi-4qFWve">Greg on Flickr</a></p>
+<p>and redraw it in much fewer colours using k-means clustering.</p>
+<h2>The Data</h2>
+<p>Let's start by defining our data. To represent this problem, we take
+each pixel in the image as a data point whose 3 features are the R, G
+and B values of the pixel.</p>
+<p>For this particular image this gives us a dataset with 3 columns and
+43,680 rows. Some of the pixels are the same colour, but we've still got
+over 10,000 unique colours in our image.</p>
+<h2>Running K-means</h2>
+<p>It is conceivable that we can group similar colours together and redraw
+the same image with fewer colours in a way that we can still tell what
+is in the image. This would reduce the amount of information needed to
+represent the image (and therefore the filesize) without visibly losing
+much detail.</p>
+<p>Once we have our dataset (the details of extracting the pixel values
+will be in the accompanying Jupyter notebook) running the algorithm with
+scikit-learn is easy:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+<span class="c1"># our dataframe (df) is the image data</span>
+<span class="n">clusters</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="c1"># &quot;clusters&quot; is a vector with a cluster assignment for each data point (pixel)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clusters</span>
+<span class="c1"># use the K cluster centroids as new colours to represent the image</span>
+<span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">]</span>
+</code></pre></div>
+
+<p>In this instance the cluster centroids are points in 3D space, where the
+3 dimensions are R, G and B, so the centroids can be thought of as
+colours themselves.</p>
+<p>That means once we have the cluster assignment for each pixel, plus the
+centroid as the associated colour value, we can reconstruct our image
+pixel by pixel to get the $k$-colour representation.</p>
+<p>The same image with only 3 colours looks like this:</p>
+<p><img alt="A 3-colour puppy" src="/images/more-on-k-means-clustering/puppy_3.jpg"></p>
+<p>The same puppy drawn with only 3 colours</p>
+<p>As you can clearly see, we've reduced the number of colours required,
+and incidentally also reduced the filesize threefold, without losing too
+much information. The image is still clearly a puppy, despite the fact
+that we've only used 3 colours.</p>
+<p>When we use 16 colours the image starts to resemble the original in much
+more detail:</p>
+<p><img alt="A 16-colour puppy" src="/images/more-on-k-means-clustering/puppy_16.jpg"></p>
+<p>A 16-colour puppy </p>
+<p>You can still see the background isn't smooth but we're getting close.
+In fact, we would get to an image that is indistinguishable from the
+original by using far less than the original 10,000 colours.</p>
+<p>Here is the <a href="https://github.com/davidasboth/blog-notebooks/blob/master/k-means/Image%20Clustering%20with%20scikit-learn.ipynb">Jupyter notebook for drawing puppies</a>.</p>
+<p>I have a couple of points left to raise, namely some practical tips when
+using clustering.</p>
+<h1>Choosing K</h1>
+<p>How would we know which point to stop at? When is $k$ at its optimal
+value?</p>
+<p>As I mentioned in part 1, this is usually somewhat subjective, but there
+are some general heuristics.</p>
+<p>In this case we could do it by visual inspection. That is, we could say
+$k$ is high enough when we are no longer visually able to tell the
+difference between the original and the redrawn images.</p>
+<p>Not all datasets will lend themselves to visual inspection like this
+though.</p>
+<p>We can use what's called the <em>elbow method</em> to evaluate when to stop.</p>
+<p>For each value of $k$ you want to evaluate how much of the variance in
+your data is explained by the configurations of those $k$ clusters.
+This value increases for each value of $k$, but the idea is that we
+stop increasing $k$ when increasing it gives us diminishing returns.</p>
+<p>Let's think of the two extremes. When $k$ = 1, it means every point
+will belong to the <em>same</em> cluster. This configuration explains 0% of the
+variance in your data, because it says all your data points are the
+same. Then $k$ is equal to the number of data points you have, it
+means every point will belong to <em>its own cluster</em>. This configuration
+explains 100% of the variation in your data because it says each of your
+data points is different from every other one. A value in between will
+explain some % of the variation, because it will say some data points
+are equal to some other data points, and different from some others.</p>
+<p><a href="https://bl.ocks.org/rpgove/0060ff3b656618e9136b">Here's a good explanation</a> of the
+elbow method, although it uses the "error" for each $k$ value, so the
+graph is upside down compared to the "variance explained" metric I
+discussed above.</p>
+<p>Either way, there is usually an "elbow" where the increase/decrease is
+suddenly less sharp. That's usually a good point to stop and use that
+value for $k$.</p>
+<h1>Normalisation</h1>
+<p>As I mentioned in the Self-Organising Maps tutorial, in practice you
+will want to normalise your data so all features are on the same scale.
+This is also true of k-means clustering. If all features are on the same
+scale, each feature will "contribute" to the algorithm equally,
+otherwise a feature with much larger values will dominate the others.</p>
+<p>In the case of colours, the R, G, and B values are all on the same scale
+(0 to 255) so this is not necessary, but in real world examples your
+features will often be on different scales.</p>
+<p>See more information on this in Sebastian Raschka's <a href="http://sebastianraschka.com/faq/docs/when-to-standardize.html">machine learning FAQ</a>.</p>
+<p>K-means and clustering in general have many more uses, and I hope these
+puppies have piqued your interest!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div><!-- /.entry-content -->
+</section>
+
+	<footer>
+		<div class="container flex-container">
+			<p>© 2022 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>hello@davidasboth.com</p>
+		</div>
+	</footer>
+	<script>
+	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+		
+	var header = document.getElementById("stickyHeader");
+
+	// Get the offset position of the navbar
+	var sticky = header.offsetTop + '180';
+	function toggleStickyHeader() {
+	  if (window.pageYOffset > sticky) {
+		header.classList.add("sticky");
+	  } else {
+		header.classList.remove("sticky");
+	  }
+	}
+	window.onscroll = function() {toggleStickyHeader()};
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth - Data Solutions &amp; Consultancy - data science</title><link href="/" rel="alternate"></link><link href="/feeds/data-science.atom.xml" rel="self"></link><id>/</id><updated>2016-11-22T18:31:00+00:00</updated><entry><title>Maths Concepts You Should Know for Data Science</title><link href="/maths-concepts-you-should-know-for-data-science.html" rel="alternate"></link><published>2016-11-22T18:31:00+00:00</published><updated>2016-11-22T18:31:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-22:/maths-concepts-you-should-know-for-data-science.html</id><summary type="html">&lt;p&gt;If you're interested in data science, I have some potentially bad news – you need to know some maths. Here's an overview of what topics you should brush up on.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you're interested in data science, I have some potentially bad news -
+you need to know some maths.&lt;/p&gt;
+&lt;p&gt;The good news is that despite what some resources might suggest, you
+don't need &lt;em&gt;that much.&lt;/em&gt; You still need more than zero, but chances are
+you'll have seen a lot of it in high/secondary school.&lt;/p&gt;
+&lt;p&gt;Here's an overview of what topics you should brush up on.&lt;/p&gt;
+&lt;h1&gt;Linear Algebra&lt;/h1&gt;
+&lt;h2&gt;What?&lt;/h2&gt;
+&lt;p&gt;I've always thought the words "linear algebra" sound more intimidating
+than they need to.&lt;/p&gt;
+&lt;p&gt;Basically, you need to know what a vector and a matrix are, the notation
+to represent them, and how to do basic operations with them (addition,
+multiplication, transposing, dot products, that sort of thing).&lt;/p&gt;
+&lt;h2&gt;Why?&lt;/h2&gt;
+&lt;p&gt;Datasets are usually represented as matrices where each rows is a data
+point and each column is a feature. When you talk about single data
+points or parameters to machine learning algorithms, they're typically
+vectors. You can avoid a lot of confusion by having your vector/matrix
+knowledge up to date.&lt;/p&gt;
+&lt;h1&gt;Statistics&lt;/h1&gt;
+&lt;h2&gt;What?&lt;/h2&gt;
+&lt;p&gt;Arguably if you don't brush up on anything else it should be this.&lt;/p&gt;
+&lt;p&gt;You should know your means from your medians, your Gaussian distribution
+from your multinomial, and you should know about the &lt;a href="http://www.jeannicholashould.com/the-theorem-every-data-scientist-should-know.html"&gt;Central Limit Theorem&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Understanding sampling and hypothesis testing is also important.&lt;/p&gt;
+&lt;h2&gt;Why?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"Data scientists are statisticians because being a statistician is
+awesome and anyone who does cool things with data is a statistician."&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Robert Rodriguez, President, American Statistical Association&lt;/small&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;OK so the head of the American Statistical Association might not be the
+most reliable source on how useful statistics is.&lt;/p&gt;
+&lt;p&gt;Overlooking that, the point is that data science is in many ways
+computational statistics. You can't get away from the fact that
+understanding fundamental statistical concepts is essential to make any
+sense of data.&lt;/p&gt;
+&lt;h1&gt;Probability&lt;/h1&gt;
+&lt;h2&gt;What?&lt;/h2&gt;
+&lt;p&gt;Being comfortable with representations of probability and seeing
+probability distributions is enough to cover your bases. You shouldn't
+be thrown off by phrases like "conditional probability" or "random
+variable".&lt;/p&gt;
+&lt;p&gt;Oh, also &lt;a href="https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/"&gt;learn and understand Bayes' Theorem&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Why?&lt;/h2&gt;
+&lt;p&gt;Understanding probabilities is a useful life skill anyway. Humans are
+typically not wired to intuitively understand probabilities (I recommend
+&lt;a href="https://en.wikipedia.org/wiki/The_Drunkard's_Walk"&gt;The Drunkard's Walk&lt;/a&gt;
+on this subject). Being able to do it is a good skill for a data
+scientist. Also, many machine learning algorithms deal with
+probabilities and probability distributions one way or another.&lt;/p&gt;
+&lt;h1&gt;Calculus (optional)&lt;/h1&gt;
+&lt;p&gt;The word "optional" might be controversial among some data scientists.
+I'd argue that you can go a long way in data science without ever
+calculating a partial derivative.&lt;/p&gt;
+&lt;p&gt;Having said that, knowing &lt;strong&gt;what&lt;/strong&gt; a partial derivative is and what it's
+used for can't hurt. Some machine learning algorithms (neural networks,
+linear regression) require that understanding if you want to go into the
+details. Don't go anywhere near "gradient descent" until you understand
+why you'd want to set a partial derivative to zero.&lt;/p&gt;
+&lt;p&gt;So high school level calculus (derivatives, integrals, the 'chain rule')
+are useful concepts to know, but don't start there. The other things
+I've mentioned above are more important.&lt;/p&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.khanacademy.org/"&gt;Khan Academy&lt;/a&gt; has been my favourite
+resource for brushing up on maths subjects. Something about Sal Khan's
+teaching style really resonates with me.&lt;/p&gt;
+&lt;p&gt;For more advanced topics, the YouTube channel
+&lt;a href="https://www.youtube.com/user/mathematicalmonk"&gt;mathematicalmonk&lt;/a&gt; is
+also excellent.&lt;/p&gt;
+&lt;p&gt;For linear algebra, getting familiar with the numpy library is also a
+good idea if you already know some Python, as numpy encourages you to
+deal with vectorised operations.&lt;/p&gt;
+&lt;p&gt;If you already have programming experience, check out &lt;a href="https://projecteuler.net/"&gt;Project Euler&lt;/a&gt; - it's a series of mathematical
+challenges you solve by writing code. It might not be immediately
+related to data science, but it's a great way to get a bit more
+motivated about maths.&lt;/p&gt;
+&lt;p&gt;Hopefully I've convinced you that you don't need a PhD in maths to
+embark on the road to data science!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category><category term="featured"></category></entry><entry><title>How to Connect to Google Sheets in Python</title><link href="/connecting-to-google-sheets-in-python.html" rel="alternate"></link><published>2016-11-13T13:54:00+00:00</published><updated>2016-11-13T13:54:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-13:/connecting-to-google-sheets-in-python.html</id><summary type="html">&lt;p&gt;A quick tutorial on how to connect to Google Sheets in Python, so you can access it like a regular CSV file.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In most data science and machine learning tutorials you typically
+encounter csv files. Either you connect to them locally, something like
+this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_local_data.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or you access them via a direct url like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://www.lotsofdata.com/hosted_data.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;What I rarely see though is connecting to slightly more obscure data
+sources. You will probably end up doing this once you go out into the
+real world of data science.&lt;/p&gt;
+&lt;p&gt;One useful data source is Google Sheets. If you have a spreadsheet
+hosted on Google Drive, which is made available for public access, and
+want to access it, it's not immediately clear how to do that.&lt;/p&gt;
+&lt;p&gt;Let's go through an example of how to connect to one. I'll use a
+spreadsheet that has the &lt;a href="https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/htmlview?usp=sharing&amp;amp;sle=true"&gt;Hacker News salary survey results&lt;/a&gt;
+from a couple of years ago.&lt;/p&gt;
+&lt;p&gt;You can't use the url directly, because the url isn't just pointing to
+the data, it's pointing to the entire Google Sheets interface.&lt;/p&gt;
+&lt;p&gt;Instead you need the sheet's export link.&lt;/p&gt;
+&lt;p&gt;To do this simply take the url until the /d/ part, and the unique ID
+that comes after, so this much:&lt;/p&gt;
+&lt;p&gt;https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A&lt;/p&gt;
+&lt;p&gt;and add &lt;strong&gt;/export&lt;/strong&gt; at the end with some parameters.&lt;/p&gt;
+&lt;p&gt;You can specify the sheet number (zero-indexed) using &lt;strong&gt;gid&lt;/strong&gt;, and the
+format to be csv using &lt;strong&gt;format&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The full url then becomes:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/export?gid=0&amp;amp;format=csv"&gt;https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/&lt;strong&gt;export?gid=0&amp;amp;format=csv&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Try that in your browser and it will download the csv file directly.&lt;/p&gt;
+&lt;p&gt;You can then read it into pandas and it will be treated as a regular csv
+file.&lt;/p&gt;
+&lt;p&gt;Here is the &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/connecting-to-google-sheets/Connecting%20to%20a%20Google%20Sheet.ipynb"&gt;associated Jupyter notebook&lt;/a&gt;
+to see it all in action.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Pandas: Thinking in Vectors</title><link href="/pandas-thinking-in-vectors.html" rel="alternate"></link><published>2016-11-04T20:35:00+00:00</published><updated>2016-11-04T20:35:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-04:/pandas-thinking-in-vectors.html</id><summary type="html">&lt;p&gt;Often when using pandas it pays to think about a faster, but perhaps less intuitive, vectorised way of doing things.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The more you use pandas to wrangle your data the more likely you'll come
+across something complicated that you won't be sure how to do. I found
+this quite quickly when trying to calculate metrics with time series
+data for example.&lt;/p&gt;
+&lt;p&gt;In these cases quite often the first solution that pops into my head
+will be the naive, brute force one. Something like "well we can loop
+through all the rows and perform a computation on each row one by one".&lt;/p&gt;
+&lt;p&gt;That is almost never the right approach, because it will be &lt;em&gt;slow&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The better solution is almost always to make use of vectorisation.&lt;/p&gt;
+&lt;p&gt;Pandas is built on top of numpy, which is built with vectors in mind -
+that is, manipulating entire arrays at once rather than the individual
+elements.&lt;/p&gt;
+&lt;p&gt;That way of thinking can be a hard to adjust to when the temptation is
+to use loops.&lt;/p&gt;
+&lt;p&gt;Sometimes it's not a bad idea to start with the brute force approach to
+be confident of the answer, and then move to a vectorised solution. For
+large datasets though, this move can easily be the difference between
+the script taking seconds or hours to run.&lt;/p&gt;
+&lt;h1&gt;Examples&lt;/h1&gt;
+&lt;h2&gt;Date Methods&lt;/h2&gt;
+&lt;p&gt;Applying methods to a column of date values is a common data
+manipulation task, for example when extracting the day as a new feature.
+There are (at least) two functionally identical ways of doing this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Method 1 - row by row&lt;/span&gt;
+&lt;span class="n"&gt;days&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;my_dataframe&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_date_column&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+    &lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;my_dataframe&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;days&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Method 2 - using the inbuilt and vectorised date functionality&lt;/span&gt;
+&lt;span class="n"&gt;my_dataframe&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;day&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;my_dataframe&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;my_date_column&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;They'll do exactly the same thing, but the second will be orders of
+magnitude faster.&lt;/p&gt;
+&lt;h2&gt;Subtracting Consecutive Values&lt;/h2&gt;
+&lt;p&gt;This is one of those problems where, if you don't know the pandas way to
+do it, it's easy to start thinking row by row.&lt;/p&gt;
+&lt;p&gt;Again, here are two functionally identical ways of doing it:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Method 1 - a function to loop through the elements one by one&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;naive_diff&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;series&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;diff_values&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;series&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
+        &lt;span class="c1"&gt;# first value needs to be NaN&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;diff_values&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NaN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;diff_values&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;series&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;series&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;diff_values&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;diff&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;naive_diff&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;measurement&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Method 2 - using the pandas shift() function&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;diff_2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;measurement&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;measurement&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shift&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As well as being shorter, the second method is again much faster.&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;This was just a &lt;em&gt;very&lt;/em&gt; brief introduction into thinking in vectors when
+using pandas.&lt;/p&gt;
+&lt;p&gt;The code is available &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/pandas-thinking-in-vectors/pandas-vector-examples.ipynb"&gt;as a Jupyter notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The take away message is that whenever you need to do something to each
+row, it's worth spending time doing some research to look for an
+appropriate, in built function, and thinking a bit harder about how to
+solve it in a vectorised way.&lt;/p&gt;
+&lt;h2&gt;Footnote: Apply and Itertuples&lt;/h2&gt;
+&lt;p&gt;If you absolutely must loop through the dataframe row by row, you should
+consider using apply and itertuples. They are two pandas functions that
+let you perform elementwise computation, but are faster than manually
+looping through the row indices.&lt;/p&gt;
+&lt;p&gt;There are further good tips &lt;a href="http://stackoverflow.com/questions/7837722/what-is-the-most-efficient-way-to-loop-through-dataframes-with-pandas"&gt;under this StackOverflow question&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Further Reading&lt;/h2&gt;
+&lt;p&gt;When doing some research for this post I came across &lt;a href="https://www.datascience.com/blog/straightening-loops-how-to-vectorize-data-aggregation-with-pandas-and-numpy/"&gt;this blog post&lt;/a&gt;,
+which is worth a read on the subject.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category><category term="pandas"></category><category term="python"></category></entry><entry><title>Pandas: a Quick Reference Guide</title><link href="/pandas-quick-reference-guide.html" rel="alternate"></link><published>2015-12-22T18:58:00+00:00</published><updated>2015-12-22T18:58:00+00:00</updated><author><name>david</name></author><id>tag:None,2015-12-22:/pandas-quick-reference-guide.html</id><summary type="html">&lt;p&gt;Just to be clear: this post is not about the cute, black-and-white bear. It is a brief overview of a Python library for data wrangling. Sorry to disappoint.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Before I start, to placate readers who were expecting a blog post about
+panda bears, here's a picture of pandas at play:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pandas at play" src="/images/pandas-quick-reference-guide/pandas-at-play-1174622-638x406.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Panda bears - more mysterious than the Python library? Certainly cuter.&lt;/p&gt;
+&lt;p&gt;From now on, 'pandas' will refer to the Python library, not the bears. &lt;/p&gt;
+&lt;h2&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Pandas is a Python library designed to help with data wrangling. I've
+been using it for a few months now, and I can't shake the nagging
+feeling that I haven't quite got the hang of it yet. For all its power
+and obvious usefulness, there's something about it that I just find
+unintuitive. I've looked at a few step-by-step tutorials online about
+it, such as the &lt;a href="https://www.kaggle.com/c/titanic/details/getting-started-with-python-ii"&gt;one on Kaggle&lt;/a&gt;,
+and it still hadn't clicked, so I decided to create an IPython Notebook
+as a reference guide. Initially, I was going to make a rough one for
+myself, but then I thought I might as well share it considering other
+people have complained of similar difficulties.&lt;/p&gt;
+&lt;h2&gt;The Notebook&lt;/h2&gt;
+&lt;p&gt;As it's meant as a quick reference guide and not a tutorial, the
+notebook itself consists mainly of headers and code snippets, often
+without much explanation. Where there are caveats, gotchas, or general
+things to remember I've made additional notes.&lt;/p&gt;
+&lt;p&gt;I was considering pasting the text from the notebook into this post.
+However, it will evolve over time as I learn more about pandas, so
+instead, you can look at the most up-to-date version on NBViewer (an
+online IPython Notebook renderer) or grab it for yourself on GitHub.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://nbviewer.ipython.org/github/davidasboth/pandas-reference/blob/master/Pandas%20tutorial.ipynb"&gt;NBViewer version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/davidasboth/pandas-reference/blob/master/Pandas%20tutorial.ipynb"&gt;GitHub version&lt;/a&gt;
+    (or you can visit the &lt;a href="https://github.com/davidasboth/pandas-reference/"&gt;full repo&lt;/a&gt;, if you want
+    to download the notebook for yourself)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Also, I've seen notebooks with dynamic tables of contents at the top, so
+I'll try to figure out how to do that at some point, especially if the
+notebook gets unwieldy.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="data science"></category><category term="featured"></category><category term="pandas"></category><category term="python"></category></entry></feed>

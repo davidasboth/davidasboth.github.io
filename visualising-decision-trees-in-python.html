@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68436188-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-68436188-1');
+	</script>
+
+
+	<!-- Start cookieyes banner -->
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/2808e7a66d4c9b126f5d2ac9/script.js"></script>
+    <!-- End cookieyes banner --> 
+
+	<!-- Favicon stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/theme/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/theme/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/theme/images/favicon-16x16.png">
+	<link rel="manifest" href="/theme/images/site.webmanifest">
+
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>David Asboth - Data Solutions &amp; Consultancy - Visualising Decision Trees in Python</title>
+
+	<link rel="canonical" href="/visualising-decision-trees-in-python.html">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
+	
+	<link rel="stylesheet" href="/theme/css/style.css">
+
+  
+
+
+
+    <meta name="tags" content="featured" />
+    <meta name="tags" content="python" />
+
+</head>
+
+<body>
+	<header id="stickyHeader">
+		<div class="container">
+			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+			<nav>
+				<ul>
+					<li>
+						<a href="/#solutions">Solutions</a>
+					</li>
+					<li>
+							<a href="/#about">About</a>
+					</li>
+					<!--
+					<li>
+							<a href="/articles">Articles</a>
+					</li>
+					-->
+					<li>
+					  <a href="#contact" class="button button-filled">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/visualising-decision-trees-in-python.html" rel="bookmark"
+         title="Permalink to Visualising Decision Trees in Python">Visualising Decision Trees in Python</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2016-11-28T22:03:00+00:00">
+      Mon 28 November 2016
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/david.html">david</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/machine-learning.html">machine learning</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/featured.html">featured</a>
+            <a href="/tag/python.html">python</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>Interpretability is often an important concern with a machine learning
+algorithm (despite spellcheck telling me it's not even a word). Having
+an accurate predictive model may be enough in itself, but in some cases
+the only way to turn it into a business decision is if you can
+understand <strong>why</strong> it's getting the results it's getting.</p>
+<p>An obvious candidate for an interpretable classifier is a decision tree.</p>
+<p>I won't go into the specifics of decision trees, Machine Learning
+Mastery has <a href="http://machinelearningmastery.com/classification-and-regression-trees-for-machine-learning/">a good tutorial on the subject</a>,
+but I'll just go over the intuition.</p>
+<p>A decision tree is a series of if-then rules that decide what class a
+data point should belong to (in the case of a classification tree), or
+what value one of its properties should have (in the case of a
+regression tree).</p>
+<p>If you've ever seen a flowchart, you can imagine a decision tree the
+same way.</p>
+<p>A model might learn a decision tree that can be interpreted as something
+like "if the petal length is less than 2, classify the flower as
+<em>setosa</em>, otherwise if the petal width is greater than 1.5 classify it
+as <em>virginica,</em> otherwise classify it as <em>versicolor</em>".</p>
+<p>You can train decision trees with Python using scikit-learn.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div>
+
+<p>I've set the maximum depth to 3, meaning it won't be grown beyond 3
+levels, in this case purely for easier visualisation.</p>
+<p>Once you're happy with a model, how do you visualise your tree?</p>
+<p>Scikit-learn has a built-in function called <em>export_graphviz</em> which
+lets you export it to a file, in a specific format.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
+
+<span class="n">export_graphviz</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="s1">&#39;iris_tree.dot&#39;</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+</code></pre></div>
+
+<p>You can then open the file in Notepad (or any text editor) and view its
+output online by pasting its contents into the textbox at
+<a href="http://webgraphviz.com/">http://webgraphviz.com/</a></p>
+<p>Our iris decision tree looks something like this:</p>
+<p><img alt="Decision tree trained on the iris dataset" src="/images/visualising-decision-trees-in-python/iris_tree.png"></p>
+<p>A 3-level decision tree trained on the Iris dataset</p>
+<p>By providing the feature names we can label each decision point so it is
+obvious what's happening at each step.</p>
+<p>The "value" part of each leaf node shows how the examples that make it
+to that node are split between the different classes.</p>
+<p>I wasn't far off with my example - a petal length of 2.45cm separates
+the <em>setosa</em> class nicely, then a further separation using petal width,
+length and sepal length is enough to give us over 90% accuracy.</p>
+<p>Once you get to deeper trees, this visualisation becomes ungainly, but
+if you want to keep the tree interpretable you probably want to limit
+its depth.</p>
+<p>For further visualisation options you can follow the instructions on
+<a href="http://scikit-learn.org/dev/modules/tree.html#classification">the official scikit-learn page</a>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div><!-- /.entry-content -->
+</section>
+
+	<footer>
+		<div class="container flex-container">
+			<p>© 2022 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>hello@davidasboth.com</p>
+		</div>
+	</footer>
+	<script>
+	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+		
+	var header = document.getElementById("stickyHeader");
+
+	// Get the offset position of the navbar
+	var sticky = header.offsetTop + '180';
+	function toggleStickyHeader() {
+	  if (window.pageYOffset > sticky) {
+		header.classList.add("sticky");
+	  } else {
+		header.classList.remove("sticky");
+	  }
+	}
+	window.onscroll = function() {toggleStickyHeader()};
+	</script>
+</body>
+
+</html>

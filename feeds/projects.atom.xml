@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth - Data Solutions &amp; Consultancy - projects</title><link href="/" rel="alternate"></link><link href="/feeds/projects.atom.xml" rel="self"></link><id>/</id><updated>2017-02-15T12:06:00+00:00</updated><entry><title>Analysis: Is Alan Davies Getting Better at QI?</title><link href="/analysis-is-alan-davies-getting-better-at-qi.html" rel="alternate"></link><published>2017-02-15T12:06:00+00:00</published><updated>2017-02-15T12:06:00+00:00</updated><author><name>david</name></author><id>tag:None,2017-02-15:/analysis-is-alan-davies-getting-better-at-qi.html</id><summary type="html">&lt;p&gt;I was watching a later series of QI recently and couldn't help but notice that Alan Davies was winning quite a few episodes. That prompted me to ask the question: is Alan Davies getting better at QI?&lt;/p&gt;</summary><content type="html">&lt;p&gt;I'm a big fan of the quiz show &lt;a href="https://en.wikipedia.org/wiki/QI"&gt;QI&lt;/a&gt;. I
+was watching a later series of it recently on Netflix and I couldn't
+help but notice that Alan Davies was winning quite a few episodes. This
+felt odd, because I was sure that when I first watched the show he
+routinely finished last, and certainly wasn't winning any shows.&lt;/p&gt;
+&lt;p&gt;That prompted me to ask the question: &lt;em&gt;is Alan Davies getting better at
+QI?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;To sate my curiosity I tried to answer that question the best way I know
+how: with &lt;strong&gt;data&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1&gt;The Data&lt;/h1&gt;
+&lt;p&gt;The data comes from &lt;a href="https://www.comedy.co.uk/"&gt;The British Comedy Guide&lt;/a&gt;, which has an exhaustive list of
+everything related to British comedy, including every episode of QI.
+There was a lot of laborious data cleaning involved, which you can see
+for yourself in &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/qi-analysis/Scrape%20QI%20Episodes.ipynb"&gt;the associated Jupyter notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/qi-analysis/qi_episodes.csv"&gt;final dataset&lt;/a&gt;
+includes every episode with its title, broadcast date and each
+contestant and their scores.&lt;/p&gt;
+&lt;h1&gt;The Analysis&lt;/h1&gt;
+&lt;p&gt;As with many data science projects, once the dataset was nice and clean
+the question was straightforward to answer. All it needed was a plot to
+show Alan's win ratio over time. Here's the accompanying &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/qi-analysis/QI%20Analysis.ipynb"&gt;Jupyter notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alan Davies's QI performance over time" src="/images/analysis-is-alan-davies-getting-better-at-qi/alan_davies_over_time.png"&gt;&lt;/p&gt;
+&lt;p&gt;Alan's more or less consistently winning a quarter of shows now&lt;/p&gt;
+&lt;p&gt;So to answer the question: yes, Alan does appear to be getting better at
+QI, certainly since the first few series. It does however remain to be
+seen whether his win ratio will plateau at 25%, I guess we'll see in a
+few years' time.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Visualising the Worldwide Win Percentage of the Hungarian National Football Team</title><link href="/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team.html" rel="alternate"></link><published>2017-01-20T11:36:00+00:00</published><updated>2017-01-20T11:36:00+00:00</updated><author><name>david</name></author><id>tag:None,2017-01-20:/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team.html</id><summary type="html">&lt;p&gt;I've often read the advice that side projects should be solving problems or answering questions that you yourself are interested in. To that end, I've always wanted to know how well the Hungarian national team have done against various countries worldwide and to explore this question, I scraped the matches played by the Hungarian national team and made an interactive world map.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've often read, and agreed with, the advice that side projects should
+be solving problems or answering questions that you yourself are
+interested in.&lt;/p&gt;
+&lt;p&gt;To that end, I've always wanted to know how well the Hungarian national
+team have done against various countries worldwide. Hungary has &lt;a href="https://en.wikipedia.org/wiki/Golden_Team"&gt;a
+glorious football past&lt;/a&gt;,
+although the last 30 years have been possibly the worst ever decades in
+Hungarian football.&lt;/p&gt;
+&lt;p&gt;To explore this question, I scraped a dataset of all matches played by
+the Hungarian national team since 1907, aggregated it and made an
+interactive world map.&lt;/p&gt;
+&lt;p&gt;I'll start with the final map, and you can read about some of the
+details beneath.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hungarian National Team worldwide win percentage" src="/images/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team/hungarian-nt-win-map.png"&gt;&lt;/p&gt;
+&lt;p&gt;The worldwide win percentage of the national team&lt;/p&gt;
+&lt;p&gt;There is &lt;a href="https://plot.ly/~dasboth/0.embed"&gt;an interactive version&lt;/a&gt;
+where you can zoom and hover over each country to find out more. I
+encourage you to look at it if you want to dive into the data and
+explore. &lt;/p&gt;
+&lt;h1&gt;The Details&lt;/h1&gt;
+&lt;h2&gt;The Data&lt;/h2&gt;
+&lt;p&gt;I scraped the data from the wonderful
+&lt;a href="http://www.magyarfutball.hu/"&gt;http://www.magyarfutball.hu&lt;/a&gt; which is a
+great resource for those with the very niche interest in Hungarian
+football. The data was unsurprisingly in Hungarian so I also had to
+translate it!&lt;/p&gt;
+&lt;p&gt;There is &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/hungarian-national-team/Scraping%20NT%20Data.ipynb"&gt;a Jupyter notebook&lt;/a&gt;
+for the scraping code and the &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/hungarian-national-team/hungarian_nt_matches.csv"&gt;final dataset&lt;/a&gt;
+is also available.&lt;/p&gt;
+&lt;h2&gt;The Map&lt;/h2&gt;
+&lt;p&gt;My &lt;a href="/blog/the-world-map-of-the-2016-fifa-awards/"&gt;last experiment&lt;/a&gt;
+making a &lt;a href="https://en.wikipedia.org/wiki/Choropleth_map"&gt;choropleth map&lt;/a&gt;
+was missing some features I'd have liked to add, such as more
+interactivity. The library I used, folium, is still under development so
+for this project I tried something new.&lt;/p&gt;
+&lt;p&gt;Introducing &lt;a href="http://plot.ly/"&gt;plot.ly&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;It's a great visualisation toolkit with a Python wrapper. It is much
+easier to make interactive choropleths with it, I specifically used
+&lt;a href="https://plot.ly/python/choropleth-maps/"&gt;this set of tutorials&lt;/a&gt;. The
+ability to customise the hover label meant I could make a much more
+useful visualisation, which you can explore.&lt;/p&gt;
+&lt;p&gt;There is &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/hungarian-national-team/Mapping%20Records%20vs%20Countries.ipynb"&gt;a Jupyter notebook&lt;/a&gt;
+where I aggregated the data, dealt with countries that don't exist
+anymore (the USSR, Yugoslavia, etc.) and made the final map.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="datavis"></category><category term="featured"></category><category term="python"></category></entry><entry><title>The World Map of the 2016 FIFA Awards</title><link href="/the-world-map-of-the-2016-fifa-awards.html" rel="alternate"></link><published>2017-01-13T15:06:00+00:00</published><updated>2017-01-13T15:06:00+00:00</updated><author><name>david</name></author><id>tag:None,2017-01-13:/the-world-map-of-the-2016-fifa-awards.html</id><summary type="html">&lt;p&gt;A mini project to visualise the votes for the 2016 FIFA Awards, to see which country voted for which player.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The "&lt;a href="http://www.fifa.com/the-best-fifa-football-awards/best-fifa-mens-player/index.html"&gt;Best FIFA Football Awards&lt;/a&gt;"
+took place recently and while the final outcome was not surprising, I've
+always wanted to know which countries vote for which players.&lt;/p&gt;
+&lt;p&gt;The way the voting works is that the captain and coach of every national
+team in FIFA, as well as a member of the media for each country, gets to
+vote for their top 3 players, giving them 5, 3, and 1 point(s)
+respectively. Like I said, the result was not surprising:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Top players in the FIFA awards" src="/images/the-world-map-of-the-2016-fifa-awards/fifa_topplayers.png"&gt;&lt;/p&gt;
+&lt;p&gt;The top 5 highest scoring players in the FIFA awards&lt;/p&gt;
+&lt;p&gt;FIFA routinely release all the votes, and I wanted to explore the data
+further. Specifically, I thought there might be some interesting
+geographic patterns (e.g. all of South America voting for South American
+players and so on), so this was a map plot waiting to happen.
+ &lt;/p&gt;
+&lt;h1&gt;The Data&lt;/h1&gt;
+&lt;p&gt;FIFA weren't going to make this easy; the dataset is &lt;a href="http://resources.fifa.com/mm/Document/the-best/PlayeroftheYear-Men/02/86/27/05/faward_MenPlayer2016_Neutral.pdf"&gt;a PDF&lt;/a&gt;
+with tables in it. While there appear to be a few ways to extract tables
+in Python, none of them worked for extracting these tables, and neither
+did highlighting it and trying to paste it into Excel.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://tabula.technology/"&gt;Tabula&lt;/a&gt; to the rescue! Tabula is a great
+open source tool for automatically finding tables in PDFs and it worked
+perfectly.&lt;/p&gt;
+&lt;p&gt;To save anyone else this trouble, here's &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/fifa-awards/player_votes.csv"&gt;the final csv file&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Not all countries had all three vote types (captain, coach, media) and I
+wanted to use a single vote for each country, so I used the priority
+order of coach -&amp;gt; captain -&amp;gt; media. This is why for example the
+vote for Argentina isn't for Messi, because the coach vote was missing
+and Messi himself is the captain who couldn't vote for himself.&lt;/p&gt;
+&lt;h1&gt;The Tools&lt;/h1&gt;
+&lt;p&gt;I wanted this to be a chance to explore
+&lt;a href="https://github.com/python-visualization/folium"&gt;folium&lt;/a&gt;, a great Python
+package for making maps.&lt;/p&gt;
+&lt;p&gt;Folium supports choropleths, but you have to provide a JSON file with
+topological information. I used data from &lt;a href="https://gist.github.com/markmarkoh/2969317"&gt;this gist&lt;/a&gt; but had to match each
+country to the countries in the FIFA tables, because they didn't always
+match and there are a few countries that weren't present in both data
+sources.&lt;/p&gt;
+&lt;p&gt;One modification I had to make is that it's not currently possible to
+add an ad hoc legend into a folium map, so I built an HTML legend and
+injected it myself. I knew that HTML knowledge would come in handy for
+data science!&lt;/p&gt;
+&lt;p&gt;The code (hopefully) speaks for itself, you can view &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/fifa-awards/FIFA%20Awards%20data.ipynb"&gt;the Jupyter notebook on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;The Map&lt;/h1&gt;
+&lt;p&gt;Here's a little preview of the final map, although &lt;a href="/fifa-awards/"&gt;the HTML version&lt;/a&gt; is better for exploring
+different regions.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="FIFA Awards World Map" src="/images/the-world-map-of-the-2016-fifa-awards/fifa_awards_finalmap.png"&gt;&lt;/p&gt;
+&lt;p&gt;That Griezmann sure is popular in Mongolia &lt;/p&gt;
+&lt;h1&gt;Wrap-up&lt;/h1&gt;
+&lt;p&gt;Unsurprisingly, a lot of countries vote for their own players where they
+have players good enough. I'm looking at Sweden, Germany, or Poland
+here. I'm unsure if this is out of national pride or whether they
+believe their players are genuinely better than Messi or Ronaldo,
+probably the former. Brazil interestingly bit the bullet and voted for
+someone else despite having Neymar as a reasonable option.&lt;/p&gt;
+&lt;p&gt;Folium doesn't currently support hover actions, but a nice addition
+would be to be able to hover over a country to see who they voted for,
+especially for the "Other" category. It might be in a future version of
+folium, as it seems to be actively under development. Realistically, a
+tool like Tableau would be better suited to a visualisation like this,
+but the ability to embed maps in Jupyter notebooks makes folium a really
+good addition to my data science toolkit.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="datavis"></category><category term="featured"></category><category term="python"></category></entry><entry><title>The Junk in Fallout 4 - a Web Scraping Tutorial</title><link href="/the-junk-in-fallout-4.html" rel="alternate"></link><published>2016-11-03T22:36:00+00:00</published><updated>2016-11-03T22:36:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-03:/the-junk-in-fallout-4.html</id><summary type="html">&lt;p&gt;This is a short web scraping tutorial based on a script I wrote to fetch and analyse data about junk in the game Fallout 4.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;A few months ago I was playing one of my favourite games of 2015 -
+&lt;a href="https://en.wikipedia.org/wiki/Fallout_4"&gt;Fallout 4.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you haven't heard of it, it's an action-RPG set in a post-apocalyptic
+world. The story is engaging and you're sort of trying to rebuild
+civilisation after the world has been devastated by nuclear war. I mean
+"rebuild" quite literally - a lot of the game is spent scavenging for
+raw materials so you can build pretty shoddy housing for strangers. And
+that rebuilding requires raw materials, which is contained mostly in
+junk.&lt;/p&gt;
+&lt;p&gt;Lots and lots of junk.&lt;/p&gt;
+&lt;p&gt;You can end up spending a disproportionately long time looking for,
+buying and selling things like broken telephones, toy rocketships, teddy
+bears, and ashtrays all because they contain precious raw materials for
+your resettlement project, or for enhancing your guns and armour.&lt;/p&gt;
+&lt;p&gt;If you play it long enough eventually you start remembering which items
+contain which raw material (information which then replaces more
+important things in your brain...). However, not all items contain the
+same amount of raw material. For example aluminium, which is quite
+useful but relatively rare, is in oil cans (which contain 1, erm, "unit"
+of aluminium) but it's better to get it from surgical trays, which
+contain 3.&lt;/p&gt;
+&lt;p&gt;That means if you want to maximise your scavenging efforts you have to
+start remembering which item contains which material &lt;em&gt;and&lt;/em&gt; how much it
+contains.&lt;/p&gt;
+&lt;p&gt;So I thought: is there a more efficient way of scavenging?&lt;/p&gt;
+&lt;p&gt;The answer is yes.&lt;/p&gt;
+&lt;p&gt;With data.&lt;/p&gt;
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;p&gt;What I really wanted to do is look at each material, and figure out
+which items it made sense to find to maximise the amount of the material
+I get. The plan was:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find a list of all the items in Fallout 4 and the materials they
+    contain&lt;/li&gt;
+&lt;li&gt;Scrape and store the list&lt;/li&gt;
+&lt;li&gt;Analyse it and make some plots&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;The Tutorial&lt;/h1&gt;
+&lt;h2&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;First of all, we need some data and some Python libraries.&lt;/p&gt;
+&lt;p&gt;The data comes from &lt;a href="http://fallout.wikia.com/wiki/Fallout_4_junk_items"&gt;a webpage of all Fallout 4 junk items&lt;/a&gt;, specifically
+the table marked "&lt;a href="http://fallout.wikia.com/wiki/Fallout_4_junk_items#Other_junk_items"&gt;Other junk items&lt;/a&gt;".&lt;/p&gt;
+&lt;p&gt;The Python libraries we need are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://docs.python-requests.org"&gt;requests&lt;/a&gt; - for fetching the
+    webpage content via HTTP&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/"&gt;BeautifulSoup&lt;/a&gt; -
+    for reading, parsing and extracting data from the returned HTML&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pandas.pydata.org/pandas-docs/stable/"&gt;pandas&lt;/a&gt; - the usual
+    suspect for manipulating data&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://matplotlib.org/"&gt;matplotlib&lt;/a&gt; - for plotting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Step 1 - Fetch the Data&lt;/h2&gt;
+&lt;p&gt;Side note: This isn't a tutorial about HTML, CSS or Javascript, so I'll
+assume you know enough about them. However, if you want to learn/brush
+up, &lt;a href="http://www.w3schools.com"&gt;w3schools&lt;/a&gt; is a great resource.&lt;/p&gt;
+&lt;p&gt;We've identified our data source and it's already in a table format,
+which will make things easier. What we want to do is isolate the table
+in the HTML so we can extract only that table.&lt;/p&gt;
+&lt;p&gt;The easiest way to do this is directly on the website.&lt;/p&gt;
+&lt;p&gt;Right click and choose "Inspect Element".&lt;/p&gt;
+&lt;p&gt;&lt;img alt="inspect element" src="/images/the-junk-in-fallout-4/inspect_element.png"&gt;&lt;/p&gt;
+&lt;p&gt;I'm using Firefox but this should be applicable to any browser.&lt;/p&gt;
+&lt;p&gt;This will open the Inspector, or Chrome Dev Tools or the equivalent,
+where we can inspect the raw HTML. Then we want to look at the
+&amp;lt;table&amp;gt; element to see its ID.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="HTML table in the inspector" src="/images/the-junk-in-fallout-4/tablehtml.png"&gt;&lt;/p&gt;
+&lt;p&gt;Unlucky, no ID. &lt;/p&gt;
+&lt;p&gt;OK, well it doesn't have an ID, so we need to find a way to uniquely
+select that element. It has a class "va-table-center" - we can check if
+that's unique on the page. To do this, go into the Console tab of the
+Inspector (in the above screenshot it's the second tab, but your browser
+may differ). In the console you can type and evaluate arbitrary
+Javascript/jQuery expressions, so let's try selecting a table with the
+class &lt;em&gt;va-table-center&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Selecting the table in the console" src="/images/the-junk-in-fallout-4/junktable_selector.png"&gt;&lt;/p&gt;
+&lt;p&gt;Apparently a script on the page finished "shamefully"... &lt;/p&gt;
+&lt;p&gt;It looks like that class isn't unique, there are 5 tables that match it
+on the page. What we can do is then figure out which one of those 5 is
+the one we need. We can expand the output on the console to help us find
+it.&lt;/p&gt;
+&lt;p&gt;You can highlight each of the 5 items and the corresponding table will
+be highlighted on the page. Doing this reveals we're after the second of
+those 5 tables.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="table highlight" src="/images/the-junk-in-fallout-4/table_highlight.png"&gt;&lt;/p&gt;
+&lt;p&gt;Note the Halloween-themed adverts about The Exorcist &lt;/p&gt;
+&lt;p&gt;Great, now we've identified the HTML element we want to load in, and we
+can do the rest of the wrangling in Python.&lt;/p&gt;
+&lt;h2&gt;Step 2 - Clean and Wrangle&lt;/h2&gt;
+&lt;p&gt;Using requests and BeautifulSoup we read in the HTML and grab just the
+table we need.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bs4&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;
+&lt;span class="c1"&gt;# load the entire page&lt;/span&gt;
+&lt;span class="n"&gt;req&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;http://fallout.wikia.com/wiki/Fallout_4_junk_items&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# read the output as text&lt;/span&gt;
+&lt;span class="n"&gt;raw&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;req&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;
+&lt;span class="c1"&gt;# load it into BeautifulSoup for parsing&lt;/span&gt;
+&lt;span class="n"&gt;soup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;html.parser&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# select just the second table with the right class&lt;/span&gt;
+&lt;span class="n"&gt;junk_table&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;table.va-table-center&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next step is to iterate over the table rows and extract what we need.
+For now, we'll focus on the item name and its components.&lt;/p&gt;
+&lt;p&gt;There are often multiple materials in a single item, so we need to
+extract them individually. What you'll notice in the table is that each
+new material starts with a capital letter, so we can split on that with
+some regex. Then we'll create a dictionary where the key is the item and
+the value is a list of its components.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;junk_dict&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+
+&lt;span class="c1"&gt;# start from the second table row (to skip the header)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;junk_table&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findAll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;tr&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:]:&lt;/span&gt;
+    &lt;span class="c1"&gt;# select all the table cells&lt;/span&gt;
+    &lt;span class="n"&gt;cells&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;td&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="c1"&gt;# get item name and components cells&lt;/span&gt;
+    &lt;span class="n"&gt;item_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cells&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;components_cell&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cells&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="c1"&gt;# split components text at uppercase letters&lt;/span&gt;
+    &lt;span class="n"&gt;components&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[A-Z][^A-Z]*&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;components_cell&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+    &lt;span class="n"&gt;junk_dict&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;item_name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;components&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next we'll create a pandas DataFrame from the dictionary. The only quirk
+is some components have "x2" style additions if there are more than one
+units in the item, and the absence of this signifies 1 unit.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;item&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;component&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;quantity&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;row_idx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;junk_dict&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;junk_dict&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+        &lt;span class="n"&gt;quantity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;# default unless otherwise specified&lt;/span&gt;
+        &lt;span class="c1"&gt;# extract the multiplier&lt;/span&gt;
+        &lt;span class="n"&gt;multiplier&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; ?x ?([0-9]*)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;component_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;
+        &lt;span class="c1"&gt;# if the multiplier is specified set the quantity to the right value&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;multiplier&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;multiplier&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;quantity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;multiplier&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+                &lt;span class="n"&gt;component_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="c1"&gt;# add as a row&lt;/span&gt;
+        &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;row_idx&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;component_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;quantity&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;row_idx&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Step 3 - Plot&lt;/h2&gt;
+&lt;p&gt;We now have our very own Fallout 4 junk dataset that we can analyse to
+our heart's content. For example we can plot the frequencies of each
+component to order them by rarity.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Rarity of junk components" src="/images/the-junk-in-fallout-4/junkplot.png"&gt;&lt;/p&gt;
+&lt;p&gt;It's a strange world where concrete is so rare.&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;There you have it - data-driven video gaming. Here's the whole thing in
+&lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/fallout-junk/Fallout%20Junk%20Data.ipynb"&gt;Jupyter notebook form&lt;/a&gt;,
+and a direct link to &lt;a href="/files/fallout_junk.csv"&gt;the csv file&lt;/a&gt;
+if you want to analyse it yourself - if you do, let me know!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="python"></category></entry><entry><title>Analysing London House Prices</title><link href="/analysing-london-house-prices.html" rel="alternate"></link><published>2016-10-23T16:33:00+01:00</published><updated>2016-10-23T16:33:00+01:00</updated><author><name>david</name></author><id>tag:None,2016-10-23:/analysing-london-house-prices.html</id><summary type="html">&lt;p&gt;London is expensive. So much so that it's a trope now for those of us who live here. But what does the data show? Are things getting better or worse? How did the 2008 recession affect behaviour for example? I wanted to find out. With data.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;London is expensive. So much so that it's a trope now for those of us
+who live here. But what does the data show? Are things getting better or
+worse? How did the 2008 recession affect buying behaviour for example?&lt;/p&gt;
+&lt;p&gt;I wanted to find out. With data.&lt;/p&gt;
+&lt;p&gt;There are many directions you could go with a dataset of London house
+prices, so I focused on answering specific questions. I wanted to know:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can the recession, centred around 2008, be seen in the house price
+    data?&lt;/li&gt;
+&lt;li&gt;Which boroughs are on the rise economically, and which are
+    exhibiting a downward turn?&lt;/li&gt;
+&lt;li&gt;How have housing prices changed over time overall?&lt;/li&gt;
+&lt;li&gt;Does the overall trend match the individual trend in each borough?&lt;/li&gt;
+&lt;li&gt;Which boroughs are similar in their economic trends?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;The Data&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://app.enigma.io/table/gov.uk.land-registry.price-paid"&gt;The dataset&lt;/a&gt;
+was obtained from an online service called &lt;a href="http://enigma.io/"&gt;Enigma&lt;/a&gt;,
+which requires a free registration to access the data. It contained the
+address of each house and the postcode, but not latitude-longitude
+values. I could have geocoded each address individually to get accurate
+lat-long values, but life's too short and postcodes were granular
+enough. I added lat-long values by joining a &lt;a href="https://www.freemaptools.com/download-uk-postcode-lat-lng.htm"&gt;geocoded postcode dataset&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The final housing price dataset consisted of 16 columns and around
+1,500,000 rows. The main columns of interest were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Date of Sale (to the nearest day)&lt;/li&gt;
+&lt;li&gt;Postcode (now with latitudes and longitudes)&lt;/li&gt;
+&lt;li&gt;Local Authority (i.e. borough)&lt;/li&gt;
+&lt;li&gt;Price (in GBP)&lt;/li&gt;
+&lt;li&gt;Property Type (Detached, Semi, Terraced, or Flat/Maisonette)&lt;/li&gt;
+&lt;li&gt;Build (Old or New)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The data covers the period between 1996 and 2014, so this post won't
+turn into a digression about Brexit, although that will be an
+interesting dataset in a few years.&lt;/p&gt;
+&lt;p&gt;There were a few boroughs with only a handful of rows in the dataset.
+One of them for example was a Welsh address, incorrectly labelled as
+'London'. I removed 5 boroughs in total because they were either outside
+of London, or contained less than 20 examples.&lt;/p&gt;
+&lt;h2&gt;The Tools&lt;/h2&gt;
+&lt;p&gt;The data wrangling was done in Python and all the visualisations were
+created with &lt;a href="http://www.tableau.com/"&gt;Tableau&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;The Analysis&lt;/h1&gt;
+&lt;h2&gt;Price Distribution&lt;/h2&gt;
+&lt;p&gt;The very first question I wanted to answer is what the distribution of
+prices is like.&lt;/p&gt;
+&lt;p&gt;The median house price is £320,000 and the upper whisker of the box plot
+is £1.26million. After that there are over 39,000 outliers with the
+highest house price at over £50 million. This suggests there may be two
+tiers of house prices in London: one for the 'average' person and one
+for the more wealthy.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Distribution of London house prices" src="/images/analysing-london-house-prices/Price-Box-Plot-and-Histogram.png"&gt;&lt;/p&gt;
+&lt;p&gt;Heavy right tails make box plots look ridiculous&lt;/p&gt;
+&lt;p&gt;At this point my hunch was that the buying patterns of people who can
+afford to pay millions for a house will be different to people buying
+houses for around the median price. To this end I created an "outliers"
+category and analysed those nearly 40,000 rows separately.&lt;/p&gt;
+&lt;h2&gt;Prices over Time&lt;/h2&gt;
+&lt;p&gt;So how have prices changed over the years in the "normal" and "outlier" categories?&lt;/p&gt;
+&lt;p&gt;&lt;img alt="London house prices over time" src="/images/analysing-london-house-prices/Price-Over-Time.png"&gt;&lt;/p&gt;
+&lt;p&gt;At this point it might be cheaper to invest in a time machine and go
+back to 1996 to buy a house&lt;/p&gt;
+&lt;p&gt;It turns out prices have steadily been climbing for both categories, but
+the number of sales dipped during the 2008 recession, but only for the
+non-outlier category. That makes sense - you'd expect the most wealthy
+to be unaffected by a recession.&lt;/p&gt;
+&lt;h2&gt;What about each borough?&lt;/h2&gt;
+&lt;p&gt;Does this overall trend look the same in each borough? Let's find out.
+For borough-level figures I looked at the non-outlier category to make
+the analysis more relatable.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Median prices over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Price-over-Time.png"&gt;&lt;/p&gt;
+&lt;p&gt;Some boroughs have a small dip but even a recession couldn't make London more affordable&lt;/p&gt;
+&lt;p&gt;There is a more noticeable, but still very small, dip during the
+recession years (highlighted in dark red) but prices are climbing in all
+London boroughs. The dip in sales during the recession is also present
+in each borough, echoing the overall trend.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Sales over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Sales-over-Time.png"&gt;&lt;/p&gt;
+&lt;p&gt;This graph would probably be a worrying EKG&lt;/p&gt;
+&lt;h2&gt;Buying Behaviour&lt;/h2&gt;
+&lt;p&gt;Is buying a house seasonal or do people buy with the same frequency
+throughout the year?&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Monthly sales histogram" src="/images/analysing-london-house-prices/Month-Histogram.png"&gt;&lt;/p&gt;
+&lt;p&gt;Apparently people rarely buy houses as Christmas presents.&lt;/p&gt;
+&lt;p&gt;The slight peak in March is interesting.&lt;/p&gt;
+&lt;p&gt;After I showed this to a few people, someone suggested it's because the
+tax year in the UK ends in April so people might end up buying with some
+urgency to keep the spending in the previous tax year. This general
+seasonal behaviour is also apparent in each borough.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Monthly sales heatmap by borough" src="/images/analysing-london-house-prices/Monthly-Heatmap-by-Borough.png"&gt;&lt;/p&gt;
+&lt;p&gt;Is it still a heatmap if it's blue? &lt;/p&gt;
+&lt;p&gt;It looks like some of the boroughs have a bigger peak in March than
+others. Can we quantify which boroughs have this behaviour and which
+don't?&lt;/p&gt;
+&lt;h2&gt;Clustering&lt;/h2&gt;
+&lt;p&gt;How do we find similar boroughs? We can make use of clustering.&lt;/p&gt;
+&lt;p&gt;First, we aggregate each borough into a 12-dimensional vector, where
+each item corresponds to the median percentage of total sales in that
+particular month. So in a slightly extreme example, a borough with half
+of all its sales in January and the other half in July would look like
+this:&lt;/p&gt;
+&lt;p&gt;[0.5, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0]&lt;/p&gt;
+&lt;p&gt;We need to use the percentage rather than actual values to ensure all
+boroughs are on a common scale. Otherwise, we would end up clustering
+boroughs together simply on sales volume rather than buying behaviour.&lt;/p&gt;
+&lt;p&gt;After trying multiple values of &lt;strong&gt;k&lt;/strong&gt; in the k-means clustering
+algorithm, it looked like there were two distinct clusters with three
+outliers. Those outliers were boroughs that had much fewer rows in the
+dataset, so they're arguably not that representative.&lt;/p&gt;
+&lt;p&gt;It appears then that there are really just two types of behaviour -
+boroughs that have a prominent peak in sales in March and those that
+don't. But which boroughs are which? Let's colour a map of London by
+cluster:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Clustered boroughs" src="/images/analysing-london-house-prices/Cluster-Dashboard-4.png"&gt;&lt;/p&gt;
+&lt;p&gt;London boroughs coloured by their buying behaviour&lt;/p&gt;
+&lt;p&gt;Interestingly the different seasonal behaviour almost neatly splits
+London into East and West. The dataset unfortunately didn't have enough
+details to give any suggestions about whether this is a coincidence.&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;Unsurprisingly, the data confirms what we all complain about - buying in
+London is expensive and it is only getting worse.&lt;/p&gt;
+&lt;p&gt;The recession impacted the average person; the number of sales dipped
+dramatically between 2007 and 2009. However, the rich were unaffected.&lt;/p&gt;
+&lt;p&gt;Buying behaviour is seasonal peaking in July, with some boroughs
+displaying a small peak in March (possibly for tax purposes). These
+boroughs are typically in East London, which may or may not be a
+coincidence.&lt;/p&gt;
+&lt;p&gt;The next analysis on my list might be finding a new, more affordable
+city!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="projects"></category><category term="featured"></category><category term="python"></category><category term="tableau"></category></entry></feed>
