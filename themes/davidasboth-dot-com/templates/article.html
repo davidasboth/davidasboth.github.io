@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<main id="articles-tutorials">
+    <section id="splash">
+        <div class="container">
+            <h1 class="text-centered">{{ article.title }}</h1>
+            <div class="text-centered padding-medium"><a class="tag" href="#">{{ article.category }}</a></div>
+            <p class="text-centered">{{ article.summary }}</p>
+         </div>
+    </section>
+
+    <section id="article-content">
+        <div class="container">
+            
+            {{ article.content }}
+
+        </div>
+    </section>
+
+    {% include 'include/about.html' %}
+
+    {% include 'include/contact.html' %}
+</main>
+
+{% endblock %}

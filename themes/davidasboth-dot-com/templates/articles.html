@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<main id="articles-tutorials">
+    <section id="splash">
+      <div class="container">
+          <h1 class="text-centered">Articles</h1>
+          <p class="text-centered">Here you can find a collection of articles about data science for business, what data science training/consultancy looks like, and an assortment of technical write-ups and projects.</p>
+       </div>
+  </section>
+    <section id="articles">
+      <div class="container">
+      <div class="flex-container wrap">
+          <div class="col-66 highlight-box">
+              <h3>Thinking of hiring a data person?
+Start here.</h3>
+          <p>
+              (COMING SOON) Helpful articles about how to make the best decision for your business needs.
+              </p>
+              <!-- <ul>
+                  <li>
+                      <a href="#">This is an article title</a>
+                  </li>
+                  <li>
+                      <a href="#">Second, slightly longer article title</a>
+                  </li>
+                  <li>
+                      <a href="#">Let's have a third, really long title in here to see how it looks</a>
+                  </li>
+              </ul> -->
+          </div>
+        <div class="col-33 lowlight-box padding-large">
+          <h3>Article categories</h3>
+          
+          {% for category in categories %}
+            <nobr><a class="tag" href="{{ category[0].url }}">{{ category[0].name }}</a></nobr>
+          {% endfor %}
+
+          </div>
+
+          <!-- <h1>Featured Articles</h1> -->
+
+          {% for article in articles if "featured" in article.tags %}
+
+            <div class="col-33 padding-medium">
+                <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                <a class="tag" href="{{ article.category.url }}">{{ article.category.name }}</a>
+                <p>{{ article.summary }}</p>
+            </div>
+
+          {% endfor %}
+
+        
+              </div>
+          </div>
+      </section>
+      
+      {% include 'include/about.html' %}
+
+      {% include 'include/contact.html' %}
+  </main>
+
+  {% endblock %}

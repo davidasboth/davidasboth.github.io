@@ -1,7 +1,6 @@
 Title: The World Map of the 2016 FIFA Awards
 Date: 2017-01-13 15:06
 Author: david
-Tags: datavis, featured, python
 Slug: the-world-map-of-the-2016-fifa-awards
 Status: published
 Summary: A mini project to visualise the votes for the 2016 FIFA Awards, to see which country voted for which player.

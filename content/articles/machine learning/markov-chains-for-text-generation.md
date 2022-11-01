@@ -1,7 +1,6 @@
 Title: Markov Chains for Text Generation
 Date: 2016-11-12 22:09
 Author: david
-Tags: featured, python
 Slug: markov-chains-for-text-generation
 Status: published
 Summary: Markov chains are a popular way to model sequential data. I want to run through an implementation where I generate new songs based on lyrics by Muse.

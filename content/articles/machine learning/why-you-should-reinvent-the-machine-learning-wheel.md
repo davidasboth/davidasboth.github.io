@@ -1,7 +1,6 @@
 Title: Why You Should Reinvent the Machine Learning Wheel
 Date: 2016-11-11 17:17
 Author: david
-Tags: featured
 Slug: why-you-should-reinvent-the-machine-learning-wheel
 Status: published
 Summary: As data scientists we spend a lot of our time using other people's implementations of machine learning algorithms. I suggest that as part of the learning process it's worthwhile to try to implement them ourselves from scratch, in order to fully understand them.

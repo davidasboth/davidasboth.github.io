@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<main id="categories">
+    <section id="splash">
+        <div class="container">
+            <h1 class="text-centered">Categories</h1>
+            <p class="text-centered">Here you can browse my articles by category</p>
+         </div>
+    </section>
+
+    <section id="categories-content">
+        <div class="container">
+            <ul>
+                {% for category in categories %}
+                <li>
+                <a class="tag" href="{{ category[0].url }}">{{ category[0].name }}</a>
+                </li>
+                {% endfor %}
+            </ul>     
+        </div>
+    </section>
+
+    {% include 'include/about.html' %}
+
+    {% include 'include/contact.html' %}
+</main>
+
+{% endblock %}

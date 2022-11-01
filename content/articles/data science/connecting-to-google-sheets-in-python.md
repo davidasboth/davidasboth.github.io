@@ -1,7 +1,7 @@
 Title: How to Connect to Google Sheets in Python
 Date: 2016-11-13 13:54
 Author: david
-Tags: featured, python
+Tags: featured
 Slug: connecting-to-google-sheets-in-python
 Status: published
 Summary: A quick tutorial on how to connect to Google Sheets in Python, so you can access it like a regular CSV file.
@@ -12,16 +12,14 @@ encounter csv files. Either you connect to them locally, something like
 this:
 
     :::python
-    import pandas as pd
-
-    df = pd.read_csv("my_local_data.csv")
+	import pandas as pd
+	df = pd.read_csv("my_local_data.csv")
 
 Or you access them via a direct url like this:
 
     :::python
-    import pandas as pd
-
-    df = pd.read_csv("http://www.lotsofdata.com/hosted_data.csv")
+	import pandas as pd
+	df = pd.read_csv("http://www.lotsofdata.com/hosted_data.csv")
 
 What I rarely see though is connecting to slightly more obscure data
 sources. You will probably end up doing this once you go out into the

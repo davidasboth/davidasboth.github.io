@@ -267,12 +267,15 @@ main ul li::before {
 		linear-gradient(to bottom, rgba(36,38,43,0.83), rgba(36,38,43,0.83)),
 		url("../images/carlos-muza-hpjSkU2UYSU-unsplash.jpg");
 }
-#articles-tagpage #splash {
+#articles-tagpage #splash,
+#categories #splash
+ {
 	padding: 20vh 3rem 10vh;
 	background-image: 
 		linear-gradient(to bottom, rgba(36,38,43,0.83), rgba(36,38,43,0.83)),
 		url("../images/angele-kamp-_XlhZVsKykw-unsplash.jpg");
 }
+
 #splash .container {
 	max-width: 800px;
 }
@@ -420,4 +423,8 @@ footer .flex-container {
 
 #contact-success #splash {
 	min-height: 90vh;
+}
+
+.codehilite  {
+	padding: 8px;
 }

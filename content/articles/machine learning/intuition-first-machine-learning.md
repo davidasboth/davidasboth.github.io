@@ -1,7 +1,6 @@
 Title: "Intuition First" Machine Learning
 Date: 2016-11-07 09:34
 Author: david
-Tags: featured
 Slug: intuition-first-machine-learning
 Status: published
 Summary: I've often felt machine learning needs to be taught "intuition first, equations later", but this doesn't seem to be the norm with most learning sources.

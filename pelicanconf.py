@@ -68,6 +68,15 @@ LOAD_CONTENT_CACHE = False
 # Set the theme
 THEME = "themes/davidasboth-dot-com"
 
+# enable code highlights in markdown
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {
+            "noclasses": True
+        }
+    }
+}
+
 # Static pages of the website that will be generated
 #TEMPLATE_PAGES = {
 #    "pages/index.html": "index.html",
