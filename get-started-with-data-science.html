@@ -31,7 +31,7 @@
 
 	<title>David Asboth - Data Solutions &amp; Consultancy</title>
 
-	<link rel="canonical" href="/realistic-machine-learning.html">
+	<link rel="canonical" href="/get-started-with-data-science.html">
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,102 +70,89 @@
 <main id="articles-tutorials">
     <section id="splash">
         <div class="container">
-            <h1 class="text-centered">Realistic Machine Learning</h1>
-            <div class="text-centered padding-medium"><a class="tag" href="category/machine-learning.html">machine learning</a></div>
-            <p class="text-centered"><p>As most data scientists quickly realise, there's a difference between the kind of data science you do while learning about it, and the kind you do at a real job. This is equally true of data cleaning/wrangling and machine learning.</p></p>
+            <h1 class="text-centered">How a business can get started with "doing data science"</h1>
+            <div class="text-centered padding-medium"><a class="tag" href="category/data-science.html">data science</a></div>
+            <p class="text-centered"><p>How can a business get started once they've decided they want "data science"?</p></p>
          </div>
     </section>
 
     <section id="article-content">
         <div class="container">
             
-            <p>As most data scientists quickly realise, there's a difference
-between the kind of data science you do while learning about it, and the
-kind you do at a real job.</p>
-<p>This is especially true of university degrees, and isn't unique to data
-science. However much you learn during your degree, reality will always
-be different in a way you weren't prepared for. I don't mean this in a
-scary way, just as a matter-of-fact appraisal of how things are.</p>
-<p>This is equally true of data cleaning/wrangling and machine learning.</p>
-<p>The "ML Hipster" <a href="https://twitter.com/ML_Hipster/status/633954383542128640">summed this up very well.</a></p>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">… and that concludes Machine Learning 101. Now, go forth and apply what you&#39;ve learned to real data! <a href="http://t.co/D6wSKgdjeM">pic.twitter.com/D6wSKgdjeM</a></p>&mdash; ML Hipster (@ML_Hipster) <a href="https://twitter.com/ML_Hipster/status/633954383542128640?ref_src=twsrc%5Etfw">August 19, 2015</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>There's also this quote I've seen (source unknown):</p>
-<p>In data science, 80% of time is spent preparing data, and 20% of time is spent complaining about the need to prepare data</p>
-<p>What are the main reasons for this disconnect?</p>
-<h3>Real Data is Messy</h3>
-<p>Yes some data science courses cover this and talk about what sorts of
-things you'd need to do to clean a dataset.</p>
-<p>However, this usually amounts to converting strings to dates or dealing
-with missing values. These are important skills to have, but only make
-up 10% of the kind of data cleaning you might encounter.</p>
-<p>Human-generated data is messy because people are not consistent, and
-often data entry systems allow multiple ways of entering data or simply
-free text.</p>
-<p>Computer/machine-generated data is messy because things can go wrong,
-log files from systems can have weird values in them, etc.</p>
-<p>Not only does this have an impact on your data cleaning efforts (by
-requiring 10x more work than anticipated) but also machine learning.</p>
-<p>Scikit-learn random forests are not designed to deal with someone
-putting "next Tuesday" in a free-type date field.</p>
-<h3>The Question is Unclear</h3>
-<p>An underappreciated quality of a data scientist is the ability to frame
-the question.</p>
-<p>Converting a business requirement, which is often nebulous and
-unquantifiable, into a machine learning problem is a difficult task.
-There's usually more than one way to approach it, but it boils down to
-making a human problem into a concrete, measurable task for an
-algorithm.</p>
-<p>This means a shift from your studies where you're given the question. No
-longer are you identifying types of iris - you need to start with
-identifying what to identify!</p>
-<h3>A Difference of Purpose</h3>
-<p>This is the big one. The moment you're doing data science for a
-business, your aims are different.</p>
-<p>Previously you were solving problems for the sake of it. Now, the focus
-is on <strong>adding value</strong>.</p>
-<p>That means that at any point in a project the next step will depend on
-what makes sense for the business, not what is academically most
-interesting. The kind of work you do will by definition be different to
-what you're used to.</p>
-<h1>How can we better prepare?</h1>
-<p>The obvious way to smooth the transition between academia (or "learning"
-in general) and industry is to teach more realistic problems.</p>
-<p>That's not to say you should <strong>start</strong> with solving a business problem,
-but you should certainly <strong>end</strong> on one.</p>
-<p>A more rounded way of teaching data science would be to start with toy
-problems and gradually build up to more complex ones. Something like
-this scale of four difficulties:</p>
-<h4>Difficulty 1</h4>
-<p>You're given an "academic" dataset with perhaps some cleaning to do
-(date formats, missing values). There is an explicit target value so
-once the cleaning is done you know exactly what to do for machine
-learning (e.g. predict the type of iris).</p>
-<h4>Difficulty 2</h4>
-<p>You're given a "real" dataset obtained from some real system or somehow
-produced by real humans. There is not just some cleaning to do, but
-questions of interpretation, data transformations, maybe even some
-feature engineering. The machine learning task is still clear though.</p>
-<h4>Difficulty 3</h4>
-<p>A real dataset but with a less well-defined machine learning task. This
-could be an unsupervised problem, where part of the work is in
-interpreting the outcomes, or it could just be unclear whether you want
-a classification or a regression approach. For example, a dataset with
-sales figures where it's unclear if you should predict sales to the
-nearest unit or just which group the sales belong to (in terms of size).</p>
-<h4>Difficulty 4</h4>
-<p>The "real world problem". You're given a broad task to solve but no
-data, or a dataset that clearly needs enhancing somehow. This task would
-involve scraping or just trawling the net for open data, then defining
-your features and deciding on how best to frame it as a machine learning
-problem.</p>
-<p>For the last type of task to work though, I'd argue the teaching has to
-be interactive. It's much easier to evaluate your approach by getting
-qualitative feedback, unlike the first 2-3 tasks where you can
-objectively measure your success.</p>
-<p>This isn't always a practical way to teach, but it would go a long way
-in preparing people for the reality of data science in the wild.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <p>What should a business do if they believe they "want data science"? Most businesses recognise that they have data lying around and they're not doing much with it. Perhaps they already have some accountants doing financial analysis, but want to expand this capability.</p>
+<p>What are the options?</p>
+<h2>Option 1 - hire a consultant to deliver a specific project</h2>
+<p>Sometimes a project is so urgent that it cannot wait for an internal capability to become available; a short-term fix by an expert is needed to deliver it. This model is tried and tested and has its merits. It is plausible that a single project is important enough to warrant the higher outlay, and the absence of a long-term vision or data strategy means hiring a permanent is not yet the right choice.</p>
+<p>Cost: <strong>high</strong></p>
+<p>Impact: <strong>short-term</strong></p>
+<p>Pros:</p>
+<ul>
+<li>Quickest impact</li>
+<li>No long-term hiring needed</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Will need to repeat for the next project and ongoing maintenance</li>
+<li>Costs scale linearly with the amount of work needed</li>
+</ul>
+<p>Alternative: have a consultant on retainer to either do prototyping work from time-to-time or in an advisory capacity.</p>
+<h2>Option 2 - train their own employees with the data skills required to do the work</h2>
+<p>One drawback of hiring an external consultant is they might need time to get up to speed on the specifics of the industry and business in question. Domain expertise is a key skill in data science; you can't make an impact without it. An alternative therefore to hiring a consultant to deliver a project is to empower the company's existing domain experts to deliver some of the work themselves. Depending on the complexity of the project it may be best to leverage the subject matter expertise already present. There is an initial investment in upskilling, but for more strategic, medium-term projects, this may be the preferred option, as it will permanently increase internal capability and require fewer external resources for future projects.</p>
+<p>Cost: <strong>medium</strong></p>
+<p>Impact: <strong>medium-term</strong></p>
+<p>Pros:</p>
+<ul>
+<li>Tap into existing domain knowledge that external consultants or new hires may not have</li>
+<li>Investing in existing staff by upskilling</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Training (and embedding of knowledge) takes time, so impact may come along later</li>
+</ul>
+<p>Alternative: hire a consultant on retainer to work alongside domain experts while they upskill and collectively deliver the first project at the same time.</p>
+<h2>Option 3 - hire a data scientist or a team</h2>
+<p>For the biggest, most long-term impact, the strategic choice may be to actually build a data science capability by hiring a data science team. The size and make-up of this team will be strongly dependent on the needs of the business, but an important thing to remember is data science cannot exist in isolation. There must be a data strategy of some description which supports this function. There needs to be a data infrastructure, ideally even a data engineering team, which supplies data for the data scientists. There also needs to be a vision for how exactly this team will make a measurable impact. Without these, a data science team alone cannot fulfil its potential, and this should be considered when embarking on the creation of a team.</p>
+<p>Cost: <strong>high</strong></p>
+<p>Impact: <strong>long-term</strong></p>
+<p>Pros:</p>
+<ul>
+<li>Permanent in-house resource for data science problems</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Impact realised long-term, since hiring + onboarding takes time</li>
+<li>Requires additional support, e.g. a data strategy and infrastructure</li>
+<li>Company may not need a permanent data science resource</li>
+</ul>
+<h2>Conclusion: every company is different</h2>
+<p>Those are some of the main options for delivering a data science project, but when deciding how to make the move into data science, naturally the right answer will be specific and tailored to each company's needs. Here's a handy breakdown of what I just discussed.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Impact</strong></th>
+<th align="center"><strong>Option</strong></th>
+<th align="center"><strong>Investment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Long-term</td>
+<td align="center">Hire data scientist(s)</td>
+<td align="center">£££££</td>
+</tr>
+<tr>
+<td align="center">Medium-term</td>
+<td align="center">Train your employees</td>
+<td align="center">£££</td>
+</tr>
+<tr>
+<td align="center">Short-term</td>
+<td align="center">Hire a consultant</td>
+<td align="center">££££</td>
+</tr>
+</tbody>
+</table>
+<p>If you're interested in a chat to explore your options, let's talk!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         </div>
     </section>

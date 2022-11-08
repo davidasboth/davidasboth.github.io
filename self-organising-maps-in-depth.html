@@ -29,7 +29,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>David Asboth - Data Solutions &amp; Consultancy - Self-Organising Maps: In Depth</title>
+	<title>David Asboth - Data Solutions &amp; Consultancy</title>
 
 	<link rel="canonical" href="/self-organising-maps-in-depth.html">
 	
@@ -38,13 +38,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
 	
 	<link rel="stylesheet" href="/theme/css/style.css">
+	<link rel="stylesheet" href="/theme/css/pygments.css">
 
-  
-
-
-
-    <meta name="tags" content="featured" />
-    <meta name="tags" content="python" />
 
 </head>
 
@@ -60,11 +55,9 @@
 					<li>
 							<a href="/#about">About</a>
 					</li>
-					<!--
 					<li>
 							<a href="/articles">Articles</a>
 					</li>
-					-->
 					<li>
 					  <a href="#contact" class="button button-filled">Contact</a>
 					</li>
@@ -73,31 +66,20 @@
 		</div>
 	</header>
 
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="/self-organising-maps-in-depth.html" rel="bookmark"
-         title="Permalink to Self-Organising Maps: In Depth">Self-Organising Maps: In Depth</a></h2>
- 
-  </header>
-  <footer class="post-info">
-    <time class="published" datetime="2016-11-06T19:44:00+00:00">
-      Sun 06 November 2016
-    </time>
-    <address class="vcard author">
-      By           <a class="url fn" href="/author/david.html">david</a>
-    </address>
-    <div class="category">
-        Category: <a href="/category/machine-learning.html">machine learning</a>
-    </div>
-    <div class="tags">
-        Tags:
-            <a href="/tag/featured.html">featured</a>
-            <a href="/tag/python.html">python</a>
-    </div>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <p>In <a href="/blog/self-organising-maps-an-introduction/">Part 1</a>,
+
+<main id="articles-tutorials">
+    <section id="splash">
+        <div class="container">
+            <h1 class="text-centered">Self-Organising Maps: In Depth</h1>
+            <div class="text-centered padding-medium"><a class="tag" href="category/machine-learning.html">machine learning</a></div>
+            <p class="text-centered"><p>In Part 1, I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I want to step through the process of training and using a SOM – both the intuition and the Python code. At the end I'll also present a couple of real life use cases, not just the toy example we'll use for implementation.</p></p>
+         </div>
+    </section>
+
+    <section id="article-content">
+        <div class="container">
+            
+            <p>In <a href="/self-organising-maps-an-introduction/">Part 1</a>,
 I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I
 want to step through the process of training and using a SOM - both the
 intuition and the Python code. At the end I'll also present a couple of
@@ -106,25 +88,25 @@ implementation.</p>
 <p>The first thing we need is a problem to solve!</p>
 <p>I'll use the colour map as the walkthrough example because it lends
 itself very nicely to visualisation.</p>
-<h1>Setup</h1>
-<h2>Dataset</h2>
+<h2>Setup</h2>
+<h3>Dataset</h3>
 <p>Our data will be a collection of random colours, so first we'll
 artificially create a dataset of 100. Each colour is a 3D vector
 representing R, G and B values:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">raw_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
 </code></pre></div>
 
 <p>That's simply 100 rows of 3D vectors all between the values of 0 and
 255.</p>
-<h2>Objective</h2>
+<h3>Objective</h3>
 <p>Just to be clear, here's what we're trying to do. We want to take our 3D
 colour vectors and map them onto a 2D surface in such a way that similar
 colours will end up in the same area of the 2D surface.</p>
-<h2>SOM Parameters</h2>
+<h3>SOM Parameters</h3>
 <p>Before training a SOM we need to decide on a few parameters.</p>
-<h3>SOM Size</h3>
+<h4>SOM Size</h4>
 <p>First of all, its <strong>dimensionality</strong>. In theory, a SOM can be any number
 of dimensions, but for visualisation purposes it is typically 2D and
 that's what I'll be using too.</p>
@@ -147,7 +129,7 @@ on the SOM has a weight vector associated with it that is the same
 number of dimensions as our input data, in this case 3 to match the 3
 dimensions of our colours. We'll see why this is important when we go
 through the implementation.</p>
-<h3>Learning Parameters</h3>
+<h4>Learning Parameters</h4>
 <p>Training the SOM is an iterative process - it will get better at its
 task with every iteration, so we need a cutoff point. Our problem is
 quite small so 2,000 iterations should suffice but in bigger problems
@@ -161,19 +143,19 @@ small changes.</p>
 <p>In practice it is best to start with a larger learning rate and reduce
 it slowly over time. This is so that the SOM can start by making big
 changes but then settle into a solution after a while.</p>
-<h1>Implementation</h1>
+<h2>Implementation</h2>
 <p>For the rest of this post I will use 3D to refer to the dimensionality
 of the input data (which in reality could be any number of dimensions)
 and 2D as the dimensionality of the SOM (which we decide and could also
 be any number).</p>
-<h2>Setup</h2>
+<h3>Setup</h3>
 <p>To setup the SOM we need to start with the following:</p>
 <ul>
 <li>Decide on and initialise the SOM parameters (as above)</li>
 <li>Setup the grid by creating a 5x5 array of random 3D weight vectors</li>
 </ul>
 <p>Here's the code:</p>
-<div class="highlight"><pre><span></span><code><span class="n">network_dimensions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<div class="codehilite"><pre><span></span><code><span class="n">network_dimensions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="n">n_iterations</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="n">init_learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="c1"># establish size variables based on data</span>
@@ -193,7 +175,7 @@ be any number).</p>
 in the SOM during training. We'll return to those in the learning phase.
 Like the learning rate, the initial 2D radius will encompass most of the
 SOM and will gradually decrease as the number of iterations increases.</p>
-<h3>Normalisation</h3>
+<h4>Normalisation</h4>
 <p>Another detail to discuss at this point is whether or not we normalise
 our dataset.</p>
 <p>First of all, SOMs train faster (and "better") if all our values are
@@ -209,7 +191,7 @@ on different scales we would have to do this column by column.</p>
 <p>I don't want this code to be entirely tailored to the colour dataset so
 I'll leave the normalisation options tied to a few Booleans that are
 easy to change.</p>
-<div class="highlight"><pre><span></span><code><span class="n">normalise_data</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="codehilite"><pre><span></span><code><span class="n">normalise_data</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="c1"># if True, assume all data is on common scale</span>
 <span class="c1"># if False, normalise to [0 1] range along each column</span>
@@ -230,7 +212,7 @@ easy to change.</p>
 </code></pre></div>
 
 <p>Now we're ready to start the learning process.</p>
-<h2>Learning</h2>
+<h3>Learning</h3>
 <p>In broad terms the learning process will be as follows. We'll fill in
 the implementation details as we go along.</p>
 <p>For a single iteration:</p>
@@ -248,14 +230,14 @@ the implementation details as we go along.</p>
 <p>And that's it. By doing the penultimate step, moving the BMU's
 neighbours, we'll achieve the desired effect that <strong>colours that are close in 3D space will be mapped to similar areas in 2D space</strong>.</p>
 <p>Let's step through this in more detail, with code.</p>
-<h3>1. Select a Random Input Vector</h3>
+<h4>1. Select a Random Input Vector</h4>
 <p>This is straightforward:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># select a training example at random</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># select a training example at random</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 </code></pre></div>
 
-<h3>2. Find the Best Matching Unit</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># find its Best Matching Unit</span>
+<h4>2. Find the Best Matching Unit</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1"># find its Best Matching Unit</span>
 <span class="n">bmu</span><span class="p">,</span> <span class="n">bmu_idx</span> <span class="o">=</span> <span class="n">find_bmu</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </code></pre></div>
 
@@ -265,7 +247,7 @@ input vector and return the one that's closest. Note the implementation
 trick of not actually measuring Euclidean distance, but the <strong>squared</strong>
 Euclidean distance, thereby avoiding an expensive square root
 computation.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">find_bmu</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">find_bmu</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the best matching unit for a given vector, t, in the SOM</span>
 <span class="sd">        Returns: a (bmu, bmu_idx) tuple where bmu is the high-dimensional BMU</span>
@@ -289,41 +271,41 @@ computation.</p>
     <span class="k">return</span> <span class="p">(</span><span class="n">bmu</span><span class="p">,</span> <span class="n">bmu_idx</span><span class="p">)</span>
 </code></pre></div>
 
-<h3>3. Update the SOM Learning Parameters</h3>
+<h4>3. Update the SOM Learning Parameters</h4>
 <p>As described above, we want to decay the learning rate over time to let
 the SOM "settle" on a solution.</p>
 <p>What we also decay is the <strong>neighbourhood radius</strong>, which defines how
 far we search for 2D neighbours when updating vectors in the SOM. We
 want to gradually reduce this over time, like the learning rate. We'll
 see this in a bit more detail in step 4.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># decay the SOM parameters</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># decay the SOM parameters</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">decay_radius</span><span class="p">(</span><span class="n">init_radius</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">time_constant</span><span class="p">)</span>
 <span class="n">l</span> <span class="o">=</span> <span class="n">decay_learning_rate</span><span class="p">(</span><span class="n">init_learning_rate</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">n_iterations</span><span class="p">)</span>
 </code></pre></div>
 
 <p>The functions to decay the radius and learning rate use exponential
 decay:</p>
-<p>$\sigma_{t} = \sigma_{0} \times \exp(\frac{-t}{\lambda})$</p>
-<p>Where $\lambda$ is the time constant (which controls the decay) and
-$\sigma$ is the value at various times $t$.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">decay_radius</span><span class="p">(</span><span class="n">initial_radius</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">time_constant</span><span class="p">):</span>
+<p><span class="math">\(\sigma_{t} = \sigma_{0} \times \exp(\frac{-t}{\lambda})\)</span></p>
+<p>Where <span class="math">\(\lambda\)</span> is the time constant (which controls the decay) and
+<span class="math">\(\sigma\)</span> is the value at various times <span class="math">\(t\)</span>.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">decay_radius</span><span class="p">(</span><span class="n">initial_radius</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">time_constant</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">initial_radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span> <span class="o">/</span> <span class="n">time_constant</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">decay_learning_rate</span><span class="p">(</span><span class="n">initial_learning_rate</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">n_iterations</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">initial_learning_rate</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span> <span class="o">/</span> <span class="n">n_iterations</span><span class="p">)</span>
 </code></pre></div>
 
-<h3>4. Move the BMU and its Neighbours in 3D Space</h3>
+<h4>4. Move the BMU and its Neighbours in 3D Space</h4>
 <p>Now that we have the BMU and the correct learning parameters, we'll
 update the SOM so that this BMU is now closer in 3D space to the colour
 that mapped to it. We will also identify the neurons that are close to
 the BMU in 2D space and update their 3D vectors to move "inwards"
 towards the BMU.</p>
 <p>The formula to update the BMU's 3D vector is:</p>
-<p>$w_{t+1} = w_{t} + L_{t}(V_{t} - w_{t})$</p>
+<p><span class="math">\(w_{t+1} = w_{t} + L_{t}(V_{t} - w_{t})\)</span></p>
 <p>That is to say, the new weight vector will be the current vector plus
-the difference between the input vector $V$ and the weight vector,
-multiplied by a learning rate $L$ at time $t$.</p>
+the difference between the input vector <span class="math">\(V\)</span> and the weight vector,
+multiplied by a learning rate <span class="math">\(L\)</span> at time <span class="math">\(t\)</span>.</p>
 <p>We are literally just moving the weight vector closer to the input
 vector.</p>
 <p>We also identify all the neurons in the SOM that are closer in 2D space
@@ -333,12 +315,12 @@ than our current radius, and also move them closer to the input vector.</p>
 it's Gaussian. So imagine a bell shape centred around the BMU - that's
 how we decide how much to pull the neighbouring neurons in by.</p>
 <p>Concretely, this is the equation we'll use to calculate the influence
-$i$:</p>
-<p>$i_{t} = \exp(-\frac{d^{2}}{2\sigma_{t}^{2}})$</p>
-<p>where $d$ is the 2D distance and $\sigma$ is the current radius of
+<span class="math">\(i\)</span>:</p>
+<p><span class="math">\(i_{t} = \exp(-\frac{d^{2}}{2\sigma_{t}^{2}})\)</span></p>
+<p>where <span class="math">\(d\)</span> is the 2D distance and <span class="math">\(\sigma\)</span> is the current radius of
 our neighbourhood.</p>
 <p>Putting that all together:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_influence</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_influence</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 
 <span class="c1"># now we know the BMU, update its weight vector to move closer to input</span>
@@ -361,25 +343,24 @@ our neighbourhood.</p>
             <span class="n">net</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">new_w</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 
-<h2>Visualisation</h2>
+<h3>Visualisation</h3>
 <p>Repeating the learning steps 1-4 for 2,000 iterations should be enough.
 We can always run it for more iterations afterwards.</p>
 <p>Handily, the 3D weight vectors in the SOM can also be interpreted as
 colours, since they are just 3D vectors just like the inputs.</p>
 <p>To that end, we can visualise them and come up with our final colour
 map:</p>
-<p><img alt="som" src="/images/self-organising-maps-in-depth/som.png"></p>
-<p>A self-organising colour map</p>
+<p><img alt="A self-organising colour map" title="A self-organising colour map" src="/images/self-organising-maps-in-depth/som.png" style="background-color: white" /></p>
 <p>None of those colours necessarily had to be in our dataset. By moving
 the 3D weight vectors to more closely match our input vectors, we've
 created a 2D colour space which clearly shows the relationship between
 colours. More blue colours will map to the left part of the SOM, whereas
 reddish colours will map to the bottom, and so on.</p>
-<h1>Other Examples</h1>
+<h2>Other Examples</h2>
 <p>Finding a 2D colour space is a good visual way to get used to the idea
 of a SOM. However, there are obviously practical applications of this
 algorithm.</p>
-<h2>Iris Dataset</h2>
+<h3>Iris Dataset</h3>
 <p>A dataset favoured by the machine learning community is Sir Ronald
 Fisher's <a href="http://archive.ics.uci.edu/ml/datasets/Iris">dataset of measurements of irises</a>. There are four
 input dimensions: petal width, petal length, sepal width and sepal
@@ -387,8 +368,7 @@ length and we could use a SOM to find similar flowers.</p>
 <p>Applying the iris data to a SOM and then retrospectively colouring each
 point with their true class (to see how good the SOM was at separating
 the irises into their distinct categories) we get something like this:</p>
-<p><img alt="iris clusters" src="/images/self-organising-maps-in-depth/iris_clusters.png"></p>
-<p>150 irises mapped onto a SOM, coloured by type</p>
+<p><img alt="150 irises mapped onto a SOM, coloured by type" title="150 irises mapped onto a SOM, coloured by type" src="/images/self-organising-maps-in-depth/iris_clusters.png" /></p>
 <p>This is a 10 by 10 SOM and each of the small points is one of the irises
 from the dataset (with added jitter to see multiple points on a single
 SOM neuron). I added the colours after training, and you can quite
@@ -396,7 +376,7 @@ clearly see the 3 distinct regions the SOM has divided itself into.</p>
 <p>There are a few SOM neurons where both the green and the blue points get
 assigned to, and this represents the overlap between the versicolor and
 virginica types.</p>
-<h2>Handwritten Digits</h2>
+<h3>Handwritten Digits</h3>
 <p>Another application I touched on in Part 1 is trying to identify
 handwritten characters.</p>
 <p>In this case, the inputs are high-dimensional - each input dimension
@@ -405,8 +385,7 @@ makes the inputs 784-dimensional (each dimension is a value between 0
 and 255).</p>
 <p>Mapping them to a 20 by 20 SOM, and again retrospectively colouring them
 based on their true class (a number from 0 to 9) yields this:</p>
-<p><img alt="A SOM of handwritten characters" src="/images/self-organising-maps-in-depth/mnist_som.png"></p>
-<p>Various handwritten numbers mapped to a 2D SOM</p>
+<p><img alt="A SOM of handwritten characters" title="Various handwritten numbers mapped to a 2D SOM" src="/images/self-organising-maps-in-depth/mnist_som.png" /></p>
 <p>In this case the true classes are labelled according to the colours in
 the bottom left.</p>
 <p>What you can see is that the SOM has successfully divided the 2D space
@@ -417,16 +396,135 @@ little overlap with other categories. Whereas in the bottom left, where
 the green and brown points overlap, is where the SOM was "confused"
 between 4s and 9s. A visual inspection of some of these handwritten
 characters shows that indeed many of the 4s and 9s are easily confused.</p>
-<h2>Further Reading</h2>
+<h3>Further Reading</h3>
 <p>I hope this was a useful walkthrough on the intuition behind a SOM, and
 a simple Python implementation. There is <a href="https://github.com/davidasboth/blog-notebooks/blob/master/self-organising-map/Self-Organising%20Map.ipynb">a Jupyter notebook</a>
 for the colour map example.</p>
 <p>Mat Buckland's <a href="http://www.ai-junkie.com/ann/som/som1.html">excellent explanation and code walkthrough</a> of SOMs was
 instrumental in helping me learn. My code is more or less a Python port
 of his C++ implementation. Reading his posts should fill in any gaps I
-may have not covered.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div><!-- /.entry-content -->
-</section>
+may have not covered.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+    </section>
+
+<section id="about">
+    <div class="container flex-container">
+      <div class="col-40 image-full">
+            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+        </div>
+      <div class="col-60">
+        <h2>About David</h2>
+        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. My previous roles have been a range of data science, software development, team management and software architecting jobs.</p>
+        <p class="text-pre-heading">Things I also do:</p>
+        <ul>
+          <li>
+            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
+            </li>
+          <li>
+            I've written various <a href="/articles">articles and tutorials</a> about data science
+          </li>
+          <li>
+            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
+            </li>
+          <li>
+            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+<section id="contact">
+<div class="container flex-container">
+  <div class="col-40 image-full">
+	<img src="/theme/images/DataScienceFestival-02-contact.jpg">
+	</div>
+  <div class="col-60">
+	<h2>Contact me</h2>
+	<p>Please give me a brief idea of what you're looking for help with, and I'll get back to you very soon. If you're having trouble with the form below, you can also email me at <a href="mailto:hello@davidasboth.com" target="_blank">hello@davidasboth.com</a></p>
+	<form action="https://api.formcake.com/api/form/184308c0-d548-4a26-ae33-db870931e16d/submission" method="POST">
+	  <input type="text" name="name" placeholder="Name *" required>
+	  <input type="email" name="email" placeholder="Email address *" required>
+	  <select name="service-required" required>
+		<option value="" disabled selected hidden>What are you looking for help with?</option>
+		<option value="consulting-largeorg" >Consulting for a large organisation</option>
+		<option value="consulting-smallbiz" >Consulting for a small business/startup</option>
+		<option value="education-staff" >Education for staff members</option>
+		<option value="mentoring-1to1" >Mentoring 1:1s for students/career newbies</option>
+		 <option value="other" >Other</option>
+		</select>
+	  <textarea placeholder="Message *" name="message" required></textarea>
+	  <input type="text" name="spiderweb" style="display: none">
+		  <input type="submit" class="button button-filled" value="Get in touch!">
+		  <a class="icon" href="https://twitter.com/davidasboth"><img src="/theme/images/icon-twitter.svg" alt="Twitter"/></a>
+		  <a class="icon" href="https://www.linkedin.com/in/david-asboth-9256772b"><img src="/theme/images/icon-linkedin.svg" alt="LinkedIn"/></a>
+	  </form>
+	</div>
+  </div>
+</section></main>
+
 
 	<footer>
 		<div class="container flex-container">

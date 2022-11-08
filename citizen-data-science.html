@@ -31,7 +31,7 @@
 
 	<title>David Asboth - Data Solutions &amp; Consultancy</title>
 
-	<link rel="canonical" href="/realistic-machine-learning.html">
+	<link rel="canonical" href="/citizen-data-science.html">
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,102 +70,27 @@
 <main id="articles-tutorials">
     <section id="splash">
         <div class="container">
-            <h1 class="text-centered">Realistic Machine Learning</h1>
-            <div class="text-centered padding-medium"><a class="tag" href="category/machine-learning.html">machine learning</a></div>
-            <p class="text-centered"><p>As most data scientists quickly realise, there's a difference between the kind of data science you do while learning about it, and the kind you do at a real job. This is equally true of data cleaning/wrangling and machine learning.</p></p>
+            <h1 class="text-centered">Citizen Data Science</h1>
+            <div class="text-centered padding-medium"><a class="tag" href="category/data-science.html">data science</a></div>
+            <p class="text-centered"><p>What does "citizen data science" mean beyond being a buzzword for "everyone should do data science" (which they most certainly shouldn't)?</p></p>
          </div>
     </section>
 
     <section id="article-content">
         <div class="container">
             
-            <p>As most data scientists quickly realise, there's a difference
-between the kind of data science you do while learning about it, and the
-kind you do at a real job.</p>
-<p>This is especially true of university degrees, and isn't unique to data
-science. However much you learn during your degree, reality will always
-be different in a way you weren't prepared for. I don't mean this in a
-scary way, just as a matter-of-fact appraisal of how things are.</p>
-<p>This is equally true of data cleaning/wrangling and machine learning.</p>
-<p>The "ML Hipster" <a href="https://twitter.com/ML_Hipster/status/633954383542128640">summed this up very well.</a></p>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">… and that concludes Machine Learning 101. Now, go forth and apply what you&#39;ve learned to real data! <a href="http://t.co/D6wSKgdjeM">pic.twitter.com/D6wSKgdjeM</a></p>&mdash; ML Hipster (@ML_Hipster) <a href="https://twitter.com/ML_Hipster/status/633954383542128640?ref_src=twsrc%5Etfw">August 19, 2015</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>There's also this quote I've seen (source unknown):</p>
-<p>In data science, 80% of time is spent preparing data, and 20% of time is spent complaining about the need to prepare data</p>
-<p>What are the main reasons for this disconnect?</p>
-<h3>Real Data is Messy</h3>
-<p>Yes some data science courses cover this and talk about what sorts of
-things you'd need to do to clean a dataset.</p>
-<p>However, this usually amounts to converting strings to dates or dealing
-with missing values. These are important skills to have, but only make
-up 10% of the kind of data cleaning you might encounter.</p>
-<p>Human-generated data is messy because people are not consistent, and
-often data entry systems allow multiple ways of entering data or simply
-free text.</p>
-<p>Computer/machine-generated data is messy because things can go wrong,
-log files from systems can have weird values in them, etc.</p>
-<p>Not only does this have an impact on your data cleaning efforts (by
-requiring 10x more work than anticipated) but also machine learning.</p>
-<p>Scikit-learn random forests are not designed to deal with someone
-putting "next Tuesday" in a free-type date field.</p>
-<h3>The Question is Unclear</h3>
-<p>An underappreciated quality of a data scientist is the ability to frame
-the question.</p>
-<p>Converting a business requirement, which is often nebulous and
-unquantifiable, into a machine learning problem is a difficult task.
-There's usually more than one way to approach it, but it boils down to
-making a human problem into a concrete, measurable task for an
-algorithm.</p>
-<p>This means a shift from your studies where you're given the question. No
-longer are you identifying types of iris - you need to start with
-identifying what to identify!</p>
-<h3>A Difference of Purpose</h3>
-<p>This is the big one. The moment you're doing data science for a
-business, your aims are different.</p>
-<p>Previously you were solving problems for the sake of it. Now, the focus
-is on <strong>adding value</strong>.</p>
-<p>That means that at any point in a project the next step will depend on
-what makes sense for the business, not what is academically most
-interesting. The kind of work you do will by definition be different to
-what you're used to.</p>
-<h1>How can we better prepare?</h1>
-<p>The obvious way to smooth the transition between academia (or "learning"
-in general) and industry is to teach more realistic problems.</p>
-<p>That's not to say you should <strong>start</strong> with solving a business problem,
-but you should certainly <strong>end</strong> on one.</p>
-<p>A more rounded way of teaching data science would be to start with toy
-problems and gradually build up to more complex ones. Something like
-this scale of four difficulties:</p>
-<h4>Difficulty 1</h4>
-<p>You're given an "academic" dataset with perhaps some cleaning to do
-(date formats, missing values). There is an explicit target value so
-once the cleaning is done you know exactly what to do for machine
-learning (e.g. predict the type of iris).</p>
-<h4>Difficulty 2</h4>
-<p>You're given a "real" dataset obtained from some real system or somehow
-produced by real humans. There is not just some cleaning to do, but
-questions of interpretation, data transformations, maybe even some
-feature engineering. The machine learning task is still clear though.</p>
-<h4>Difficulty 3</h4>
-<p>A real dataset but with a less well-defined machine learning task. This
-could be an unsupervised problem, where part of the work is in
-interpreting the outcomes, or it could just be unclear whether you want
-a classification or a regression approach. For example, a dataset with
-sales figures where it's unclear if you should predict sales to the
-nearest unit or just which group the sales belong to (in terms of size).</p>
-<h4>Difficulty 4</h4>
-<p>The "real world problem". You're given a broad task to solve but no
-data, or a dataset that clearly needs enhancing somehow. This task would
-involve scraping or just trawling the net for open data, then defining
-your features and deciding on how best to frame it as a machine learning
-problem.</p>
-<p>For the last type of task to work though, I'd argue the teaching has to
-be interactive. It's much easier to evaluate your approach by getting
-qualitative feedback, unlike the first 2-3 tasks where you can
-objectively measure your success.</p>
-<p>This isn't always a practical way to teach, but it would go a long way
-in preparing people for the reality of data science in the wild.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <h2>Citizen Data Science</h2>
+<p>This was a popular phrase a few years back. At the peak of the data science hype cycle we somehow managed to go beyond "everyone needs data science" and start convincing ourselves that, in fact, everyone needs to be a data scientist. There was also a lot of pushback on this. After all, why should Debbie from Finance learn Python? Why should our salesmen be able to tell the difference between supervised and unsupervised learning? Clearly this was one step too far, or so we thought. At the time something bugged me about this particular debate, but I wasn't sure what. I agreed that data science should largely be restricted to its own function, not "democratised" just because it was becoming popular. My motivation wasn't gatekeeping, but a separation of concern. </p>
+<p>What I've since realised though is that some of the skills necessary for data science, namely the ones that make a data scientist a good analyst, are actually useful across the board. Much like how computer literacy is a necessary part of life in the 21st century, knowing a few data science fundamentals will only become more important. Specifically, there are two areas where I believe widespread education would be helpful: data literacy and an automation mindset.</p>
+<h2>Data literacy</h2>
+<p>What is data literacy exactly? There need not be a societal push to teach everyone confidence intervals and probability theory. You can be data literate without linear algebra. What most people need is an intuition to always be sceptical about data-driven findings, question every result, and put it in the wider context. Does this chart show what it claims to show? Do these reported numbers make sense, and if they seem plausible, is the process that generated them trustworthy and repeatable? Are there truly fewer Covid-19 cases over the weekend, or is it just that numbers aren't updated and reported until Monday?</p>
+<p>All we need to do is let people flex this particular muscle. Discuss case studies, ones that contain realistic ambiguity. Most business decisions are made under uncertainty, regardless of the quality and quantity of data analysis. We need to better understand and embrace this. Data will not tell us what to do, it can only give us suggestions, and we need to be equipped to make the most of these. I argue this isn't a skill that only the biggest decision makers, the C-level execs need, this is something with which we should all get comfortable.</p>
+<p>So that's fine, our "citizens" don't need mathematical training, just an intuition for how to use data in the right way. But what about technical skills? How much programming for example do people need? Clearly not everyone needs to know how to train and deploy a machine learning model (although exposure to this process can't hurt, if only to help demystify it) but we also can't ignore the need for some technical training that people can genuinely benefit from. The balance is struck, in my opinion, when we focus on teaching programming for automation.</p>
+<h2>Automation</h2>
+<p>Automation is a superpower. If you have any sort of repetitive task that is part of your day-to-day, business as usual work, imagine how great it would be if the computer could do it for you. No, it wouldn't result in the computers taking away your job. I know people genuinely fear that, I get it. The right way to think about it is that automating the boring stuff (see the <a href="https://automatetheboringstuff.com/">book/online course of the same name</a>) frees you, the human, up to do the things that computers can't. Build human relationships. Consider nuance. See the bigger picture.</p>
+<p>Students of mine have already heard me on my soapbox about this. Learn just enough programming (Python or otherwise) to automate the boring stuff. The more practice you have with this skill, the more you will see it everywhere, and the smaller your tolerance will be for manually doing repetitive tasks. You should get annoyed that a stakeholder demands a particular report emailed to them every Monday. Find a way to take yourself out of the loop. Got a bunch of spreadsheets to download from different web pages and collate once a week? Write a script for it.</p>
+<h2>So what do we call this thing?</h2>
+<p>Let's not call it "citizen data science", that sounds patronising to me. It probably doesn't even need a name (but then how will it ever go viral, David??). After the somewhat misguided idea of citizen data science came and went we're left with some key takeaways. There is a reason to take elements of data science beyond the data science team. We don't want any gatekeeping ("only data scientists should analyse data") and everyone benefits from data literacy and some basic coding knowledge.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         </div>
     </section>

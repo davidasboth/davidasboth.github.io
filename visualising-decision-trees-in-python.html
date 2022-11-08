@@ -29,7 +29,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>David Asboth - Data Solutions &amp; Consultancy - Visualising Decision Trees in Python</title>
+	<title>David Asboth - Data Solutions &amp; Consultancy</title>
 
 	<link rel="canonical" href="/visualising-decision-trees-in-python.html">
 	
@@ -38,13 +38,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
 	
 	<link rel="stylesheet" href="/theme/css/style.css">
+	<link rel="stylesheet" href="/theme/css/pygments.css">
 
-  
-
-
-
-    <meta name="tags" content="featured" />
-    <meta name="tags" content="python" />
 
 </head>
 
@@ -60,11 +55,9 @@
 					<li>
 							<a href="/#about">About</a>
 					</li>
-					<!--
 					<li>
 							<a href="/articles">Articles</a>
 					</li>
-					-->
 					<li>
 					  <a href="#contact" class="button button-filled">Contact</a>
 					</li>
@@ -73,31 +66,20 @@
 		</div>
 	</header>
 
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="/visualising-decision-trees-in-python.html" rel="bookmark"
-         title="Permalink to Visualising Decision Trees in Python">Visualising Decision Trees in Python</a></h2>
- 
-  </header>
-  <footer class="post-info">
-    <time class="published" datetime="2016-11-28T22:03:00+00:00">
-      Mon 28 November 2016
-    </time>
-    <address class="vcard author">
-      By           <a class="url fn" href="/author/david.html">david</a>
-    </address>
-    <div class="category">
-        Category: <a href="/category/machine-learning.html">machine learning</a>
-    </div>
-    <div class="tags">
-        Tags:
-            <a href="/tag/featured.html">featured</a>
-            <a href="/tag/python.html">python</a>
-    </div>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <p>Interpretability is often an important concern with a machine learning
+
+<main id="articles-tutorials">
+    <section id="splash">
+        <div class="container">
+            <h1 class="text-centered">Visualising Decision Trees in Python</h1>
+            <div class="text-centered padding-medium"><a class="tag" href="category/machine-learning.html">machine learning</a></div>
+            <p class="text-centered"><p>Having an accurate machine learning model may be enough in itself, but in some cases the only way to turn it into a business decision is if you can understand why it's getting the results it's getting. In this short tutorial I want to show a quick way to visualise a trained decision tree in Python.</p></p>
+         </div>
+    </section>
+
+    <section id="article-content">
+        <div class="container">
+            
+            <p>Interpretability is often an important concern with a machine learning
 algorithm (despite spellcheck telling me it's not even a word). Having
 an accurate predictive model may be enough in itself, but in some cases
 the only way to turn it into a business decision is if you can
@@ -117,7 +99,7 @@ like "if the petal length is less than 2, classify the flower as
 <em>setosa</em>, otherwise if the petal width is greater than 1.5 classify it
 as <em>virginica,</em> otherwise classify it as <em>versicolor</em>".</p>
 <p>You can train decision trees with Python using scikit-learn.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
@@ -138,17 +120,16 @@ levels, in this case purely for easier visualisation.</p>
 <p>Once you're happy with a model, how do you visualise your tree?</p>
 <p>Scikit-learn has a built-in function called <em>export_graphviz</em> which
 lets you export it to a file, in a specific format.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
 
 <span class="n">export_graphviz</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="s1">&#39;iris_tree.dot&#39;</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
 </code></pre></div>
 
 <p>You can then open the file in Notepad (or any text editor) and view its
 output online by pasting its contents into the textbox at
-<a href="http://webgraphviz.com/">http://webgraphviz.com/</a></p>
+<a href="http://webgraphviz.com">http://webgraphviz.com</a></p>
 <p>Our iris decision tree looks something like this:</p>
-<p><img alt="Decision tree trained on the iris dataset" src="/images/visualising-decision-trees-in-python/iris_tree.png"></p>
-<p>A 3-level decision tree trained on the Iris dataset</p>
+<p><img alt="Decision tree trained on the iris dataset" src="/images/visualising-decision-trees-in-python/iris_tree.png" /></p>
 <p>By providing the feature names we can label each decision point so it is
 obvious what's happening at each step.</p>
 <p>The "value" part of each leaf node shows how the examples that make it
@@ -161,8 +142,65 @@ if you want to keep the tree interpretable you probably want to limit
 its depth.</p>
 <p>For further visualisation options you can follow the instructions on
 <a href="http://scikit-learn.org/dev/modules/tree.html#classification">the official scikit-learn page</a>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div><!-- /.entry-content -->
-</section>
+
+        </div>
+    </section>
+
+<section id="about">
+    <div class="container flex-container">
+      <div class="col-40 image-full">
+            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+        </div>
+      <div class="col-60">
+        <h2>About David</h2>
+        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. My previous roles have been a range of data science, software development, team management and software architecting jobs.</p>
+        <p class="text-pre-heading">Things I also do:</p>
+        <ul>
+          <li>
+            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
+            </li>
+          <li>
+            I've written various <a href="/articles">articles and tutorials</a> about data science
+          </li>
+          <li>
+            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
+            </li>
+          <li>
+            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+<section id="contact">
+<div class="container flex-container">
+  <div class="col-40 image-full">
+	<img src="/theme/images/DataScienceFestival-02-contact.jpg">
+	</div>
+  <div class="col-60">
+	<h2>Contact me</h2>
+	<p>Please give me a brief idea of what you're looking for help with, and I'll get back to you very soon. If you're having trouble with the form below, you can also email me at <a href="mailto:hello@davidasboth.com" target="_blank">hello@davidasboth.com</a></p>
+	<form action="https://api.formcake.com/api/form/184308c0-d548-4a26-ae33-db870931e16d/submission" method="POST">
+	  <input type="text" name="name" placeholder="Name *" required>
+	  <input type="email" name="email" placeholder="Email address *" required>
+	  <select name="service-required" required>
+		<option value="" disabled selected hidden>What are you looking for help with?</option>
+		<option value="consulting-largeorg" >Consulting for a large organisation</option>
+		<option value="consulting-smallbiz" >Consulting for a small business/startup</option>
+		<option value="education-staff" >Education for staff members</option>
+		<option value="mentoring-1to1" >Mentoring 1:1s for students/career newbies</option>
+		 <option value="other" >Other</option>
+		</select>
+	  <textarea placeholder="Message *" name="message" required></textarea>
+	  <input type="text" name="spiderweb" style="display: none">
+		  <input type="submit" class="button button-filled" value="Get in touch!">
+		  <a class="icon" href="https://twitter.com/davidasboth"><img src="/theme/images/icon-twitter.svg" alt="Twitter"/></a>
+		  <a class="icon" href="https://www.linkedin.com/in/david-asboth-9256772b"><img src="/theme/images/icon-linkedin.svg" alt="LinkedIn"/></a>
+	  </form>
+	</div>
+  </div>
+</section></main>
+
 
 	<footer>
 		<div class="container flex-container">

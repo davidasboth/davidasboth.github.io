@@ -3,48 +3,48 @@
 learning algorithms "in plain English"? They're popular because many
 people want to learn about machine learning, but don't want to be
 bombarded with heavy maths the moment they start. I agree, I think
-machine learning should be taught &lt;a href="/blog/intuition-first-machine-learning/"&gt;intuition first&lt;/a&gt;.
+machine learning should be taught &lt;a href="/intuition-first-machine-learning"&gt;intuition first&lt;/a&gt;.
 I also recognise that people are busy and don't want to spend hours
 reading up on algorithms to understand them.&lt;/p&gt;
 &lt;p&gt;So forget "machine learning in plain English". Instead, I present some
 of the most popular algorithms in haiku form. Consider it "machine
 learning for the busy".&lt;/p&gt;
-&lt;h2&gt;Logistic Regression&lt;/h2&gt;
-&lt;p&gt;Inputs weighted, summed.&lt;br&gt;
-Passed through logistic function.&lt;br&gt;
+&lt;h3&gt;Logistic Regression&lt;/h3&gt;
+&lt;p&gt;Inputs weighted, summed.&lt;br /&gt;
+Passed through logistic function.&lt;br /&gt;
 Shall we output 1?&lt;/p&gt;
-&lt;h2&gt;Random Forest&lt;/h2&gt;
-&lt;p&gt;Oh, decision trees!&lt;br&gt;
-Alone you're not so useful.&lt;br&gt;
+&lt;h3&gt;Random Forest&lt;/h3&gt;
+&lt;p&gt;Oh, decision trees!&lt;br /&gt;
+Alone you're not so useful.&lt;br /&gt;
 How 'bout a forest?&lt;/p&gt;
-&lt;h2&gt;Support Vector Machines&lt;/h2&gt;
-&lt;p&gt;Binary outcomes.&lt;br&gt;
-Maximum separation,&lt;br&gt;
+&lt;h3&gt;Support Vector Machines&lt;/h3&gt;
+&lt;p&gt;Binary outcomes.&lt;br /&gt;
+Maximum separation,&lt;br /&gt;
 Is what is needed.&lt;/p&gt;
-&lt;h2&gt;Linear Regression&lt;/h2&gt;
-&lt;p&gt;Weighted X is summed.&lt;br&gt;
-Perhaps regularised, too.&lt;br&gt;
+&lt;h3&gt;Linear Regression&lt;/h3&gt;
+&lt;p&gt;Weighted X is summed.&lt;br /&gt;
+Perhaps regularised, too.&lt;br /&gt;
 Gives me real numbers.&lt;/p&gt;
-&lt;h2&gt;Neural Networks&lt;/h2&gt;
-&lt;p&gt;Backpropagation:&lt;br&gt;
-Works well, is a mystery.&lt;br&gt;
+&lt;h3&gt;Neural Networks&lt;/h3&gt;
+&lt;p&gt;Backpropagation:&lt;br /&gt;
+Works well, is a mystery.&lt;br /&gt;
 But Geoff Hinton knows.&lt;/p&gt;
-&lt;h2&gt;K Nearest Neighbours&lt;/h2&gt;
-&lt;p&gt;Nothing to learn here.&lt;br&gt;
-Find the nearest data points,&lt;br&gt;
+&lt;h3&gt;K Nearest Neighbours&lt;/h3&gt;
+&lt;p&gt;Nothing to learn here.&lt;br /&gt;
+Find the nearest data points,&lt;br /&gt;
 And use the average.&lt;/p&gt;
-&lt;h2&gt;K-means Clustering&lt;/h2&gt;
-&lt;p&gt;Find similar things&lt;br&gt;
-By grouping based on distance&lt;br&gt;
+&lt;h3&gt;K-means Clustering&lt;/h3&gt;
+&lt;p&gt;Find similar things&lt;br /&gt;
+By grouping based on distance&lt;br /&gt;
 There's no "right" answer.&lt;/p&gt;
-&lt;h2&gt;Markov Chains&lt;/h2&gt;
-&lt;p&gt;Mr Markov, your&lt;br&gt;
-Use of probabilities&lt;br&gt;
+&lt;h3&gt;Markov Chains&lt;/h3&gt;
+&lt;p&gt;Mr Markov, your&lt;br /&gt;
+Use of probabilities&lt;br /&gt;
 Gave us funny text.&lt;/p&gt;
-&lt;h2&gt;Naive Bayes&lt;/h2&gt;
-&lt;p&gt;We're gonna pretend&lt;br&gt;
-Features are independent,&lt;br&gt;
-Naive as that is.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry><entry><title>Visualising Decision Trees in Python</title><link href="/visualising-decision-trees-in-python.html" rel="alternate"></link><published>2016-11-28T22:03:00+00:00</published><updated>2016-11-28T22:03:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-28:/visualising-decision-trees-in-python.html</id><summary type="html">&lt;p&gt;Having an accurate machine learning model may be enough in itself, but in some cases the only way to turn it into a business decision is if you can understand why it's getting the results it's getting. In this short tutorial I want to show a quick way to visualise a trained decision tree in Python.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Interpretability is often an important concern with a machine learning
+&lt;h3&gt;Naive Bayes&lt;/h3&gt;
+&lt;p&gt;We're gonna pretend&lt;br /&gt;
+Features are independent,&lt;br /&gt;
+Naive as that is.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category></entry><entry><title>Visualising Decision Trees in Python</title><link href="/visualising-decision-trees-in-python.html" rel="alternate"></link><published>2016-11-28T22:03:00+00:00</published><updated>2016-11-28T22:03:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-28:/visualising-decision-trees-in-python.html</id><summary type="html">&lt;p&gt;Having an accurate machine learning model may be enough in itself, but in some cases the only way to turn it into a business decision is if you can understand why it's getting the results it's getting. In this short tutorial I want to show a quick way to visualise a trained decision tree in Python.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Interpretability is often an important concern with a machine learning
 algorithm (despite spellcheck telling me it's not even a word). Having
 an accurate predictive model may be enough in itself, but in some cases
 the only way to turn it into a business decision is if you can
@@ -64,7 +64,7 @@ like "if the petal length is less than 2, classify the flower as
 &lt;em&gt;setosa&lt;/em&gt;, otherwise if the petal width is greater than 1.5 classify it
 as &lt;em&gt;virginica,&lt;/em&gt; otherwise classify it as &lt;em&gt;versicolor&lt;/em&gt;".&lt;/p&gt;
 &lt;p&gt;You can train decision trees with Python using scikit-learn.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.datasets&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;load_iris&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.datasets&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;load_iris&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.tree&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DecisionTreeClassifier&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.model_selection&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;train_test_split&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.metrics&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;accuracy_score&lt;/span&gt;
@@ -85,17 +85,16 @@ levels, in this case purely for easier visualisation.&lt;/p&gt;
 &lt;p&gt;Once you're happy with a model, how do you visualise your tree?&lt;/p&gt;
 &lt;p&gt;Scikit-learn has a built-in function called &lt;em&gt;export_graphviz&lt;/em&gt; which
 lets you export it to a file, in a specific format.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.tree&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;export_graphviz&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.tree&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;export_graphviz&lt;/span&gt;
 
 &lt;span class="n"&gt;export_graphviz&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;iris_tree.dot&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;feature_names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;iris&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;feature_names&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You can then open the file in Notepad (or any text editor) and view its
 output online by pasting its contents into the textbox at
-&lt;a href="http://webgraphviz.com/"&gt;http://webgraphviz.com/&lt;/a&gt;&lt;/p&gt;
+&lt;a href="http://webgraphviz.com"&gt;http://webgraphviz.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Our iris decision tree looks something like this:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Decision tree trained on the iris dataset" src="/images/visualising-decision-trees-in-python/iris_tree.png"&gt;&lt;/p&gt;
-&lt;p&gt;A 3-level decision tree trained on the Iris dataset&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Decision tree trained on the iris dataset" src="/images/visualising-decision-trees-in-python/iris_tree.png" /&gt;&lt;/p&gt;
 &lt;p&gt;By providing the feature names we can label each decision point so it is
 obvious what's happening at each step.&lt;/p&gt;
 &lt;p&gt;The "value" part of each leaf node shows how the examples that make it
@@ -107,36 +106,30 @@ length and sepal length is enough to give us over 90% accuracy.&lt;/p&gt;
 if you want to keep the tree interpretable you probably want to limit
 its depth.&lt;/p&gt;
 &lt;p&gt;For further visualisation options you can follow the instructions on
-&lt;a href="http://scikit-learn.org/dev/modules/tree.html#classification"&gt;the official scikit-learn page&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>More on K-means Clustering</title><link href="/more-on-k-means-clustering.html" rel="alternate"></link><published>2016-11-20T17:01:00+00:00</published><updated>2016-11-20T17:01:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-20:/more-on-k-means-clustering.html</id><summary type="html">&lt;p&gt;In this post I look at a practical example of k-means clustering in action, namely to draw puppies. I also touch on a couple of more general points to consider when using clustering.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="/blog/introduction-to-k-means-clustering/"&gt;Part 1&lt;/a&gt;
+&lt;a href="http://scikit-learn.org/dev/modules/tree.html#classification"&gt;the official scikit-learn page&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>More on K-means Clustering</title><link href="/more-on-k-means-clustering.html" rel="alternate"></link><published>2016-11-20T17:01:00+00:00</published><updated>2016-11-20T17:01:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-20:/more-on-k-means-clustering.html</id><summary type="html">&lt;p&gt;In this post I look at a practical example of k-means clustering in action, namely to draw puppies. I also touch on a couple of more general points to consider when using clustering.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="/introduction-to-k-means-clustering"&gt;Part 1&lt;/a&gt;
 I described the k-means clustering algorithm and some of its uses along
 with a quick Python implementation. Going forward I recommend using the
 &lt;a href="http://scikit-learn.org/stable/modules/clustering.html#k-means"&gt;scikit-learn implementation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Now let's see k-means in action!
- &lt;/p&gt;
-&lt;h1&gt;Image Segmentation&lt;/h1&gt;
+&lt;p&gt;Now let's see k-means in action!&lt;/p&gt;
+&lt;h2&gt;Image Segmentation&lt;/h2&gt;
 &lt;p&gt;One use of clustering is to segment images:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;For example, in computer graphics, color quantization is the task of
-reducing the color palette of an image to a fixed number of colors
-&lt;em&gt;k&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;From: &lt;a href="https://en.wikipedia.org/wiki/K-means_clustering#Vector_quantization"&gt;k-means clustering (Wikipedia)&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;For example, in computer graphics, color quantization is the task of reducing the color palette of an image to a fixed number of colors &lt;em&gt;k&lt;/em&gt;.&lt;/em&gt;
+&lt;small&gt;From: &lt;a href="https://en.wikipedia.org/wiki/K-means_clustering#Vector_quantization"&gt;k-means clustering (Wikipedia)&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;p&gt;Given an image, we can use k-means clustering to find similar colours in
 the image, and re-draw it with fewer colours. This has uses in data
 compression for example.&lt;/p&gt;
 &lt;p&gt;This is the example I'll run through today.&lt;/p&gt;
 &lt;p&gt;We'll take this image of a puppy:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A puppy" src="/images/more-on-k-means-clustering/puppy.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;Puppy image from &lt;a href="https://www.flickr.com/photos/gregcullen/250779651/in/photolist-oaj46-cTecd9-sHsHk-5WP7e-9jLY1e-dMrkp4-oak27-8LgQUd-72uozM-9N6oDE-4VoQq-fGnMUG-fkMAUo-hSg7Vm-9xukWa-7K3S2B-fz3KAH-aWe43R-HhRcz-4SZHdM-3d8eAm-Gh4ip-c3LHsG-y6YdK-e4Qn6h-y6U3M-48xfrF-qaZttJ-8MuTV2-aDsi2E-db1Ujw-oxFiuK-y6Ynf-oBGkqj-bVUar-5ft6bn-mwDdV-4BeWnC-itR65i-8d1bVK-5CSiqu-fNwmya-7kTing-7oySVC-boenVS-bBvADe-5fmmvh-4j3Q9U-53pHvi-4qFWve"&gt;Greg on Flickr&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;and redraw it in much fewer colours using k-means clustering.&lt;/p&gt;
-&lt;h2&gt;The Data&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="A puppy" src="/images/more-on-k-means-clustering/puppy.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;Puppy image from &lt;a href="https://www.flickr.com/photos/gregcullen/250779651/in/photolist-oaj46-cTecd9-sHsHk-5WP7e-9jLY1e-dMrkp4-oak27-8LgQUd-72uozM-9N6oDE-4VoQq-fGnMUG-fkMAUo-hSg7Vm-9xukWa-7K3S2B-fz3KAH-aWe43R-HhRcz-4SZHdM-3d8eAm-Gh4ip-c3LHsG-y6YdK-e4Qn6h-y6U3M-48xfrF-qaZttJ-8MuTV2-aDsi2E-db1Ujw-oxFiuK-y6Ynf-oBGkqj-bVUar-5ft6bn-mwDdV-4BeWnC-itR65i-8d1bVK-5CSiqu-fNwmya-7kTing-7oySVC-boenVS-bBvADe-5fmmvh-4j3Q9U-53pHvi-4qFWve"&gt;Greg on Flickr&lt;/a&gt; and redraw it in much fewer colours using k-means clustering.&lt;/p&gt;
+&lt;h3&gt;The Data&lt;/h3&gt;
 &lt;p&gt;Let's start by defining our data. To represent this problem, we take
 each pixel in the image as a data point whose 3 features are the R, G
 and B values of the pixel.&lt;/p&gt;
 &lt;p&gt;For this particular image this gives us a dataset with 3 columns and
 43,680 rows. Some of the pixels are the same colour, but we've still got
 over 10,000 unique colours in our image.&lt;/p&gt;
-&lt;h2&gt;Running K-means&lt;/h2&gt;
+&lt;h3&gt;Running K-means&lt;/h3&gt;
 &lt;p&gt;It is conceivable that we can group similar colours together and redraw
 the same image with fewer colours in a way that we can still tell what
 is in the image. This would reduce the amount of information needed to
@@ -145,7 +138,7 @@ much detail.&lt;/p&gt;
 &lt;p&gt;Once we have our dataset (the details of extracting the pixel values
 will be in the accompanying Jupyter notebook) running the algorithm with
 scikit-learn is easy:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.cluster&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;KMeans&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.cluster&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;KMeans&lt;/span&gt;
 
 &lt;span class="n"&gt;kmeans&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;KMeans&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n_clusters&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="c1"&gt;# our dataframe (df) is the image data&lt;/span&gt;
@@ -161,9 +154,9 @@ scikit-learn is easy:&lt;/p&gt;
 colours themselves.&lt;/p&gt;
 &lt;p&gt;That means once we have the cluster assignment for each pixel, plus the
 centroid as the associated colour value, we can reconstruct our image
-pixel by pixel to get the $k$-colour representation.&lt;/p&gt;
+pixel by pixel to get the &lt;span class="math"&gt;\(k\)&lt;/span&gt;-colour representation.&lt;/p&gt;
 &lt;p&gt;The same image with only 3 colours looks like this:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A 3-colour puppy" src="/images/more-on-k-means-clustering/puppy_3.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A 3-colour puppy" src="/images/more-on-k-means-clustering/puppy_3.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;The same puppy drawn with only 3 colours&lt;/p&gt;
 &lt;p&gt;As you can clearly see, we've reduced the number of colours required,
 and incidentally also reduced the filesize threefold, without losing too
@@ -171,7 +164,7 @@ much information. The image is still clearly a puppy, despite the fact
 that we've only used 3 colours.&lt;/p&gt;
 &lt;p&gt;When we use 16 colours the image starts to resemble the original in much
 more detail:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A 16-colour puppy" src="/images/more-on-k-means-clustering/puppy_16.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A 16-colour puppy" src="/images/more-on-k-means-clustering/puppy_16.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;A 16-colour puppy &lt;/p&gt;
 &lt;p&gt;You can still see the background isn't smooth but we're getting close.
 In fact, we would get to an image that is indistinguishable from the
@@ -179,38 +172,38 @@ original by using far less than the original 10,000 colours.&lt;/p&gt;
 &lt;p&gt;Here is the &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/k-means/Image%20Clustering%20with%20scikit-learn.ipynb"&gt;Jupyter notebook for drawing puppies&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I have a couple of points left to raise, namely some practical tips when
 using clustering.&lt;/p&gt;
-&lt;h1&gt;Choosing K&lt;/h1&gt;
-&lt;p&gt;How would we know which point to stop at? When is $k$ at its optimal
+&lt;h2&gt;Choosing K&lt;/h2&gt;
+&lt;p&gt;How would we know which point to stop at? When is &lt;span class="math"&gt;\(k\)&lt;/span&gt; at its optimal
 value?&lt;/p&gt;
 &lt;p&gt;As I mentioned in part 1, this is usually somewhat subjective, but there
 are some general heuristics.&lt;/p&gt;
 &lt;p&gt;In this case we could do it by visual inspection. That is, we could say
-$k$ is high enough when we are no longer visually able to tell the
+&lt;span class="math"&gt;\(k\)&lt;/span&gt; is high enough when we are no longer visually able to tell the
 difference between the original and the redrawn images.&lt;/p&gt;
 &lt;p&gt;Not all datasets will lend themselves to visual inspection like this
 though.&lt;/p&gt;
 &lt;p&gt;We can use what's called the &lt;em&gt;elbow method&lt;/em&gt; to evaluate when to stop.&lt;/p&gt;
-&lt;p&gt;For each value of $k$ you want to evaluate how much of the variance in
-your data is explained by the configurations of those $k$ clusters.
-This value increases for each value of $k$, but the idea is that we
-stop increasing $k$ when increasing it gives us diminishing returns.&lt;/p&gt;
-&lt;p&gt;Let's think of the two extremes. When $k$ = 1, it means every point
+&lt;p&gt;For each value of &lt;span class="math"&gt;\(k\)&lt;/span&gt; you want to evaluate how much of the variance in
+your data is explained by the configurations of those &lt;span class="math"&gt;\(k\)&lt;/span&gt; clusters.
+This value increases for each value of &lt;span class="math"&gt;\(k\)&lt;/span&gt;, but the idea is that we
+stop increasing &lt;span class="math"&gt;\(k\)&lt;/span&gt; when increasing it gives us diminishing returns.&lt;/p&gt;
+&lt;p&gt;Let's think of the two extremes. When &lt;span class="math"&gt;\(k\)&lt;/span&gt; = 1, it means every point
 will belong to the &lt;em&gt;same&lt;/em&gt; cluster. This configuration explains 0% of the
 variance in your data, because it says all your data points are the
-same. Then $k$ is equal to the number of data points you have, it
+same. Then &lt;span class="math"&gt;\(k\)&lt;/span&gt; is equal to the number of data points you have, it
 means every point will belong to &lt;em&gt;its own cluster&lt;/em&gt;. This configuration
 explains 100% of the variation in your data because it says each of your
 data points is different from every other one. A value in between will
 explain some % of the variation, because it will say some data points
 are equal to some other data points, and different from some others.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://bl.ocks.org/rpgove/0060ff3b656618e9136b"&gt;Here's a good explanation&lt;/a&gt; of the
-elbow method, although it uses the "error" for each $k$ value, so the
+elbow method, although it uses the "error" for each &lt;span class="math"&gt;\(k\)&lt;/span&gt; value, so the
 graph is upside down compared to the "variance explained" metric I
 discussed above.&lt;/p&gt;
 &lt;p&gt;Either way, there is usually an "elbow" where the increase/decrease is
 suddenly less sharp. That's usually a good point to stop and use that
-value for $k$.&lt;/p&gt;
-&lt;h1&gt;Normalisation&lt;/h1&gt;
+value for &lt;span class="math"&gt;\(k\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h2&gt;Normalisation&lt;/h2&gt;
 &lt;p&gt;As I mentioned in the Self-Organising Maps tutorial, in practice you
 will want to normalise your data so all features are on the same scale.
 This is also true of k-means clustering. If all features are on the same
@@ -221,11 +214,73 @@ otherwise a feature with much larger values will dominate the others.&lt;/p&gt;
 features will often be on different scales.&lt;/p&gt;
 &lt;p&gt;See more information on this in Sebastian Raschka's &lt;a href="http://sebastianraschka.com/faq/docs/when-to-standardize.html"&gt;machine learning FAQ&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;K-means and clustering in general have many more uses, and I hope these
-puppies have piqued your interest!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Introduction to K-means Clustering</title><link href="/introduction-to-k-means-clustering.html" rel="alternate"></link><published>2016-11-20T15:18:00+00:00</published><updated>2016-11-20T15:18:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-20:/introduction-to-k-means-clustering.html</id><summary type="html">&lt;p&gt;An introduction to the popular k-means clustering algorithm with intuition and Python code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first of a two-part post on K-means clustering.&lt;/p&gt;
-&lt;h1&gt;Introduction&lt;/h1&gt;
-&lt;h2&gt;Unsupervised Learning&lt;/h2&gt;
+puppies have piqued your interest!&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Introduction to K-means Clustering</title><link href="/introduction-to-k-means-clustering.html" rel="alternate"></link><published>2016-11-20T15:18:00+00:00</published><updated>2016-11-20T15:18:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-20:/introduction-to-k-means-clustering.html</id><summary type="html">&lt;p&gt;An introduction to the popular k-means clustering algorithm with intuition and Python code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first of a two-part post on K-means clustering.&lt;/p&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;h3&gt;Unsupervised Learning&lt;/h3&gt;
 &lt;p&gt;I've talked about unsupervised learning before when dealing with
-&lt;a href="/blog/self-organising-maps-an-introduction/"&gt;Self-Organising Maps&lt;/a&gt;,
+&lt;a href="/self-organising-maps-an-introduction"&gt;Self-Organising Maps&lt;/a&gt;,
 but just to recap. Unsupervised learning is when you have a dataset of
 features with no pre-defined outcomes. You give it to an algorithm to
 learn patterns in the data without knowing in advance what associations
@@ -236,7 +291,7 @@ about the structure of the images, so it can find similar images without
 explicitly knowing about cats and dogs.&lt;/p&gt;
 &lt;p&gt;K-means is a type of unsupervised learning method, specifically a type
 of clustering.&lt;/p&gt;
-&lt;h2&gt;Clustering&lt;/h2&gt;
+&lt;h3&gt;Clustering&lt;/h3&gt;
 &lt;p&gt;Clustering deals with finding groups of similar data points.&lt;/p&gt;
 &lt;p&gt;There are two criteria that make a "good" set of clusters:&lt;/p&gt;
 &lt;ul&gt;
@@ -251,24 +306,25 @@ of clustering.&lt;/p&gt;
 of the &lt;a href="http://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html"&gt;many types&lt;/a&gt;
 of clustering algorithm, but I've chosen it as it's popular as well as
 being easy to understand and implement.&lt;/p&gt;
-&lt;h2&gt;Uses of Clustering&lt;/h2&gt;
-&lt;p&gt;What are some uses of clustering? Finding similarities in your data that
+&lt;h3&gt;Uses of Clustering&lt;/h3&gt;
+&lt;p&gt;What are some uses of clustering?&lt;/p&gt;
+&lt;p&gt;Finding similarities in your data that
 you couldn't do by inspection has a lot of uses. The classic example is
 "segmenting your customer base", that is identifying customers with
 similar buying behaviours for better targeted advertising. Another form
 of clustering, hierarchical clustering, is &lt;a href="http://astronomy.swin.edu.au/cosmos/h/hierarchical+clustering"&gt;used in astronomy&lt;/a&gt;.
-You can even use it &lt;a href="/blog/analysing-london-house-prices/"&gt;to find similar boroughs in London based on house-buying behaviour&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Potential Problems&lt;/h2&gt;
-&lt;h3&gt;Choosing K&lt;/h3&gt;
+You can even use it &lt;a href="/analysing-london-house-prices/"&gt;to find similar boroughs in London based on house-buying behaviour&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Potential Problems&lt;/h3&gt;
+&lt;h4&gt;Choosing K&lt;/h4&gt;
 &lt;p&gt;Before you start training your data to learn the clusters, you need to
-choose a value for $k$. That is, you have to decide beforehand how
+choose a value for &lt;span class="math"&gt;\(k\)&lt;/span&gt;. That is, you have to decide beforehand how
 many groups there are going to be. This sounds like it defeats the
 purpose of being unsupervised, and it is indeed something that you have
 to set manually.&lt;/p&gt;
 &lt;p&gt;Due to the random nature of the initialisation of the algorithm, and the
-uncertainty in the correct value for $k$, it is advisable to re-run
-the algorithm multiple times and decide on which configuration to use.&lt;/p&gt;
-&lt;h3&gt;Subjective Evaluation&lt;/h3&gt;
+uncertainty in the correct value for &lt;span class="math"&gt;\(k\)&lt;/span&gt;, you might find re-running
+the algorithm multiple times gives you different results.&lt;/p&gt;
+&lt;h4&gt;Subjective Evaluation&lt;/h4&gt;
 &lt;p&gt;As with unsupervised algorithms in general, evaluating the outcome is
 partly subjective. There are objective measures with which we can
 compare different runs, but the final evaluation will be based on which
@@ -280,7 +336,7 @@ over 60, you might choose another run that better separates your
 customers based on age. Of course, the clusters will be created based on
 your data, so if there really are two distinct groups of over-60
 customers then no amount of runs will change that!&lt;/p&gt;
-&lt;h1&gt;The K-means Algorithm (with words)&lt;/h1&gt;
+&lt;h2&gt;The K-means Algorithm (with words)&lt;/h2&gt;
 &lt;p&gt;Clusters have two properties: a &lt;strong&gt;centroid&lt;/strong&gt; and a set of your data
 points that are assigned to the cluster.&lt;/p&gt;
 &lt;p&gt;The centroid is simply a point which is the &lt;strong&gt;mean&lt;/strong&gt; of the data points
@@ -289,24 +345,24 @@ that belong to it (hence, "k-means").&lt;/p&gt;
 n is the number of features your data has.&lt;/p&gt;
 &lt;p&gt;The basic idea behind the k-means clustering algorithm is simple:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Start with a chosen value of $k$.&lt;/li&gt;
-&lt;li&gt;Choose $k$ of your data points at random to be your starting
+&lt;li&gt;Start with a chosen value of &lt;span class="math"&gt;\(k\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;Choose &lt;span class="math"&gt;\(k\)&lt;/span&gt; of your data points at random to be your starting
     centroids.&lt;/li&gt;
 &lt;li&gt;For each data point, assign it to a cluster based on which of the
-    $k$ centroids it is &lt;em&gt;closest&lt;/em&gt; to. Closest can mean any distance
+    &lt;span class="math"&gt;\(k\)&lt;/span&gt; centroids it is &lt;em&gt;closest&lt;/em&gt; to. Closest can mean any distance
     measure. The Euclidean distance is often used.&lt;/li&gt;
-&lt;li&gt;Now you have $k$ groups of data points assigned to a cluster.
+&lt;li&gt;Now you have &lt;span class="math"&gt;\(k\)&lt;/span&gt; groups of data points assigned to a cluster.
     Re-calculate the position of each cluster centroid by taking the
     &lt;em&gt;mean&lt;/em&gt; of the new points that are now associated with that cluster.&lt;/li&gt;
 &lt;li&gt;Repeat steps 3 and 4 until convergence. You are typically done when
     no points have changed clusters since the last iteration.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;It's better to see this happen visually - &lt;a href="http://www.onmyphd.com/?p=k-means.clustering#h3_goodexample"&gt;here's a good example&lt;/a&gt;.
+&lt;p&gt;It's better to see this happen visually - &lt;a href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering"&gt;here's a good interactive example&lt;/a&gt;.
  &lt;/p&gt;
-&lt;h1&gt;The K-means Algorithm (with code)&lt;/h1&gt;
+&lt;h2&gt;The K-means Algorithm (with code)&lt;/h2&gt;
 &lt;p&gt;Let's go through the steps again with code. Let's use &lt;a href="http://archive.ics.uci.edu/ml/datasets/Iris"&gt;the iris dataset&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Steps 1 &amp;amp; 2 - Initialisation&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;h3&gt;Steps 1 &amp;amp; 2 - Initialisation&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 
 &lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;iris.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# I&amp;#39;ll supply this alongside the Jupyter notebook&lt;/span&gt;
@@ -328,8 +384,8 @@ n is the number of features your data has.&lt;/p&gt;
     &lt;span class="n"&gt;centroids&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;Steps 3 &amp;amp; 4 - Learning&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;n_iterations&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;h3&gt;Steps 3 &amp;amp; 4 - Learning&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;n_iterations&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;assign_to_cluster&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;idx&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;point&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iloc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;idx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -371,10 +427,10 @@ points have changed cluster since the last iteration.&lt;/p&gt;
 &lt;p&gt;Once we've done that we can plot two of the data's dimensions and colour
 each point by its assigned cluster (and mark the cluster centroids).&lt;/p&gt;
 &lt;p&gt;We've gone from this plot of raw data:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Iris petal plot (no clusters)" src="/images/introduction-to-k-means-clustering/kmeans_iris_1.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Iris petal plot (no clusters)" src="/images/introduction-to-k-means-clustering/kmeans_iris_1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Plot of raw data before clustering&lt;/p&gt;
 &lt;p&gt;To this plot where we've clustered our points into 3 groups:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Iris data with 3 clusters" src="/images/introduction-to-k-means-clustering/kmeans_iris_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Iris data with 3 clusters" src="/images/introduction-to-k-means-clustering/kmeans_iris_2.png" /&gt;&lt;/p&gt;
 &lt;p&gt;3 clusters after just 20 iterations&lt;/p&gt;
 &lt;p&gt;There is still some overlap between the black and blue clusters, but
 just 20 iterations have quite effectively grouped our data into 3
@@ -383,18 +439,80 @@ clusters.&lt;/p&gt;
 &lt;p&gt;Here is the &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/k-means/K-Means.ipynb"&gt;associated Jupyter notebook&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In Part 2, I'll talk about another practical application of the k-means
 algorithm (using scikit-learn this time) as well as some implementation
-details such as how to pick the value of $k$.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Markov Chains for Text Generation</title><link href="/markov-chains-for-text-generation.html" rel="alternate"></link><published>2016-11-12T22:09:00+00:00</published><updated>2016-11-12T22:09:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-12:/markov-chains-for-text-generation.html</id><summary type="html">&lt;p&gt;Markov chains are a popular way to model sequential data. I want to run through an implementation where I generate new songs based on lyrics by Muse.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Markov chains are a popular way to model sequential data. They form the
+details such as how to pick the value of &lt;span class="math"&gt;\(k\)&lt;/span&gt;.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Markov Chains for Text Generation</title><link href="/markov-chains-for-text-generation.html" rel="alternate"></link><published>2016-11-12T22:09:00+00:00</published><updated>2016-11-12T22:09:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-12:/markov-chains-for-text-generation.html</id><summary type="html">&lt;p&gt;Markov chains are a popular way to model sequential data. I want to run through an implementation where I generate new songs based on lyrics by Muse.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Markov chains are a popular way to model sequential data. They form the
 basis of more complex ideas, such as Hidden Markov Models, which are
 used for speech recognition and have applications in bioinformatics.&lt;/p&gt;
 &lt;p&gt;Today I want to run through an implementation of Markov chains for
 generating text based on an existing corpus. First of course we need to
 understand what Markov chains are before we can implement one.&lt;/p&gt;
-&lt;h1&gt;The Intuition&lt;/h1&gt;
-&lt;p&gt;I've talked about &lt;a href="/blog/intuition-first-machine-learning/"&gt;intuition-first machine learning&lt;/a&gt;
+&lt;h2&gt;The Intuition&lt;/h2&gt;
+&lt;p&gt;I've talked about &lt;a href="/intuition-first-machine-learning"&gt;intuition-first machine learning&lt;/a&gt;
 before, so I'll start with the intuition. The first thing we need to
 know about is what a Markov chain consists of, then we need to define
 the Markov assumption.&lt;/p&gt;
-&lt;h2&gt;States and Transitions&lt;/h2&gt;
+&lt;h3&gt;States and Transitions&lt;/h3&gt;
 &lt;p&gt;In a Markov chain we are assuming our sequence is made up of &lt;strong&gt;discrete states&lt;/strong&gt;. That is, every item in the sequence is one of a finite set of
 possible values. In text, the states could be every letter of the
 alphabet and our punctuation marks.&lt;/p&gt;
@@ -409,27 +527,25 @@ probabilities if we always used the entire sequence. This would be like
 trying to predict the last word in War and Peace and having to take into
 account every single word that came before it.&lt;/p&gt;
 &lt;p&gt;To make this easier, we make what's called the Markov assumption.&lt;/p&gt;
-&lt;h2&gt;The Markov Assumption&lt;/h2&gt;
+&lt;h3&gt;The Markov Assumption&lt;/h3&gt;
 &lt;p&gt;The Markov assumption is when we assume the Markov property to be true.&lt;/p&gt;
 &lt;p&gt;The Markov property (of a sequence) is typically formulated like so:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The future is independent of the past, given the present.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;The future is independent of the past, given the present.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;That sounds a bit like an old proverb but it's a simple concept.&lt;/p&gt;
 &lt;p&gt;If a sequence has the Markov property it means that the value of the
-sequence at the next step &lt;strong&gt;depends only on the value at the past $n$ steps&lt;/strong&gt;. The value of $n$ (how far back we assume we need to go) is
+sequence at the next step &lt;strong&gt;depends only on the value at the past &lt;span class="math"&gt;\(n\)&lt;/span&gt; steps&lt;/strong&gt;. The value of &lt;span class="math"&gt;\(n\)&lt;/span&gt; (how far back we assume we need to go) is
 called the &lt;strong&gt;order&lt;/strong&gt; of a Markov chain.&lt;/p&gt;
 &lt;p&gt;So a second-order Markov chain is one where we use the current and the
 previous value to predict the next value. We are assuming that it does
 not matter what the rest of the text was before the previous word, we
 only need the current word and the one before it.&lt;/p&gt;
-&lt;p&gt;In effect, the Markov chain has no "memory" beyond the last $n$ steps.&lt;/p&gt;
+&lt;p&gt;In effect, the Markov chain has no "memory" beyond the last &lt;span class="math"&gt;\(n\)&lt;/span&gt; steps.&lt;/p&gt;
 &lt;p&gt;The Markov assumption simply states that we believe this Markov property
 to hold for a given sequence.&lt;/p&gt;
 &lt;p&gt;This is a simplifying assumption that means it is much easier to compute
 these Markov chains at the cost of some complexity and accuracy. However
 simple this assumption may feel, it performs remarkably well.&lt;/p&gt;
-&lt;h2&gt;The Markov Assumption in Text&lt;/h2&gt;
+&lt;h3&gt;The Markov Assumption in Text&lt;/h3&gt;
 &lt;p&gt;Let's look at an example. What does this Markov assumption look like for
 text? We'll work with second-order Markov chains, as defined above.&lt;/p&gt;
 &lt;p&gt;Let's imagine that our sequence is this string of animals:&lt;/p&gt;
@@ -449,18 +565,18 @@ possible pair.&lt;/p&gt;
 followed by "cat" twice, "dog" once and "fish" also once. That means if
 we're in the state "cat cat" the next word will be "cat" with a 50%
 probability, or "dog" or "fish" with 25% probability each.&lt;/p&gt;
-&lt;h1&gt;The Code&lt;/h1&gt;
+&lt;h2&gt;The Code&lt;/h2&gt;
 &lt;p&gt;That's enough intuition, let's get into the code.&lt;/p&gt;
 &lt;p&gt;I've scraped the lyrics to all songs written by &lt;a href="http://muse.mu/"&gt;Muse&lt;/a&gt;
 and we'll use this as our corpus. We'll use it to generate some more
 text, specifically a new Muse song.&lt;/p&gt;
-&lt;h2&gt;Preparation&lt;/h2&gt;
+&lt;h3&gt;Preparation&lt;/h3&gt;
 &lt;p&gt;The first step is to read the file in and clean it so we have a sequence
 of words and new lines. I won't go into the details, you can see how the
 cleaning is done in the accompanying Jupyter notebook. I also included
 the code I wrote to scrape the lyrics in the first place, but going
 through that is optional as I'll also include the final source file.&lt;/p&gt;
-&lt;h2&gt;Training&lt;/h2&gt;
+&lt;h3&gt;Training&lt;/h3&gt;
 &lt;p&gt;When we do the "learning" for a Markov chain, we're just identifying all
 unique triplets of words, and creating our transition probabilities
 using the first two words as the current state and the third as the next
@@ -472,11 +588,11 @@ even explicitly calculated the probabilities, but instead included each
 word as many times as it appears.&lt;/p&gt;
 &lt;p&gt;Our "cat cat" example above would look like an entry in a Python
 dictionary like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;cat cat&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;cat&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;cat&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;dog&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;fish&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;cat cat&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;cat&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;cat&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;dog&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;fish&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;To generate our transition probabilities we use a helper function:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;generate_triples&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word_list&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;generate_triples&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word_list&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
     &lt;span class="c1"&gt;# loop through the text and generate triples&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word_list&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
@@ -498,7 +614,7 @@ adding the next word into the list associated with that pair.&lt;/p&gt;
 words, we randomly sample from the list associated with that pair.&lt;/p&gt;
 &lt;p&gt;This function gives us the next word each time. This is part of a Markov
 class, where self.words is our previously trained dictionary.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_random_word&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;phrase&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_random_word&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;phrase&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;phrase&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="c1"&gt;# find a phrase from the list of words associated with the last two words in the supplied phrase&lt;/span&gt;
         &lt;span class="n"&gt;phrase_words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;phrase&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
@@ -531,31 +647,31 @@ chorus and a couple of verses.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;hear me moan&lt;/p&gt;
 &lt;p&gt;Verse 1&lt;/p&gt;
-&lt;p&gt;you are just&lt;br&gt;
-too much attention&lt;br&gt;
-and its gonna be&lt;br&gt;
-show me mercy can someone rescue me&lt;br&gt;
+&lt;p&gt;you are just&lt;br /&gt;
+too much attention&lt;br /&gt;
+and its gonna be&lt;br /&gt;
+show me mercy can someone rescue me&lt;br /&gt;
 make me agitated&lt;/p&gt;
 &lt;p&gt;Chorus&lt;/p&gt;
-&lt;p&gt;escaped your world&lt;br&gt;
-no one is crying alone&lt;br&gt;
-i wont let them hurt&lt;br&gt;
+&lt;p&gt;escaped your world&lt;br /&gt;
+no one is crying alone&lt;br /&gt;
+i wont let them hurt&lt;br /&gt;
 hurting you no&lt;/p&gt;
 &lt;p&gt;Verse 2&lt;/p&gt;
-&lt;p&gt;you know what youve done&lt;br&gt;
-bring me peace and wash away my dirt&lt;br&gt;
+&lt;p&gt;you know what youve done&lt;br /&gt;
+bring me peace and wash away my dirt&lt;br /&gt;
 spin me round and have me to&lt;/p&gt;
 &lt;p&gt;Chorus&lt;/p&gt;
-&lt;p&gt;escaped your world&lt;br&gt;
-no one is crying alone&lt;br&gt;
-i wont let them hurt&lt;br&gt;
+&lt;p&gt;escaped your world&lt;br /&gt;
+no one is crying alone&lt;br /&gt;
+i wont let them hurt&lt;br /&gt;
 hurting you no&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I dare say Matt Bellamy couldn't have written it better himself.&lt;/p&gt;
 &lt;p&gt;Here's the &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/markov-chain-muse-lyrics/Markov%20Chain%20Muse%20Lyrics.ipynb"&gt;associated Jupyter notebook&lt;/a&gt;.
 I've also previously published the code as more of a plug and play
 library, which &lt;a href="https://github.com/davidasboth/markov-chain-for-text"&gt;you can find here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Next Steps&lt;/h2&gt;
+&lt;h3&gt;Next Steps&lt;/h3&gt;
 &lt;p&gt;We could improve this code by doing any of the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Experiment with different orders for the Markov chain&lt;/li&gt;
@@ -566,12 +682,74 @@ library, which &lt;a href="https://github.com/davidasboth/markov-chain-for-text"
     a &lt;a href="https://github.com/karpathy/char-rnn"&gt;Recurrent Neural Network&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Adding support for punctuation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Further Reading&lt;/h1&gt;
+&lt;h2&gt;Further Reading&lt;/h2&gt;
 &lt;p&gt;If you want to learn more about Markov chains, and even see them 'in
 action', this is &lt;a href="http://setosa.io/ev/markov-chains/"&gt;a great resource&lt;/a&gt;
 to start with.&lt;/p&gt;
 &lt;p&gt;I glossed over a lot of the maths behind the algorithm, but if you're
-interested you could &lt;a href="https://www.youtube.com/watch?v=WUjt98HcHlk"&gt;start here&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Why You Should Reinvent the Machine Learning Wheel</title><link href="/why-you-should-reinvent-the-machine-learning-wheel.html" rel="alternate"></link><published>2016-11-11T17:17:00+00:00</published><updated>2016-11-11T17:17:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-11:/why-you-should-reinvent-the-machine-learning-wheel.html</id><summary type="html">&lt;p&gt;As data scientists we spend a lot of our time using other people's implementations of machine learning algorithms. I suggest that as part of the learning process it's worthwhile to try to implement them ourselves from scratch, in order to fully understand them.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you're a data scientist, unless you're in a job that's very
+interested you could &lt;a href="https://www.youtube.com/watch?v=WUjt98HcHlk"&gt;start here&lt;/a&gt;.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category></entry><entry><title>Why You Should Reinvent the Machine Learning Wheel</title><link href="/why-you-should-reinvent-the-machine-learning-wheel.html" rel="alternate"></link><published>2016-11-11T17:17:00+00:00</published><updated>2016-11-11T17:17:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-11:/why-you-should-reinvent-the-machine-learning-wheel.html</id><summary type="html">&lt;p&gt;As data scientists we spend a lot of our time using other people's implementations of machine learning algorithms. I suggest that as part of the learning process it's worthwhile to try to implement them ourselves from scratch, in order to fully understand them.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you're a data scientist, unless you're in a job that's very
 research-focused (and likely requires a PhD) you'll mostly be using
 machine learning algorithms invented anywhere between say 5 and 30 years
 ago. Similar to being a programmer, you'll be using many libraries made
@@ -641,7 +819,7 @@ to code the whole thing.&lt;/p&gt;
 as part of the Learning Club.&lt;/p&gt;
 &lt;h3&gt;Self-Organising Maps&lt;/h3&gt;
 &lt;p&gt;I
-&lt;a href="/blog/self-organising-maps-an-introduction/"&gt;discussed&lt;/a&gt;
+&lt;a href="/self-organising-maps-an-introduction"&gt;discussed&lt;/a&gt;
 this algorithm recently, and hopefully showed that two blog posts are
 enough to go through the details enough to actually &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/self-organising-map/Self-Organising%20Map.ipynb"&gt;write the code&lt;/a&gt;
 for it. This is perhaps a less mainstream choice but conceptually lends
@@ -650,8 +828,7 @@ itself to a good coding exercise.&lt;/p&gt;
 &lt;p&gt;A popular choice for modelling and predicting sequential data (text,
 audio, time series). It only requires simple probability theory and is
 another good choice to start with.&lt;/p&gt;
-&lt;p&gt;Another topic I'll return to later this month. My
-&lt;a href="https://github.com/davidasboth/markov-chain-for-text"&gt;implementation&lt;/a&gt;
+&lt;p&gt;My &lt;a href="https://github.com/davidasboth/markov-chain-for-text"&gt;implementation&lt;/a&gt;
 generates new text based on text you give it.&lt;/p&gt;
 &lt;h3&gt;Other Choices&lt;/h3&gt;
 &lt;p&gt;Some other algorithms I suggest might be reasonable choices:&lt;/p&gt;
@@ -666,7 +843,7 @@ understand and &lt;a href="https://mattmazur.com/2015/03/17/a-step-by-step-backp
 but it would be a good advanced programming challenge.&lt;/p&gt;
 &lt;p&gt;Hopefully I've convinced you that implementing machine algorithms from
 scratch is a worthwhile endeavour. I'm always interested in seeing other
-people's implementations so let me know if you've done any!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry><entry><title>Realistic Machine Learning</title><link href="/realistic-machine-learning.html" rel="alternate"></link><published>2016-11-10T15:41:00+00:00</published><updated>2016-11-10T15:41:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-10:/realistic-machine-learning.html</id><summary type="html">&lt;p&gt;As most data scientists quickly realise, there's a difference between the kind of data science you do while learning about it, and the kind you do at a real job. This is equally true of data cleaning/wrangling and machine learning.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As most data scientists quickly realise, there's a difference
+people's implementations so let me know if you've done any!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category></entry><entry><title>Realistic Machine Learning</title><link href="/realistic-machine-learning.html" rel="alternate"></link><published>2016-11-10T15:41:00+00:00</published><updated>2016-11-10T15:41:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-10:/realistic-machine-learning.html</id><summary type="html">&lt;p&gt;As most data scientists quickly realise, there's a difference between the kind of data science you do while learning about it, and the kind you do at a real job. This is equally true of data cleaning/wrangling and machine learning.&lt;/p&gt;</summary><content type="html">&lt;p&gt;As most data scientists quickly realise, there's a difference
 between the kind of data science you do while learning about it, and the
 kind you do at a real job.&lt;/p&gt;
 &lt;p&gt;This is especially true of university degrees, and isn't unique to data
@@ -679,10 +856,7 @@ scary way, just as a matter-of-fact appraisal of how things are.&lt;/p&gt;
 &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 
 &lt;p&gt;There's also this quote I've seen (source unknown):&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;In data science, 80% of time is spent preparing data, and 20% of time
-is spent complaining about the need to prepare data&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;In data science, 80% of time is spent preparing data, and 20% of time is spent complaining about the need to prepare data&lt;/p&gt;
 &lt;p&gt;What are the main reasons for this disconnect?&lt;/p&gt;
 &lt;h3&gt;Real Data is Messy&lt;/h3&gt;
 &lt;p&gt;Yes some data science courses cover this and talk about what sorts of
@@ -724,10 +898,6 @@ what you're used to.&lt;/p&gt;
 in general) and industry is to teach more realistic problems.&lt;/p&gt;
 &lt;p&gt;That's not to say you should &lt;strong&gt;start&lt;/strong&gt; with solving a business problem,
 but you should certainly &lt;strong&gt;end&lt;/strong&gt; on one.&lt;/p&gt;
-&lt;p&gt;As &lt;a href="/blog/5-data-science-book-recommendations/"&gt;I've already mentioned&lt;/a&gt;,
-the book Data Science from Scratch gives realistic-sounding problems
-when introducing various data science concepts.&lt;/p&gt;
-&lt;p&gt;I think we need more of that.&lt;/p&gt;
 &lt;p&gt;A more rounded way of teaching data science would be to start with toy
 problems and gradually build up to more complex ones. Something like
 this scale of four difficulties:&lt;/p&gt;
@@ -783,17 +953,13 @@ first, you get a "feel" for the concept before you get into the
 nitty-gritty implementation details.&lt;/p&gt;
 &lt;p&gt;Here's the idea of top down machine learning, quoted straight from the
 article:&lt;/p&gt;
-&lt;blockquote&gt;
 &lt;p&gt;We can summarize this top-down approach as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Learn the high-level process of applied machine learning.&lt;/li&gt;
-&lt;li&gt;Learn how to use a tool enough to be able to work through
-    problems.&lt;/li&gt;
+&lt;li&gt;Learn how to use a tool enough to be able to work through problems.&lt;/li&gt;
 &lt;li&gt;Practice on datasets, a lot.&lt;/li&gt;
-&lt;li&gt;Transition into the details and theory of machine learning
-    algorithms.&lt;/li&gt;
+&lt;li&gt;Transition into the details and theory of machine learning algorithms.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;I wholeheartedly agree with step 1 being the high-level process. You
 want to know exactly what you're trying to achieve before you need to
 formalise it mathematically.&lt;/p&gt;
@@ -807,15 +973,12 @@ need to understand it in more depth if you want to actually use it on a
 real problem.&lt;/p&gt;
 &lt;p&gt;This is what I propose instead, for an amended version of "top down"
 machine learning.&lt;/p&gt;
-&lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;Learn the high-level process of applied machine learning.&lt;/li&gt;
 &lt;li&gt;Try some toy examples, get your hands dirty.&lt;/li&gt;
-&lt;li&gt;Transition into the details and theory of machine learning
-    algorithms.&lt;/li&gt;
-&lt;li&gt;Practise on lots of datasets.&lt;/li&gt;
+&lt;li&gt;Transition into the details and theory of machine learning algorithms.&lt;/li&gt;
+&lt;li&gt;Practise on lots of datasets. &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;Not a big change, but the key difference is that you should understand
 the theory in more detail before you spend lots of time practising.
 Trying some toy problems before diving into the theory will help you put
@@ -838,7 +1001,7 @@ understand things like:&lt;/p&gt;
 prefer an approach where they're given the equations first, but I
 suspect they're the minority. If the imbalance is the way I perceive it,
 then there does seem to be a disconnect between the way people learn and
-the way machine learning is often taught.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry><entry><title>Self-Organising Maps: In Depth</title><link href="/self-organising-maps-in-depth.html" rel="alternate"></link><published>2016-11-06T19:44:00+00:00</published><updated>2016-11-06T19:44:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-06:/self-organising-maps-in-depth.html</id><summary type="html">&lt;p&gt;In Part 1, I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I want to step through the process of training and using a SOM – both the intuition and the Python code. At the end I'll also present a couple of real life use cases, not just the toy example we'll use for implementation.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="/blog/self-organising-maps-an-introduction/"&gt;Part 1&lt;/a&gt;,
+the way machine learning is often taught.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category></entry><entry><title>Self-Organising Maps: In Depth</title><link href="/self-organising-maps-in-depth.html" rel="alternate"></link><published>2016-11-06T19:44:00+00:00</published><updated>2016-11-06T19:44:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-06:/self-organising-maps-in-depth.html</id><summary type="html">&lt;p&gt;In Part 1, I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I want to step through the process of training and using a SOM – both the intuition and the Python code. At the end I'll also present a couple of real life use cases, not just the toy example we'll use for implementation.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="/self-organising-maps-an-introduction/"&gt;Part 1&lt;/a&gt;,
 I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I
 want to step through the process of training and using a SOM - both the
 intuition and the Python code. At the end I'll also present a couple of
@@ -847,25 +1010,25 @@ implementation.&lt;/p&gt;
 &lt;p&gt;The first thing we need is a problem to solve!&lt;/p&gt;
 &lt;p&gt;I'll use the colour map as the walkthrough example because it lends
 itself very nicely to visualisation.&lt;/p&gt;
-&lt;h1&gt;Setup&lt;/h1&gt;
-&lt;h2&gt;Dataset&lt;/h2&gt;
+&lt;h2&gt;Setup&lt;/h2&gt;
+&lt;h3&gt;Dataset&lt;/h3&gt;
 &lt;p&gt;Our data will be a collection of random colours, so first we'll
 artificially create a dataset of 100. Each colour is a 3D vector
 representing R, G and B values:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 
 &lt;span class="n"&gt;raw_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;That's simply 100 rows of 3D vectors all between the values of 0 and
 255.&lt;/p&gt;
-&lt;h2&gt;Objective&lt;/h2&gt;
+&lt;h3&gt;Objective&lt;/h3&gt;
 &lt;p&gt;Just to be clear, here's what we're trying to do. We want to take our 3D
 colour vectors and map them onto a 2D surface in such a way that similar
 colours will end up in the same area of the 2D surface.&lt;/p&gt;
-&lt;h2&gt;SOM Parameters&lt;/h2&gt;
+&lt;h3&gt;SOM Parameters&lt;/h3&gt;
 &lt;p&gt;Before training a SOM we need to decide on a few parameters.&lt;/p&gt;
-&lt;h3&gt;SOM Size&lt;/h3&gt;
+&lt;h4&gt;SOM Size&lt;/h4&gt;
 &lt;p&gt;First of all, its &lt;strong&gt;dimensionality&lt;/strong&gt;. In theory, a SOM can be any number
 of dimensions, but for visualisation purposes it is typically 2D and
 that's what I'll be using too.&lt;/p&gt;
@@ -888,7 +1051,7 @@ on the SOM has a weight vector associated with it that is the same
 number of dimensions as our input data, in this case 3 to match the 3
 dimensions of our colours. We'll see why this is important when we go
 through the implementation.&lt;/p&gt;
-&lt;h3&gt;Learning Parameters&lt;/h3&gt;
+&lt;h4&gt;Learning Parameters&lt;/h4&gt;
 &lt;p&gt;Training the SOM is an iterative process - it will get better at its
 task with every iteration, so we need a cutoff point. Our problem is
 quite small so 2,000 iterations should suffice but in bigger problems
@@ -902,19 +1065,19 @@ small changes.&lt;/p&gt;
 &lt;p&gt;In practice it is best to start with a larger learning rate and reduce
 it slowly over time. This is so that the SOM can start by making big
 changes but then settle into a solution after a while.&lt;/p&gt;
-&lt;h1&gt;Implementation&lt;/h1&gt;
+&lt;h2&gt;Implementation&lt;/h2&gt;
 &lt;p&gt;For the rest of this post I will use 3D to refer to the dimensionality
 of the input data (which in reality could be any number of dimensions)
 and 2D as the dimensionality of the SOM (which we decide and could also
 be any number).&lt;/p&gt;
-&lt;h2&gt;Setup&lt;/h2&gt;
+&lt;h3&gt;Setup&lt;/h3&gt;
 &lt;p&gt;To setup the SOM we need to start with the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Decide on and initialise the SOM parameters (as above)&lt;/li&gt;
 &lt;li&gt;Setup the grid by creating a 5x5 array of random 3D weight vectors&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Here's the code:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;network_dimensions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;network_dimensions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="n"&gt;n_iterations&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2000&lt;/span&gt;
 &lt;span class="n"&gt;init_learning_rate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.01&lt;/span&gt;
 &lt;span class="c1"&gt;# establish size variables based on data&lt;/span&gt;
@@ -934,7 +1097,7 @@ be any number).&lt;/p&gt;
 in the SOM during training. We'll return to those in the learning phase.
 Like the learning rate, the initial 2D radius will encompass most of the
 SOM and will gradually decrease as the number of iterations increases.&lt;/p&gt;
-&lt;h3&gt;Normalisation&lt;/h3&gt;
+&lt;h4&gt;Normalisation&lt;/h4&gt;
 &lt;p&gt;Another detail to discuss at this point is whether or not we normalise
 our dataset.&lt;/p&gt;
 &lt;p&gt;First of all, SOMs train faster (and "better") if all our values are
@@ -950,7 +1113,7 @@ on different scales we would have to do this column by column.&lt;/p&gt;
 &lt;p&gt;I don't want this code to be entirely tailored to the colour dataset so
 I'll leave the normalisation options tied to a few Booleans that are
 easy to change.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;normalise_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;normalise_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 
 &lt;span class="c1"&gt;# if True, assume all data is on common scale&lt;/span&gt;
 &lt;span class="c1"&gt;# if False, normalise to [0 1] range along each column&lt;/span&gt;
@@ -971,7 +1134,7 @@ easy to change.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now we're ready to start the learning process.&lt;/p&gt;
-&lt;h2&gt;Learning&lt;/h2&gt;
+&lt;h3&gt;Learning&lt;/h3&gt;
 &lt;p&gt;In broad terms the learning process will be as follows. We'll fill in
 the implementation details as we go along.&lt;/p&gt;
 &lt;p&gt;For a single iteration:&lt;/p&gt;
@@ -989,14 +1152,14 @@ the implementation details as we go along.&lt;/p&gt;
 &lt;p&gt;And that's it. By doing the penultimate step, moving the BMU's
 neighbours, we'll achieve the desired effect that &lt;strong&gt;colours that are close in 3D space will be mapped to similar areas in 2D space&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Let's step through this in more detail, with code.&lt;/p&gt;
-&lt;h3&gt;1. Select a Random Input Vector&lt;/h3&gt;
+&lt;h4&gt;1. Select a Random Input Vector&lt;/h4&gt;
 &lt;p&gt;This is straightforward:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# select a training example at random&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# select a training example at random&lt;/span&gt;
 &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;2. Find the Best Matching Unit&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# find its Best Matching Unit&lt;/span&gt;
+&lt;h4&gt;2. Find the Best Matching Unit&lt;/h4&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# find its Best Matching Unit&lt;/span&gt;
 &lt;span class="n"&gt;bmu&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bmu_idx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;find_bmu&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;net&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -1006,7 +1169,7 @@ input vector and return the one that's closest. Note the implementation
 trick of not actually measuring Euclidean distance, but the &lt;strong&gt;squared&lt;/strong&gt;
 Euclidean distance, thereby avoiding an expensive square root
 computation.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;find_bmu&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;net&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;find_bmu&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;net&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;        Find the best matching unit for a given vector, t, in the SOM&lt;/span&gt;
 &lt;span class="sd"&gt;        Returns: a (bmu, bmu_idx) tuple where bmu is the high-dimensional BMU&lt;/span&gt;
@@ -1030,41 +1193,41 @@ computation.&lt;/p&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bmu&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bmu_idx&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;3. Update the SOM Learning Parameters&lt;/h3&gt;
+&lt;h4&gt;3. Update the SOM Learning Parameters&lt;/h4&gt;
 &lt;p&gt;As described above, we want to decay the learning rate over time to let
 the SOM "settle" on a solution.&lt;/p&gt;
 &lt;p&gt;What we also decay is the &lt;strong&gt;neighbourhood radius&lt;/strong&gt;, which defines how
 far we search for 2D neighbours when updating vectors in the SOM. We
 want to gradually reduce this over time, like the learning rate. We'll
 see this in a bit more detail in step 4.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# decay the SOM parameters&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# decay the SOM parameters&lt;/span&gt;
 &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;decay_radius&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;init_radius&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;time_constant&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;decay_learning_rate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;init_learning_rate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n_iterations&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The functions to decay the radius and learning rate use exponential
 decay:&lt;/p&gt;
-&lt;p&gt;$\sigma_{t} = \sigma_{0} \times \exp(\frac{-t}{\lambda})$&lt;/p&gt;
-&lt;p&gt;Where $\lambda$ is the time constant (which controls the decay) and
-$\sigma$ is the value at various times $t$.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;decay_radius&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;initial_radius&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;time_constant&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\sigma_{t} = \sigma_{0} \times \exp(\frac{-t}{\lambda})\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Where &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt; is the time constant (which controls the decay) and
+&lt;span class="math"&gt;\(\sigma\)&lt;/span&gt; is the value at various times &lt;span class="math"&gt;\(t\)&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;decay_radius&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;initial_radius&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;time_constant&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;initial_radius&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;time_constant&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;decay_learning_rate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;initial_learning_rate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n_iterations&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;initial_learning_rate&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;n_iterations&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;4. Move the BMU and its Neighbours in 3D Space&lt;/h3&gt;
+&lt;h4&gt;4. Move the BMU and its Neighbours in 3D Space&lt;/h4&gt;
 &lt;p&gt;Now that we have the BMU and the correct learning parameters, we'll
 update the SOM so that this BMU is now closer in 3D space to the colour
 that mapped to it. We will also identify the neurons that are close to
 the BMU in 2D space and update their 3D vectors to move "inwards"
 towards the BMU.&lt;/p&gt;
 &lt;p&gt;The formula to update the BMU's 3D vector is:&lt;/p&gt;
-&lt;p&gt;$w_{t+1} = w_{t} + L_{t}(V_{t} - w_{t})$&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(w_{t+1} = w_{t} + L_{t}(V_{t} - w_{t})\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;That is to say, the new weight vector will be the current vector plus
-the difference between the input vector $V$ and the weight vector,
-multiplied by a learning rate $L$ at time $t$.&lt;/p&gt;
+the difference between the input vector &lt;span class="math"&gt;\(V\)&lt;/span&gt; and the weight vector,
+multiplied by a learning rate &lt;span class="math"&gt;\(L\)&lt;/span&gt; at time &lt;span class="math"&gt;\(t\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;We are literally just moving the weight vector closer to the input
 vector.&lt;/p&gt;
 &lt;p&gt;We also identify all the neurons in the SOM that are closer in 2D space
@@ -1074,12 +1237,12 @@ than our current radius, and also move them closer to the input vector.&lt;/p&gt
 it's Gaussian. So imagine a bell shape centred around the BMU - that's
 how we decide how much to pull the neighbouring neurons in by.&lt;/p&gt;
 &lt;p&gt;Concretely, this is the equation we'll use to calculate the influence
-$i$:&lt;/p&gt;
-&lt;p&gt;$i_{t} = \exp(-\frac{d^{2}}{2\sigma_{t}^{2}})$&lt;/p&gt;
-&lt;p&gt;where $d$ is the 2D distance and $\sigma$ is the current radius of
+&lt;span class="math"&gt;\(i\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(i_{t} = \exp(-\frac{d^{2}}{2\sigma_{t}^{2}})\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class="math"&gt;\(d\)&lt;/span&gt; is the 2D distance and &lt;span class="math"&gt;\(\sigma\)&lt;/span&gt; is the current radius of
 our neighbourhood.&lt;/p&gt;
 &lt;p&gt;Putting that all together:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;calculate_influence&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;calculate_influence&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 
 &lt;span class="c1"&gt;# now we know the BMU, update its weight vector to move closer to input&lt;/span&gt;
@@ -1102,25 +1265,24 @@ our neighbourhood.&lt;/p&gt;
             &lt;span class="n"&gt;net&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;:]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_w&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reshape&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;Visualisation&lt;/h2&gt;
+&lt;h3&gt;Visualisation&lt;/h3&gt;
 &lt;p&gt;Repeating the learning steps 1-4 for 2,000 iterations should be enough.
 We can always run it for more iterations afterwards.&lt;/p&gt;
 &lt;p&gt;Handily, the 3D weight vectors in the SOM can also be interpreted as
 colours, since they are just 3D vectors just like the inputs.&lt;/p&gt;
 &lt;p&gt;To that end, we can visualise them and come up with our final colour
 map:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="som" src="/images/self-organising-maps-in-depth/som.png"&gt;&lt;/p&gt;
-&lt;p&gt;A self-organising colour map&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A self-organising colour map" title="A self-organising colour map" src="/images/self-organising-maps-in-depth/som.png" style="background-color: white" /&gt;&lt;/p&gt;
 &lt;p&gt;None of those colours necessarily had to be in our dataset. By moving
 the 3D weight vectors to more closely match our input vectors, we've
 created a 2D colour space which clearly shows the relationship between
 colours. More blue colours will map to the left part of the SOM, whereas
 reddish colours will map to the bottom, and so on.&lt;/p&gt;
-&lt;h1&gt;Other Examples&lt;/h1&gt;
+&lt;h2&gt;Other Examples&lt;/h2&gt;
 &lt;p&gt;Finding a 2D colour space is a good visual way to get used to the idea
 of a SOM. However, there are obviously practical applications of this
 algorithm.&lt;/p&gt;
-&lt;h2&gt;Iris Dataset&lt;/h2&gt;
+&lt;h3&gt;Iris Dataset&lt;/h3&gt;
 &lt;p&gt;A dataset favoured by the machine learning community is Sir Ronald
 Fisher's &lt;a href="http://archive.ics.uci.edu/ml/datasets/Iris"&gt;dataset of measurements of irises&lt;/a&gt;. There are four
 input dimensions: petal width, petal length, sepal width and sepal
@@ -1128,8 +1290,7 @@ length and we could use a SOM to find similar flowers.&lt;/p&gt;
 &lt;p&gt;Applying the iris data to a SOM and then retrospectively colouring each
 point with their true class (to see how good the SOM was at separating
 the irises into their distinct categories) we get something like this:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="iris clusters" src="/images/self-organising-maps-in-depth/iris_clusters.png"&gt;&lt;/p&gt;
-&lt;p&gt;150 irises mapped onto a SOM, coloured by type&lt;/p&gt;
+&lt;p&gt;&lt;img alt="150 irises mapped onto a SOM, coloured by type" title="150 irises mapped onto a SOM, coloured by type" src="/images/self-organising-maps-in-depth/iris_clusters.png" /&gt;&lt;/p&gt;
 &lt;p&gt;This is a 10 by 10 SOM and each of the small points is one of the irises
 from the dataset (with added jitter to see multiple points on a single
 SOM neuron). I added the colours after training, and you can quite
@@ -1137,7 +1298,7 @@ clearly see the 3 distinct regions the SOM has divided itself into.&lt;/p&gt;
 &lt;p&gt;There are a few SOM neurons where both the green and the blue points get
 assigned to, and this represents the overlap between the versicolor and
 virginica types.&lt;/p&gt;
-&lt;h2&gt;Handwritten Digits&lt;/h2&gt;
+&lt;h3&gt;Handwritten Digits&lt;/h3&gt;
 &lt;p&gt;Another application I touched on in Part 1 is trying to identify
 handwritten characters.&lt;/p&gt;
 &lt;p&gt;In this case, the inputs are high-dimensional - each input dimension
@@ -1146,8 +1307,7 @@ makes the inputs 784-dimensional (each dimension is a value between 0
 and 255).&lt;/p&gt;
 &lt;p&gt;Mapping them to a 20 by 20 SOM, and again retrospectively colouring them
 based on their true class (a number from 0 to 9) yields this:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A SOM of handwritten characters" src="/images/self-organising-maps-in-depth/mnist_som.png"&gt;&lt;/p&gt;
-&lt;p&gt;Various handwritten numbers mapped to a 2D SOM&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A SOM of handwritten characters" title="Various handwritten numbers mapped to a 2D SOM" src="/images/self-organising-maps-in-depth/mnist_som.png" /&gt;&lt;/p&gt;
 &lt;p&gt;In this case the true classes are labelled according to the colours in
 the bottom left.&lt;/p&gt;
 &lt;p&gt;What you can see is that the SOM has successfully divided the 2D space
@@ -1158,14 +1318,76 @@ little overlap with other categories. Whereas in the bottom left, where
 the green and brown points overlap, is where the SOM was "confused"
 between 4s and 9s. A visual inspection of some of these handwritten
 characters shows that indeed many of the 4s and 9s are easily confused.&lt;/p&gt;
-&lt;h2&gt;Further Reading&lt;/h2&gt;
+&lt;h3&gt;Further Reading&lt;/h3&gt;
 &lt;p&gt;I hope this was a useful walkthrough on the intuition behind a SOM, and
 a simple Python implementation. There is &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/self-organising-map/Self-Organising%20Map.ipynb"&gt;a Jupyter notebook&lt;/a&gt;
 for the colour map example.&lt;/p&gt;
 &lt;p&gt;Mat Buckland's &lt;a href="http://www.ai-junkie.com/ann/som/som1.html"&gt;excellent explanation and code walkthrough&lt;/a&gt; of SOMs was
 instrumental in helping me learn. My code is more or less a Python port
 of his C++ implementation. Reading his posts should fill in any gaps I
-may have not covered.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Self-Organising Maps: An Introduction</title><link href="/self-organising-maps-an-introduction.html" rel="alternate"></link><published>2016-11-05T18:26:00+00:00</published><updated>2016-11-05T18:26:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-05:/self-organising-maps-an-introduction.html</id><summary type="html">&lt;p&gt;When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+may have not covered.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Self-Organising Maps: An Introduction</title><link href="/self-organising-maps-an-introduction.html" rel="alternate"></link><published>2016-11-05T18:26:00+00:00</published><updated>2016-11-05T18:26:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-05:/self-organising-maps-an-introduction.html</id><summary type="html">&lt;p&gt;When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;When you learn about machine learning techniques, you usually get a
 selection of the usual suspects. Something like: Support Vector
 Machines, decision trees/random forests, and logistic regression for
@@ -1178,12 +1400,12 @@ you covered.&lt;/p&gt;
 &lt;p&gt;In this post I want to talk about a less prevalent algorithm, but one
 that I like and that can be useful for different purposes.&lt;/p&gt;
 &lt;p&gt;It's called a Self-Organising Map (SOM).&lt;/p&gt;
-&lt;h1&gt;Brief History&lt;/h1&gt;
+&lt;h2&gt;Brief History&lt;/h2&gt;
 &lt;p&gt;SOMs are a type of artificial neural network. Some of the concepts date
 back further, but SOMs were proposed and became widespread in the 1980s,
 by a Finnish professor named Teuvo Kohonen. Unsurprisingly SOMs are also
 referred to as Kohonen maps.&lt;/p&gt;
-&lt;h2&gt;Artificial Neural Networks&lt;/h2&gt;
+&lt;h3&gt;Artificial Neural Networks&lt;/h3&gt;
 &lt;p&gt;Artifical neural networks (ANNs) were designed initially to be a
 computational representation of what is believed to happen in the brain.
 The way signals are passed along an ANN is based on how signals pass
@@ -1192,7 +1414,7 @@ between neurons in the brain.&lt;/p&gt;
 first layer consists of your inputs, the last layer consists of your
 outputs, and there are any number of so-called &lt;em&gt;hidden&lt;/em&gt; layers in
 between.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Simple neural network architecture" src="/images/self-organising-maps-an-introduction/296px-Colored_neural_network.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Simple neural network architecture" src="/images/self-organising-maps-an-introduction/296px-Colored_neural_network.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;small&gt;By &lt;a href="//commons.wikimedia.org/wiki/User_talk:Glosser.ca" title="User talk:Glosser.ca"&gt;Glosser.ca&lt;/a&gt; - [Own work], Derivative of &lt;a href="//commons.wikimedia.org/wiki/File:Artificial_neural_network.svg" title="File:Artificial neural network.svg"&gt;File:Artificial neural network.svg&lt;/a&gt;, &lt;a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0"&gt;CC BY-SA 3.0&lt;/a&gt;, &lt;a href="https://commons.wikimedia.org/w/index.php?curid=24913461"&gt;Link&lt;/a&gt;&lt;/small&gt;
  &lt;/p&gt;
 &lt;p&gt;The broad idea of an ANN is that you give it a dataset and a set of
@@ -1211,7 +1433,7 @@ errors they make, and incrementally get better at solving the problem.&lt;/p&gt;
 &lt;p&gt;This is a &lt;strong&gt;supervised&lt;/strong&gt; machine learning problem because you are
 telling the algorithm the desired answer for each set of inputs it's
 trained on, so it knows if it makes errors.&lt;/p&gt;
-&lt;h2&gt;The SOM as an ANN&lt;/h2&gt;
+&lt;h3&gt;The SOM as an ANN&lt;/h3&gt;
 &lt;p&gt;There are three main ways in which a Self-Organising Map is different
 from a "standard" ANN:&lt;/p&gt;
 &lt;ul&gt;
@@ -1228,12 +1450,12 @@ each input.&lt;/p&gt;
 your inputs to it without associating them with an output. Instead, a
 SOM is used to find structure in your data.
  &lt;/p&gt;
-&lt;h1&gt;What is a SOM used for?&lt;/h1&gt;
+&lt;h2&gt;What is a SOM used for?&lt;/h2&gt;
 &lt;p&gt;This last point about unsupervised learning brings me to an important
 question, because abstract concepts like neural networks are great to
 talk about but I'm a practical kind of guy.&lt;/p&gt;
 &lt;p&gt;In that spirit then, what is a SOM used for?&lt;/p&gt;
-&lt;h2&gt;Finding Structure&lt;/h2&gt;
+&lt;h3&gt;Finding Structure&lt;/h3&gt;
 &lt;p&gt;A classic example of what clustering algorithms are used for is finding
 similar customers in your customer base. SOMs can also do this. In fact,
 a SOM is meant to be &lt;strong&gt;a 2D representation of your multi-dimensional
@@ -1242,20 +1464,19 @@ each of your customers, maps to one of the nodes on the 2D grid. Most
 importantly, &lt;strong&gt;similar (high-dimensional) inputs will map to the same 2D
 node,&lt;/strong&gt; or at least the same region in 2D space. This is how the SOM
 finds and groups similar inputs together.&lt;/p&gt;
-&lt;h2&gt;Dimensionality Reduction&lt;/h2&gt;
+&lt;h3&gt;Dimensionality Reduction&lt;/h3&gt;
 &lt;p&gt;Related to finding structure is the fact that by finding this structure
 a SOM finds a lower-dimensional representation of your dataset &lt;strong&gt;while
 preserving the similarity between your records&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;That is, data points that are "nearby" in high-dimensional space will
 also be nearby in the SOM.&lt;/p&gt;
-&lt;h2&gt;Visualisation&lt;/h2&gt;
+&lt;h3&gt;Visualisation&lt;/h3&gt;
 &lt;p&gt;By creating a (typically) 2D representation of your dataset you can also
 more easily visualise it, which you can't do if your data has more than
 3 dimensions.&lt;/p&gt;
-&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
 &lt;p&gt;To summarise, I'll quote an answer I gave on StackOverflow to a question
 about SOMs:&lt;/p&gt;
-&lt;blockquote&gt;
 &lt;p&gt;The idea behind a SOM is that you're mapping high-dimensional vectors
 onto a smaller dimensional (typically 2D) space. You can think of it
 as clustering, like in K-means, with the added difference that vectors
@@ -1270,8 +1491,7 @@ it's not in a convenient 2D format.&lt;/p&gt;
 3D vectors that represent R,G,B colours. When mapped to a 2D SOM you
 can see regions of similar colours begin to develop, which is the
 topology of the colour space.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;Colours&lt;/h2&gt;
+&lt;h3&gt;Colours&lt;/h3&gt;
 &lt;p&gt;I hope that sounds interesting, because in Part 2 of this post I'll
 discuss some concrete examples and walk through a Python implementation
 of Self-Organising Maps.&lt;/p&gt;
@@ -1279,6 +1499,5 @@ of Self-Organising Maps.&lt;/p&gt;
 (where the 3 dimensions are R, G and B) and producing a 2D SOM where we
 visualise the "topology" of the 3D colour space.&lt;/p&gt;
 &lt;p&gt;Something like this:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="som" src="/images/self-organising-maps-an-introduction/som.png"&gt;&lt;/p&gt;
-&lt;p&gt;A Self-Organising Colourmap &lt;/p&gt;
-&lt;p&gt;In &lt;a href="/blog/self-organising-maps-in-depth/"&gt;Part 2&lt;/a&gt;, we'll look at an in-depth implementation of SOMs.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry></feed>
+&lt;p&gt;&lt;img alt="A self-organising colour map" title="A self-organising colour map" src="/images/self-organising-maps-an-introduction/som.png" style="background-color: white" /&gt;&lt;/p&gt;
+&lt;p&gt;In &lt;a href="/self-organising-maps-in-depth"&gt;Part 2&lt;/a&gt;, we'll look at an in-depth implementation of SOMs.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category></entry></feed>

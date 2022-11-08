@@ -29,7 +29,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>David Asboth - Data Solutions &amp; Consultancy - Markov Chains for Text Generation</title>
+	<title>David Asboth - Data Solutions &amp; Consultancy</title>
 
 	<link rel="canonical" href="/markov-chains-for-text-generation.html">
 	
@@ -38,13 +38,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
 	
 	<link rel="stylesheet" href="/theme/css/style.css">
+	<link rel="stylesheet" href="/theme/css/pygments.css">
 
-  
-
-
-
-    <meta name="tags" content="featured" />
-    <meta name="tags" content="python" />
 
 </head>
 
@@ -60,11 +55,9 @@
 					<li>
 							<a href="/#about">About</a>
 					</li>
-					<!--
 					<li>
 							<a href="/articles">Articles</a>
 					</li>
-					-->
 					<li>
 					  <a href="#contact" class="button button-filled">Contact</a>
 					</li>
@@ -73,42 +66,31 @@
 		</div>
 	</header>
 
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="/markov-chains-for-text-generation.html" rel="bookmark"
-         title="Permalink to Markov Chains for Text Generation">Markov Chains for Text Generation</a></h2>
- 
-  </header>
-  <footer class="post-info">
-    <time class="published" datetime="2016-11-12T22:09:00+00:00">
-      Sat 12 November 2016
-    </time>
-    <address class="vcard author">
-      By           <a class="url fn" href="/author/david.html">david</a>
-    </address>
-    <div class="category">
-        Category: <a href="/category/machine-learning.html">machine learning</a>
-    </div>
-    <div class="tags">
-        Tags:
-            <a href="/tag/featured.html">featured</a>
-            <a href="/tag/python.html">python</a>
-    </div>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <p>Markov chains are a popular way to model sequential data. They form the
+
+<main id="articles-tutorials">
+    <section id="splash">
+        <div class="container">
+            <h1 class="text-centered">Markov Chains for Text Generation</h1>
+            <div class="text-centered padding-medium"><a class="tag" href="category/machine-learning.html">machine learning</a></div>
+            <p class="text-centered"><p>Markov chains are a popular way to model sequential data. I want to run through an implementation where I generate new songs based on lyrics by Muse.</p></p>
+         </div>
+    </section>
+
+    <section id="article-content">
+        <div class="container">
+            
+            <p>Markov chains are a popular way to model sequential data. They form the
 basis of more complex ideas, such as Hidden Markov Models, which are
 used for speech recognition and have applications in bioinformatics.</p>
 <p>Today I want to run through an implementation of Markov chains for
 generating text based on an existing corpus. First of course we need to
 understand what Markov chains are before we can implement one.</p>
-<h1>The Intuition</h1>
-<p>I've talked about <a href="/blog/intuition-first-machine-learning/">intuition-first machine learning</a>
+<h2>The Intuition</h2>
+<p>I've talked about <a href="/intuition-first-machine-learning">intuition-first machine learning</a>
 before, so I'll start with the intuition. The first thing we need to
 know about is what a Markov chain consists of, then we need to define
 the Markov assumption.</p>
-<h2>States and Transitions</h2>
+<h3>States and Transitions</h3>
 <p>In a Markov chain we are assuming our sequence is made up of <strong>discrete states</strong>. That is, every item in the sequence is one of a finite set of
 possible values. In text, the states could be every letter of the
 alphabet and our punctuation marks.</p>
@@ -123,27 +105,25 @@ probabilities if we always used the entire sequence. This would be like
 trying to predict the last word in War and Peace and having to take into
 account every single word that came before it.</p>
 <p>To make this easier, we make what's called the Markov assumption.</p>
-<h2>The Markov Assumption</h2>
+<h3>The Markov Assumption</h3>
 <p>The Markov assumption is when we assume the Markov property to be true.</p>
 <p>The Markov property (of a sequence) is typically formulated like so:</p>
-<blockquote>
-<p>The future is independent of the past, given the present.</p>
-</blockquote>
+<p><em>The future is independent of the past, given the present.</em></p>
 <p>That sounds a bit like an old proverb but it's a simple concept.</p>
 <p>If a sequence has the Markov property it means that the value of the
-sequence at the next step <strong>depends only on the value at the past $n$ steps</strong>. The value of $n$ (how far back we assume we need to go) is
+sequence at the next step <strong>depends only on the value at the past <span class="math">\(n\)</span> steps</strong>. The value of <span class="math">\(n\)</span> (how far back we assume we need to go) is
 called the <strong>order</strong> of a Markov chain.</p>
 <p>So a second-order Markov chain is one where we use the current and the
 previous value to predict the next value. We are assuming that it does
 not matter what the rest of the text was before the previous word, we
 only need the current word and the one before it.</p>
-<p>In effect, the Markov chain has no "memory" beyond the last $n$ steps.</p>
+<p>In effect, the Markov chain has no "memory" beyond the last <span class="math">\(n\)</span> steps.</p>
 <p>The Markov assumption simply states that we believe this Markov property
 to hold for a given sequence.</p>
 <p>This is a simplifying assumption that means it is much easier to compute
 these Markov chains at the cost of some complexity and accuracy. However
 simple this assumption may feel, it performs remarkably well.</p>
-<h2>The Markov Assumption in Text</h2>
+<h3>The Markov Assumption in Text</h3>
 <p>Let's look at an example. What does this Markov assumption look like for
 text? We'll work with second-order Markov chains, as defined above.</p>
 <p>Let's imagine that our sequence is this string of animals:</p>
@@ -163,18 +143,18 @@ possible pair.</p>
 followed by "cat" twice, "dog" once and "fish" also once. That means if
 we're in the state "cat cat" the next word will be "cat" with a 50%
 probability, or "dog" or "fish" with 25% probability each.</p>
-<h1>The Code</h1>
+<h2>The Code</h2>
 <p>That's enough intuition, let's get into the code.</p>
 <p>I've scraped the lyrics to all songs written by <a href="http://muse.mu/">Muse</a>
 and we'll use this as our corpus. We'll use it to generate some more
 text, specifically a new Muse song.</p>
-<h2>Preparation</h2>
+<h3>Preparation</h3>
 <p>The first step is to read the file in and clean it so we have a sequence
 of words and new lines. I won't go into the details, you can see how the
 cleaning is done in the accompanying Jupyter notebook. I also included
 the code I wrote to scrape the lyrics in the first place, but going
 through that is optional as I'll also include the final source file.</p>
-<h2>Training</h2>
+<h3>Training</h3>
 <p>When we do the "learning" for a Markov chain, we're just identifying all
 unique triplets of words, and creating our transition probabilities
 using the first two words as the current state and the third as the next
@@ -186,11 +166,11 @@ even explicitly calculated the probabilities, but instead included each
 word as many times as it appears.</p>
 <p>Our "cat cat" example above would look like an entry in a Python
 dictionary like this:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span> <span class="s2">&quot;cat cat&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;fish&quot;</span> <span class="p">]</span> <span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span> <span class="s2">&quot;cat cat&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;fish&quot;</span> <span class="p">]</span> <span class="p">}</span>
 </code></pre></div>
 
 <p>To generate our transition probabilities we use a helper function:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_triples</span><span class="p">(</span><span class="n">word_list</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_triples</span><span class="p">(</span><span class="n">word_list</span><span class="p">):</span>
     <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="c1"># loop through the text and generate triples</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word_list</span><span class="p">)):</span>
@@ -212,7 +192,7 @@ adding the next word into the list associated with that pair.</p>
 words, we randomly sample from the list associated with that pair.</p>
 <p>This function gives us the next word each time. This is part of a Markov
 class, where self.words is our previously trained dictionary.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_random_word</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phrase</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_random_word</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phrase</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">phrase</span><span class="p">:</span>
         <span class="c1"># find a phrase from the list of words associated with the last two words in the supplied phrase</span>
         <span class="n">phrase_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">phrase</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)]</span>
@@ -245,31 +225,31 @@ chorus and a couple of verses.</p>
 <blockquote>
 <p>hear me moan</p>
 <p>Verse 1</p>
-<p>you are just<br>
-too much attention<br>
-and its gonna be<br>
-show me mercy can someone rescue me<br>
+<p>you are just<br />
+too much attention<br />
+and its gonna be<br />
+show me mercy can someone rescue me<br />
 make me agitated</p>
 <p>Chorus</p>
-<p>escaped your world<br>
-no one is crying alone<br>
-i wont let them hurt<br>
+<p>escaped your world<br />
+no one is crying alone<br />
+i wont let them hurt<br />
 hurting you no</p>
 <p>Verse 2</p>
-<p>you know what youve done<br>
-bring me peace and wash away my dirt<br>
+<p>you know what youve done<br />
+bring me peace and wash away my dirt<br />
 spin me round and have me to</p>
 <p>Chorus</p>
-<p>escaped your world<br>
-no one is crying alone<br>
-i wont let them hurt<br>
+<p>escaped your world<br />
+no one is crying alone<br />
+i wont let them hurt<br />
 hurting you no</p>
 </blockquote>
 <p>I dare say Matt Bellamy couldn't have written it better himself.</p>
 <p>Here's the <a href="https://github.com/davidasboth/blog-notebooks/blob/master/markov-chain-muse-lyrics/Markov%20Chain%20Muse%20Lyrics.ipynb">associated Jupyter notebook</a>.
 I've also previously published the code as more of a plug and play
 library, which <a href="https://github.com/davidasboth/markov-chain-for-text">you can find here</a>.</p>
-<h2>Next Steps</h2>
+<h3>Next Steps</h3>
 <p>We could improve this code by doing any of the following:</p>
 <ul>
 <li>Experiment with different orders for the Markov chain</li>
@@ -280,14 +260,133 @@ library, which <a href="https://github.com/davidasboth/markov-chain-for-text">yo
     a <a href="https://github.com/karpathy/char-rnn">Recurrent Neural Network</a></li>
 <li>Adding support for punctuation</li>
 </ul>
-<h1>Further Reading</h1>
+<h2>Further Reading</h2>
 <p>If you want to learn more about Markov chains, and even see them 'in
 action', this is <a href="http://setosa.io/ev/markov-chains/">a great resource</a>
 to start with.</p>
 <p>I glossed over a lot of the maths behind the algorithm, but if you're
-interested you could <a href="https://www.youtube.com/watch?v=WUjt98HcHlk">start here</a>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div><!-- /.entry-content -->
-</section>
+interested you could <a href="https://www.youtube.com/watch?v=WUjt98HcHlk">start here</a>.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+    </section>
+
+<section id="about">
+    <div class="container flex-container">
+      <div class="col-40 image-full">
+            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+        </div>
+      <div class="col-60">
+        <h2>About David</h2>
+        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. My previous roles have been a range of data science, software development, team management and software architecting jobs.</p>
+        <p class="text-pre-heading">Things I also do:</p>
+        <ul>
+          <li>
+            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
+            </li>
+          <li>
+            I've written various <a href="/articles">articles and tutorials</a> about data science
+          </li>
+          <li>
+            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
+            </li>
+          <li>
+            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+<section id="contact">
+<div class="container flex-container">
+  <div class="col-40 image-full">
+	<img src="/theme/images/DataScienceFestival-02-contact.jpg">
+	</div>
+  <div class="col-60">
+	<h2>Contact me</h2>
+	<p>Please give me a brief idea of what you're looking for help with, and I'll get back to you very soon. If you're having trouble with the form below, you can also email me at <a href="mailto:hello@davidasboth.com" target="_blank">hello@davidasboth.com</a></p>
+	<form action="https://api.formcake.com/api/form/184308c0-d548-4a26-ae33-db870931e16d/submission" method="POST">
+	  <input type="text" name="name" placeholder="Name *" required>
+	  <input type="email" name="email" placeholder="Email address *" required>
+	  <select name="service-required" required>
+		<option value="" disabled selected hidden>What are you looking for help with?</option>
+		<option value="consulting-largeorg" >Consulting for a large organisation</option>
+		<option value="consulting-smallbiz" >Consulting for a small business/startup</option>
+		<option value="education-staff" >Education for staff members</option>
+		<option value="mentoring-1to1" >Mentoring 1:1s for students/career newbies</option>
+		 <option value="other" >Other</option>
+		</select>
+	  <textarea placeholder="Message *" name="message" required></textarea>
+	  <input type="text" name="spiderweb" style="display: none">
+		  <input type="submit" class="button button-filled" value="Get in touch!">
+		  <a class="icon" href="https://twitter.com/davidasboth"><img src="/theme/images/icon-twitter.svg" alt="Twitter"/></a>
+		  <a class="icon" href="https://www.linkedin.com/in/david-asboth-9256772b"><img src="/theme/images/icon-linkedin.svg" alt="LinkedIn"/></a>
+	  </form>
+	</div>
+  </div>
+</section></main>
+
 
 	<footer>
 		<div class="container flex-container">

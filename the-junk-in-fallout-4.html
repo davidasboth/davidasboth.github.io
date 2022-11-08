@@ -29,7 +29,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>David Asboth - Data Solutions &amp; Consultancy - The Junk in Fallout 4 - a Web Scraping Tutorial</title>
+	<title>David Asboth - Data Solutions &amp; Consultancy</title>
 
 	<link rel="canonical" href="/the-junk-in-fallout-4.html">
 	
@@ -38,12 +38,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"> 
 	
 	<link rel="stylesheet" href="/theme/css/style.css">
+	<link rel="stylesheet" href="/theme/css/pygments.css">
 
-  
-
-
-
-    <meta name="tags" content="python" />
 
 </head>
 
@@ -59,11 +55,9 @@
 					<li>
 							<a href="/#about">About</a>
 					</li>
-					<!--
 					<li>
 							<a href="/articles">Articles</a>
 					</li>
-					-->
 					<li>
 					  <a href="#contact" class="button button-filled">Contact</a>
 					</li>
@@ -72,31 +66,21 @@
 		</div>
 	</header>
 
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="/the-junk-in-fallout-4.html" rel="bookmark"
-         title="Permalink to The Junk in Fallout 4 - a Web Scraping Tutorial">The Junk in Fallout 4 - a Web Scraping Tutorial</a></h2>
- 
-  </header>
-  <footer class="post-info">
-    <time class="published" datetime="2016-11-03T22:36:00+00:00">
-      Thu 03 November 2016
-    </time>
-    <address class="vcard author">
-      By           <a class="url fn" href="/author/david.html">david</a>
-    </address>
-    <div class="category">
-        Category: <a href="/category/projects.html">projects</a>
-    </div>
-    <div class="tags">
-        Tags:
-            <a href="/tag/python.html">python</a>
-    </div>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <h1>Introduction</h1>
-<h2>The Problem</h2>
+
+<main id="articles-tutorials">
+    <section id="splash">
+        <div class="container">
+            <h1 class="text-centered">The Junk in Fallout 4 - a Web Scraping Tutorial</h1>
+            <div class="text-centered padding-medium"><a class="tag" href="category/projects.html">projects</a></div>
+            <p class="text-centered"><p>This is a short web scraping tutorial based on a script I wrote to fetch and analyse data about junk in the game Fallout 4.</p></p>
+         </div>
+    </section>
+
+    <section id="article-content">
+        <div class="container">
+            
+            <h2>Introduction</h2>
+<h3>The Problem</h3>
 <p>A few months ago I was playing one of my favourite games of 2015 -
 <a href="https://en.wikipedia.org/wiki/Fallout_4">Fallout 4.</a></p>
 <p>If you haven't heard of it, it's an action-RPG set in a post-apocalyptic
@@ -124,7 +108,7 @@ contains.</p>
 <p>So I thought: is there a more efficient way of scavenging?</p>
 <p>The answer is yes.</p>
 <p>With data.</p>
-<h2>The solution</h2>
+<h3>The solution</h3>
 <p>What I really wanted to do is look at each material, and figure out
 which items it made sense to find to maximise the amount of the material
 I get. The plan was:</p>
@@ -134,8 +118,8 @@ I get. The plan was:</p>
 <li>Scrape and store the list</li>
 <li>Analyse it and make some plots</li>
 </ul>
-<h1>The Tutorial</h1>
-<h2>Prerequisites</h2>
+<h2>The Tutorial</h2>
+<h3>Prerequisites</h3>
 <p>First of all, we need some data and some Python libraries.</p>
 <p>The data comes from <a href="http://fallout.wikia.com/wiki/Fallout_4_junk_items">a webpage of all Fallout 4 junk items</a>, specifically
 the table marked "<a href="http://fallout.wikia.com/wiki/Fallout_4_junk_items#Other_junk_items">Other junk items</a>".</p>
@@ -149,7 +133,7 @@ the table marked "<a href="http://fallout.wikia.com/wiki/Fallout_4_junk_items#Ot
     suspect for manipulating data</li>
 <li><a href="http://matplotlib.org/">matplotlib</a> - for plotting</li>
 </ul>
-<h2>Step 1 - Fetch the Data</h2>
+<h3>Step 1 - Fetch the Data</h3>
 <p>Side note: This isn't a tutorial about HTML, CSS or Javascript, so I'll
 assume you know enough about them. However, if you want to learn/brush
 up, <a href="http://www.w3schools.com">w3schools</a> is a great resource.</p>
@@ -158,12 +142,12 @@ which will make things easier. What we want to do is isolate the table
 in the HTML so we can extract only that table.</p>
 <p>The easiest way to do this is directly on the website.</p>
 <p>Right click and choose "Inspect Element".</p>
-<p><img alt="inspect element" src="/images/the-junk-in-fallout-4/inspect_element.png"></p>
+<p><img alt="inspect element" src="/images/the-junk-in-fallout-4/inspect_element.png" /></p>
 <p>I'm using Firefox but this should be applicable to any browser.</p>
 <p>This will open the Inspector, or Chrome Dev Tools or the equivalent,
 where we can inspect the raw HTML. Then we want to look at the
 &lt;table&gt; element to see its ID.</p>
-<p><img alt="HTML table in the inspector" src="/images/the-junk-in-fallout-4/tablehtml.png"></p>
+<p><img alt="HTML table in the inspector" src="/images/the-junk-in-fallout-4/tablehtml.png" /></p>
 <p>Unlucky, no ID. </p>
 <p>OK, well it doesn't have an ID, so we need to find a way to uniquely
 select that element. It has a class "va-table-center" - we can check if
@@ -172,7 +156,7 @@ Inspector (in the above screenshot it's the second tab, but your browser
 may differ). In the console you can type and evaluate arbitrary
 Javascript/jQuery expressions, so let's try selecting a table with the
 class <em>va-table-center</em>.</p>
-<p><img alt="Selecting the table in the console" src="/images/the-junk-in-fallout-4/junktable_selector.png"></p>
+<p><img alt="Selecting the table in the console" src="/images/the-junk-in-fallout-4/junktable_selector.png" /></p>
 <p>Apparently a script on the page finished "shamefully"... </p>
 <p>It looks like that class isn't unique, there are 5 tables that match it
 on the page. What we can do is then figure out which one of those 5 is
@@ -181,14 +165,14 @@ it.</p>
 <p>You can highlight each of the 5 items and the corresponding table will
 be highlighted on the page. Doing this reveals we're after the second of
 those 5 tables.</p>
-<p><img alt="table highlight" src="/images/the-junk-in-fallout-4/table_highlight.png"></p>
+<p><img alt="table highlight" src="/images/the-junk-in-fallout-4/table_highlight.png" /></p>
 <p>Note the Halloween-themed adverts about The Exorcist </p>
 <p>Great, now we've identified the HTML element we want to load in, and we
 can do the rest of the wrangling in Python.</p>
-<h2>Step 2 - Clean and Wrangle</h2>
+<h3>Step 2 - Clean and Wrangle</h3>
 <p>Using requests and BeautifulSoup we read in the HTML and grab just the
 table we need.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="c1"># load the entire page</span>
 <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://fallout.wikia.com/wiki/Fallout_4_junk_items&#39;</span><span class="p">)</span>
@@ -207,7 +191,7 @@ extract them individually. What you'll notice in the table is that each
 new material starts with a capital letter, so we can split on that with
 some regex. Then we'll create a dictionary where the key is the item and
 the value is a list of its components.</p>
-<div class="highlight"><pre><span></span><code><span class="n">junk_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="codehilite"><pre><span></span><code><span class="n">junk_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="c1"># start from the second table row (to skip the header)</span>
 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">junk_table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]:</span>
@@ -224,7 +208,7 @@ the value is a list of its components.</p>
 <p>Next we'll create a pandas DataFrame from the dictionary. The only quirk
 is some components have "x2" style additions if there are more than one
 units in the item, and the absence of this signifies 1 unit.</p>
-<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;component&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;component&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">))</span>
 <span class="n">row_idx</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">junk_dict</span><span class="p">:</span>
@@ -243,19 +227,79 @@ units in the item, and the absence of this signifies 1 unit.</p>
         <span class="n">row_idx</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></div>
 
-<h2>Step 3 - Plot</h2>
+<h3>Step 3 - Plot</h3>
 <p>We now have our very own Fallout 4 junk dataset that we can analyse to
 our heart's content. For example we can plot the frequencies of each
 component to order them by rarity.</p>
-<p><img alt="Rarity of junk components" src="/images/the-junk-in-fallout-4/junkplot.png"></p>
+<p><img alt="A bar chart showing the rarity of junk components" title="Rarity of junk components" src="/images/the-junk-in-fallout-4/junkplot.png" style="background-color: white" /></p>
 <p>It's a strange world where concrete is so rare.</p>
-<h1>Conclusion</h1>
+<h2>Conclusion</h2>
 <p>There you have it - data-driven video gaming. Here's the whole thing in
 <a href="https://github.com/davidasboth/blog-notebooks/blob/master/fallout-junk/Fallout%20Junk%20Data.ipynb">Jupyter notebook form</a>,
 and a direct link to <a href="/files/fallout_junk.csv">the csv file</a>
-if you want to analyse it yourself - if you do, let me know!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div><!-- /.entry-content -->
-</section>
+if you want to analyse it yourself - if you do, let me know!</p>
+<h3>Post-script</h3>
+<p>Since writing this tutorial (in 2016) I discovered pandas has a <code>read_html()</code> method, which scans an entire HTML document and extracts all <code>&lt;table&gt;</code> elements as pandas DataFrames. You should definitely use that instead of looping over table rows and cells, but I'm keeping this tutorial as it was, since it's still instructive.</p>
+<p><em>This post originally appeared on my blog in 2016</em></p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+    </section>
+
+<section id="about">
+    <div class="container flex-container">
+      <div class="col-40 image-full">
+            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+        </div>
+      <div class="col-60">
+        <h2>About David</h2>
+        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. My previous roles have been a range of data science, software development, team management and software architecting jobs.</p>
+        <p class="text-pre-heading">Things I also do:</p>
+        <ul>
+          <li>
+            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
+            </li>
+          <li>
+            I've written various <a href="/articles">articles and tutorials</a> about data science
+          </li>
+          <li>
+            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
+            </li>
+          <li>
+            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+<section id="contact">
+<div class="container flex-container">
+  <div class="col-40 image-full">
+	<img src="/theme/images/DataScienceFestival-02-contact.jpg">
+	</div>
+  <div class="col-60">
+	<h2>Contact me</h2>
+	<p>Please give me a brief idea of what you're looking for help with, and I'll get back to you very soon. If you're having trouble with the form below, you can also email me at <a href="mailto:hello@davidasboth.com" target="_blank">hello@davidasboth.com</a></p>
+	<form action="https://api.formcake.com/api/form/184308c0-d548-4a26-ae33-db870931e16d/submission" method="POST">
+	  <input type="text" name="name" placeholder="Name *" required>
+	  <input type="email" name="email" placeholder="Email address *" required>
+	  <select name="service-required" required>
+		<option value="" disabled selected hidden>What are you looking for help with?</option>
+		<option value="consulting-largeorg" >Consulting for a large organisation</option>
+		<option value="consulting-smallbiz" >Consulting for a small business/startup</option>
+		<option value="education-staff" >Education for staff members</option>
+		<option value="mentoring-1to1" >Mentoring 1:1s for students/career newbies</option>
+		 <option value="other" >Other</option>
+		</select>
+	  <textarea placeholder="Message *" name="message" required></textarea>
+	  <input type="text" name="spiderweb" style="display: none">
+		  <input type="submit" class="button button-filled" value="Get in touch!">
+		  <a class="icon" href="https://twitter.com/davidasboth"><img src="/theme/images/icon-twitter.svg" alt="Twitter"/></a>
+		  <a class="icon" href="https://www.linkedin.com/in/david-asboth-9256772b"><img src="/theme/images/icon-linkedin.svg" alt="LinkedIn"/></a>
+	  </form>
+	</div>
+  </div>
+</section></main>
+
 
 	<footer>
 		<div class="container flex-container">
