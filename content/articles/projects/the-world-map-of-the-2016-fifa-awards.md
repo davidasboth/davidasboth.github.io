@@ -4,7 +4,6 @@ Author: david
 Slug: the-world-map-of-the-2016-fifa-awards
 Status: published
 Summary: A mini project to visualise the votes for the 2016 FIFA Awards, to see which country voted for which player.
-Alias: /2017/01/13/the-world-map-of-the-2016-fifa-awards
 
 The "[Best FIFA Football Awards](http://www.fifa.com/the-best-fifa-football-awards/best-fifa-mens-player/index.html)"
 took place recently and while the final outcome was not surprising, I've
@@ -25,7 +24,7 @@ geographic patterns (e.g. all of South America voting for South American
 players and so on), so this was a map plot waiting to happen.
  
 
-# The Data
+## The Data
 
 FIFA weren't going to make this easy; the dataset is [a PDF](http://resources.fifa.com/mm/Document/the-best/PlayeroftheYear-Men/02/86/27/05/faward_MenPlayer2016_Neutral.pdf)
 with tables in it. While there appear to be a few ways to extract tables
@@ -44,7 +43,7 @@ order of coach -&gt; captain -&gt; media. This is why for example the
 vote for Argentina isn't for Messi, because the coach vote was missing
 and Messi himself is the captain who couldn't vote for himself.
 
-# The Tools
+## The Tools
 
 I wanted this to be a chance to explore
 [folium](https://github.com/python-visualization/folium), a great Python
@@ -64,7 +63,7 @@ data science!
 The code (hopefully) speaks for itself, you can view [the Jupyter notebook on GitHub](https://github.com/davidasboth/blog-notebooks/blob/master/fifa-awards/FIFA%20Awards%20data.ipynb).
 
 
-# The Map
+## The Map
 
 Here's a little preview of the final map, although [the HTML version](/fifa-awards/) is better for exploring
 different regions.
@@ -73,7 +72,7 @@ different regions.
 
 That Griezmann sure is popular in Mongolia 
 
-# Wrap-up 
+## Wrap-up 
 
 Unsurprisingly, a lot of countries vote for their own players where they
 have players good enough. I'm looking at Sweden, Germany, or Poland
@@ -89,3 +88,5 @@ folium, as it seems to be actively under development. Realistically, a
 tool like Tableau would be better suited to a visualisation like this,
 but the ability to embed maps in Jupyter notebooks makes folium a really
 good addition to my data science toolkit.
+
+_This post originally appeared on my blog in 2017_

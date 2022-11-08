@@ -7,7 +7,7 @@ Status: published
 Summary: When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.
 Alias: /2016/11/05/self-organising-maps-an-introduction/
 
-# Introduction
+## Introduction
 
 When you learn about machine learning techniques, you usually get a
 selection of the usual suspects. Something like: Support Vector
@@ -27,14 +27,14 @@ that I like and that can be useful for different purposes.
 It's called a Self-Organising Map (SOM).
 
 
-# Brief History
+## Brief History
 
 SOMs are a type of artificial neural network. Some of the concepts date
 back further, but SOMs were proposed and became widespread in the 1980s,
 by a Finnish professor named Teuvo Kohonen. Unsurprisingly SOMs are also
 referred to as Kohonen maps.
 
-## Artificial Neural Networks
+### Artificial Neural Networks
 
 Artifical neural networks (ANNs) were designed initially to be a
 computational representation of what is believed to happen in the brain.
@@ -72,7 +72,7 @@ This is a **supervised** machine learning problem because you are
 telling the algorithm the desired answer for each set of inputs it's
 trained on, so it knows if it makes errors.
 
-## The SOM as an ANN
+### The SOM as an ANN
 
 There are three main ways in which a Self-Organising Map is different
 from a "standard" ANN:
@@ -93,7 +93,7 @@ your inputs to it without associating them with an output. Instead, a
 SOM is used to find structure in your data.
  
 
-# What is a SOM used for? 
+## What is a SOM used for? 
 
 This last point about unsupervised learning brings me to an important
 question, because abstract concepts like neural networks are great to
@@ -101,7 +101,7 @@ talk about but I'm a practical kind of guy.
 
 In that spirit then, what is a SOM used for?
 
-## Finding Structure
+### Finding Structure
 
 A classic example of what clustering algorithms are used for is finding
 similar customers in your customer base. SOMs can also do this. In fact,
@@ -112,7 +112,7 @@ importantly, **similar (high-dimensional) inputs will map to the same 2D
 node,** or at least the same region in 2D space. This is how the SOM
 finds and groups similar inputs together.
 
-## Dimensionality Reduction
+### Dimensionality Reduction
 
 Related to finding structure is the fact that by finding this structure
 a SOM finds a lower-dimensional representation of your dataset **while
@@ -121,36 +121,36 @@ preserving the similarity between your records**.
 That is, data points that are "nearby" in high-dimensional space will
 also be nearby in the SOM.
 
-## Visualisation
+### Visualisation
 
 By creating a (typically) 2D representation of your dataset you can also
 more easily visualise it, which you can't do if your data has more than
 3 dimensions.
 
 
-# Summary
+## Summary
 
 To summarise, I'll quote an answer I gave on StackOverflow to a question
 about SOMs:
 
-> The idea behind a SOM is that you're mapping high-dimensional vectors
-> onto a smaller dimensional (typically 2D) space. You can think of it
-> as clustering, like in K-means, with the added difference that vectors
-> that are close in the high-dimensional space also end up being mapped
-> to nodes that are close in 2D space.
->
-> SOMs therefore are said to "preserve the topology" of the original
-> data, because the distances in 2D space reflect those in the
-> high-dimensional space. K-means also clusters similar data points
-> together, but its final "representation" is hard to visualise because
-> it's not in a convenient 2D format.
->
-> A typical example is with colours, where each of the data points are
-> 3D vectors that represent R,G,B colours. When mapped to a 2D SOM you
-> can see regions of similar colours begin to develop, which is the
-> topology of the colour space.
+The idea behind a SOM is that you're mapping high-dimensional vectors
+onto a smaller dimensional (typically 2D) space. You can think of it
+as clustering, like in K-means, with the added difference that vectors
+that are close in the high-dimensional space also end up being mapped
+to nodes that are close in 2D space.
 
-## Colours
+SOMs therefore are said to "preserve the topology" of the original
+data, because the distances in 2D space reflect those in the
+high-dimensional space. K-means also clusters similar data points
+together, but its final "representation" is hard to visualise because
+it's not in a convenient 2D format.
+
+A typical example is with colours, where each of the data points are
+3D vectors that represent R,G,B colours. When mapped to a 2D SOM you
+can see regions of similar colours begin to develop, which is the
+topology of the colour space.
+
+### Colours
 
 I hope that sounds interesting, because in Part 2 of this post I'll
 discuss some concrete examples and walk through a Python implementation
@@ -162,8 +162,6 @@ visualise the "topology" of the 3D colour space.
 
 Something like this:
 
-![som]({static}/images/self-organising-maps-an-introduction/som.png)
+<img alt="A self-organising colour map" title="A self-organising colour map" src="{static}/images/self-organising-maps-an-introduction/som.png" style="background-color: white" />
 
-A Self-Organising Colourmap 
-
-In [Part 2](/blog/self-organising-maps-in-depth/), we'll look at an in-depth implementation of SOMs.
+In [Part 2](/self-organising-maps-in-depth), we'll look at an in-depth implementation of SOMs.

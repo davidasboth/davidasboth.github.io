@@ -4,7 +4,6 @@ Author: david
 Slug: realistic-machine-learning
 Status: published
 Summary: As most data scientists quickly realise, there's a difference between the kind of data science you do while learning about it, and the kind you do at a real job. This is equally true of data cleaning/wrangling and machine learning.
-Alias: /2016/11/10/realistic-machine-learning
 
 As most data scientists quickly realise, there's a difference
 between the kind of data science you do while learning about it, and the
@@ -24,8 +23,7 @@ The "ML Hipster" [summed this up very well.](https://twitter.com/ML_Hipster/stat
 
 There's also this quote I've seen (source unknown):
 
-> In data science, 80% of time is spent preparing data, and 20% of time
-> is spent complaining about the need to prepare data
+In data science, 80% of time is spent preparing data, and 20% of time is spent complaining about the need to prepare data
 
 What are the main reasons for this disconnect?
 
@@ -87,12 +85,6 @@ in general) and industry is to teach more realistic problems.
 
 That's not to say you should **start** with solving a business problem,
 but you should certainly **end** on one.
-
-As [I've already mentioned](/blog/5-data-science-book-recommendations/),
-the book Data Science from Scratch gives realistic-sounding problems
-when introducing various data science concepts.
-
-I think we need more of that.
 
 A more rounded way of teaching data science would be to start with toy
 problems and gradually build up to more complex ones. Something like

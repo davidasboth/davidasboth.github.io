@@ -4,7 +4,6 @@ Author: david
 Slug: markov-chains-for-text-generation
 Status: published
 Summary: Markov chains are a popular way to model sequential data. I want to run through an implementation where I generate new songs based on lyrics by Muse.
-Alias: /2016/11/12/markov-chains-for-text-generation
 
 Markov chains are a popular way to model sequential data. They form the
 basis of more complex ideas, such as Hidden Markov Models, which are
@@ -16,15 +15,15 @@ understand what Markov chains are before we can implement one.
 
  
 
-# The Intuition
+## The Intuition
 
 
-I've talked about [intuition-first machine learning](/blog/intuition-first-machine-learning/)
+I've talked about [intuition-first machine learning](/intuition-first-machine-learning)
 before, so I'll start with the intuition. The first thing we need to
 know about is what a Markov chain consists of, then we need to define
 the Markov assumption.
 
-## States and Transitions
+### States and Transitions
 
 In a Markov chain we are assuming our sequence is made up of **discrete states**. That is, every item in the sequence is one of a finite set of
 possible values. In text, the states could be every letter of the
@@ -45,13 +44,13 @@ account every single word that came before it.
 
 To make this easier, we make what's called the Markov assumption.
 
-## The Markov Assumption
+### The Markov Assumption
 
 The Markov assumption is when we assume the Markov property to be true.
 
 The Markov property (of a sequence) is typically formulated like so:
 
-> The future is independent of the past, given the present.
+*The future is independent of the past, given the present.*
 
 That sounds a bit like an old proverb but it's a simple concept.
 
@@ -73,7 +72,7 @@ This is a simplifying assumption that means it is much easier to compute
 these Markov chains at the cost of some complexity and accuracy. However
 simple this assumption may feel, it performs remarkably well.
 
-## The Markov Assumption in Text
+### The Markov Assumption in Text
 
 Let's look at an example. What does this Markov assumption look like for
 text? We'll work with second-order Markov chains, as defined above.
@@ -102,7 +101,7 @@ followed by "cat" twice, "dog" once and "fish" also once. That means if
 we're in the state "cat cat" the next word will be "cat" with a 50%
 probability, or "dog" or "fish" with 25% probability each.
 
-# The Code
+## The Code
 
 That's enough intuition, let's get into the code.
 
@@ -110,7 +109,7 @@ I've scraped the lyrics to all songs written by [Muse](http://muse.mu/)
 and we'll use this as our corpus. We'll use it to generate some more
 text, specifically a new Muse song.
 
-## Preparation
+### Preparation
 
 The first step is to read the file in and clean it so we have a sequence
 of words and new lines. I won't go into the details, you can see how the
@@ -118,7 +117,7 @@ cleaning is done in the accompanying Jupyter notebook. I also included
 the code I wrote to scrape the lyrics in the first place, but going
 through that is optional as I'll also include the final source file.
 
-## Training
+### Training
 
 When we do the "learning" for a Markov chain, we're just identifying all
 unique triplets of words, and creating our transition probabilities
@@ -236,7 +235,7 @@ Here's the [associated Jupyter notebook](https://github.com/davidasboth/blog-not
 I've also previously published the code as more of a plug and play
 library, which [you can find here](https://github.com/davidasboth/markov-chain-for-text).
 
-## Next Steps
+### Next Steps
 
 We could improve this code by doing any of the following:
 
@@ -248,9 +247,7 @@ We could improve this code by doing any of the following:
     a [Recurrent Neural Network](https://github.com/karpathy/char-rnn)
 -   Adding support for punctuation
 
- 
-
-# Further Reading
+## Further Reading
 
 If you want to learn more about Markov chains, and even see them 'in
 action', this is [a great resource](http://setosa.io/ev/markov-chains/)

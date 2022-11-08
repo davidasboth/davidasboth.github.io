@@ -4,7 +4,6 @@ Author: david
 Slug: analysis-is-alan-davies-getting-better-at-qi
 Status: published
 Summary: I was watching a later series of QI recently and couldn't help but notice that Alan Davies was winning quite a few episodes. That prompted me to ask the question: is Alan Davies getting better at QI?
-Alias: /2017/02/15/analysis-is-alan-davies-getting-better-at-qi
 
 I'm a big fan of the quiz show [QI](https://en.wikipedia.org/wiki/QI). I
 was watching a later series of it recently on Netflix and I couldn't
@@ -40,9 +39,9 @@ show Alan's win ratio over time. Here's the accompanying [Jupyter notebook](http
 
 Alan's more or less consistently winning a quarter of shows now
 
-
 So to answer the question: yes, Alan does appear to be getting better at
 QI, certainly since the first few series. It does however remain to be
 seen whether his win ratio will plateau at 25%, I guess we'll see in a
 few years' time.
 
+_This post originally appeared on my blog in 2017_

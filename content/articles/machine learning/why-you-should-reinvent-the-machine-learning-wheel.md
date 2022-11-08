@@ -4,7 +4,6 @@ Author: david
 Slug: why-you-should-reinvent-the-machine-learning-wheel
 Status: published
 Summary: As data scientists we spend a lot of our time using other people's implementations of machine learning algorithms. I suggest that as part of the learning process it's worthwhile to try to implement them ourselves from scratch, in order to fully understand them.
-Alias: /2016/11/11/why-you-should-reinvent-the-machine-learning-wheel
 
 When you're a data scientist, unless you're in a job that's very
 research-focused (and likely requires a PhD) you'll mostly be using
@@ -103,7 +102,7 @@ as part of the Learning Club.
 ### Self-Organising Maps
 
 I
-[discussed](/blog/self-organising-maps-an-introduction/)
+[discussed](/self-organising-maps-an-introduction)
 this algorithm recently, and hopefully showed that two blog posts are
 enough to go through the details enough to actually [write the code](https://github.com/davidasboth/blog-notebooks/blob/master/self-organising-map/Self-Organising%20Map.ipynb)
 for it. This is perhaps a less mainstream choice but conceptually lends
@@ -115,8 +114,7 @@ A popular choice for modelling and predicting sequential data (text,
 audio, time series). It only requires simple probability theory and is
 another good choice to start with.
 
-Another topic I'll return to later this month. My
-[implementation](https://github.com/davidasboth/markov-chain-for-text)
+My [implementation](https://github.com/davidasboth/markov-chain-for-text)
 generates new text based on text you give it.
 
 ### Other Choices

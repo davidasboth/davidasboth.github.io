@@ -5,7 +5,6 @@ Tags: python
 Slug: duck-typing
 Status: published
 Summary: My first attempt to bridge the gap between the two disciplines of programming and data science, by talking about programming concepts useful for data scientists, and vice versa. Today: duck typing.
-Alias: /2016/11/14/duck-typing
 
 In an attempt to bridge the gap between the two disciplines of
 programming and data science I will occasionally talk about programming

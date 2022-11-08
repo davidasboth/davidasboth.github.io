@@ -5,7 +5,6 @@ Tags: featured, python
 Slug: visualising-decision-trees-in-python
 Status: published
 Summary: Having an accurate machine learning model may be enough in itself, but in some cases the only way to turn it into a business decision is if you can understand why it's getting the results it's getting. In this short tutorial I want to show a quick way to visualise a trained decision tree in Python.
-Alias: /2016/11/28/visualising-decision-trees-in-python
 
 Interpretability is often an important concern with a machine learning
 algorithm (despite spellcheck telling me it's not even a word). Having
@@ -65,13 +64,11 @@ lets you export it to a file, in a specific format.
 
 You can then open the file in Notepad (or any text editor) and view its
 output online by pasting its contents into the textbox at
-<http://webgraphviz.com/>
+[http://webgraphviz.com](http://webgraphviz.com)
 
 Our iris decision tree looks something like this:
 
 ![Decision tree trained on the iris dataset]({static}/images/visualising-decision-trees-in-python/iris_tree.png)
-
-A 3-level decision tree trained on the Iris dataset
 
 By providing the feature names we can label each decision point so it is
 obvious what's happening at each step.

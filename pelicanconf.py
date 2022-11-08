@@ -72,8 +72,10 @@ THEME = "themes/davidasboth-dot-com"
 MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.codehilite': {
-            "noclasses": True
-        }
+            "pygments_style": "rrt",
+            "noclasses": False
+        },
+        'markdown.extensions.extra': {}
     }
 }
 

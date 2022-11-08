@@ -4,7 +4,6 @@ Author: david
 Slug: intuition-first-machine-learning
 Status: published
 Summary: I've often felt machine learning needs to be taught "intuition first, equations later", but this doesn't seem to be the norm with most learning sources.
-Alias: /2016/11/07/intuition-first-machine-learning
 
 I read [an article on Machine Learning Mastery](http://machinelearningmastery.com/4-steps-to-get-started-in-machine-learning/)
 recently about getting started with machine learning.
@@ -37,16 +36,13 @@ nitty-gritty implementation details.
 Here's the idea of top down machine learning, quoted straight from the
 article:
 
-> We can summarize this top-down approach as follows:
->
-> 1.  Learn the high-level process of applied machine learning.
-> 2.  Learn how to use a tool enough to be able to work through
->     problems.
-> 3.  Practice on datasets, a lot.
-> 4.  Transition into the details and theory of machine learning
->     algorithms.
+We can summarize this top-down approach as follows:
 
- 
+1.  Learn the high-level process of applied machine learning.
+2.  Learn how to use a tool enough to be able to work through problems.
+3.  Practice on datasets, a lot.
+4.  Transition into the details and theory of machine learning algorithms.
+
 
 I wholeheartedly agree with step 1 being the high-level process. You
 want to know exactly what you're trying to achieve before you need to
@@ -65,13 +61,10 @@ real problem.
 This is what I propose instead, for an amended version of "top down"
 machine learning.
 
-> 1.  Learn the high-level process of applied machine learning.
-> 2.  Try some toy examples, get your hands dirty.
-> 3.  Transition into the details and theory of machine learning
->     algorithms.
-> 4.  Practise on lots of datasets.
-
- 
+1.  Learn the high-level process of applied machine learning.
+2.  Try some toy examples, get your hands dirty.
+3.  Transition into the details and theory of machine learning algorithms.
+4.  Practise on lots of datasets. 
 
 Not a big change, but the key difference is that you should understand
 the theory in more detail before you spend lots of time practising.
@@ -92,7 +85,6 @@ understand things like:
     process but the idea of training and test sets needs to be drilled
     home before you start getting too deep.
 
- 
 
 This might not work for everyone, the mathematically-minded could well
 prefer an approach where they're given the equations first, but I

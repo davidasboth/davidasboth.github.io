@@ -5,18 +5,15 @@ Tags: featured, python
 Slug: introduction-to-k-means-clustering
 Status: published
 Summary: An introduction to the popular k-means clustering algorithm with intuition and Python code.
-Alias: /2016/11/20/introduction-to-k-means-clustering
 
 This is the first of a two-part post on K-means clustering.
 
-# Introduction
+## Introduction
 
-## Unsupervised Learning
-
-
+### Unsupervised Learning
 
 I've talked about unsupervised learning before when dealing with
-[Self-Organising Maps](/blog/self-organising-maps-an-introduction/),
+[Self-Organising Maps](/self-organising-maps-an-introduction),
 but just to recap. Unsupervised learning is when you have a dataset of
 features with no pre-defined outcomes. You give it to an algorithm to
 learn patterns in the data without knowing in advance what associations
@@ -30,8 +27,7 @@ explicitly knowing about cats and dogs.
 K-means is a type of unsupervised learning method, specifically a type
 of clustering.
 
-## Clustering
-
+### Clustering
 
 Clustering deals with finding groups of similar data points.
 
@@ -44,27 +40,26 @@ There are two criteria that make a "good" set of clusters:
     should be sufficiently different from data points in another
     cluster.
 
- 
-
 This is also what we're trying to achieve with k-means. It is only one
 of the [many types](http://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html)
 of clustering algorithm, but I've chosen it as it's popular as well as
 being easy to understand and implement.
 
-## Uses of Clustering
+### Uses of Clustering
 
 
-What are some uses of clustering? Finding similarities in your data that
+What are some uses of clustering?
+
+Finding similarities in your data that
 you couldn't do by inspection has a lot of uses. The classic example is
 "segmenting your customer base", that is identifying customers with
 similar buying behaviours for better targeted advertising. Another form
 of clustering, hierarchical clustering, is [used in astronomy](http://astronomy.swin.edu.au/cosmos/h/hierarchical+clustering).
-You can even use it [to find similar boroughs in London based on house-buying behaviour](/blog/analysing-london-house-prices/).
+You can even use it [to find similar boroughs in London based on house-buying behaviour](/analysing-london-house-prices/).
 
-## Potential Problems
+### Potential Problems
 
-
-### Choosing K
+#### Choosing K
 
 Before you start training your data to learn the clusters, you need to
 choose a value for $k$. That is, you have to decide beforehand how
@@ -73,10 +68,10 @@ purpose of being unsupervised, and it is indeed something that you have
 to set manually.
 
 Due to the random nature of the initialisation of the algorithm, and the
-uncertainty in the correct value for $k$, it is advisable to re-run
-the algorithm multiple times and decide on which configuration to use.
+uncertainty in the correct value for $k$, you might find re-running
+the algorithm multiple times gives you different results.
 
-### Subjective Evaluation
+#### Subjective Evaluation
 
 As with unsupervised algorithms in general, evaluating the outcome is
 partly subjective. There are objective measures with which we can
@@ -91,10 +86,7 @@ customers based on age. Of course, the clusters will be created based on
 your data, so if there really are two distinct groups of over-60
 customers then no amount of runs will change that!
 
- 
-
-# The K-means Algorithm (with words) 
-
+## The K-means Algorithm (with words) 
 
 Clusters have two properties: a **centroid** and a set of your data
 points that are assigned to the cluster.
@@ -108,27 +100,27 @@ n is the number of features your data has.
 The basic idea behind the k-means clustering algorithm is simple:
 
 1.  Start with a chosen value of $k$.
-2.  Choose $k$ of your data points at random to be your starting
+1.  Choose $k$ of your data points at random to be your starting
     centroids.
-3.  For each data point, assign it to a cluster based on which of the
+1.  For each data point, assign it to a cluster based on which of the
     $k$ centroids it is *closest* to. Closest can mean any distance
     measure. The Euclidean distance is often used.
-4.  Now you have $k$ groups of data points assigned to a cluster.
+1.  Now you have $k$ groups of data points assigned to a cluster.
     Re-calculate the position of each cluster centroid by taking the
     *mean* of the new points that are now associated with that cluster.
-5.  Repeat steps 3 and 4 until convergence. You are typically done when
+1.  Repeat steps 3 and 4 until convergence. You are typically done when
     no points have changed clusters since the last iteration.
 
  
 
-It's better to see this happen visually - [here's a good example](http://www.onmyphd.com/?p=k-means.clustering#h3_goodexample).
+It's better to see this happen visually - [here's a good interactive example](https://www.naftaliharris.com/blog/visualizing-k-means-clustering).
  
 
-# The K-means Algorithm (with code) 
+## The K-means Algorithm (with code) 
 
 Let's go through the steps again with code. Let's use [the iris dataset](http://archive.ics.uci.edu/ml/datasets/Iris).
 
-## Steps 1 & 2 - Initialisation
+### Steps 1 & 2 - Initialisation
 
 
     :::python
@@ -153,7 +145,7 @@ Let's go through the steps again with code. Let's use [the iris dataset](http://
         # append it to the centroids list
         centroids.append(pt.values)
 
-## Steps 3 & 4 - Learning
+### Steps 3 & 4 - Learning
 
 
     :::python

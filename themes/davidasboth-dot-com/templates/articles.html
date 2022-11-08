@@ -20,19 +20,15 @@
               <h3>Thinking of hiring a data person?
 Start here.</h3>
           <p>
-              (COMING SOON) Helpful articles about how to make the best decision for your business needs.
+              Helpful articles about how to make the best decision for your business needs:
               </p>
-              <!-- <ul>
+              <ul>
+                {% for article in articles if "data-science-highlight" in article.tags %}
                   <li>
-                      <a href="#">This is an article title</a>
+                      <a href="{{ article.url }}">{{ article.title }}</a>
                   </li>
-                  <li>
-                      <a href="#">Second, slightly longer article title</a>
-                  </li>
-                  <li>
-                      <a href="#">Let's have a third, really long title in here to see how it looks</a>
-                  </li>
-              </ul> -->
+                  {% endfor %}
+              </ul>
           </div>
         <div class="col-33 lowlight-box padding-large">
           <h3>Article categories</h3>
@@ -43,7 +39,7 @@ Start here.</h3>
 
           </div>
 
-          <!-- <h1>Featured Articles</h1> -->
+          <!-- <h2>Featured Articles</h2> -->
 
           {% for article in articles if "featured" in article.tags %}
 

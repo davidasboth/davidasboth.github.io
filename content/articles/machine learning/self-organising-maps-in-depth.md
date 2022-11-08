@@ -7,7 +7,7 @@ Status: published
 Summary: In Part 1, I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I want to step through the process of training and using a SOM – both the intuition and the Python code. At the end I'll also present a couple of real life use cases, not just the toy example we'll use for implementation.
 Alias: /2016/11/06/self-organising-maps-in-depth
 
-In [Part 1](/blog/self-organising-maps-an-introduction/),
+In [Part 1](/self-organising-maps-an-introduction/),
 I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I
 want to step through the process of training and using a SOM - both the
 intuition and the Python code. At the end I'll also present a couple of
@@ -19,10 +19,9 @@ The first thing we need is a problem to solve!
 I'll use the colour map as the walkthrough example because it lends
 itself very nicely to visualisation.
 
+## Setup
 
-# Setup
-
-## Dataset
+### Dataset
 
 Our data will be a collection of random colours, so first we'll
 artificially create a dataset of 100. Each colour is a 3D vector
@@ -36,17 +35,17 @@ representing R, G and B values:
 That's simply 100 rows of 3D vectors all between the values of 0 and
 255.
 
-## Objective
+### Objective
 
 Just to be clear, here's what we're trying to do. We want to take our 3D
 colour vectors and map them onto a 2D surface in such a way that similar
 colours will end up in the same area of the 2D surface.
 
-## SOM Parameters
+### SOM Parameters
 
 Before training a SOM we need to decide on a few parameters.
 
-### SOM Size
+#### SOM Size
 
 First of all, its **dimensionality**. In theory, a SOM can be any number
 of dimensions, but for visualisation purposes it is typically 2D and
@@ -75,7 +74,7 @@ number of dimensions as our input data, in this case 3 to match the 3
 dimensions of our colours. We'll see why this is important when we go
 through the implementation.
 
-### Learning Parameters
+#### Learning Parameters
 
 Training the SOM is an iterative process - it will get better at its
 task with every iteration, so we need a cutoff point. Our problem is
@@ -96,7 +95,7 @@ it slowly over time. This is so that the SOM can start by making big
 changes but then settle into a solution after a while.
 
 
-# Implementation
+## Implementation
 
 
 For the rest of this post I will use 3D to refer to the dimensionality
@@ -104,7 +103,7 @@ of the input data (which in reality could be any number of dimensions)
 and 2D as the dimensionality of the SOM (which we decide and could also
 be any number).
 
-## Setup
+### Setup
 
 To setup the SOM we need to start with the following:
 
@@ -135,7 +134,7 @@ Like the learning rate, the initial 2D radius will encompass most of the
 SOM and will gradually decrease as the number of iterations increases.
 
 
-### Normalisation
+#### Normalisation
 
 Another detail to discuss at this point is whether or not we normalise
 our dataset.
@@ -178,7 +177,7 @@ easy to change.
 
 Now we're ready to start the learning process.
 
-## Learning
+### Learning
 
 In broad terms the learning process will be as follows. We'll fill in
 the implementation details as we go along.
@@ -201,7 +200,7 @@ neighbours, we'll achieve the desired effect that **colours that are close in 3D
 
 Let's step through this in more detail, with code.
 
-### 1. Select a Random Input Vector
+#### 1. Select a Random Input Vector
 
 This is straightforward:
 
@@ -209,7 +208,7 @@ This is straightforward:
     # select a training example at random
     t = data[:, np.random.randint(0, n)].reshape(np.array([m, 1]))
 
-### 2. Find the Best Matching Unit
+#### 2. Find the Best Matching Unit
 
     :::python
     # find its Best Matching Unit
@@ -246,7 +245,7 @@ computation.
         # return the (bmu, bmu_idx) tuple
         return (bmu, bmu_idx)
 
-### 3. Update the SOM Learning Parameters
+#### 3. Update the SOM Learning Parameters
 
 As described above, we want to decay the learning rate over time to let
 the SOM "settle" on a solution.
@@ -276,7 +275,7 @@ $\sigma$ is the value at various times $t$.
     def decay_learning_rate(initial_learning_rate, i, n_iterations):
         return initial_learning_rate * np.exp(-i / n_iterations)
 
-### 4. Move the BMU and its Neighbours in 3D Space
+#### 4. Move the BMU and its Neighbours in 3D Space
 
 Now that we have the BMU and the correct learning parameters, we'll
 update the SOM so that this BMU is now closer in 3D space to the colour
@@ -337,7 +336,7 @@ Putting that all together:
                 # commit the new weight
                 net[x, y, :] = new_w.reshape(1, 3)
 
-## Visualisation
+### Visualisation
 
 Repeating the learning steps 1-4 for 2,000 iterations should be enough.
 We can always run it for more iterations afterwards.
@@ -348,10 +347,7 @@ colours, since they are just 3D vectors just like the inputs.
 To that end, we can visualise them and come up with our final colour
 map:
 
-![som]({static}/images/self-organising-maps-in-depth/som.png)
-
-A self-organising colour map
-
+<img alt="A self-organising colour map" title="A self-organising colour map" src="{static}/images/self-organising-maps-in-depth/som.png" style="background-color: white" />
 
 None of those colours necessarily had to be in our dataset. By moving
 the 3D weight vectors to more closely match our input vectors, we've
@@ -360,14 +356,14 @@ colours. More blue colours will map to the left part of the SOM, whereas
 reddish colours will map to the bottom, and so on.
 
 
-# Other Examples
+## Other Examples
 
 
 Finding a 2D colour space is a good visual way to get used to the idea
 of a SOM. However, there are obviously practical applications of this
 algorithm.
 
-## Iris Dataset
+### Iris Dataset
 
 
 A dataset favoured by the machine learning community is Sir Ronald
@@ -379,10 +375,7 @@ Applying the iris data to a SOM and then retrospectively colouring each
 point with their true class (to see how good the SOM was at separating
 the irises into their distinct categories) we get something like this:
 
-![iris clusters]({static}/images/self-organising-maps-in-depth/iris_clusters.png)
-
-150 irises mapped onto a SOM, coloured by type
-
+<img alt="150 irises mapped onto a SOM, coloured by type" title="150 irises mapped onto a SOM, coloured by type" src="{static}/images/self-organising-maps-in-depth/iris_clusters.png" />
 
 This is a 10 by 10 SOM and each of the small points is one of the irises
 from the dataset (with added jitter to see multiple points on a single
@@ -393,7 +386,7 @@ There are a few SOM neurons where both the green and the blue points get
 assigned to, and this represents the overlap between the versicolor and
 virginica types.
 
-## Handwritten Digits
+### Handwritten Digits
 
 Another application I touched on in Part 1 is trying to identify
 handwritten characters.
@@ -406,9 +399,7 @@ and 255).
 Mapping them to a 20 by 20 SOM, and again retrospectively colouring them
 based on their true class (a number from 0 to 9) yields this:
 
-![A SOM of handwritten characters]({static}/images/self-organising-maps-in-depth/mnist_som.png)
-
-Various handwritten numbers mapped to a 2D SOM
+<img alt="A SOM of handwritten characters" title="Various handwritten numbers mapped to a 2D SOM" src="{static}/images/self-organising-maps-in-depth/mnist_som.png" />
 
 In this case the true classes are labelled according to the colours in
 the bottom left.
@@ -423,7 +414,7 @@ the green and brown points overlap, is where the SOM was "confused"
 between 4s and 9s. A visual inspection of some of these handwritten
 characters shows that indeed many of the 4s and 9s are easily confused.
 
-## Further Reading
+### Further Reading
 
 I hope this was a useful walkthrough on the intuition behind a SOM, and
 a simple Python implementation. There is [a Jupyter notebook](https://github.com/davidasboth/blog-notebooks/blob/master/self-organising-map/Self-Organising%20Map.ipynb)

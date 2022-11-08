@@ -5,11 +5,10 @@ Tags: python
 Slug: the-junk-in-fallout-4
 Status: published
 Summary: This is a short web scraping tutorial based on a script I wrote to fetch and analyse data about junk in the game Fallout 4.
-Alias: /2016/11/03/the-junk-in-fallout-4
 
-# Introduction
+## Introduction
 
-## The Problem
+### The Problem
 
 A few months ago I was playing one of my favourite games of 2015 -
 [Fallout 4.](https://en.wikipedia.org/wiki/Fallout_4)
@@ -47,7 +46,7 @@ The answer is yes.
 
 With data.
 
-## The solution
+### The solution
 
 What I really wanted to do is look at each material, and figure out
 which items it made sense to find to maximise the amount of the material
@@ -59,9 +58,9 @@ I get. The plan was:
 -   Analyse it and make some plots
 
 
-# The Tutorial
+## The Tutorial
 
-## Prerequisites
+### Prerequisites
 
 First of all, we need some data and some Python libraries.
 
@@ -79,7 +78,7 @@ The Python libraries we need are:
 -   [matplotlib](http://matplotlib.org/) - for plotting
 
 
-## Step 1 - Fetch the Data
+### Step 1 - Fetch the Data
 
 Side note: This isn't a tutorial about HTML, CSS or Javascript, so I'll
 assume you know enough about them. However, if you want to learn/brush
@@ -133,7 +132,7 @@ Note the Halloween-themed adverts about The Exorcist 
 Great, now we've identified the HTML element we want to load in, and we
 can do the rest of the wrangling in Python.
 
-## Step 2 - Clean and Wrangle
+### Step 2 - Clean and Wrangle
 
 Using requests and BeautifulSoup we read in the HTML and grab just the
 table we need.
@@ -196,19 +195,25 @@ units in the item, and the absence of this signifies 1 unit.
             df.loc[row_idx] = [k, component_name.strip(), quantity]
             row_idx += 1
 
-## Step 3 - Plot
+### Step 3 - Plot
 
 We now have our very own Fallout 4 junk dataset that we can analyse to
 our heart's content. For example we can plot the frequencies of each
 component to order them by rarity.
 
-![Rarity of junk components]({static}/images/the-junk-in-fallout-4/junkplot.png)
+<img alt="A bar chart showing the rarity of junk components" title="Rarity of junk components" src="{static}/images/the-junk-in-fallout-4/junkplot.png" style="background-color: white" />
 
 It's a strange world where concrete is so rare.
 
-# Conclusion
+## Conclusion
 
 There you have it - data-driven video gaming. Here's the whole thing in
 [Jupyter notebook form](https://github.com/davidasboth/blog-notebooks/blob/master/fallout-junk/Fallout%20Junk%20Data.ipynb),
 and a direct link to [the csv file]({static}/files/fallout_junk.csv)
 if you want to analyse it yourself - if you do, let me know!
+
+### Post-script
+
+Since writing this tutorial (in 2016) I discovered pandas has a `read_html()` method, which scans an entire HTML document and extracts all `<table>` elements as pandas DataFrames. You should definitely use that instead of looping over table rows and cells, but I'm keeping this tutorial as it was, since it's still instructive.
+
+_This post originally appeared on my blog in 2016_

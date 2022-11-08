@@ -4,7 +4,6 @@ Author: david
 Slug: visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team
 Status: published
 Summary: I've often read the advice that side projects should be solving problems or answering questions that you yourself are interested in. To that end, I've always wanted to know how well the Hungarian national team have done against various countries worldwide and to explore this question, I scraped the matches played by the Hungarian national team and made an interactive world map.
-Alias: /2017/01/20/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team
 
 I've often read, and agreed with, the advice that side projects should
 be solving problems or answering questions that you yourself are
@@ -32,9 +31,9 @@ where you can zoom and hover over each country to find out more. I
 encourage you to look at it if you want to dive into the data and
 explore. 
 
-# The Details
+## The Details
 
-## The Data
+### The Data
 
 I scraped the data from the wonderful
 [http://www.magyarfutball.hu](http://www.magyarfutball.hu/) which is a
@@ -47,9 +46,9 @@ for the scraping code and the [final dataset](https://github.com/davidasboth/blo
 is also available.
 
 
-## The Map
+### The Map
 
-My [last experiment](/blog/the-world-map-of-the-2016-fifa-awards/)
+My [last experiment](/the-world-map-of-the-2016-fifa-awards)
 making a [choropleth map](https://en.wikipedia.org/wiki/Choropleth_map)
 was missing some features I'd have liked to add, such as more
 interactivity. The library I used, folium, is still under development so
@@ -66,3 +65,5 @@ useful visualisation, which you can explore.
 There is [a Jupyter notebook](https://github.com/davidasboth/blog-notebooks/blob/master/hungarian-national-team/Mapping%20Records%20vs%20Countries.ipynb)
 where I aggregated the data, dealt with countries that don't exist
 anymore (the USSR, Yugoslavia, etc.) and made the final map.
+
+_This post originally appeared on my blog in 2017_

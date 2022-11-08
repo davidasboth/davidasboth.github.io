@@ -5,19 +5,18 @@ Tags: featured
 Slug: connecting-to-google-sheets-in-python
 Status: published
 Summary: A quick tutorial on how to connect to Google Sheets in Python, so you can access it like a regular CSV file.
-Alias: /2016/11/13/connecting-to-google-sheets-in-python
 
 In most data science and machine learning tutorials you typically
 encounter csv files. Either you connect to them locally, something like
 this:
 
-    :::python
+	:::python
 	import pandas as pd
 	df = pd.read_csv("my_local_data.csv")
 
 Or you access them via a direct url like this:
 
-    :::python
+	:::python
 	import pandas as pd
 	df = pd.read_csv("http://www.lotsofdata.com/hosted_data.csv")
 
@@ -41,7 +40,7 @@ Instead you need the sheet's export link.
 To do this simply take the url until the /d/ part, and the unique ID
 that comes after, so this much:
 
-https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A
+[https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A](https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A)
 
 and add **/export** at the end with some parameters.
 

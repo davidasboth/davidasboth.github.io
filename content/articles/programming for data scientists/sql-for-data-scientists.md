@@ -5,13 +5,12 @@ Tags: featured
 Slug: sql-for-data-scientists
 Status: published
 Summary: SQL is a useful part of a data scientist's toolkit and it can feel like an intimidatingly big area to try and learn alongside all the other data science concepts. I want to present a few key concepts that are enough to get you up and running with SQL!
-Alias: /2016/11/26/sql-for-data-scientists
 
 From what I can tell, the biggest difference between data science
 curricula and data science job postings is usually knowledge of SQL. I
 assume most businesses want a data scientist who knows SQL because a lot
 of corporate data is stored in some sort of relational database. For
-some reason though, data science courses don't tend to teach it
+some reason though, data science courses don't always tend to teach it
 explicitly.
 
 I wanted to collect some of the concepts which I think are useful for
@@ -19,7 +18,7 @@ aspiring data scientists to learn about databases and SQL. I'll also
 link to appropriate parts of the [w3schools SQL tutorials](http://www.w3schools.com/sql/) along the way.
 
 
-# Query Syntax
+## Query Syntax
 
 Obviously the first step is to understand how to write a SQL query.
 
@@ -29,7 +28,12 @@ that means is that when you write a SQL query, you're expressing **what the resu
 Let's look at a basic SQL query and see how that's the case.
 
     :::sql
-    SELECT name, age, height FROM people WHERE job = "data scientist"
+    SELECT
+        name, age, height
+    FROM
+        people
+    WHERE
+        job = "data scientist"
 
 SQL is not case sensitive, but I capitalised the keywords (which is a
 typical thing to do anyway).
@@ -64,8 +68,7 @@ The main keywords you need to know are:
 -   [JOIN](http://www.w3schools.com/sql/sql_join.asp) (to join multiple
     tables together)
 
-# The JOIN keyword
-
+## The JOIN keyword
 
 I left the JOIN keyword until last in that list because it warrants its
 own section.
@@ -94,7 +97,7 @@ phone\_numbers table in a database, rather than csv files):
 
     :::sql
     SELECT
-      people.name, people.age, people.height, phone_numbers.number
+      people.name, people.age, people.height, phone_numbers.phone_number
     FROM
       people
       INNER JOIN phone_numbers ON people.name = phone_numbers.name
@@ -127,11 +130,11 @@ The rows of people who don't have a phone number would have shown a NULL
 value for the phone number. Using an inner join wouldn't have returned
 them at all.
 
-It can be helpful to view this visually, and the w3schools pages do that
+It can be helpful to see this visually, and the w3schools pages do that
 already, but [here's another good example](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/).
 
  
-# SQL Tools for Data Science
+## SQL Tools for Data Science
 
 
 If you know the basic query syntax and the various join types, you're
@@ -139,7 +142,7 @@ probably equipped enough to start pulling data out of any SQL database.
 Programmers working with SQL often use specific tools to access
 databases, such as Microsoft's SQL Server Management Studio.
 
-However, as a data scientist you'll want to do this straight from your
+However, as a data scientist you may want to do this straight from your
 code instead. You have a few options for this.
 
 -   You can [connect to sqlite](http://www.datacarpentry.org/python-ecology-lesson/08-working-with-sql)
@@ -150,7 +153,7 @@ code instead. You have a few options for this.
 Also, if you're familiar with pandas but not with SQL, the pandas
 documentation has a section with [pandas commands and the associated SQL queries](http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html).
 
-# Conclusion
+## Conclusion
 
 I'd argue that's all you need to get up and running.
 

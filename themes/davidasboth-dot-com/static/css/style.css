@@ -17,7 +17,7 @@
 }
 
 /* Remove list styles (bullets/numbers) */
-ol, ul, menu {
+ul, menu {
     list-style: none;
 }
 
@@ -108,6 +108,24 @@ h3 {
 	font-size: 2.4rem;
 	line-height: 3rem;
 	font-weight: 700;
+	color: #FFF;
+}
+h4 {
+	font-size: 2rem;
+	line-height: 3rem;
+	font-weight: 700;
+	margin-bottom: 1.2rem;
+	color: #FFF;
+}
+h5 {
+	font-size: 1.8rem;
+	line-height: 2.6rem;
+	margin-bottom: 1.2rem;
+	color: #FFF;
+}
+h6 {
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
 	color: #FFF;
 }
 p, main ul, main ol, table {
@@ -425,6 +443,49 @@ footer .flex-container {
 	min-height: 90vh;
 }
 
+/* Davidka custom stuff */
+
 .codehilite  {
-	padding: 8px;
+	padding: 0px;
+	white-space: break-spaces;
+}
+
+code {
+	background-color: rgba(26,29,33,1.00);
+	padding: 0.5rem;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	color: #FFFFFF;
+}
+
+.codehilite code {
+	display: block;
+	padding: 1rem;
+	border-left: 2px solid rgba(252,216,5,1.00);
+	margin-bottom: 2rem;
+}
+
+main ul, main ol {
+	margin-bottom: 1rem;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: 700;
+}
+
+table {
+	background-color: white;
+	margin-bottom: 2rem;
+}
+
+th {
+	background-color: #24262b
+}
+
+th, td {
+	padding: 1rem;
+	border: 1px solid #b8b8b8;
 }

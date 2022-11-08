@@ -4,12 +4,10 @@ Author: david
 Slug: analysing-london-house-prices
 Status: published
 Summary: London is expensive. So much so that it's a trope now for those of us who live here. But what does the data show? Are things getting better or worse? How did the 2008 recession affect behaviour for example? I wanted to find out. With data.
-Alias: /2016/10/23/analysing-london-house-prices
 
-# Introduction
+## Introduction
 
-London is expensive. So much so that it's a trope now for those of us
-who live here. But what does the data show? Are things getting better or
+London is expensive. So much so that it's a trope now for those that live there. But what does the data show? Are things getting better or
 worse? How did the 2008 recession affect buying behaviour for example?
 
 I wanted to find out. With data.
@@ -25,7 +23,7 @@ prices, so I focused on answering specific questions. I wanted to know:
 -   Does the overall trend match the individual trend in each borough?
 -   Which boroughs are similar in their economic trends?
 
-## The Data
+### The Data
 
 [The dataset](https://app.enigma.io/table/gov.uk.land-registry.price-paid)
 was obtained from an online service called [Enigma](http://enigma.io/),
@@ -54,14 +52,14 @@ One of them for example was a Welsh address, incorrectly labelled as
 'London'. I removed 5 boroughs in total because they were either outside
 of London, or contained less than 20 examples.
 
-## The Tools
+### The Tools
 
 The data wrangling was done in Python and all the visualisations were
 created with [Tableau](http://www.tableau.com/).
 
-# The Analysis
+## The Analysis
 
-## Price Distribution
+### Price Distribution
 
 The very first question I wanted to answer is what the distribution of
 prices is like.
@@ -81,7 +79,7 @@ afford to pay millions for a house will be different to people buying
 houses for around the median price. To this end I created an "outliers"
 category and analysed those nearly 40,000 rows separately.
 
-## Prices over Time
+### Prices over Time
 
 So how have prices changed over the years in the "normal" and "outlier" categories?
 
@@ -96,7 +94,7 @@ the number of sales dipped during the 2008 recession, but only for the
 non-outlier category. That makes sense - you'd expect the most wealthy
 to be unaffected by a recession.
 
-## What about each borough?
+### What about each borough?
 
 Does this overall trend look the same in each borough? Let's find out.
 For borough-level figures I looked at the non-outlier category to make
@@ -117,7 +115,7 @@ in each borough, echoing the overall trend.
 This graph would probably be a worrying EKG
 
 
-## Buying Behaviour
+### Buying Behaviour
 
 Is buying a house seasonal or do people buy with the same frequency
 throughout the year?
@@ -141,7 +139,7 @@ It looks like some of the boroughs have a bigger peak in March than
 others. Can we quantify which boroughs have this behaviour and which
 don't?
 
-## Clustering
+### Clustering
 
 How do we find similar boroughs? We can make use of clustering.
 
@@ -169,13 +167,11 @@ cluster:
 
 ![Clustered boroughs]({static}/images/analysing-london-house-prices/Cluster-Dashboard-4.png)
 
-London boroughs coloured by their buying behaviour
-
 Interestingly the different seasonal behaviour almost neatly splits
 London into East and West. The dataset unfortunately didn't have enough
 details to give any suggestions about whether this is a coincidence.
 
-# Conclusion
+## Conclusion
 
 Unsurprisingly, the data confirms what we all complain about - buying in
 London is expensive and it is only getting worse.
@@ -190,3 +186,5 @@ coincidence.
 
 The next analysis on my list might be finding a new, more affordable
 city!
+
+_This post originally appeared on my blog in 2016_

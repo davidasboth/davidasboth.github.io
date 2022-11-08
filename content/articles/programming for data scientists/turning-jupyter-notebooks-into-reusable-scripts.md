@@ -5,7 +5,6 @@ Tags: python
 Slug: turning-jupyter-notebooks-into-reusable-scripts
 Status: published
 Summary: As part of my commitment to occasionally talk about "programming for data scientists", I want to share ideas that will facilitate this to help data scientists focus on important stuff. In this post I want to share some thoughts on how to make your Jupyter notebooks easier to "productionise".
-Alias: /2016/11/17/turning-jupyter-notebooks-into-reusable-scripts
 
 I read an article today called Data Scientists Need More Automation. No
 prizes for guessing what it was about.

@@ -5,26 +5,20 @@ Tags: featured, python
 Slug: more-on-k-means-clustering
 Status: published
 Summary: In this post I look at a practical example of k-means clustering in action, namely to draw puppies. I also touch on a couple of more general points to consider when using clustering.
-Alias: /2016/11/20/more-on-k-means-clustering
 
-In [Part 1](/blog/introduction-to-k-means-clustering/)
+In [Part 1](/introduction-to-k-means-clustering)
 I described the k-means clustering algorithm and some of its uses along
 with a quick Python implementation. Going forward I recommend using the
 [scikit-learn implementation](http://scikit-learn.org/stable/modules/clustering.html#k-means).
 
 Now let's see k-means in action!
- 
 
-# Image Segmentation
+## Image Segmentation
  
-
 One use of clustering is to segment images:
 
-> For example, in computer graphics, color quantization is the task of
-> reducing the color palette of an image to a fixed number of colors
-> *k*.
->
-> <small>From: [k-means clustering (Wikipedia)](https://en.wikipedia.org/wiki/K-means_clustering#Vector_quantization)</small>
+_For example, in computer graphics, color quantization is the task of reducing the color palette of an image to a fixed number of colors *k*._
+<small>From: [k-means clustering (Wikipedia)](https://en.wikipedia.org/wiki/K-means_clustering#Vector_quantization)</small>
 
 Given an image, we can use k-means clustering to find similar colours in
 the image, and re-draw it with fewer colours. This has uses in data
@@ -36,12 +30,9 @@ We'll take this image of a puppy:
 
 ![A puppy]({static}/images/more-on-k-means-clustering/puppy.jpg)
 
-Puppy image from [Greg on Flickr](https://www.flickr.com/photos/gregcullen/250779651/in/photolist-oaj46-cTecd9-sHsHk-5WP7e-9jLY1e-dMrkp4-oak27-8LgQUd-72uozM-9N6oDE-4VoQq-fGnMUG-fkMAUo-hSg7Vm-9xukWa-7K3S2B-fz3KAH-aWe43R-HhRcz-4SZHdM-3d8eAm-Gh4ip-c3LHsG-y6YdK-e4Qn6h-y6U3M-48xfrF-qaZttJ-8MuTV2-aDsi2E-db1Ujw-oxFiuK-y6Ynf-oBGkqj-bVUar-5ft6bn-mwDdV-4BeWnC-itR65i-8d1bVK-5CSiqu-fNwmya-7kTing-7oySVC-boenVS-bBvADe-5fmmvh-4j3Q9U-53pHvi-4qFWve)
+Puppy image from [Greg on Flickr](https://www.flickr.com/photos/gregcullen/250779651/in/photolist-oaj46-cTecd9-sHsHk-5WP7e-9jLY1e-dMrkp4-oak27-8LgQUd-72uozM-9N6oDE-4VoQq-fGnMUG-fkMAUo-hSg7Vm-9xukWa-7K3S2B-fz3KAH-aWe43R-HhRcz-4SZHdM-3d8eAm-Gh4ip-c3LHsG-y6YdK-e4Qn6h-y6U3M-48xfrF-qaZttJ-8MuTV2-aDsi2E-db1Ujw-oxFiuK-y6Ynf-oBGkqj-bVUar-5ft6bn-mwDdV-4BeWnC-itR65i-8d1bVK-5CSiqu-fNwmya-7kTing-7oySVC-boenVS-bBvADe-5fmmvh-4j3Q9U-53pHvi-4qFWve) and redraw it in much fewer colours using k-means clustering.
 
-
-and redraw it in much fewer colours using k-means clustering.
-
-## The Data
+### The Data
 
 Let's start by defining our data. To represent this problem, we take
 each pixel in the image as a data point whose 3 features are the R, G
@@ -51,7 +42,7 @@ For this particular image this gives us a dataset with 3 columns and
 43,680 rows. Some of the pixels are the same colour, but we've still got
 over 10,000 unique colours in our image.
 
-## Running K-means
+### Running K-means
 
 It is conceivable that we can group similar colours together and redraw
 the same image with fewer colours in a way that we can still tell what
@@ -110,7 +101,7 @@ Here is the [Jupyter notebook for drawing puppies](https://github.com/davidasbot
 I have a couple of points left to raise, namely some practical tips when
 using clustering.
 
-# Choosing K
+## Choosing K
 
 How would we know which point to stop at? When is $k$ at its optimal
 value?
@@ -151,7 +142,7 @@ Either way, there is usually an "elbow" where the increase/decrease is
 suddenly less sharp. That's usually a good point to stop and use that
 value for $k$.
 
-# Normalisation
+## Normalisation
 
 As I mentioned in the Self-Organising Maps tutorial, in practice you
 will want to normalise your data so all features are on the same scale.
