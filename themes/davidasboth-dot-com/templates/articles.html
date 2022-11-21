@@ -25,7 +25,7 @@ Start here.</h3>
               <ul>
                 {% for article in articles if "data-science-highlight" in article.tags %}
                   <li>
-                      <a href="{{ article.url }}">{{ article.title }}</a>
+                      <a href="/{{ article.url }}">{{ article.title }}</a>
                   </li>
                   {% endfor %}
               </ul>
@@ -34,7 +34,7 @@ Start here.</h3>
           <h3>Article categories</h3>
           
           {% for category in categories %}
-            <nobr><a class="tag" href="{{ category[0].url }}">{{ category[0].name }}</a></nobr>
+            <nobr><a class="tag" href="/{{ category[0].url }}">{{ category[0].name }}</a></nobr>
           {% endfor %}
 
           </div>
@@ -44,8 +44,8 @@ Start here.</h3>
           {% for article in articles if "featured" in article.tags %}
 
             <div class="col-33 padding-medium">
-                <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-                <a class="tag" href="{{ article.category.url }}">{{ article.category.name }}</a>
+                <h3><a href="/{{ article.url }}">{{ article.title }}</a></h3>
+                <a class="tag" href="/{{ article.category.url }}">{{ article.category.name }}</a>
                 <p>{{ article.summary }}</p>
             </div>
 
