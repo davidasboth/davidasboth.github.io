@@ -6,14 +6,15 @@
 	<meta charset="utf-8">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68436188-1"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FMY957X39V"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
-	  gtag('config', 'UA-68436188-1');
+	gtag('config', 'G-FMY957X39V');
 	</script>
+
 
 
 	<!-- Start cookieyes banner -->
@@ -93,12 +94,12 @@ link to appropriate parts of the <a href="http://www.w3schools.com/sql/">w3schoo
 <p>SQL is a <a href="https://en.wikipedia.org/wiki/Declarative_programming">declarative language</a>. All
 that means is that when you write a SQL query, you're expressing <strong>what the result should look like, rather than how to achieve it</strong>.</p>
 <p>Let's look at a basic SQL query and see how that's the case.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span>
-    <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">height</span>
-<span class="k">FROM</span>
-    <span class="n">people</span>
-<span class="k">WHERE</span>
-    <span class="n">job</span> <span class="o">=</span> <span class="ss">&quot;data scientist&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"></span>
+<span class="w">    </span><span class="n">people</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"></span>
+<span class="w">    </span><span class="n">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;data scientist&quot;</span><span class="w"></span>
 </code></pre></div>
 
 <p>SQL is not case sensitive, but I capitalised the keywords (which is a
@@ -153,11 +154,11 @@ common between both data sources.</p>
 <p>That <em>how</em> keyword corresponds to the type of join in SQL. The same
 operation in SQL looks like this (assuming we have a people and
 phone_numbers table in a database, rather than csv files):</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span>
-  <span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">people</span><span class="p">.</span><span class="n">age</span><span class="p">,</span> <span class="n">people</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">phone_numbers</span><span class="p">.</span><span class="n">phone_number</span>
-<span class="k">FROM</span>
-  <span class="n">people</span>
-  <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">phone_numbers</span> <span class="k">ON</span> <span class="n">people</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">phone_numbers</span><span class="p">.</span><span class="n">name</span>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
+<span class="w">  </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="n">phone_numbers</span><span class="p">.</span><span class="n">phone_number</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"></span>
+<span class="w">  </span><span class="n">people</span><span class="w"></span>
+<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">phone_numbers</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phone_numbers</span><span class="p">.</span><span class="n">name</span><span class="w"></span>
 </code></pre></div>
 
 <p>I've specifically stated in the SELECT clause where the columns come
@@ -275,7 +276,7 @@ argue that it's an optional skill for most data scientists.</p><script src="//pl
 
 	<footer>
 		<div class="container flex-container">
-			<p>© 2022 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>© 2023 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>
