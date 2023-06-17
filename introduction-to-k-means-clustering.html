@@ -121,12 +121,12 @@ You can even use it <a href="/analysing-london-house-prices/">to find similar bo
 <h3>Potential Problems</h3>
 <h4>Choosing K</h4>
 <p>Before you start training your data to learn the clusters, you need to
-choose a value for <span class="math">\(k\)</span>. That is, you have to decide beforehand how
+choose a value for $k$. That is, you have to decide beforehand how
 many groups there are going to be. This sounds like it defeats the
 purpose of being unsupervised, and it is indeed something that you have
 to set manually.</p>
 <p>Due to the random nature of the initialisation of the algorithm, and the
-uncertainty in the correct value for <span class="math">\(k\)</span>, you might find re-running
+uncertainty in the correct value for $k$, you might find re-running
 the algorithm multiple times gives you different results.</p>
 <h4>Subjective Evaluation</h4>
 <p>As with unsupervised algorithms in general, evaluating the outcome is
@@ -149,13 +149,13 @@ that belong to it (hence, "k-means").</p>
 n is the number of features your data has.</p>
 <p>The basic idea behind the k-means clustering algorithm is simple:</p>
 <ol>
-<li>Start with a chosen value of <span class="math">\(k\)</span>.</li>
-<li>Choose <span class="math">\(k\)</span> of your data points at random to be your starting
+<li>Start with a chosen value of $k$.</li>
+<li>Choose $k$ of your data points at random to be your starting
     centroids.</li>
 <li>For each data point, assign it to a cluster based on which of the
-    <span class="math">\(k\)</span> centroids it is <em>closest</em> to. Closest can mean any distance
+    $k$ centroids it is <em>closest</em> to. Closest can mean any distance
     measure. The Euclidean distance is often used.</li>
-<li>Now you have <span class="math">\(k\)</span> groups of data points assigned to a cluster.
+<li>Now you have $k$ groups of data points assigned to a cluster.
     Re-calculate the position of each cluster centroid by taking the
     <em>mean</em> of the new points that are now associated with that cluster.</li>
 <li>Repeat steps 3 and 4 until convergence. You are typically done when
@@ -243,69 +243,7 @@ clusters.</p>
 <p>Here is the <a href="https://github.com/davidasboth/blog-notebooks/blob/master/k-means/K-Means.ipynb">associated Jupyter notebook</a>.</p>
 <p>In Part 2, I'll talk about another practical application of the k-means
 algorithm (using scikit-learn this time) as well as some implementation
-details such as how to pick the value of <span class="math">\(k\)</span>.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+details such as how to pick the value of $k$.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         </div>
     </section>

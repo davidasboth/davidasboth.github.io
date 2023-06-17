@@ -112,13 +112,13 @@ account every single word that came before it.</p>
 <p><em>The future is independent of the past, given the present.</em></p>
 <p>That sounds a bit like an old proverb but it's a simple concept.</p>
 <p>If a sequence has the Markov property it means that the value of the
-sequence at the next step <strong>depends only on the value at the past <span class="math">\(n\)</span> steps</strong>. The value of <span class="math">\(n\)</span> (how far back we assume we need to go) is
+sequence at the next step <strong>depends only on the value at the past $n$ steps</strong>. The value of $n$ (how far back we assume we need to go) is
 called the <strong>order</strong> of a Markov chain.</p>
 <p>So a second-order Markov chain is one where we use the current and the
 previous value to predict the next value. We are assuming that it does
 not matter what the rest of the text was before the previous word, we
 only need the current word and the one before it.</p>
-<p>In effect, the Markov chain has no "memory" beyond the last <span class="math">\(n\)</span> steps.</p>
+<p>In effect, the Markov chain has no "memory" beyond the last $n$ steps.</p>
 <p>The Markov assumption simply states that we believe this Markov property
 to hold for a given sequence.</p>
 <p>This is a simplifying assumption that means it is much easier to compute
@@ -266,69 +266,7 @@ library, which <a href="https://github.com/davidasboth/markov-chain-for-text">yo
 action', this is <a href="http://setosa.io/ev/markov-chains/">a great resource</a>
 to start with.</p>
 <p>I glossed over a lot of the maths behind the algorithm, but if you're
-interested you could <a href="https://www.youtube.com/watch?v=WUjt98HcHlk">start here</a>.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+interested you could <a href="https://www.youtube.com/watch?v=WUjt98HcHlk">start here</a>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         </div>
     </section>

@@ -249,7 +249,7 @@ trick of not actually measuring Euclidean distance, but the <strong>squared</str
 Euclidean distance, thereby avoiding an expensive square root
 computation.</p>
 <div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">find_bmu</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the best matching unit for a given vector, t, in the SOM</span>
 <span class="sd">        Returns: a (bmu, bmu_idx) tuple where bmu is the high-dimensional BMU</span>
 <span class="sd">                 and bmu_idx is the index of this vector in the SOM</span>
@@ -286,9 +286,9 @@ see this in a bit more detail in step 4.</p>
 
 <p>The functions to decay the radius and learning rate use exponential
 decay:</p>
-<p><span class="math">\(\sigma_{t} = \sigma_{0} \times \exp(\frac{-t}{\lambda})\)</span></p>
-<p>Where <span class="math">\(\lambda\)</span> is the time constant (which controls the decay) and
-<span class="math">\(\sigma\)</span> is the value at various times <span class="math">\(t\)</span>.</p>
+<p>$\sigma_{t} = \sigma_{0} \times \exp(\frac{-t}{\lambda})$</p>
+<p>Where $\lambda$ is the time constant (which controls the decay) and
+$\sigma$ is the value at various times $t$.</p>
 <div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">decay_radius</span><span class="p">(</span><span class="n">initial_radius</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">time_constant</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">initial_radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span> <span class="o">/</span> <span class="n">time_constant</span><span class="p">)</span>
 
@@ -303,10 +303,10 @@ that mapped to it. We will also identify the neurons that are close to
 the BMU in 2D space and update their 3D vectors to move "inwards"
 towards the BMU.</p>
 <p>The formula to update the BMU's 3D vector is:</p>
-<p><span class="math">\(w_{t+1} = w_{t} + L_{t}(V_{t} - w_{t})\)</span></p>
+<p>$w_{t+1} = w_{t} + L_{t}(V_{t} - w_{t})$</p>
 <p>That is to say, the new weight vector will be the current vector plus
-the difference between the input vector <span class="math">\(V\)</span> and the weight vector,
-multiplied by a learning rate <span class="math">\(L\)</span> at time <span class="math">\(t\)</span>.</p>
+the difference between the input vector $V$ and the weight vector,
+multiplied by a learning rate $L$ at time $t$.</p>
 <p>We are literally just moving the weight vector closer to the input
 vector.</p>
 <p>We also identify all the neurons in the SOM that are closer in 2D space
@@ -316,9 +316,9 @@ than our current radius, and also move them closer to the input vector.</p>
 it's Gaussian. So imagine a bell shape centred around the BMU - that's
 how we decide how much to pull the neighbouring neurons in by.</p>
 <p>Concretely, this is the equation we'll use to calculate the influence
-<span class="math">\(i\)</span>:</p>
-<p><span class="math">\(i_{t} = \exp(-\frac{d^{2}}{2\sigma_{t}^{2}})\)</span></p>
-<p>where <span class="math">\(d\)</span> is the 2D distance and <span class="math">\(\sigma\)</span> is the current radius of
+$i$:</p>
+<p>$i_{t} = \exp(-\frac{d^{2}}{2\sigma_{t}^{2}})$</p>
+<p>where $d$ is the 2D distance and $\sigma$ is the current radius of
 our neighbourhood.</p>
 <p>Putting that all together:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_influence</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
@@ -404,69 +404,7 @@ for the colour map example.</p>
 <p>Mat Buckland's <a href="http://www.ai-junkie.com/ann/som/som1.html">excellent explanation and code walkthrough</a> of SOMs was
 instrumental in helping me learn. My code is more or less a Python port
 of his C++ implementation. Reading his posts should fill in any gaps I
-may have not covered.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+may have not covered.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         </div>
     </section>

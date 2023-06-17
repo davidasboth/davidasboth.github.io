@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth - Data Solutions &amp; Consultancy</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-11-22T13:54:00+00:00</updated><entry><title>Learning as a "data generalist"</title><link href="/learning-as-a-data-generalist.html" rel="alternate"></link><published>2022-11-22T13:54:00+00:00</published><updated>2022-11-22T13:54:00+00:00</updated><author><name>david</name></author><id>tag:None,2022-11-22:/learning-as-a-data-generalist.html</id><summary type="html">&lt;p&gt;One of the most common questions I get from students near the end of a data science course is "what next?". How do you keep learning once you have the basics, especially if you're a generalist?&lt;/p&gt;</summary><content type="html">&lt;p&gt;One of the most common questions I get from students near the end of a data science course is "what next?". The subtext is often "what is the next algorithm I should study that we didn't cover in this course?". Even a short data science course will reveal the tremendous breadth of topics that fall under the data science umbrella. Students, understandably, think all those topics should be ticked off before they're ready to be data scientists. I've written about this feeling before; it's impostor syndrome in disguise. In &lt;a href="/impostor-syndrome"&gt;"How to use your impostor syndrome to learn anything"&lt;/a&gt; I detail the most common piece of advice I give to students:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>David Asboth - Data Solutions &amp; Consultancy</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2023-06-17T19:00:00+01:00</updated><entry><title>Learn data science like you would learn jazz</title><link href="/learning-data-like-jazz.html" rel="alternate"></link><published>2023-06-17T19:00:00+01:00</published><updated>2023-06-17T19:00:00+01:00</updated><author><name>david</name></author><id>tag:None,2023-06-17:/learning-data-like-jazz.html</id><summary type="html">&lt;p&gt;Aspiring analysts want to know how data analysis is done. As it turns out, there are similarities between learning how to analyse data and learning how to play music, especially jazz.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Aspiring analysts want to know how data analysis is done. Beyond the technical skills required to be an analyst, they assume that, surely, learning the discipline of data analysis includes some sort of repeatable process; a step-by-step method to apply to any analytical problem. &lt;strong&gt;Such a method doesn't exist&lt;/strong&gt;. How seasoned analysts do their work is a mixture of technical and interpersonal skills sprinkled with intuition built up through years of just analysing data. This kind of intuition is hard to put down on paper, which for a student is an unsatisfying thing to hear.&lt;/p&gt;
+&lt;p&gt;I'm a professional data analyst and educator, and an amateur jazz enthusiast. Hear me out: as it turns out, there are similarities between learning how to analyse data and learning how to play music, especially jazz.&lt;/p&gt;
+&lt;h3&gt;Improvisation&lt;/h3&gt;
+&lt;p&gt;Jazz has multiple components that make it distinct from other musical genres. What makes jazz unique is that it includes &lt;strong&gt;improvisation&lt;/strong&gt;, where musicians can put their own creative stamp on a piece. Because of this, when you hear a performance of a jazz &lt;em&gt;"standard"&lt;/em&gt;, a popular song that's part of the jazz canon, you never hear the same performance twice. &lt;strong&gt;The individual notes aren't as important as the general structure&lt;/strong&gt;. Jazz musicians don't get given an exact score like classical musicians. In a classical piece, every note is mapped out exactly as the composer intended, and musicians tend to follow this as closely as possible. In jazz, you often just get what's called a &lt;em&gt;lead sheet&lt;/em&gt;, which contains a song's main melody, its structure, and its chords. However, even this loose structure is fungible, and &lt;strong&gt;jazz musicians take many liberties to make a piece their own&lt;/strong&gt;. This has parallels for data analysis.&lt;/p&gt;
+&lt;p&gt;Two analysts attempting the same problem will arrive at different results. The problem, the "analytical lead sheet" if you will, is the same, but because their methods, assumptions, and choices will be different, they end up playing a different tune. There is enough uncertainty in data analysis that this doesn't mean either one is wrong. In fact, the two analysts would likely learn something by comparing notes afterwards.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Just like jazz musicians don't look back and check whether every note they played was perfect, aspiring analysts shouldn't get bogged down with whether every individual piece of their analysis was the perfect choice.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Chances are there were other, equally acceptable, options at multiple points in the analysis.&lt;/p&gt;
+&lt;p&gt;How does one get to a point where they can confidently improvise? Music and data education are both historically very method-driven. They are focused on drilling the fundamentals before moving on to practical applications. However, because jazz is so different from other musical genres, the best way to learn it is also different and the same should be true of data analysis.&lt;/p&gt;
+&lt;h3&gt;Songs before scales&lt;/h3&gt;
+&lt;p&gt;Rigorous music theory lessons will no doubt make you a better jazz musician. Knowing how notes, scales, and chords interrelate builds a foundation you can use to improve. However, &lt;strong&gt;knowing theory doesn't make you better at the practice&lt;/strong&gt;, in and of itself. You need two things: to &lt;strong&gt;apply your knowledge&lt;/strong&gt; by playing lots of jazz and to learn from the greats. The first is obviously accomplished by sitting down at your instrument and &lt;strong&gt;practising&lt;/strong&gt;. There are no shortcuts here, but one important point is that you want to practise playing songs. Anyone who's ever had lessons in an instrument has had to practice scales and arpeggios. Music lessons typically include these technical practice challenges to hone your skill at the instrument. These are clearly important, but they should not override the purpose of the lessons, which is to make music. If you &lt;strong&gt;focus on songs first&lt;/strong&gt;, learning scales makes more sense since you have the right context for them.&lt;/p&gt;
+&lt;p&gt;Just like songs should be the first-class citizen of jazz practice, &lt;strong&gt;projects should be the first-class citizen of learning data analysis&lt;/strong&gt;. Once you have the basics under your belt, that is you know how to load, clean, explore, and visualise a dataset, you shouldn't go and learn 10 more tools or algorithms for the sake of it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;More technical training will not give you the best return on investment on your learning time.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It is much better to start solving problems &lt;strong&gt;as soon as possible&lt;/strong&gt;, even if you don't have all the necessary skills yet. Attempting an actual data analysis problem will force you to learn exactly what you need, and you will have the right context for those technical components, which you can always learn when you need them.&lt;/p&gt;
+&lt;p&gt;There is an important caveat here. You shouldn't learn songs or complete analytical projects &lt;strong&gt;in isolation&lt;/strong&gt;. The way to improve is to do the work, get feedback, and see how the experts do it.&lt;/p&gt;
+&lt;h3&gt;Learning from experts&lt;/h3&gt;
+&lt;p&gt;To figure out how you can get closer to the greatest jazz artists is by &lt;strong&gt;listening to and analysing how they play&lt;/strong&gt;. Rather than guessing which notes you could have played differently to make your solo sound a bit better, it's more effective to listen to a recording of Miles Davis, John Coltrane, or Duke Ellington, and hear what they did. One piece of advice given to aspiring jazz musicians is to try to &lt;em&gt;transcribe&lt;/em&gt; your favourite solos. The point of attempting to figure out every note that was played isn't to replicate the solo exactly but to see a master at work and pick up some new tricks. Why couldn't we do the same for data analysis?&lt;/p&gt;
+&lt;p&gt;When teaching programming, a great tool for the educator is the &lt;strong&gt;code-along&lt;/strong&gt;. Students get a lot of value from an expert instructor talking through every line of code not just to explain the syntax, but to &lt;strong&gt;talk about the wider context&lt;/strong&gt;. On the surface level, the instructor explains the exact command used to remove missing values, but on a deeper level, they reveal the justification for doing so in the first place. This sort of narrated, granular deep dive is incredibly powerful at filling in the gaps in students' knowledge.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Learning from experts by actually seeing them work is underutilised in tech education.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To put my money where my mouth is, I have in the past streamed my attempts at an analytical problem &lt;a href="https://www.twitch.tv/jazzsloth"&gt;on Twitch&lt;/a&gt;, and plan to start doing more of this again. I find that narrating my own thought process helps me learn a lot, too.&lt;/p&gt;
+&lt;h3&gt;Jazz up your data analysis learning&lt;/h3&gt;
+&lt;p&gt;If you want to get better at analysing data, think like a jazz musician. Don't spend long hours reading dry textbooks of yet another analytical tool or algorithm. Play songs instead. Improvise to put your own stamp on a problem, observe the experts, and, most importantly, &lt;strong&gt;just make some sweet, sweet data jazz&lt;/strong&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="education"></category><category term="featured"></category></entry><entry><title>Learning as a "data generalist"</title><link href="/learning-as-a-data-generalist.html" rel="alternate"></link><published>2022-11-22T13:54:00+00:00</published><updated>2022-11-22T13:54:00+00:00</updated><author><name>david</name></author><id>tag:None,2022-11-22:/learning-as-a-data-generalist.html</id><summary type="html">&lt;p&gt;One of the most common questions I get from students near the end of a data science course is "what next?". How do you keep learning once you have the basics, especially if you're a generalist?&lt;/p&gt;</summary><content type="html">&lt;p&gt;One of the most common questions I get from students near the end of a data science course is "what next?". The subtext is often "what is the next algorithm I should study that we didn't cover in this course?". Even a short data science course will reveal the tremendous breadth of topics that fall under the data science umbrella. Students, understandably, think all those topics should be ticked off before they're ready to be data scientists. I've written about this feeling before; it's impostor syndrome in disguise. In &lt;a href="/impostor-syndrome"&gt;"How to use your impostor syndrome to learn anything"&lt;/a&gt; I detail the most common piece of advice I give to students:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[you] don't need to learn everything up front, [you] just need to be confident enough that [you] can learn anything when [you] need to&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -124,26 +150,26 @@
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align="center"&gt;&lt;strong&gt;Impact&lt;/strong&gt;&lt;/th&gt;
-&lt;th align="center"&gt;&lt;strong&gt;Option&lt;/strong&gt;&lt;/th&gt;
-&lt;th align="center"&gt;&lt;strong&gt;Investment&lt;/strong&gt;&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;&lt;strong&gt;Impact&lt;/strong&gt;&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;&lt;strong&gt;Option&lt;/strong&gt;&lt;/th&gt;
+&lt;th style="text-align: center;"&gt;&lt;strong&gt;Investment&lt;/strong&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align="center"&gt;Long-term&lt;/td&gt;
-&lt;td align="center"&gt;Hire data scientist(s)&lt;/td&gt;
-&lt;td align="center"&gt;£££££&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;Long-term&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;Hire data scientist(s)&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;£££££&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align="center"&gt;Medium-term&lt;/td&gt;
-&lt;td align="center"&gt;Train your employees&lt;/td&gt;
-&lt;td align="center"&gt;£££&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;Medium-term&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;Train your employees&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;£££&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align="center"&gt;Short-term&lt;/td&gt;
-&lt;td align="center"&gt;Hire a consultant&lt;/td&gt;
-&lt;td align="center"&gt;££££&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;Short-term&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;Hire a consultant&lt;/td&gt;
+&lt;td style="text-align: center;"&gt;££££&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -545,12 +571,12 @@ link to appropriate parts of the &lt;a href="http://www.w3schools.com/sql/"&gt;w
 &lt;p&gt;SQL is a &lt;a href="https://en.wikipedia.org/wiki/Declarative_programming"&gt;declarative language&lt;/a&gt;. All
 that means is that when you write a SQL query, you're expressing &lt;strong&gt;what the result should look like, rather than how to achieve it&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Let's look at a basic SQL query and see how that's the case.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="k"&gt;FROM&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="k"&gt;WHERE&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;job&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;data scientist&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;
+&lt;span class="k"&gt;FROM&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;
+&lt;span class="k"&gt;WHERE&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;job&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;data scientist&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;SQL is not case sensitive, but I capitalised the keywords (which is a
@@ -605,11 +631,11 @@ common between both data sources.&lt;/p&gt;
 &lt;p&gt;That &lt;em&gt;how&lt;/em&gt; keyword corresponds to the type of join in SQL. The same
 operation in SQL looks like this (assuming we have a people and
 phone_numbers table in a database, rather than csv files):&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phone_numbers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;phone_number&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="k"&gt;FROM&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;INNER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;JOIN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phone_numbers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;ON&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phone_numbers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phone_numbers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;phone_number&lt;/span&gt;
+&lt;span class="k"&gt;FROM&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;INNER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;JOIN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phone_numbers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;ON&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;people&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;phone_numbers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;I've specifically stated in the SELECT clause where the columns come
@@ -712,7 +738,7 @@ scikit-learn is easy:&lt;/p&gt;
 colours themselves.&lt;/p&gt;
 &lt;p&gt;That means once we have the cluster assignment for each pixel, plus the
 centroid as the associated colour value, we can reconstruct our image
-pixel by pixel to get the &lt;span class="math"&gt;\(k\)&lt;/span&gt;-colour representation.&lt;/p&gt;
+pixel by pixel to get the $k$-colour representation.&lt;/p&gt;
 &lt;p&gt;The same image with only 3 colours looks like this:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="A 3-colour puppy" src="/images/more-on-k-means-clustering/puppy_3.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;The same puppy drawn with only 3 colours&lt;/p&gt;
@@ -731,36 +757,36 @@ original by using far less than the original 10,000 colours.&lt;/p&gt;
 &lt;p&gt;I have a couple of points left to raise, namely some practical tips when
 using clustering.&lt;/p&gt;
 &lt;h2&gt;Choosing K&lt;/h2&gt;
-&lt;p&gt;How would we know which point to stop at? When is &lt;span class="math"&gt;\(k\)&lt;/span&gt; at its optimal
+&lt;p&gt;How would we know which point to stop at? When is $k$ at its optimal
 value?&lt;/p&gt;
 &lt;p&gt;As I mentioned in part 1, this is usually somewhat subjective, but there
 are some general heuristics.&lt;/p&gt;
 &lt;p&gt;In this case we could do it by visual inspection. That is, we could say
-&lt;span class="math"&gt;\(k\)&lt;/span&gt; is high enough when we are no longer visually able to tell the
+$k$ is high enough when we are no longer visually able to tell the
 difference between the original and the redrawn images.&lt;/p&gt;
 &lt;p&gt;Not all datasets will lend themselves to visual inspection like this
 though.&lt;/p&gt;
 &lt;p&gt;We can use what's called the &lt;em&gt;elbow method&lt;/em&gt; to evaluate when to stop.&lt;/p&gt;
-&lt;p&gt;For each value of &lt;span class="math"&gt;\(k\)&lt;/span&gt; you want to evaluate how much of the variance in
-your data is explained by the configurations of those &lt;span class="math"&gt;\(k\)&lt;/span&gt; clusters.
-This value increases for each value of &lt;span class="math"&gt;\(k\)&lt;/span&gt;, but the idea is that we
-stop increasing &lt;span class="math"&gt;\(k\)&lt;/span&gt; when increasing it gives us diminishing returns.&lt;/p&gt;
-&lt;p&gt;Let's think of the two extremes. When &lt;span class="math"&gt;\(k\)&lt;/span&gt; = 1, it means every point
+&lt;p&gt;For each value of $k$ you want to evaluate how much of the variance in
+your data is explained by the configurations of those $k$ clusters.
+This value increases for each value of $k$, but the idea is that we
+stop increasing $k$ when increasing it gives us diminishing returns.&lt;/p&gt;
+&lt;p&gt;Let's think of the two extremes. When $k$ = 1, it means every point
 will belong to the &lt;em&gt;same&lt;/em&gt; cluster. This configuration explains 0% of the
 variance in your data, because it says all your data points are the
-same. Then &lt;span class="math"&gt;\(k\)&lt;/span&gt; is equal to the number of data points you have, it
+same. Then $k$ is equal to the number of data points you have, it
 means every point will belong to &lt;em&gt;its own cluster&lt;/em&gt;. This configuration
 explains 100% of the variation in your data because it says each of your
 data points is different from every other one. A value in between will
 explain some % of the variation, because it will say some data points
 are equal to some other data points, and different from some others.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://bl.ocks.org/rpgove/0060ff3b656618e9136b"&gt;Here's a good explanation&lt;/a&gt; of the
-elbow method, although it uses the "error" for each &lt;span class="math"&gt;\(k\)&lt;/span&gt; value, so the
+elbow method, although it uses the "error" for each $k$ value, so the
 graph is upside down compared to the "variance explained" metric I
 discussed above.&lt;/p&gt;
 &lt;p&gt;Either way, there is usually an "elbow" where the increase/decrease is
 suddenly less sharp. That's usually a good point to stop and use that
-value for &lt;span class="math"&gt;\(k\)&lt;/span&gt;.&lt;/p&gt;
+value for $k$.&lt;/p&gt;
 &lt;h2&gt;Normalisation&lt;/h2&gt;
 &lt;p&gt;As I mentioned in the Self-Organising Maps tutorial, in practice you
 will want to normalise your data so all features are on the same scale.
@@ -772,69 +798,7 @@ otherwise a feature with much larger values will dominate the others.&lt;/p&gt;
 features will often be on different scales.&lt;/p&gt;
 &lt;p&gt;See more information on this in Sebastian Raschka's &lt;a href="http://sebastianraschka.com/faq/docs/when-to-standardize.html"&gt;machine learning FAQ&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;K-means and clustering in general have many more uses, and I hope these
-puppies have piqued your interest!&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Introduction to K-means Clustering</title><link href="/introduction-to-k-means-clustering.html" rel="alternate"></link><published>2016-11-20T15:18:00+00:00</published><updated>2016-11-20T15:18:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-20:/introduction-to-k-means-clustering.html</id><summary type="html">&lt;p&gt;An introduction to the popular k-means clustering algorithm with intuition and Python code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first of a two-part post on K-means clustering.&lt;/p&gt;
+puppies have piqued your interest!&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Introduction to K-means Clustering</title><link href="/introduction-to-k-means-clustering.html" rel="alternate"></link><published>2016-11-20T15:18:00+00:00</published><updated>2016-11-20T15:18:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-20:/introduction-to-k-means-clustering.html</id><summary type="html">&lt;p&gt;An introduction to the popular k-means clustering algorithm with intuition and Python code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first of a two-part post on K-means clustering.&lt;/p&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;h3&gt;Unsupervised Learning&lt;/h3&gt;
 &lt;p&gt;I've talked about unsupervised learning before when dealing with
@@ -875,12 +839,12 @@ You can even use it &lt;a href="/analysing-london-house-prices/"&gt;to find simi
 &lt;h3&gt;Potential Problems&lt;/h3&gt;
 &lt;h4&gt;Choosing K&lt;/h4&gt;
 &lt;p&gt;Before you start training your data to learn the clusters, you need to
-choose a value for &lt;span class="math"&gt;\(k\)&lt;/span&gt;. That is, you have to decide beforehand how
+choose a value for $k$. That is, you have to decide beforehand how
 many groups there are going to be. This sounds like it defeats the
 purpose of being unsupervised, and it is indeed something that you have
 to set manually.&lt;/p&gt;
 &lt;p&gt;Due to the random nature of the initialisation of the algorithm, and the
-uncertainty in the correct value for &lt;span class="math"&gt;\(k\)&lt;/span&gt;, you might find re-running
+uncertainty in the correct value for $k$, you might find re-running
 the algorithm multiple times gives you different results.&lt;/p&gt;
 &lt;h4&gt;Subjective Evaluation&lt;/h4&gt;
 &lt;p&gt;As with unsupervised algorithms in general, evaluating the outcome is
@@ -903,13 +867,13 @@ that belong to it (hence, "k-means").&lt;/p&gt;
 n is the number of features your data has.&lt;/p&gt;
 &lt;p&gt;The basic idea behind the k-means clustering algorithm is simple:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Start with a chosen value of &lt;span class="math"&gt;\(k\)&lt;/span&gt;.&lt;/li&gt;
-&lt;li&gt;Choose &lt;span class="math"&gt;\(k\)&lt;/span&gt; of your data points at random to be your starting
+&lt;li&gt;Start with a chosen value of $k$.&lt;/li&gt;
+&lt;li&gt;Choose $k$ of your data points at random to be your starting
     centroids.&lt;/li&gt;
 &lt;li&gt;For each data point, assign it to a cluster based on which of the
-    &lt;span class="math"&gt;\(k\)&lt;/span&gt; centroids it is &lt;em&gt;closest&lt;/em&gt; to. Closest can mean any distance
+    $k$ centroids it is &lt;em&gt;closest&lt;/em&gt; to. Closest can mean any distance
     measure. The Euclidean distance is often used.&lt;/li&gt;
-&lt;li&gt;Now you have &lt;span class="math"&gt;\(k\)&lt;/span&gt; groups of data points assigned to a cluster.
+&lt;li&gt;Now you have $k$ groups of data points assigned to a cluster.
     Re-calculate the position of each cluster centroid by taking the
     &lt;em&gt;mean&lt;/em&gt; of the new points that are now associated with that cluster.&lt;/li&gt;
 &lt;li&gt;Repeat steps 3 and 4 until convergence. You are typically done when
@@ -997,69 +961,7 @@ clusters.&lt;/p&gt;
 &lt;p&gt;Here is the &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/k-means/K-Means.ipynb"&gt;associated Jupyter notebook&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In Part 2, I'll talk about another practical application of the k-means
 algorithm (using scikit-learn this time) as well as some implementation
-details such as how to pick the value of &lt;span class="math"&gt;\(k\)&lt;/span&gt;.&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Turning Jupyter Notebooks into Reusable Scripts</title><link href="/turning-jupyter-notebooks-into-reusable-scripts.html" rel="alternate"></link><published>2016-11-17T19:56:00+00:00</published><updated>2016-11-17T19:56:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-17:/turning-jupyter-notebooks-into-reusable-scripts.html</id><summary type="html">&lt;p&gt;As part of my commitment to occasionally talk about "programming for data scientists", I want to share ideas that will facilitate this to help data scientists focus on important stuff. In this post I want to share some thoughts on how to make your Jupyter notebooks easier to "productionise".&lt;/p&gt;</summary><content type="html">&lt;p&gt;I read an article today called Data Scientists Need More Automation. No
+details such as how to pick the value of $k$.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Turning Jupyter Notebooks into Reusable Scripts</title><link href="/turning-jupyter-notebooks-into-reusable-scripts.html" rel="alternate"></link><published>2016-11-17T19:56:00+00:00</published><updated>2016-11-17T19:56:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-17:/turning-jupyter-notebooks-into-reusable-scripts.html</id><summary type="html">&lt;p&gt;As part of my commitment to occasionally talk about "programming for data scientists", I want to share ideas that will facilitate this to help data scientists focus on important stuff. In this post I want to share some thoughts on how to make your Jupyter notebooks easier to "productionise".&lt;/p&gt;</summary><content type="html">&lt;p&gt;I read an article today called Data Scientists Need More Automation. No
 prizes for guessing what it was about.&lt;/p&gt;
 &lt;p&gt;A lot of the specifics were focused on sysadmin-type work like using
 SSH, but the main idea is one that applies to all data science tasks.&lt;/p&gt;
@@ -1234,9 +1136,9 @@ program's execution. This is perfectly valid:&lt;/p&gt;
 
 &lt;p&gt;You can't do this in a statically-typed language. Once you declare a
 variable as a certain type, it stays that way. Take this example in C#:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;my_variable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;42&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// explicitly declare an integer&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;my_variable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;42&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// explicitly declare an integer&lt;/span&gt;
 &lt;span class="c1"&gt;// do stuff&lt;/span&gt;
-&lt;span class="n"&gt;my_variable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;can I be a string?&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// this will produce a compiler error&lt;/span&gt;
+&lt;span class="n"&gt;my_variable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;can I be a string?&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// this will produce a compiler error&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;em&gt;Actually there are &lt;a href="https://msdn.microsoft.com/en-us/library/dd264736.aspx"&gt;dynamic types in C#&lt;/a&gt; but we'll just gloss over that.&lt;/em&gt;&lt;/p&gt;
@@ -1398,13 +1300,13 @@ account every single word that came before it.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;The future is independent of the past, given the present.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;That sounds a bit like an old proverb but it's a simple concept.&lt;/p&gt;
 &lt;p&gt;If a sequence has the Markov property it means that the value of the
-sequence at the next step &lt;strong&gt;depends only on the value at the past &lt;span class="math"&gt;\(n\)&lt;/span&gt; steps&lt;/strong&gt;. The value of &lt;span class="math"&gt;\(n\)&lt;/span&gt; (how far back we assume we need to go) is
+sequence at the next step &lt;strong&gt;depends only on the value at the past $n$ steps&lt;/strong&gt;. The value of $n$ (how far back we assume we need to go) is
 called the &lt;strong&gt;order&lt;/strong&gt; of a Markov chain.&lt;/p&gt;
 &lt;p&gt;So a second-order Markov chain is one where we use the current and the
 previous value to predict the next value. We are assuming that it does
 not matter what the rest of the text was before the previous word, we
 only need the current word and the one before it.&lt;/p&gt;
-&lt;p&gt;In effect, the Markov chain has no "memory" beyond the last &lt;span class="math"&gt;\(n\)&lt;/span&gt; steps.&lt;/p&gt;
+&lt;p&gt;In effect, the Markov chain has no "memory" beyond the last $n$ steps.&lt;/p&gt;
 &lt;p&gt;The Markov assumption simply states that we believe this Markov property
 to hold for a given sequence.&lt;/p&gt;
 &lt;p&gt;This is a simplifying assumption that means it is much easier to compute
@@ -1552,69 +1454,7 @@ library, which &lt;a href="https://github.com/davidasboth/markov-chain-for-text"
 action', this is &lt;a href="http://setosa.io/ev/markov-chains/"&gt;a great resource&lt;/a&gt;
 to start with.&lt;/p&gt;
 &lt;p&gt;I glossed over a lot of the maths behind the algorithm, but if you're
-interested you could &lt;a href="https://www.youtube.com/watch?v=WUjt98HcHlk"&gt;start here&lt;/a&gt;.&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category></entry><entry><title>Why You Should Reinvent the Machine Learning Wheel</title><link href="/why-you-should-reinvent-the-machine-learning-wheel.html" rel="alternate"></link><published>2016-11-11T17:17:00+00:00</published><updated>2016-11-11T17:17:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-11:/why-you-should-reinvent-the-machine-learning-wheel.html</id><summary type="html">&lt;p&gt;As data scientists we spend a lot of our time using other people's implementations of machine learning algorithms. I suggest that as part of the learning process it's worthwhile to try to implement them ourselves from scratch, in order to fully understand them.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you're a data scientist, unless you're in a job that's very
+interested you could &lt;a href="https://www.youtube.com/watch?v=WUjt98HcHlk"&gt;start here&lt;/a&gt;.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category></entry><entry><title>Why You Should Reinvent the Machine Learning Wheel</title><link href="/why-you-should-reinvent-the-machine-learning-wheel.html" rel="alternate"></link><published>2016-11-11T17:17:00+00:00</published><updated>2016-11-11T17:17:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-11:/why-you-should-reinvent-the-machine-learning-wheel.html</id><summary type="html">&lt;p&gt;As data scientists we spend a lot of our time using other people's implementations of machine learning algorithms. I suggest that as part of the learning process it's worthwhile to try to implement them ourselves from scratch, in order to fully understand them.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you're a data scientist, unless you're in a job that's very
 research-focused (and likely requires a PhD) you'll mostly be using
 machine learning algorithms invented anywhere between say 5 and 30 years
 ago. Similar to being a programmer, you'll be using many libraries made
@@ -2035,7 +1875,7 @@ trick of not actually measuring Euclidean distance, but the &lt;strong&gt;square
 Euclidean distance, thereby avoiding an expensive square root
 computation.&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;find_bmu&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;net&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;        Find the best matching unit for a given vector, t, in the SOM&lt;/span&gt;
 &lt;span class="sd"&gt;        Returns: a (bmu, bmu_idx) tuple where bmu is the high-dimensional BMU&lt;/span&gt;
 &lt;span class="sd"&gt;                 and bmu_idx is the index of this vector in the SOM&lt;/span&gt;
@@ -2072,9 +1912,9 @@ see this in a bit more detail in step 4.&lt;/p&gt;
 
 &lt;p&gt;The functions to decay the radius and learning rate use exponential
 decay:&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(\sigma_{t} = \sigma_{0} \times \exp(\frac{-t}{\lambda})\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Where &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt; is the time constant (which controls the decay) and
-&lt;span class="math"&gt;\(\sigma\)&lt;/span&gt; is the value at various times &lt;span class="math"&gt;\(t\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;$\sigma_{t} = \sigma_{0} \times \exp(\frac{-t}{\lambda})$&lt;/p&gt;
+&lt;p&gt;Where $\lambda$ is the time constant (which controls the decay) and
+$\sigma$ is the value at various times $t$.&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;decay_radius&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;initial_radius&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;time_constant&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;initial_radius&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;time_constant&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -2089,10 +1929,10 @@ that mapped to it. We will also identify the neurons that are close to
 the BMU in 2D space and update their 3D vectors to move "inwards"
 towards the BMU.&lt;/p&gt;
 &lt;p&gt;The formula to update the BMU's 3D vector is:&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(w_{t+1} = w_{t} + L_{t}(V_{t} - w_{t})\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$w_{t+1} = w_{t} + L_{t}(V_{t} - w_{t})$&lt;/p&gt;
 &lt;p&gt;That is to say, the new weight vector will be the current vector plus
-the difference between the input vector &lt;span class="math"&gt;\(V\)&lt;/span&gt; and the weight vector,
-multiplied by a learning rate &lt;span class="math"&gt;\(L\)&lt;/span&gt; at time &lt;span class="math"&gt;\(t\)&lt;/span&gt;.&lt;/p&gt;
+the difference between the input vector $V$ and the weight vector,
+multiplied by a learning rate $L$ at time $t$.&lt;/p&gt;
 &lt;p&gt;We are literally just moving the weight vector closer to the input
 vector.&lt;/p&gt;
 &lt;p&gt;We also identify all the neurons in the SOM that are closer in 2D space
@@ -2102,9 +1942,9 @@ than our current radius, and also move them closer to the input vector.&lt;/p&gt
 it's Gaussian. So imagine a bell shape centred around the BMU - that's
 how we decide how much to pull the neighbouring neurons in by.&lt;/p&gt;
 &lt;p&gt;Concretely, this is the equation we'll use to calculate the influence
-&lt;span class="math"&gt;\(i\)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(i_{t} = \exp(-\frac{d^{2}}{2\sigma_{t}^{2}})\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;where &lt;span class="math"&gt;\(d\)&lt;/span&gt; is the 2D distance and &lt;span class="math"&gt;\(\sigma\)&lt;/span&gt; is the current radius of
+$i$:&lt;/p&gt;
+&lt;p&gt;$i_{t} = \exp(-\frac{d^{2}}{2\sigma_{t}^{2}})$&lt;/p&gt;
+&lt;p&gt;where $d$ is the 2D distance and $\sigma$ is the current radius of
 our neighbourhood.&lt;/p&gt;
 &lt;p&gt;Putting that all together:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;calculate_influence&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -2190,69 +2030,7 @@ for the colour map example.&lt;/p&gt;
 &lt;p&gt;Mat Buckland's &lt;a href="http://www.ai-junkie.com/ann/som/som1.html"&gt;excellent explanation and code walkthrough&lt;/a&gt; of SOMs was
 instrumental in helping me learn. My code is more or less a Python port
 of his C++ implementation. Reading his posts should fill in any gaps I
-may have not covered.&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Self-Organising Maps: An Introduction</title><link href="/self-organising-maps-an-introduction.html" rel="alternate"></link><published>2016-11-05T18:26:00+00:00</published><updated>2016-11-05T18:26:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-05:/self-organising-maps-an-introduction.html</id><summary type="html">&lt;p&gt;When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
+may have not covered.&lt;/p&gt;&lt;script src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</content><category term="machine learning"></category><category term="featured"></category><category term="python"></category></entry><entry><title>Self-Organising Maps: An Introduction</title><link href="/self-organising-maps-an-introduction.html" rel="alternate"></link><published>2016-11-05T18:26:00+00:00</published><updated>2016-11-05T18:26:00+00:00</updated><author><name>david</name></author><id>tag:None,2016-11-05:/self-organising-maps-an-introduction.html</id><summary type="html">&lt;p&gt;When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;When you learn about machine learning techniques, you usually get a
 selection of the usual suspects. Something like: Support Vector
 Machines, decision trees/random forests, and logistic regression for

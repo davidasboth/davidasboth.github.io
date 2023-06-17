@@ -94,12 +94,12 @@ link to appropriate parts of the <a href="http://www.w3schools.com/sql/">w3schoo
 <p>SQL is a <a href="https://en.wikipedia.org/wiki/Declarative_programming">declarative language</a>. All
 that means is that when you write a SQL query, you're expressing <strong>what the result should look like, rather than how to achieve it</strong>.</p>
 <p>Let's look at a basic SQL query and see how that's the case.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"></span>
-<span class="w">    </span><span class="n">people</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"></span>
-<span class="w">    </span><span class="n">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;data scientist&quot;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">    </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">height</span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">people</span>
+<span class="k">WHERE</span>
+<span class="w">    </span><span class="n">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;data scientist&quot;</span>
 </code></pre></div>
 
 <p>SQL is not case sensitive, but I capitalised the keywords (which is a
@@ -154,11 +154,11 @@ common between both data sources.</p>
 <p>That <em>how</em> keyword corresponds to the type of join in SQL. The same
 operation in SQL looks like this (assuming we have a people and
 phone_numbers table in a database, rather than csv files):</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
-<span class="w">  </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="n">phone_numbers</span><span class="p">.</span><span class="n">phone_number</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"></span>
-<span class="w">  </span><span class="n">people</span><span class="w"></span>
-<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">phone_numbers</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phone_numbers</span><span class="p">.</span><span class="n">name</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">  </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="n">phone_numbers</span><span class="p">.</span><span class="n">phone_number</span>
+<span class="k">FROM</span>
+<span class="w">  </span><span class="n">people</span>
+<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">phone_numbers</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phone_numbers</span><span class="p">.</span><span class="n">name</span>
 </code></pre></div>
 
 <p>I've specifically stated in the SELECT clause where the columns come

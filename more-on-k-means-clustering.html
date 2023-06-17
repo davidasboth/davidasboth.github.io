@@ -128,7 +128,7 @@ scikit-learn is easy:</p>
 colours themselves.</p>
 <p>That means once we have the cluster assignment for each pixel, plus the
 centroid as the associated colour value, we can reconstruct our image
-pixel by pixel to get the <span class="math">\(k\)</span>-colour representation.</p>
+pixel by pixel to get the $k$-colour representation.</p>
 <p>The same image with only 3 colours looks like this:</p>
 <p><img alt="A 3-colour puppy" src="/images/more-on-k-means-clustering/puppy_3.jpg" /></p>
 <p>The same puppy drawn with only 3 colours</p>
@@ -147,36 +147,36 @@ original by using far less than the original 10,000 colours.</p>
 <p>I have a couple of points left to raise, namely some practical tips when
 using clustering.</p>
 <h2>Choosing K</h2>
-<p>How would we know which point to stop at? When is <span class="math">\(k\)</span> at its optimal
+<p>How would we know which point to stop at? When is $k$ at its optimal
 value?</p>
 <p>As I mentioned in part 1, this is usually somewhat subjective, but there
 are some general heuristics.</p>
 <p>In this case we could do it by visual inspection. That is, we could say
-<span class="math">\(k\)</span> is high enough when we are no longer visually able to tell the
+$k$ is high enough when we are no longer visually able to tell the
 difference between the original and the redrawn images.</p>
 <p>Not all datasets will lend themselves to visual inspection like this
 though.</p>
 <p>We can use what's called the <em>elbow method</em> to evaluate when to stop.</p>
-<p>For each value of <span class="math">\(k\)</span> you want to evaluate how much of the variance in
-your data is explained by the configurations of those <span class="math">\(k\)</span> clusters.
-This value increases for each value of <span class="math">\(k\)</span>, but the idea is that we
-stop increasing <span class="math">\(k\)</span> when increasing it gives us diminishing returns.</p>
-<p>Let's think of the two extremes. When <span class="math">\(k\)</span> = 1, it means every point
+<p>For each value of $k$ you want to evaluate how much of the variance in
+your data is explained by the configurations of those $k$ clusters.
+This value increases for each value of $k$, but the idea is that we
+stop increasing $k$ when increasing it gives us diminishing returns.</p>
+<p>Let's think of the two extremes. When $k$ = 1, it means every point
 will belong to the <em>same</em> cluster. This configuration explains 0% of the
 variance in your data, because it says all your data points are the
-same. Then <span class="math">\(k\)</span> is equal to the number of data points you have, it
+same. Then $k$ is equal to the number of data points you have, it
 means every point will belong to <em>its own cluster</em>. This configuration
 explains 100% of the variation in your data because it says each of your
 data points is different from every other one. A value in between will
 explain some % of the variation, because it will say some data points
 are equal to some other data points, and different from some others.</p>
 <p><a href="https://bl.ocks.org/rpgove/0060ff3b656618e9136b">Here's a good explanation</a> of the
-elbow method, although it uses the "error" for each <span class="math">\(k\)</span> value, so the
+elbow method, although it uses the "error" for each $k$ value, so the
 graph is upside down compared to the "variance explained" metric I
 discussed above.</p>
 <p>Either way, there is usually an "elbow" where the increase/decrease is
 suddenly less sharp. That's usually a good point to stop and use that
-value for <span class="math">\(k\)</span>.</p>
+value for $k$.</p>
 <h2>Normalisation</h2>
 <p>As I mentioned in the Self-Organising Maps tutorial, in practice you
 will want to normalise your data so all features are on the same scale.
@@ -188,69 +188,7 @@ otherwise a feature with much larger values will dominate the others.</p>
 features will often be on different scales.</p>
 <p>See more information on this in Sebastian Raschka's <a href="http://sebastianraschka.com/faq/docs/when-to-standardize.html">machine learning FAQ</a>.</p>
 <p>K-means and clustering in general have many more uses, and I hope these
-puppies have piqued your interest!</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+puppies have piqued your interest!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         </div>
     </section>
