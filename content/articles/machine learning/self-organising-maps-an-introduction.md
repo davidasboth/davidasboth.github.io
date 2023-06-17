@@ -5,7 +5,6 @@ Tags: featured
 Slug: self-organising-maps-an-introduction
 Status: published
 Summary: When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.
-Alias: /2016/11/05/self-organising-maps-an-introduction/
 
 ## Introduction
 

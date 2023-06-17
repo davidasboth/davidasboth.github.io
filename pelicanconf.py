@@ -33,7 +33,7 @@ TWITTER_USERNAME = "davidasboth"
 USE_FOLDER_AS_CATEGORY = True
 
 PLUGIN_PATHS = ['plugins/pelican-plugins/']
-PLUGINS = ['pelican_alias', 'jinja2content', 'render_math', 'pelican.plugins.embed_tweet']
+PLUGINS = ['jinja2content', 'render_math', 'pelican.plugins.embed_tweet']
 
 # Pages
 PAGE_URL = 'pages/{slug}'

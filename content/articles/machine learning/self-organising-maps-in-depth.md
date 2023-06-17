@@ -5,7 +5,6 @@ Tags: featured, python
 Slug: self-organising-maps-in-depth
 Status: published
 Summary: In Part 1, I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I want to step through the process of training and using a SOM – both the intuition and the Python code. At the end I'll also present a couple of real life use cases, not just the toy example we'll use for implementation.
-Alias: /2016/11/06/self-organising-maps-in-depth
 
 In [Part 1](/self-organising-maps-an-introduction/),
 I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I
