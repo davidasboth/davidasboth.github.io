@@ -19,7 +19,7 @@
             <ul>
                 {% for category in categories %}
                 <li>
-                <a class="tag" href="{{ category[0].url }}">{{ category[0].name }}</a>
+                <a class="tag" href="/category/{{ category[0].slug }}">{{ category[0].name }}</a>
                 </li>
                 {% endfor %}
             </ul>     

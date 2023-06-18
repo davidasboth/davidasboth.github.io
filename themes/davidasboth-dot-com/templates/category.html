@@ -21,8 +21,8 @@
 					{% for article in articles %}
 					
 						<div class="col-33 padding-medium">
-							<h3><a href="/{{ article.url }}">{{ article.title }}</a></h3>
-							<a class="tag" href="/{{ category.url }}"> {{ article.category }} </a>
+							<h3><a href="/{{ article.slug }}">{{ article.title }}</a></h3>
+							<a class="tag" href="/category/{{ category.slug }}"> {{ article.category }} </a>
 							<p> {{ article.summary }} </p>
 						</div>
 					
