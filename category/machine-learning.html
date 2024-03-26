@@ -47,24 +47,37 @@
 <body>
 	<header id="stickyHeader">
 		<div class="container">
-			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
-			<nav>
-				<ul>
-					<li>
-						<a href="/#solutions">Solutions</a>
-					</li>
-					<li>
-							<a href="/#about">About</a>
-					</li>
-					<li>
-							<a href="/articles">Articles</a>
-					</li>
-					<li>
-					  <a href="#contact" class="button button-filled">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+		<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+		<nav>
+			<!-- Hidden checkbox -->
+        	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        	<!-- Label for the checkbox, acting as the menu button -->
+        	<label for="menu-toggle" id="menu-open-button">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+				  <rect width="100" height="20"></rect>
+				  <rect y="30" width="100" height="20"></rect>
+				  <rect y="60" width="100" height="20"></rect>
+				</svg>
+        	</label>
+			<ul id="menu-items">
+				<li>
+					<a href="/#book">Book</a>
+				</li>
+				<li>
+					<a href="/#podcast">Podcast</a>
+				</li>
+			<li>
+					<a href="/#about">About David</a>
+			  </li>
+			<li>
+					<a href="/articles">Articles</a>
+			  </li>
+			<li>
+			  <a href="#contact" class="button button-filled">Contact</a>
+			  </li></ul>
+		</nav>
+			</div>
 	</header>
 
 
@@ -72,7 +85,7 @@
 		  <section id="splash">
 			<div class="container">
 				<p class="text-pre-heading text-centered">Articles tagged with</p>
-				<h1 class="text-centered">"machine learning"</h1>
+				<h1 class="text-centered">Machine learning</h1>
 				
 				<div class="text-centered padding-medium"><a href="/articles" class="button button-outline">Back to all articles</a></div>
 			 </div>
@@ -83,70 +96,70 @@
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/machine-learning-haikus">Machine Learning Haikus</a></h3>
-							<a class="tag" href="/category/machine-learning"> machine learning </a>
+							<a class="tag" href="/category/machine-learning"> Machine learning </a>
 							<p> <p>Forget "machine learning in plain English". Instead, I present some of the most popular algorithms in haiku form. Consider it "machine learning for the busy".</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/visualising-decision-trees-in-python">Visualising Decision Trees in Python</a></h3>
-							<a class="tag" href="/category/machine-learning"> machine learning </a>
+							<a class="tag" href="/category/machine-learning"> Machine learning </a>
 							<p> <p>Having an accurate machine learning model may be enough in itself, but in some cases the only way to turn it into a business decision is if you can understand why it's getting the results it's getting. In this short tutorial I want to show a quick way to visualise a trained decision tree in Python.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/more-on-k-means-clustering">More on K-means Clustering</a></h3>
-							<a class="tag" href="/category/machine-learning"> machine learning </a>
+							<a class="tag" href="/category/machine-learning"> Machine learning </a>
 							<p> <p>In this post I look at a practical example of k-means clustering in action, namely to draw puppies. I also touch on a couple of more general points to consider when using clustering.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/introduction-to-k-means-clustering">Introduction to K-means Clustering</a></h3>
-							<a class="tag" href="/category/machine-learning"> machine learning </a>
+							<a class="tag" href="/category/machine-learning"> Machine learning </a>
 							<p> <p>An introduction to the popular k-means clustering algorithm with intuition and Python code.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/markov-chains-for-text-generation">Markov Chains for Text Generation</a></h3>
-							<a class="tag" href="/category/machine-learning"> machine learning </a>
+							<a class="tag" href="/category/machine-learning"> Machine learning </a>
 							<p> <p>Markov chains are a popular way to model sequential data. I want to run through an implementation where I generate new songs based on lyrics by Muse.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/why-you-should-reinvent-the-machine-learning-wheel">Why You Should Reinvent the Machine Learning Wheel</a></h3>
-							<a class="tag" href="/category/machine-learning"> machine learning </a>
+							<a class="tag" href="/category/machine-learning"> Machine learning </a>
 							<p> <p>As data scientists we spend a lot of our time using other people's implementations of machine learning algorithms. I suggest that as part of the learning process it's worthwhile to try to implement them ourselves from scratch, in order to fully understand them.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/realistic-machine-learning">Realistic Machine Learning</a></h3>
-							<a class="tag" href="/category/machine-learning"> machine learning </a>
+							<a class="tag" href="/category/machine-learning"> Machine learning </a>
 							<p> <p>As most data scientists quickly realise, there's a difference between the kind of data science you do while learning about it, and the kind you do at a real job. This is equally true of data cleaning/wrangling and machine learning.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/intuition-first-machine-learning">"Intuition First" Machine Learning</a></h3>
-							<a class="tag" href="/category/machine-learning"> machine learning </a>
+							<a class="tag" href="/category/machine-learning"> Machine learning </a>
 							<p> <p>I've often felt machine learning needs to be taught "intuition first, equations later", but this doesn't seem to be the norm with most learning sources.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/self-organising-maps-in-depth">Self-Organising Maps: In Depth</a></h3>
-							<a class="tag" href="/category/machine-learning"> machine learning </a>
+							<a class="tag" href="/category/machine-learning"> Machine learning </a>
 							<p> <p>In Part 1, I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I want to step through the process of training and using a SOM – both the intuition and the Python code. At the end I'll also present a couple of real life use cases, not just the toy example we'll use for implementation.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/self-organising-maps-an-introduction">Self-Organising Maps: An Introduction</a></h3>
-							<a class="tag" href="/category/machine-learning"> machine learning </a>
+							<a class="tag" href="/category/machine-learning"> Machine learning </a>
 							<p> <p>When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.</p> </p>
 						</div>
 					
@@ -154,6 +167,32 @@
 			</div>
 		</section>
 			
+<section id="about">
+    <div class="container flex-container">
+      <div class="col-40 image-full">
+            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+        </div>
+      <div class="col-60">
+        <h2>About David</h2>
+        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. I'm a generalist; my previous roles have been a range of data science, software development, and software architecting jobs.</p>
+        <p class="text-pre-heading">Things I also do:</p>
+        <ul>
+          <li>
+            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
+            </li>
+          <li>
+            I've written various <a href="/articles">articles and tutorials</a> about data science
+          </li>
+          <li>
+            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
+            </li>
+          <li>
+            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>		
 <section id="contact">
 <div class="container flex-container">
   <div class="col-40 image-full">
@@ -186,7 +225,7 @@
 
 	<footer>
 		<div class="container flex-container">
-			<p>© 2023 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>© 2024 David Asboth. All Rights Reserved. Site designed with love by <a href="http://design.barbasboth.com/" target="_blank">Barbara Asboth</a>. All Rights Reserved.</p>
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>

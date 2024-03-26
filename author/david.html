@@ -47,76 +47,173 @@
 <body>
 	<header id="stickyHeader">
 		<div class="container">
-			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
-			<nav>
-				<ul>
-					<li>
-						<a href="/#solutions">Solutions</a>
-					</li>
-					<li>
-							<a href="/#about">About</a>
-					</li>
-					<li>
-							<a href="/articles">Articles</a>
-					</li>
-					<li>
-					  <a href="#contact" class="button button-filled">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+		<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+		<nav>
+			<!-- Hidden checkbox -->
+        	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        	<!-- Label for the checkbox, acting as the menu button -->
+        	<label for="menu-toggle" id="menu-open-button">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+				  <rect width="100" height="20"></rect>
+				  <rect y="30" width="100" height="20"></rect>
+				  <rect y="60" width="100" height="20"></rect>
+				</svg>
+        	</label>
+			<ul id="menu-items">
+				<li>
+					<a href="/#book">Book</a>
+				</li>
+				<li>
+					<a href="/#podcast">Podcast</a>
+				</li>
+			<li>
+					<a href="/#about">About David</a>
+			  </li>
+			<li>
+					<a href="/articles">Articles</a>
+			  </li>
+			<li>
+			  <a href="#contact" class="button button-filled">Contact</a>
+			  </li></ul>
+		</nav>
+			</div>
 	</header>
 
 
 <main id="homepage">
-		  <section id="splash">
-			  <div class="container">
-			<h1 class="text-centered"><span class="colour-highlight">Personalised</span> data science training, consultancy, and mentoring</h1>
-			<p class="text-centered">Hi, I’m David Asboth. Data scientist, consultant, and educator. I specialise in creating personalised learning experiences to upskill individuals and teams in vital programming and data science skills. If you want to improve your own or your team's technical proficiency, have a look at how I can help!</p>
-			<a href="#solutions" class="button button-outline">View solutions</a>
-				  </div>
-		</section>
-		  <section id="trusted-logos">
-			<div class="container">
-			  <p class="text-pre-heading text-centered">Trusted by</p>
-			  <div class="flex-container">
-					<img src="/theme/images/UAL logo.svg" alt="University of the Arts London"/>
-					<img src="/theme/images/barclays.svg" alt="Barclays"/>
-					<img src="/theme/images/general-assembly.svg" alt="General Assembly"/>
-					<img src="/theme/images/Lloyds Banking Group.svg" alt="Lloyds Banking Group"/>
-					<img src="/theme/images/Novartis-Logo.svg" alt="Novartis"/>
-				  	<img src="/theme/images/DeutscheBank.svg" alt="Deutsche Bank"/>
-					<img src="/theme/images/Roland-Berger.svg" alt="Roland Berger" />
-					<img src="/theme/images/lendable-logo-01.svg" alt="Lendable" />
-					<img src="/theme/images/AIR_LIQUIDE_logo.svg" alt="Air Liquide" />
-			  </div>
-			  </div>
-			</section>
-		  <section id="solutions">
-			<div class="container">
-			  <h2 class="text-centered colour-bottom-border">Featured Solutions</h2>
+	<section id="splash">
+		<div class="container"><img class="img-icon" src="/theme/images/DavidAsbothCartoonProfile.svg"
+				alt="Illustration of David" />
+			<h1 class="text-centered"><span class="colour-highlight">David Asboth</span> is a data generalist,
+				consultant, author, and educator.</h1>
+			<p class="text-centered">David specialises in creating personalised learning experiences to upskill both
+				individuals and teams in vital programming and data science skills. His book "Solve Any Data Science
+				Problem" is due for release in 2024.</p>
+			<a href="#solutions" class="button button-filled">Learn more</a>
+		</div>
+	</section>
+	<section id="book" class="bg-lighter">
+		<div class="container flex-container">
+			<div class="col-50">
+				<img src="/theme/images/Solve-Any-Data-Analysis-Problem---Book-Mockup_small.png"
+					alt="Book cover of Solve Any Data Analysis Problem by David Asboth" />
+			</div>
+			<div class="col-50">
+				<p class="text-pre-heading text-dark">Get the book</p>
+				<h2 class="text-dark">Solve Any Data Science Problem: Eight Projects that Show You How</h2>
+				<p class="text-dark">Complete eight data science projects that lock in important real world skills, along
+					with a practical process you can use to learn any new technique quickly and efficiently.</p>
+				<ul class="text-dark">
+					<li>High-value skills, usually missing from basic training, to tackle specific analytical problems</li>
+					<li>Deconstructing problems for faster, practical solutions</li>
+					<li>Data modeling, PDF data extraction, and categorical data manipulation</li>
+					<li>Handling vague metrics, deciphering inherited projects, and defining customer records</li><br>
+				</ul><a target="_blank" href="https://www.manning.com/books/solve-any-data-analysis-problem"
+					class="button button-filled">Learn more</a>
+			</div>
+		</div>
+		<div class="spacer-5" id="podcast"></div>
+		<div class="container flex-container">
+			<div class="col-50">
+				<p class="text-pre-heading text-dark">Listen to the podcast</p>
+				<h2 class="text-dark">Half Stack Data Science: The Podcast</h2>
+				<p>Half Stack Data Science is a podcast about data science in the real world. It unpacks the practical side of data science, from storytelling and education to real-world applications, in lively conversations with industry experts. It's where theory meets practice in the world of data science. Brought to you by David Asboth and Shaun McGirr.</p>
+				<a target="_blank" href="https://halfstackdatascience.com" class="button button-filled">Podcast
+					website</a>
+			</div>
+			<div class="col-50">
+				<img id="podcast-cover" src="/theme/images/halfstackdatascience_1400x1400.jpg"
+					alt="Logo for the Half Stack Data Science podcast by David Asboth and Shaun McGirr" />
+			</div>
+		</div>
+		<div class="spacer-5"></div>
+	</section>
+	<section id="trusted-logos">
+		<div class="container">
+			<p class="text-pre-heading text-centered">Trusted by</p>
 			<div class="flex-container">
-			  <div class="col-33 padding-medium">
-				<h3>Consultancy</h3>
-				<p><span class="colour-highlight">More companies need data science than they need data scientists.</span> Get help with a piece of research or one-off deep dive analysis by hiring a consultant instead. I can also help you create a bespoke job spec for a permanent data role, if you decide it’s something you want to take further.</p>
+				<img src="/theme/images/UAL logo.svg" alt="University of the Arts London" />
+				<img src="/theme/images/barclays.svg" alt="Barclays" />
+				<img src="/theme/images/general-assembly.svg" alt="General Assembly" />
+				<img src="/theme/images/Lloyds Banking Group.svg" alt="Lloyds Banking Group" />
+				<img src="/theme/images/lendable-logo-01.svg" alt="Lendable" />
+				<img src="/theme/images/Novartis-Logo.svg" alt="Novartis" />
+				<img src="/theme/images/DeutscheBank.svg" alt="Deutsche Bank" />
+				<img src="/theme/images/Roland-Berger.svg" alt="Roland Berger" />
+				<img src="/theme/images/AIR_LIQUIDE_logo.svg" alt="Air Liquide" />
+			</div>
+			<blockquote class="speechbubble">
+				<p class="text-dark"><span class="colour-highlight">" </span>The training was perfect. Can't ask for a
+					better instructor than David. The pace at which the
+					course progressed is really commendable along with the exercises.
+					<span class="colour-highlight">"</span>
+				</p>
+				<cite><em>Intermediate Python for Data Science</em> student </cite>
+			</blockquote>
+		</div>
+	</section>
+	<section id="solutions">
+		<div class="container">
+			<h2 class="text-centered colour-bottom-border">Ways we can work together</h2>
+			<div class="flex-container">
+				<div class="col-33 padding-medium">
+					<h3>Consultancy</h3>
+					<p><span class="bold">More companies need data science than they need data scientists.</span> Get
+						help with a piece of research or one-off deep dive analysis by hiring a consultant instead. I
+						can also help you create a bespoke job spec for a permanent data role, if you decide it’s
+						something you want to take further.</p>
 				</div>
-			  <div class="col-33 padding-medium">
-				<h3>Training</h3>
-				<p><span class="colour-highlight">Upskill your employees with data skills for the 21st century.</span> I develop bespoke courses to teach you and your staff the tools, technical skills and general “data thinking” you need to analyse and leverage your data to make better, more efficient business decisions.</p>
+				<div class="col-33 padding-medium">
+					<h3>Training</h3>
+					<p><span class="bold">Upskill your employees with data skills for the 21st century.</span> I develop
+						bespoke courses to teach you and your staff the tools, technical skills and general “data
+						thinking” you need to analyse and leverage your data to make better, more efficient business
+						decisions.</p>
 				</div>
-			  <div class="col-33 padding-medium">
-				<h3>Mentoring</h3>
-				<p><span class="colour-highlight">Just starting out in your data science career?</span>  I offer short (30m), medium (60m) and long (90m) slots for one-on-one mentoring where I can help with your learning objectives, project reviews, optimising your CV &amp; cover letter, and give you general industry advice.</p>
+				<div class="col-33 padding-medium">
+					<h3>Mentoring</h3>
+					<p><span class="bold">Just starting out in your data science career?</span> I offer short (30m),
+						medium (60m) and long (90m) slots for one-on-one mentoring where I can help with your learning
+						objectives, project reviews, optimising your CV &amp; cover letter, and give you general
+						industry advice.</p>
 				</div>
 			</div>
-			  <blockquote>
-				<p><span class="colour-highlight">"</span> Likeable, knowledgeable, agreeable, engaging - David's characteristics have provided a learning environment that made it very easy for everyone involved to come along this quite demanding learning experience! <span class="colour-highlight">"</span></p>
-				<cite>- Data science student feedback</cite>
-				</blockquote>
-			  <div class=" text-centered"><a href="#contact" class="button button-filled">Let's talk!</a></div>
-			  </div>
-			</section>
-		  
+		</div>
+		<blockquote class="speechbubble">
+			<p class="text-dark"><span class="colour-highlight">" </span> I was very impressed by David's knowledge and
+				real life application of the concepts
+				discussed. He also demonstrated a fine understanding of his audience, which helped the course
+				flow well!
+				<span class="colour-highlight">"</span>
+			</p>
+			<cite><em>Intro to Python</em> student </cite>
+		</blockquote>
+		<div class="text-centered"><a href="#contact" class="button button-filled">Contact me</a></div>
+	</section>
+	<section id="articles">
+		<div class="container">
+			<h2 class="text-centered colour-bottom-border">Latest articles &amp; tutorials</h2>
+			<div class="flex-container">
+				<div class="col-33 padding-medium">
+					<h3><a href="/learning-data-like-jazz">Learn data science like you would learn jazz</a></h3>
+					<a class="tag" href="/category/education">Education</a>
+					<p><p>Aspiring analysts want to know how data analysis is done. As it turns out, there are similarities between learning how to analyse data and learning how to play music, especially jazz.</p></p>
+				</div>
+				<div class="col-33 padding-medium">
+					<h3><a href="/learning-as-a-data-generalist">Learning as a "data generalist"</a></h3>
+					<a class="tag" href="/category/data-generalism">Data generalism</a>
+					<p><p>One of the most common questions I get from students near the end of a data science course is "what next?". How do you keep learning once you have the basics, especially if you're a generalist?</p></p>
+				</div>
+				<div class="col-33 padding-medium">
+					<h3><a href="/why-i-now-call-myself-a-data-generalist">Why I now call myself a "data generalist"</a></h3>
+					<a class="tag" href="/category/data-generalism">Data generalism</a>
+					<p><p>I've realised that pigeonholing myself as a data scientist, broad as that term is, doesn't work for me. Finding a good job title for myself is actually non-trivial. If you feel the same way, you may also be a "data generalist", and this post is for you.</p></p>
+				</div>
+			</div>
+			<div class=" text-centered"><a href="articles" class="button button-filled">More articles</a></div>
+		</div>
+	</section>
 <section id="about">
     <div class="container flex-container">
       <div class="col-40 image-full">
@@ -142,33 +239,7 @@
           </ul>
         </div>
       </div>
-    </section>
-			<!--
-		  <section id="articles">
-			<div class="container">
-			  <h2 class="text-centered colour-bottom-border">Featured Articles &amp; Tutorials</h2>
-				<div class="flex-container">
-			  <div class="col-33 padding-medium">
-				  <h3><a href="#">Self-organising maps: An Introduction</a></h3>
-				<a class="tag" href="#">Category name</a>
-				<p>When you learn about machine learning techniques, you usually get a selection of the usual suspects. Something like: Support Vector Machine...</p>
-				</div>
-			  <div class="col-33 padding-medium">
-				<h3><a href="#">Machine learning haikus</a></h3>
-				<a class="tag" href="#">Category name</a>
-				<p>Forget “machine learning in plain English”. Instead, I present some of the most popular algorithms in haiku form. Consider it “machine learning for the busy”.</p>
-				</div>
-			  <div class="col-33 padding-medium">
-				<h3><a href="#">5 Programming Concepts for Data Scientists</a></h3>
-				<a class="tag" href="#">Category name</a>
-				<p>In this post I want to introduce some software development concepts that I think data scientists would benefit from. Specifically 5 of them.</p>
-				</div>
-					</div>
-			  <div class=" text-centered"><a href="articles" class="button button-filled">More articles</a></div>
-			  </div>
-			</section>
-	  -->
-<section id="contact">
+    </section><section id="contact">
 <div class="container flex-container">
   <div class="col-40 image-full">
 	<img src="/theme/images/DataScienceFestival-02-contact.jpg">
@@ -195,12 +266,12 @@
 	  </form>
 	</div>
   </div>
-</section>	</main>
+</section></main>
 
 
 	<footer>
 		<div class="container flex-container">
-			<p>© 2023 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>© 2024 David Asboth. All Rights Reserved. Site designed with love by <a href="http://design.barbasboth.com/" target="_blank">Barbara Asboth</a>. All Rights Reserved.</p>
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>

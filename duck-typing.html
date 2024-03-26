@@ -47,24 +47,37 @@
 <body>
 	<header id="stickyHeader">
 		<div class="container">
-			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
-			<nav>
-				<ul>
-					<li>
-						<a href="/#solutions">Solutions</a>
-					</li>
-					<li>
-							<a href="/#about">About</a>
-					</li>
-					<li>
-							<a href="/articles">Articles</a>
-					</li>
-					<li>
-					  <a href="#contact" class="button button-filled">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+		<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+		<nav>
+			<!-- Hidden checkbox -->
+        	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        	<!-- Label for the checkbox, acting as the menu button -->
+        	<label for="menu-toggle" id="menu-open-button">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+				  <rect width="100" height="20"></rect>
+				  <rect y="30" width="100" height="20"></rect>
+				  <rect y="60" width="100" height="20"></rect>
+				</svg>
+        	</label>
+			<ul id="menu-items">
+				<li>
+					<a href="/#book">Book</a>
+				</li>
+				<li>
+					<a href="/#podcast">Podcast</a>
+				</li>
+			<li>
+					<a href="/#about">About David</a>
+			  </li>
+			<li>
+					<a href="/articles">Articles</a>
+			  </li>
+			<li>
+			  <a href="#contact" class="button button-filled">Contact</a>
+			  </li></ul>
+		</nav>
+			</div>
 	</header>
 
 
@@ -72,14 +85,15 @@
     <section id="splash">
         <div class="container">
             <h1 class="text-centered">Duck Typing</h1>
-            <div class="text-centered padding-medium"><a class="tag" href="/category/programming-for-data-scientists">programming for data scientists</a></div>
+            <div class="text-centered padding-medium"><a class="tag text-light"
+                    href="/category/programming-for-data-scientists">Programming for Data Scientists</a></div>
             <p class="text-centered"><p>My first attempt to bridge the gap between the two disciplines of programming and data science, by talking about programming concepts useful for data scientists, and vice versa. Today: duck typing.</p></p>
-         </div>
+        </div>
     </section>
 
     <section id="article-content">
         <div class="container">
-            
+
             <p>In an attempt to bridge the gap between the two disciplines of
 programming and data science I will occasionally talk about programming
 concepts useful for data scientists, and vice versa.</p>
@@ -205,35 +219,38 @@ but the point is you can do a lot of it by duck typing.</p>
 <p>Here's <a href="https://github.com/davidasboth/blog-notebooks/blob/master/duck-typing/Duck%20Typing.ipynb">the associated notebook</a>.</p>
 <p>Happy quacking!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+            <div class="about-article-end">
+                <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+                <p class="text-pre-heading">About David</p>
+                <p>I'm a freelance data scientist consultant and educator with an MSc. in Data Science and a background
+                    in software and web development. My previous roles have been a range of data science, software
+                    development, team management and software architecting jobs.</p>
+            </div>
+        </div>
+    </section>
+    <section id="suggested-articles">
+        <div class="container">
+            <h2>Related articles tagged Programming for Data Scientists</h2>
+            <div class="flex-container">
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/method-chaining-in-pandas">Method Chaining in Pandas</a></h3>
+                            <a class="tag" href="/category/programming-for-data-scientists">Programming for Data Scientists</a>
+                            <p><p>A discussion of "method chaining" in pandas. Used for better readability, or harder debugging, depending on how you look at it.</p></p>
+                        </div>
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/sql-for-data-scientists">SQL For Data Scientists</a></h3>
+                            <a class="tag" href="/category/programming-for-data-scientists">Programming for Data Scientists</a>
+                            <p><p>SQL is a useful part of a data scientist's toolkit and it can feel like an intimidatingly big area to try and learn alongside all the other data science concepts. I want to present a few key concepts that are enough to get you up and running with SQL!</p></p>
+                        </div>
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/turning-jupyter-notebooks-into-reusable-scripts">Turning Jupyter Notebooks into Reusable Scripts</a></h3>
+                            <a class="tag" href="/category/programming-for-data-scientists">Programming for Data Scientists</a>
+                            <p><p>As part of my commitment to occasionally talk about "programming for data scientists", I want to share ideas that will facilitate this to help data scientists focus on important stuff. In this post I want to share some thoughts on how to make your Jupyter notebooks easier to "productionise".</p></p>
+                        </div>
+        </div>
         </div>
     </section>
 
-<section id="about">
-    <div class="container flex-container">
-      <div class="col-40 image-full">
-            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
-        </div>
-      <div class="col-60">
-        <h2>About David</h2>
-        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. I'm a generalist; my previous roles have been a range of data science, software development, and software architecting jobs.</p>
-        <p class="text-pre-heading">Things I also do:</p>
-        <ul>
-          <li>
-            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
-            </li>
-          <li>
-            I've written various <a href="/articles">articles and tutorials</a> about data science
-          </li>
-          <li>
-            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
-            </li>
-          <li>
-            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
 <section id="contact">
 <div class="container flex-container">
   <div class="col-40 image-full">
@@ -266,7 +283,7 @@ but the point is you can do a lot of it by duck typing.</p>
 
 	<footer>
 		<div class="container flex-container">
-			<p>© 2023 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>© 2024 David Asboth. All Rights Reserved. Site designed with love by <a href="http://design.barbasboth.com/" target="_blank">Barbara Asboth</a>. All Rights Reserved.</p>
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>

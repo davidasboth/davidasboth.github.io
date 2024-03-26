@@ -4,7 +4,7 @@
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
-*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+*:where( :not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
     all: unset;
     display: revert;
 }
@@ -17,7 +17,7 @@
 }
 
 /* Remove list styles (bullets/numbers) */
-ul, menu {
+ol, ul, menu {
     list-style: none;
 }
 
@@ -50,8 +50,8 @@ html {
 body {
 	font-family: 'Atkinson Hyperlegible', Arial, 'sans-serif';
 	font-size: 1.6rem;
-	background-color: #24262b;
-	color: #d3dae2;
+	background-color: #F3F3F3;
+	color: #444444;
 }
 section {
 	padding: 5rem 2rem;
@@ -74,6 +74,9 @@ section {
 .padding-large {
 	padding: 3rem;
 }
+.spacer-5 {
+	height: 5rem;
+}
 @media (max-width : 767px) {
 	.padding-small {
 		padding: 0.5rem;
@@ -89,7 +92,6 @@ h1 {
 	font-size: 5.6rem;
 	line-height: 6.4rem;
 	font-weight: 700;
-	color: #FFF;
 }
 @media (max-width : 767px) {
 	h1 {
@@ -102,31 +104,27 @@ h2 {
 	line-height: 3.8rem;
 	font-weight: 700;
 	margin-bottom: 3.5rem;
-	color: #FFF;
 }
 h3 {
 	font-size: 2.4rem;
 	line-height: 3rem;
 	font-weight: 700;
-	color: #FFF;
+	margin-bottom: 1.8rem;
 }
 h4 {
 	font-size: 2rem;
 	line-height: 3rem;
 	font-weight: 700;
 	margin-bottom: 1.2rem;
-	color: #FFF;
 }
 h5 {
 	font-size: 1.8rem;
 	line-height: 2.6rem;
 	margin-bottom: 1.2rem;
-	color: #FFF;
 }
 h6 {
 	font-size: 1.6rem;
 	margin-bottom: 1rem;
-	color: #FFF;
 }
 p, main ul, main ol, table {
 	line-height: 2.6rem;
@@ -135,44 +133,72 @@ p, h3 {
 	margin-bottom: 2rem;
 }
 blockquote {
-	max-width: 650px;
+	max-width: 900px;
 	margin: 2rem auto 3rem;
 	text-align: center;
 }
 blockquote p {
-	font-size: 2.4rem;
-	line-height: 3.2rem;
-	color: #fff;
-	
+font-size: 2rem;
+  line-height: 3.2rem;
 }
-
+blockquote.speechbubble p {
+	background-color: #fff;
+  padding: 2rem 3rem 6rem;
+  clip-path: polygon(1.53% 2.27%, 98.61% 0%, 100% 83.68%, 28.54% 83.65%, 28.08% 99.23%, 20.16% 82.83%, 0.15% 83.2%);
+	margin-bottom: 0.3rem;
+}
+.bold {
+	font-weight: 700;
+}
+em {
+	font-style: italic;
+}
 #article-content blockquote {
 	text-align: left;
-	margin: 1rem 0 2rem 0;
+	margin: 1rem 0 1rem 4rem;
 	padding: 1rem 0 1rem 2rem;
 	border-left: 3px solid rgba(252,216,5,1.00);
-	max-width: 100%;
 }
 #article-content blockquote p {
 	margin-bottom: 0;
 }
-
 section a, 
 section a:visited {
-	color: #fcd805;
+background-color: #fcd805;
+	color: #24262b;
 	font-weight: 700;
-	text-decoration: underline;
+	border-bottom: 1px solid;
 	cursor: pointer;
+	padding: 3px;
+	box-sizing: border-box;
 }
 section a:hover, 
 section a:active,
 section a:focus {
-	background-color: #fcd805;
-	color: #24262b;
+	background-color: #24262b;
+	color: #fff;
 	transition: 0.1s linear;
 }
+ol {
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+code {
+	display: inline-block;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	color: #FFFFFF;
+	padding: 1rem;
+	border-left: 2px solid rgba(252,216,5,1.00);
+	background-color: rgba(26,29,33,1.00);
+}
+.text-dark {
+	color: #444444;
+}
+.text-light {
+	color: aliceblue;
+}
 .colour-highlight {
-	color: #fcd805;
+	color: #FCD805;
 	font-weight: 700;
 }
 .colour-bottom-border::after {
@@ -186,6 +212,7 @@ section a:focus {
 }
 .button {
 	padding: 1.5rem 3.5rem;
+	color: #444;
 	font-weight: 700;
 	text-decoration: none;
 	border-radius: 5px;
@@ -210,24 +237,25 @@ section a:focus {
 .button-filled:active,
 .button-filled:focus {
 	border: 2px solid #FCD805;
-	color: #fcd805;
-	background: none;
+	color: white;
+	background: #24262B;
 }
 .container {
 	max-width: 1200px;
 	margin: auto;
 }
-
-#article-content .container {
-	max-width: 800px;
-}
-
 .tag {
-	color: #fcd805;
+	color: #585858;
+	background: none;
 	font-weight: 400;
+	border: none;
 	text-decoration: none;
-	padding: 0.3rem 0.5rem 0.3rem 2rem;
+	padding: 0.5rem 0.5rem 0.5rem 2rem;
+	margin-bottom: 1.5rem;
 	display: inline-block;
+}
+.tag.text-light {
+	color: rgba(203,203,203,1.00)
 }
 .tag::before {
 	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M0,5.909V1.125A1.125,1.125,0,0,1,1.125,0H5.909a1.125,1.125,0,0,1,.8.33L11.67,5.3a1.125,1.125,0,0,1,0,1.591L6.886,11.67a1.125,1.125,0,0,1-1.591,0L.33,6.7a1.125,1.125,0,0,1-.33-.8ZM2.625,1.5A1.125,1.125,0,1,0,3.75,2.625,1.125,1.125,0,0,0,2.625,1.5Z' fill='%23fcd805'/%3E%3C/svg%3E");
@@ -235,16 +263,18 @@ section a:focus {
 	padding-right: 5px;
 }
 header {
-	padding: 2rem;
+	padding: 1rem;
 	position: fixed;
 	width: 100%;
 	z-index: 999;
+	color: rgba(222,222,222,0.94);
 }
-
 header.sticky {
-	background: rgba(36, 38, 43, 0.9);
+  background: #24262be5;
+	-moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
 }
-
 nav {
 	float:right;
 }
@@ -257,6 +287,7 @@ nav li a:visited {
 	padding: 1rem 2rem;
 	border: none;
 	cursor: pointer;
+	color: rgba(222,222,222,0.94);
 }
 nav li a:hover,
 nav li a:active,
@@ -272,6 +303,16 @@ nav li a:focus {
 #header-logo:focus {
 	background-color: white;
 }
+.menu-toggle {
+    display: none;
+}
+#menu-items {
+       display: block; /* Always show menu items on larger screens */
+    }
+#menu-open-button {
+	fill: #FCD805;
+       display: none; /* Hide the menu button on larger screens */
+    }
 main ul li::before {
 	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='12' viewBox='0 0 7 12'%3E%3Cpath d='M6,0l6,7H0Z' transform='translate(7) rotate(90)' fill='%23fcd805'/%3E%3C/svg%3E");
 	padding-right: 1rem;
@@ -281,36 +322,94 @@ main ul li::before {
 	background-position: center center;
 	background-blend-mode: multiply;
 	background-attachment: fixed;
-	padding: 30vh 3rem 20vh;
+	padding: 17vh 3rem 20vh;
 	text-align: center;
 	position: relative;
 	clip-path: polygon(0 0, 100% 0, 100% 93%, 0% 100%);
+	z-index: 0;
+	color: white;
 }
 #homepage #splash {
 	background-image: 
-		linear-gradient(to bottom, rgba(36,38,43,0.83), rgba(36,38,43,0.83)),
-		url("../images/DataScienceFestival-01.jpg");
+		linear-gradient(to bottom, rgba(36,38,43,0.93), rgba(36,38,43,0.93)),
+		url("../images/mindmap3.png");
 }
 @media (max-width: 767px){
 	#homepage #splash {
 		background-position: 33% center;
 	}
+	/* Base styles for mobile view */
+	#menu-items {
+		display: none; /* Hide menu items initially */
+		background-color: rgba(36,38,43,0.95);
+		position: fixed;
+		top: -5rem;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		padding: 2rem;
+	}
+	#menu-open-button {
+		cursor: pointer;
+		display: block;
+		position: fixed;
+		top: 2rem;
+		right: 2rem;
+		z-index: 999;
+	}
+	nav {
+		float: none;
+		position: fixed;
+		background-color: rgba(36,38,43,0.95);
+	}
+	nav ul {
+		margin: 5rem auto 0;
+		text-align: center;
+		width: 100%;
+	}
+	nav li {
+		display: block;
+	}
+	nav li a {
+		display: block;
+		width: 100%;
+		min-height: 8vh;
+		font-size: 2rem;
+	}
+	/* Show menu when checkbox is checked */
+	.menu-toggle:checked + #menu-open-button + #menu-items {
+		display: block; /* Show menu items */
+	}
+}
+a[target="_blank"]:after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px;
+	  }
+.bg-lighter {
+	padding: 7rem 3rem;
+	background-color: #FFF;
+	clip-path: polygon(-10px 7%, 100% 0px, 100% 92%, 0% 100%);
+	margin-top: -5.5rem;
+}
+#book img {
+	display: block;
+}
+#podcast-cover {
+	max-width: 300px;
+	margin: auto;
 }
 #articles-tutorials #splash {
-	padding: 20vh 3rem 10vh;
+	padding: 10rem 3rem 5rem;
 	background-image: 
 		linear-gradient(to bottom, rgba(36,38,43,0.83), rgba(36,38,43,0.83)),
-		url("../images/carlos-muza-hpjSkU2UYSU-unsplash.jpg");
+		url("../images/laptop-with-data.jpg");
 }
-#articles-tagpage #splash,
-#categories #splash
- {
-	padding: 20vh 3rem 10vh;
+#articles-tagpage #splash {
+	padding: 20vh 3rem 5vh;
 	background-image: 
 		linear-gradient(to bottom, rgba(36,38,43,0.83), rgba(36,38,43,0.83)),
-		url("../images/angele-kamp-_XlhZVsKykw-unsplash.jpg");
+		url("../images/tags.jpg");
 }
-
 #splash .container {
 	max-width: 800px;
 }
@@ -324,6 +423,12 @@ main ul li::before {
 }
 .col-40 {
 	flex-basis: 40%;
+	padding: 1rem;
+    align-items: stretch;
+	align-content: stretch;
+}
+.col-50 {
+	flex-basis: 50%;
 	padding: 1rem;
     align-items: stretch;
 	align-content: stretch;
@@ -350,6 +455,9 @@ main ul li::before {
 	background-position: 1rem 1rem;
 	color: #24262b;
 	padding: 3rem;
+}
+.no-flex-bg {
+	align-self: flex-start;
 }
 .highlight-box * {
 	color: #24262b;
@@ -395,6 +503,14 @@ main .highlight-box ul li::before {
 		width: 48%;
 	}
 }
+img {
+	max-width: 100%;
+}
+img.img-icon {
+	width: 100px;
+	display: block;
+	margin: 1rem auto 3rem;
+}
 .image-full {
 	align-self: stretch;
 	overflow: hidden;
@@ -403,10 +519,23 @@ main .highlight-box ul li::before {
 .image-full img {
 	min-height: 100%;
 	object-fit: cover;
-	object-position: 60% 33%;
+	object-position: 33% 33%;
+}
+.about-article-end {
+	margin: 2rem 0;
+	padding: 2rem 1rem 0.5rem;
+	background-color: rgba(226,230,234,1.00);
+	overflow: hidden;
+}
+.about-article-end img {
+	clip-path: circle();
+	max-width: 100px;
+	border-radius: 50%;
+	float: left;
+	margin: 0 3rem 0 2rem;
 }
 input, select, textarea {
-	background-color: rgba(255,255,255,0.15);
+	background-color: rgba(230,230,230,1.00);
 	padding: 1.5rem;
 	margin-bottom: 5px;
 }
@@ -450,59 +579,3 @@ footer .flex-container {
 	align-content:space-between;
 }
 
-#contact-success~footer {
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-}
-
-#contact-success #splash {
-	min-height: 90vh;
-}
-
-/* Davidka custom stuff */
-
-.codehilite  {
-	padding: 0px;
-	white-space: break-spaces;
-}
-
-code {
-	background-color: rgba(26,29,33,1.00);
-	padding: 0.5rem;
-	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
-	color: #FFFFFF;
-}
-
-.codehilite code {
-	display: block;
-	padding: 1rem;
-	border-left: 2px solid rgba(252,216,5,1.00);
-	margin-bottom: 2rem;
-}
-
-main ul, main ol {
-	margin: 0 0 2rem 4rem;
-}
-
-em {
-	font-style: italic;
-}
-
-strong {
-	font-weight: 700;
-}
-
-table {
-	background-color: white;
-	margin-bottom: 2rem;
-}
-
-th {
-	background-color: #24262b
-}
-
-th, td {
-	padding: 1rem;
-	border: 1px solid #b8b8b8;
-}

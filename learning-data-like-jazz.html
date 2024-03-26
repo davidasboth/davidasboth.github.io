@@ -47,24 +47,37 @@
 <body>
 	<header id="stickyHeader">
 		<div class="container">
-			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
-			<nav>
-				<ul>
-					<li>
-						<a href="/#solutions">Solutions</a>
-					</li>
-					<li>
-							<a href="/#about">About</a>
-					</li>
-					<li>
-							<a href="/articles">Articles</a>
-					</li>
-					<li>
-					  <a href="#contact" class="button button-filled">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+		<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+		<nav>
+			<!-- Hidden checkbox -->
+        	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        	<!-- Label for the checkbox, acting as the menu button -->
+        	<label for="menu-toggle" id="menu-open-button">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+				  <rect width="100" height="20"></rect>
+				  <rect y="30" width="100" height="20"></rect>
+				  <rect y="60" width="100" height="20"></rect>
+				</svg>
+        	</label>
+			<ul id="menu-items">
+				<li>
+					<a href="/#book">Book</a>
+				</li>
+				<li>
+					<a href="/#podcast">Podcast</a>
+				</li>
+			<li>
+					<a href="/#about">About David</a>
+			  </li>
+			<li>
+					<a href="/articles">Articles</a>
+			  </li>
+			<li>
+			  <a href="#contact" class="button button-filled">Contact</a>
+			  </li></ul>
+		</nav>
+			</div>
 	</header>
 
 
@@ -72,14 +85,15 @@
     <section id="splash">
         <div class="container">
             <h1 class="text-centered">Learn data science like you would learn jazz</h1>
-            <div class="text-centered padding-medium"><a class="tag" href="/category/education">education</a></div>
+            <div class="text-centered padding-medium"><a class="tag text-light"
+                    href="/category/education">Education</a></div>
             <p class="text-centered"><p>Aspiring analysts want to know how data analysis is done. As it turns out, there are similarities between learning how to analyse data and learning how to play music, especially jazz.</p></p>
-         </div>
+        </div>
     </section>
 
     <section id="article-content">
         <div class="container">
-            
+
             <p>Aspiring analysts want to know how data analysis is done. Beyond the technical skills required to be an analyst, they assume that, surely, learning the discipline of data analysis includes some sort of repeatable process; a step-by-step method to apply to any analytical problem. <strong>Such a method doesn't exist</strong>. How seasoned analysts do their work is a mixture of technical and interpersonal skills sprinkled with intuition built up through years of just analysing data. This kind of intuition is hard to put down on paper, which for a student is an unsatisfying thing to hear.</p>
 <p>I'm a professional data analyst and educator, and an amateur jazz enthusiast. Hear me out: as it turns out, there are similarities between learning how to analyse data and learning how to play music, especially jazz.</p>
 <h3>Improvisation</h3>
@@ -108,35 +122,28 @@
 <h3>Jazz up your data analysis learning</h3>
 <p>If you want to get better at analysing data, think like a jazz musician. Don't spend long hours reading dry textbooks of yet another analytical tool or algorithm. Play songs instead. Improvise to put your own stamp on a problem, observe the experts, and, most importantly, <strong>just make some sweet, sweet data jazz</strong>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+            <div class="about-article-end">
+                <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+                <p class="text-pre-heading">About David</p>
+                <p>I'm a freelance data scientist consultant and educator with an MSc. in Data Science and a background
+                    in software and web development. My previous roles have been a range of data science, software
+                    development, team management and software architecting jobs.</p>
+            </div>
+        </div>
+    </section>
+    <section id="suggested-articles">
+        <div class="container">
+            <h2>Related articles tagged Education</h2>
+            <div class="flex-container">
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/learning-data-like-jazz">Learn data science like you would learn jazz</a></h3>
+                            <a class="tag" href="/category/education">Education</a>
+                            <p><p>Aspiring analysts want to know how data analysis is done. As it turns out, there are similarities between learning how to analyse data and learning how to play music, especially jazz.</p></p>
+                        </div>
+        </div>
         </div>
     </section>
 
-<section id="about">
-    <div class="container flex-container">
-      <div class="col-40 image-full">
-            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
-        </div>
-      <div class="col-60">
-        <h2>About David</h2>
-        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. I'm a generalist; my previous roles have been a range of data science, software development, and software architecting jobs.</p>
-        <p class="text-pre-heading">Things I also do:</p>
-        <ul>
-          <li>
-            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
-            </li>
-          <li>
-            I've written various <a href="/articles">articles and tutorials</a> about data science
-          </li>
-          <li>
-            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
-            </li>
-          <li>
-            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
 <section id="contact">
 <div class="container flex-container">
   <div class="col-40 image-full">
@@ -169,7 +176,7 @@
 
 	<footer>
 		<div class="container flex-container">
-			<p>© 2023 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>© 2024 David Asboth. All Rights Reserved. Site designed with love by <a href="http://design.barbasboth.com/" target="_blank">Barbara Asboth</a>. All Rights Reserved.</p>
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>

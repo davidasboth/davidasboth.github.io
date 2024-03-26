@@ -47,24 +47,37 @@
 <body>
 	<header id="stickyHeader">
 		<div class="container">
-			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
-			<nav>
-				<ul>
-					<li>
-						<a href="/#solutions">Solutions</a>
-					</li>
-					<li>
-							<a href="/#about">About</a>
-					</li>
-					<li>
-							<a href="/articles">Articles</a>
-					</li>
-					<li>
-					  <a href="#contact" class="button button-filled">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+		<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+		<nav>
+			<!-- Hidden checkbox -->
+        	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        	<!-- Label for the checkbox, acting as the menu button -->
+        	<label for="menu-toggle" id="menu-open-button">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+				  <rect width="100" height="20"></rect>
+				  <rect y="30" width="100" height="20"></rect>
+				  <rect y="60" width="100" height="20"></rect>
+				</svg>
+        	</label>
+			<ul id="menu-items">
+				<li>
+					<a href="/#book">Book</a>
+				</li>
+				<li>
+					<a href="/#podcast">Podcast</a>
+				</li>
+			<li>
+					<a href="/#about">About David</a>
+			  </li>
+			<li>
+					<a href="/articles">Articles</a>
+			  </li>
+			<li>
+			  <a href="#contact" class="button button-filled">Contact</a>
+			  </li></ul>
+		</nav>
+			</div>
 	</header>
 
 
@@ -72,7 +85,7 @@
 		  <section id="splash">
 			<div class="container">
 				<p class="text-pre-heading text-centered">Articles tagged with</p>
-				<h1 class="text-centered">"data generalism"</h1>
+				<h1 class="text-centered">Data generalism</h1>
 				
 				<div class="text-centered padding-medium"><a href="/articles" class="button button-outline">Back to all articles</a></div>
 			 </div>
@@ -83,14 +96,14 @@
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/learning-as-a-data-generalist">Learning as a "data generalist"</a></h3>
-							<a class="tag" href="/category/data-generalism"> data generalism </a>
+							<a class="tag" href="/category/data-generalism"> Data generalism </a>
 							<p> <p>One of the most common questions I get from students near the end of a data science course is "what next?". How do you keep learning once you have the basics, especially if you're a generalist?</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/why-i-now-call-myself-a-data-generalist">Why I now call myself a "data generalist"</a></h3>
-							<a class="tag" href="/category/data-generalism"> data generalism </a>
+							<a class="tag" href="/category/data-generalism"> Data generalism </a>
 							<p> <p>I've realised that pigeonholing myself as a data scientist, broad as that term is, doesn't work for me. Finding a good job title for myself is actually non-trivial. If you feel the same way, you may also be a "data generalist", and this post is for you.</p> </p>
 						</div>
 					
@@ -98,6 +111,32 @@
 			</div>
 		</section>
 			
+<section id="about">
+    <div class="container flex-container">
+      <div class="col-40 image-full">
+            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+        </div>
+      <div class="col-60">
+        <h2>About David</h2>
+        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. I'm a generalist; my previous roles have been a range of data science, software development, and software architecting jobs.</p>
+        <p class="text-pre-heading">Things I also do:</p>
+        <ul>
+          <li>
+            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
+            </li>
+          <li>
+            I've written various <a href="/articles">articles and tutorials</a> about data science
+          </li>
+          <li>
+            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
+            </li>
+          <li>
+            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>		
 <section id="contact">
 <div class="container flex-container">
   <div class="col-40 image-full">
@@ -130,7 +169,7 @@
 
 	<footer>
 		<div class="container flex-container">
-			<p>© 2023 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>© 2024 David Asboth. All Rights Reserved. Site designed with love by <a href="http://design.barbasboth.com/" target="_blank">Barbara Asboth</a>. All Rights Reserved.</p>
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>

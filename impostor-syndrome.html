@@ -47,24 +47,37 @@
 <body>
 	<header id="stickyHeader">
 		<div class="container">
-			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
-			<nav>
-				<ul>
-					<li>
-						<a href="/#solutions">Solutions</a>
-					</li>
-					<li>
-							<a href="/#about">About</a>
-					</li>
-					<li>
-							<a href="/articles">Articles</a>
-					</li>
-					<li>
-					  <a href="#contact" class="button button-filled">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+		<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+		<nav>
+			<!-- Hidden checkbox -->
+        	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        	<!-- Label for the checkbox, acting as the menu button -->
+        	<label for="menu-toggle" id="menu-open-button">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+				  <rect width="100" height="20"></rect>
+				  <rect y="30" width="100" height="20"></rect>
+				  <rect y="60" width="100" height="20"></rect>
+				</svg>
+        	</label>
+			<ul id="menu-items">
+				<li>
+					<a href="/#book">Book</a>
+				</li>
+				<li>
+					<a href="/#podcast">Podcast</a>
+				</li>
+			<li>
+					<a href="/#about">About David</a>
+			  </li>
+			<li>
+					<a href="/articles">Articles</a>
+			  </li>
+			<li>
+			  <a href="#contact" class="button button-filled">Contact</a>
+			  </li></ul>
+		</nav>
+			</div>
 	</header>
 
 
@@ -72,14 +85,15 @@
     <section id="splash">
         <div class="container">
             <h1 class="text-centered">How to use your impostor syndrome to learn anything</h1>
-            <div class="text-centered padding-medium"><a class="tag" href="/category/data-science">data science</a></div>
+            <div class="text-centered padding-medium"><a class="tag text-light"
+                    href="/category/data-science">Data science</a></div>
             <p class="text-centered"><p>How can you harness your impostor syndrome? Get good at being able to learn anything.</p></p>
-         </div>
+        </div>
     </section>
 
     <section id="article-content">
         <div class="container">
-            
+
             <h2>How to use your impostor syndrome to learn anything</h2>
 <p>I have a theory that data science is a field where impostor syndrome is particularly rife, more so than other fields. There is so much to know under the wide umbrella of "data science" that no single human can know it all, yet we all go around calling ourselves data scientists, so the implication is that we <em>should</em> know it all. The more you learn about what's out there, the easier it is to be overwhelmed that you couldn't possibly ever learn everything, and from there it's not a huge leap to "I will never be good enough". You might see a tweet or read a paper from a fellow data scientist working on a different part of the field and think it might as well be in a foreign language and your heart might sink that there's yet another thing you don't know yet. The truth is that it's perfectly normal and fine for people to specialise and therefore have different strengths, but we can't all see this clearly all the time, hence impostor syndrome proliferating among us.</p>
 <p>There are two ways to tackle impostor syndrome: either learn everything and genuinely don't be an impostor, or embrace the fact that you can't know everything at once, and instead get good at being able to learn anything. Clearly only one of those things works, and it's something of a slow-burning epiphany I've had over the years; I don't need to learn everything up front, I just need to be confident enough that I can learn anything when I need to.</p>
@@ -99,35 +113,38 @@
 <p>Obviously this goes for non-technical topics. You should probably always be the one in the room who knows the most about, say, linear regression, but if you've just been hired at an agricultural firm as a data scientist and know nothing about agriculture, don't be afraid of that fact. Use it to your advantage. The same way anxiety can be a good thing before an important speech or meeting, because it shows you care enough about doing well to be anxious, impostor syndrome can also be a useful companion. Free yourself and ask all the questions.</p>
 <p>So let's hear it for impostor syndrome. We only ever talk about it as if it's a disease plaguing our industry, but it can also be our secret weapon in getting things done. Don't worry about learning it all up front. You'll almost always be measured on what you achieve, not what you know. I like the framing "just in time" learning rather than "just in case". In the meantime, just go and do stuff. Stuff that interests you, without worrying about what you'll learn from it or whether you'll learn anything. Chances are you'll learn along the way and be better equipped next time. And think of your self-imposed "impostor" label not as a judgement, but an opportunity to always learn something new.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+            <div class="about-article-end">
+                <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+                <p class="text-pre-heading">About David</p>
+                <p>I'm a freelance data scientist consultant and educator with an MSc. in Data Science and a background
+                    in software and web development. My previous roles have been a range of data science, software
+                    development, team management and software architecting jobs.</p>
+            </div>
+        </div>
+    </section>
+    <section id="suggested-articles">
+        <div class="container">
+            <h2>Related articles tagged Data science</h2>
+            <div class="flex-container">
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/citizen-data-science">Citizen Data Science</a></h3>
+                            <a class="tag" href="/category/data-science">Data science</a>
+                            <p><p>What does "citizen data science" mean beyond being a buzzword for "everyone should do data science" (which they most certainly shouldn't)?</p></p>
+                        </div>
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/get-started-with-data-science">How a business can get started with "doing data science"</a></h3>
+                            <a class="tag" href="/category/data-science">Data science</a>
+                            <p><p>How can a business get started once they've decided they want "data science"?</p></p>
+                        </div>
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/impostor-syndrome">How to use your impostor syndrome to learn anything</a></h3>
+                            <a class="tag" href="/category/data-science">Data science</a>
+                            <p><p>How can you harness your impostor syndrome? Get good at being able to learn anything.</p></p>
+                        </div>
+        </div>
         </div>
     </section>
 
-<section id="about">
-    <div class="container flex-container">
-      <div class="col-40 image-full">
-            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
-        </div>
-      <div class="col-60">
-        <h2>About David</h2>
-        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. I'm a generalist; my previous roles have been a range of data science, software development, and software architecting jobs.</p>
-        <p class="text-pre-heading">Things I also do:</p>
-        <ul>
-          <li>
-            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
-            </li>
-          <li>
-            I've written various <a href="/articles">articles and tutorials</a> about data science
-          </li>
-          <li>
-            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
-            </li>
-          <li>
-            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
 <section id="contact">
 <div class="container flex-container">
   <div class="col-40 image-full">
@@ -160,7 +177,7 @@
 
 	<footer>
 		<div class="container flex-container">
-			<p>© 2023 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>© 2024 David Asboth. All Rights Reserved. Site designed with love by <a href="http://design.barbasboth.com/" target="_blank">Barbara Asboth</a>. All Rights Reserved.</p>
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>

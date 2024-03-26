@@ -47,160 +47,205 @@
 <body>
 	<header id="stickyHeader">
 		<div class="container">
-			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
-			<nav>
-				<ul>
-					<li>
-						<a href="/#solutions">Solutions</a>
-					</li>
-					<li>
-							<a href="/#about">About</a>
-					</li>
-					<li>
-							<a href="/articles">Articles</a>
-					</li>
-					<li>
-					  <a href="#contact" class="button button-filled">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+		<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+		<nav>
+			<!-- Hidden checkbox -->
+        	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        	<!-- Label for the checkbox, acting as the menu button -->
+        	<label for="menu-toggle" id="menu-open-button">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+				  <rect width="100" height="20"></rect>
+				  <rect y="30" width="100" height="20"></rect>
+				  <rect y="60" width="100" height="20"></rect>
+				</svg>
+        	</label>
+			<ul id="menu-items">
+				<li>
+					<a href="/#book">Book</a>
+				</li>
+				<li>
+					<a href="/#podcast">Podcast</a>
+				</li>
+			<li>
+					<a href="/#about">About David</a>
+			  </li>
+			<li>
+					<a href="/articles">Articles</a>
+			  </li>
+			<li>
+			  <a href="#contact" class="button button-filled">Contact</a>
+			  </li></ul>
+		</nav>
+			</div>
 	</header>
 
 
 <main id="articles-tutorials">
-    <section id="splash">
-      <div class="container">
-          <h1 class="text-centered">Articles</h1>
-          <p class="text-centered">Here you can find a collection of articles about data science for business, what data science training/consultancy looks like, and an assortment of technical write-ups and projects.</p>
-       </div>
+  <section id="splash">
+    <div class="container">
+      <h1 class="text-centered">Articles</h1>
+      <p class="text-light">
+        <nobr><a class="tag text-light" href="/category/data-generalism">Data generalism</a></nobr>
+        <nobr><a class="tag text-light" href="/category/data-science">Data science</a></nobr>
+        <nobr><a class="tag text-light" href="/category/education">Education</a></nobr>
+        <nobr><a class="tag text-light" href="/category/machine-learning">Machine learning</a></nobr>
+        <nobr><a class="tag text-light" href="/category/programming-for-data-scientists">Programming for Data Scientists</a></nobr>
+        <nobr><a class="tag text-light" href="/category/projects">Projects</a></nobr>
+      </p>
+    </div>
   </section>
-    <section id="articles">
-      <div class="container">
+  <section id="articles">
+    <div class="container">
       <div class="flex-container wrap">
-          <div class="col-66 highlight-box">
-              <h3>Thinking of hiring a data person?
-Start here.</h3>
+        <div class="col-66">
+          <div class="col-50 padding-medium">
+            <h3><a href="/learning-data-like-jazz">Learn data science like you would learn jazz</a></h3>
+            <a class="tag" href="/category/education">Education</a>
+            <p><p>Aspiring analysts want to know how data analysis is done. As it turns out, there are similarities between learning how to analyse data and learning how to play music, especially jazz.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/learning-as-a-data-generalist">Learning as a "data generalist"</a></h3>
+            <a class="tag" href="/category/data-generalism">Data generalism</a>
+            <p><p>One of the most common questions I get from students near the end of a data science course is "what next?". How do you keep learning once you have the basics, especially if you're a generalist?</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/why-i-now-call-myself-a-data-generalist">Why I now call myself a "data generalist"</a></h3>
+            <a class="tag" href="/category/data-generalism">Data generalism</a>
+            <p><p>I've realised that pigeonholing myself as a data scientist, broad as that term is, doesn't work for me. Finding a good job title for myself is actually non-trivial. If you feel the same way, you may also be a "data generalist", and this post is for you.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/citizen-data-science">Citizen Data Science</a></h3>
+            <a class="tag" href="/category/data-science">Data science</a>
+            <p><p>What does "citizen data science" mean beyond being a buzzword for "everyone should do data science" (which they most certainly shouldn't)?</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/get-started-with-data-science">How a business can get started with "doing data science"</a></h3>
+            <a class="tag" href="/category/data-science">Data science</a>
+            <p><p>How can a business get started once they've decided they want "data science"?</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/impostor-syndrome">How to use your impostor syndrome to learn anything</a></h3>
+            <a class="tag" href="/category/data-science">Data science</a>
+            <p><p>How can you harness your impostor syndrome? Get good at being able to learn anything.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/machine-learning-haikus">Machine Learning Haikus</a></h3>
+            <a class="tag" href="/category/machine-learning">Machine learning</a>
+            <p><p>Forget "machine learning in plain English". Instead, I present some of the most popular algorithms in haiku form. Consider it "machine learning for the busy".</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/analysis-is-alan-davies-getting-better-at-qi">Analysis: Is Alan Davies Getting Better at QI?</a></h3>
+            <a class="tag" href="/category/projects">Projects</a>
+            <p><p>I was watching a later series of QI recently and couldn't help but notice that Alan Davies was winning quite a few episodes. That prompted me to ask the question: is Alan Davies getting better at QI?</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team">Visualising the Worldwide Win Percentage of the Hungarian National Football Team</a></h3>
+            <a class="tag" href="/category/projects">Projects</a>
+            <p><p>I've often read the advice that side projects should be solving problems or answering questions that you yourself are interested in. To that end, I've always wanted to know how well the Hungarian national team have done against various countries worldwide and to explore this question, I scraped the matches played by the Hungarian national team and made an interactive world map.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/the-world-map-of-the-2016-fifa-awards">The World Map of the 2016 FIFA Awards</a></h3>
+            <a class="tag" href="/category/projects">Projects</a>
+            <p><p>A mini project to visualise the votes for the 2016 FIFA Awards, to see which country voted for which player.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/method-chaining-in-pandas">Method Chaining in Pandas</a></h3>
+            <a class="tag" href="/category/programming-for-data-scientists">Programming for Data Scientists</a>
+            <p><p>A discussion of "method chaining" in pandas. Used for better readability, or harder debugging, depending on how you look at it.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/visualising-decision-trees-in-python">Visualising Decision Trees in Python</a></h3>
+            <a class="tag" href="/category/machine-learning">Machine learning</a>
+            <p><p>Having an accurate machine learning model may be enough in itself, but in some cases the only way to turn it into a business decision is if you can understand why it's getting the results it's getting. In this short tutorial I want to show a quick way to visualise a trained decision tree in Python.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/sql-for-data-scientists">SQL For Data Scientists</a></h3>
+            <a class="tag" href="/category/programming-for-data-scientists">Programming for Data Scientists</a>
+            <p><p>SQL is a useful part of a data scientist's toolkit and it can feel like an intimidatingly big area to try and learn alongside all the other data science concepts. I want to present a few key concepts that are enough to get you up and running with SQL!</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/more-on-k-means-clustering">More on K-means Clustering</a></h3>
+            <a class="tag" href="/category/machine-learning">Machine learning</a>
+            <p><p>In this post I look at a practical example of k-means clustering in action, namely to draw puppies. I also touch on a couple of more general points to consider when using clustering.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/introduction-to-k-means-clustering">Introduction to K-means Clustering</a></h3>
+            <a class="tag" href="/category/machine-learning">Machine learning</a>
+            <p><p>An introduction to the popular k-means clustering algorithm with intuition and Python code.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/turning-jupyter-notebooks-into-reusable-scripts">Turning Jupyter Notebooks into Reusable Scripts</a></h3>
+            <a class="tag" href="/category/programming-for-data-scientists">Programming for Data Scientists</a>
+            <p><p>As part of my commitment to occasionally talk about "programming for data scientists", I want to share ideas that will facilitate this to help data scientists focus on important stuff. In this post I want to share some thoughts on how to make your Jupyter notebooks easier to "productionise".</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/duck-typing">Duck Typing</a></h3>
+            <a class="tag" href="/category/programming-for-data-scientists">Programming for Data Scientists</a>
+            <p><p>My first attempt to bridge the gap between the two disciplines of programming and data science, by talking about programming concepts useful for data scientists, and vice versa. Today: duck typing.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/connecting-to-google-sheets-in-python">How to Connect to Google Sheets in Python</a></h3>
+            <a class="tag" href="/category/data-science">Data science</a>
+            <p><p>A quick tutorial on how to connect to Google Sheets in Python, so you can access it like a regular CSV file.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/markov-chains-for-text-generation">Markov Chains for Text Generation</a></h3>
+            <a class="tag" href="/category/machine-learning">Machine learning</a>
+            <p><p>Markov chains are a popular way to model sequential data. I want to run through an implementation where I generate new songs based on lyrics by Muse.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/why-you-should-reinvent-the-machine-learning-wheel">Why You Should Reinvent the Machine Learning Wheel</a></h3>
+            <a class="tag" href="/category/machine-learning">Machine learning</a>
+            <p><p>As data scientists we spend a lot of our time using other people's implementations of machine learning algorithms. I suggest that as part of the learning process it's worthwhile to try to implement them ourselves from scratch, in order to fully understand them.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/realistic-machine-learning">Realistic Machine Learning</a></h3>
+            <a class="tag" href="/category/machine-learning">Machine learning</a>
+            <p><p>As most data scientists quickly realise, there's a difference between the kind of data science you do while learning about it, and the kind you do at a real job. This is equally true of data cleaning/wrangling and machine learning.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/intuition-first-machine-learning">"Intuition First" Machine Learning</a></h3>
+            <a class="tag" href="/category/machine-learning">Machine learning</a>
+            <p><p>I've often felt machine learning needs to be taught "intuition first, equations later", but this doesn't seem to be the norm with most learning sources.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/self-organising-maps-in-depth">Self-Organising Maps: In Depth</a></h3>
+            <a class="tag" href="/category/machine-learning">Machine learning</a>
+            <p><p>In Part 1, I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I want to step through the process of training and using a SOM – both the intuition and the Python code. At the end I'll also present a couple of real life use cases, not just the toy example we'll use for implementation.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/self-organising-maps-an-introduction">Self-Organising Maps: An Introduction</a></h3>
+            <a class="tag" href="/category/machine-learning">Machine learning</a>
+            <p><p>When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/the-junk-in-fallout-4">The Junk in Fallout 4 - a Web Scraping Tutorial</a></h3>
+            <a class="tag" href="/category/projects">Projects</a>
+            <p><p>This is a short web scraping tutorial based on a script I wrote to fetch and analyse data about junk in the game Fallout 4.</p></p>
+          </div>
+          <div class="col-50 padding-medium">
+            <h3><a href="/analysing-london-house-prices">Analysing London House Prices</a></h3>
+            <a class="tag" href="/category/projects">Projects</a>
+            <p><p>London is expensive. So much so that it's a trope now for those of us who live here. But what does the data show? Are things getting better or worse? How did the 2008 recession affect behaviour for example? I wanted to find out. With data.</p></p>
+          </div>
+        </div>
+        <div class="col-33 highlight-box no-flex-bg">
+          <h3>Thinking of hiring a data person?
+            Start here.</h3>
           <p>
-              Helpful articles about how to make the best decision for your business needs:
-              </p>
-              <ul>
-                  <li>
-                      <a href="/get-started-with-data-science">How a business can get started with "doing data science"</a>
-                  </li>
-              </ul>
-          </div>
-        <div class="col-33 lowlight-box padding-large">
-          <h3>Article categories</h3>
-          
-            <nobr><a class="tag" href="/category/data-generalism">data generalism</a></nobr>
-            <nobr><a class="tag" href="/category/data-science">data science</a></nobr>
-            <nobr><a class="tag" href="/category/education">education</a></nobr>
-            <nobr><a class="tag" href="/category/machine-learning">machine learning</a></nobr>
-            <nobr><a class="tag" href="/category/programming-for-data-scientists">programming for data scientists</a></nobr>
-            <nobr><a class="tag" href="/category/projects">projects</a></nobr>
+            Helpful articles about how to make the best decision for your business needs.
+          </p>
+          <ul>
+            <li>
+              <a href="/get-started-with-data-science">How a business can get started with "doing data science"</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          </div>
-
-          <!-- <h2>Featured Articles</h2> -->
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/learning-data-like-jazz">Learn data science like you would learn jazz</a></h3>
-                <a class="tag" href="/category/education">education</a>
-                <p><p>Aspiring analysts want to know how data analysis is done. As it turns out, there are similarities between learning how to analyse data and learning how to play music, especially jazz.</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/learning-as-a-data-generalist">Learning as a "data generalist"</a></h3>
-                <a class="tag" href="/category/data-generalism">data generalism</a>
-                <p><p>One of the most common questions I get from students near the end of a data science course is "what next?". How do you keep learning once you have the basics, especially if you're a generalist?</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/why-i-now-call-myself-a-data-generalist">Why I now call myself a "data generalist"</a></h3>
-                <a class="tag" href="/category/data-generalism">data generalism</a>
-                <p><p>I've realised that pigeonholing myself as a data scientist, broad as that term is, doesn't work for me. Finding a good job title for myself is actually non-trivial. If you feel the same way, you may also be a "data generalist", and this post is for you.</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/citizen-data-science">Citizen Data Science</a></h3>
-                <a class="tag" href="/category/data-science">data science</a>
-                <p><p>What does "citizen data science" mean beyond being a buzzword for "everyone should do data science" (which they most certainly shouldn't)?</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/impostor-syndrome">How to use your impostor syndrome to learn anything</a></h3>
-                <a class="tag" href="/category/data-science">data science</a>
-                <p><p>How can you harness your impostor syndrome? Get good at being able to learn anything.</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/method-chaining-in-pandas">Method Chaining in Pandas</a></h3>
-                <a class="tag" href="/category/programming-for-data-scientists">programming for data scientists</a>
-                <p><p>A discussion of "method chaining" in pandas. Used for better readability, or harder debugging, depending on how you look at it.</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/visualising-decision-trees-in-python">Visualising Decision Trees in Python</a></h3>
-                <a class="tag" href="/category/machine-learning">machine learning</a>
-                <p><p>Having an accurate machine learning model may be enough in itself, but in some cases the only way to turn it into a business decision is if you can understand why it's getting the results it's getting. In this short tutorial I want to show a quick way to visualise a trained decision tree in Python.</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/sql-for-data-scientists">SQL For Data Scientists</a></h3>
-                <a class="tag" href="/category/programming-for-data-scientists">programming for data scientists</a>
-                <p><p>SQL is a useful part of a data scientist's toolkit and it can feel like an intimidatingly big area to try and learn alongside all the other data science concepts. I want to present a few key concepts that are enough to get you up and running with SQL!</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/more-on-k-means-clustering">More on K-means Clustering</a></h3>
-                <a class="tag" href="/category/machine-learning">machine learning</a>
-                <p><p>In this post I look at a practical example of k-means clustering in action, namely to draw puppies. I also touch on a couple of more general points to consider when using clustering.</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/introduction-to-k-means-clustering">Introduction to K-means Clustering</a></h3>
-                <a class="tag" href="/category/machine-learning">machine learning</a>
-                <p><p>An introduction to the popular k-means clustering algorithm with intuition and Python code.</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/connecting-to-google-sheets-in-python">How to Connect to Google Sheets in Python</a></h3>
-                <a class="tag" href="/category/data-science">data science</a>
-                <p><p>A quick tutorial on how to connect to Google Sheets in Python, so you can access it like a regular CSV file.</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/self-organising-maps-in-depth">Self-Organising Maps: In Depth</a></h3>
-                <a class="tag" href="/category/machine-learning">machine learning</a>
-                <p><p>In Part 1, I introduced the concept of Self-Organising Maps (SOMs). Now in Part 2 I want to step through the process of training and using a SOM – both the intuition and the Python code. At the end I'll also present a couple of real life use cases, not just the toy example we'll use for implementation.</p></p>
-            </div>
-
-
-            <div class="col-33 padding-medium">
-                <h3><a href="/self-organising-maps-an-introduction">Self-Organising Maps: An Introduction</a></h3>
-                <a class="tag" href="/category/machine-learning">machine learning</a>
-                <p><p>When you learn about machine learning techniques, you usually get a selection of the usual suspects. In this post I want to introduce an often-overlooked, but (I think) very interesting and useful idea – a Self-Organising Map.</p></p>
-            </div>
-
-
-        
-              </div>
-          </div>
-      </section>
-      
 <section id="about">
     <div class="container flex-container">
       <div class="col-40 image-full">
@@ -254,12 +299,12 @@ Start here.</h3>
 	  </form>
 	</div>
   </div>
-</section>  </main>
+</section></main>
 
 
 	<footer>
 		<div class="container flex-container">
-			<p>© 2023 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>© 2024 David Asboth. All Rights Reserved. Site designed with love by <a href="http://design.barbasboth.com/" target="_blank">Barbara Asboth</a>. All Rights Reserved.</p>
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>

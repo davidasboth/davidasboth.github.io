@@ -47,24 +47,37 @@
 <body>
 	<header id="stickyHeader">
 		<div class="container">
-			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
-			<nav>
-				<ul>
-					<li>
-						<a href="/#solutions">Solutions</a>
-					</li>
-					<li>
-							<a href="/#about">About</a>
-					</li>
-					<li>
-							<a href="/articles">Articles</a>
-					</li>
-					<li>
-					  <a href="#contact" class="button button-filled">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+		<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+		<nav>
+			<!-- Hidden checkbox -->
+        	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        	<!-- Label for the checkbox, acting as the menu button -->
+        	<label for="menu-toggle" id="menu-open-button">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+				  <rect width="100" height="20"></rect>
+				  <rect y="30" width="100" height="20"></rect>
+				  <rect y="60" width="100" height="20"></rect>
+				</svg>
+        	</label>
+			<ul id="menu-items">
+				<li>
+					<a href="/#book">Book</a>
+				</li>
+				<li>
+					<a href="/#podcast">Podcast</a>
+				</li>
+			<li>
+					<a href="/#about">About David</a>
+			  </li>
+			<li>
+					<a href="/articles">Articles</a>
+			  </li>
+			<li>
+			  <a href="#contact" class="button button-filled">Contact</a>
+			  </li></ul>
+		</nav>
+			</div>
 	</header>
 
 
@@ -72,7 +85,7 @@
 		  <section id="splash">
 			<div class="container">
 				<p class="text-pre-heading text-centered">Articles tagged with</p>
-				<h1 class="text-centered">"projects"</h1>
+				<h1 class="text-centered">Projects</h1>
 				
 				<div class="text-centered padding-medium"><a href="/articles" class="button button-outline">Back to all articles</a></div>
 			 </div>
@@ -83,35 +96,35 @@
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/analysis-is-alan-davies-getting-better-at-qi">Analysis: Is Alan Davies Getting Better at QI?</a></h3>
-							<a class="tag" href="/category/projects"> projects </a>
+							<a class="tag" href="/category/projects"> Projects </a>
 							<p> <p>I was watching a later series of QI recently and couldn't help but notice that Alan Davies was winning quite a few episodes. That prompted me to ask the question: is Alan Davies getting better at QI?</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team">Visualising the Worldwide Win Percentage of the Hungarian National Football Team</a></h3>
-							<a class="tag" href="/category/projects"> projects </a>
+							<a class="tag" href="/category/projects"> Projects </a>
 							<p> <p>I've often read the advice that side projects should be solving problems or answering questions that you yourself are interested in. To that end, I've always wanted to know how well the Hungarian national team have done against various countries worldwide and to explore this question, I scraped the matches played by the Hungarian national team and made an interactive world map.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/the-world-map-of-the-2016-fifa-awards">The World Map of the 2016 FIFA Awards</a></h3>
-							<a class="tag" href="/category/projects"> projects </a>
+							<a class="tag" href="/category/projects"> Projects </a>
 							<p> <p>A mini project to visualise the votes for the 2016 FIFA Awards, to see which country voted for which player.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/the-junk-in-fallout-4">The Junk in Fallout 4 - a Web Scraping Tutorial</a></h3>
-							<a class="tag" href="/category/projects"> projects </a>
+							<a class="tag" href="/category/projects"> Projects </a>
 							<p> <p>This is a short web scraping tutorial based on a script I wrote to fetch and analyse data about junk in the game Fallout 4.</p> </p>
 						</div>
 					
 					
 						<div class="col-33 padding-medium">
 							<h3><a href="/analysing-london-house-prices">Analysing London House Prices</a></h3>
-							<a class="tag" href="/category/projects"> projects </a>
+							<a class="tag" href="/category/projects"> Projects </a>
 							<p> <p>London is expensive. So much so that it's a trope now for those of us who live here. But what does the data show? Are things getting better or worse? How did the 2008 recession affect behaviour for example? I wanted to find out. With data.</p> </p>
 						</div>
 					
@@ -119,6 +132,32 @@
 			</div>
 		</section>
 			
+<section id="about">
+    <div class="container flex-container">
+      <div class="col-40 image-full">
+            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+        </div>
+      <div class="col-60">
+        <h2>About David</h2>
+        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. I'm a generalist; my previous roles have been a range of data science, software development, and software architecting jobs.</p>
+        <p class="text-pre-heading">Things I also do:</p>
+        <ul>
+          <li>
+            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
+            </li>
+          <li>
+            I've written various <a href="/articles">articles and tutorials</a> about data science
+          </li>
+          <li>
+            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
+            </li>
+          <li>
+            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>		
 <section id="contact">
 <div class="container flex-container">
   <div class="col-40 image-full">
@@ -151,7 +190,7 @@
 
 	<footer>
 		<div class="container flex-container">
-			<p>© 2023 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>© 2024 David Asboth. All Rights Reserved. Site designed with love by <a href="http://design.barbasboth.com/" target="_blank">Barbara Asboth</a>. All Rights Reserved.</p>
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>

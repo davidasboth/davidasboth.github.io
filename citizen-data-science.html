@@ -47,24 +47,37 @@
 <body>
 	<header id="stickyHeader">
 		<div class="container">
-			<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
-			<nav>
-				<ul>
-					<li>
-						<a href="/#solutions">Solutions</a>
-					</li>
-					<li>
-							<a href="/#about">About</a>
-					</li>
-					<li>
-							<a href="/articles">Articles</a>
-					</li>
-					<li>
-					  <a href="#contact" class="button button-filled">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+		<a href="/"><img src="/theme/images/da-logo.svg" alt="David Asboth logo" id="header-logo"/></a>
+		<nav>
+			<!-- Hidden checkbox -->
+        	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        	<!-- Label for the checkbox, acting as the menu button -->
+        	<label for="menu-toggle" id="menu-open-button">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+				  <rect width="100" height="20"></rect>
+				  <rect y="30" width="100" height="20"></rect>
+				  <rect y="60" width="100" height="20"></rect>
+				</svg>
+        	</label>
+			<ul id="menu-items">
+				<li>
+					<a href="/#book">Book</a>
+				</li>
+				<li>
+					<a href="/#podcast">Podcast</a>
+				</li>
+			<li>
+					<a href="/#about">About David</a>
+			  </li>
+			<li>
+					<a href="/articles">Articles</a>
+			  </li>
+			<li>
+			  <a href="#contact" class="button button-filled">Contact</a>
+			  </li></ul>
+		</nav>
+			</div>
 	</header>
 
 
@@ -72,14 +85,15 @@
     <section id="splash">
         <div class="container">
             <h1 class="text-centered">Citizen Data Science</h1>
-            <div class="text-centered padding-medium"><a class="tag" href="/category/data-science">data science</a></div>
+            <div class="text-centered padding-medium"><a class="tag text-light"
+                    href="/category/data-science">Data science</a></div>
             <p class="text-centered"><p>What does "citizen data science" mean beyond being a buzzword for "everyone should do data science" (which they most certainly shouldn't)?</p></p>
-         </div>
+        </div>
     </section>
 
     <section id="article-content">
         <div class="container">
-            
+
             <h2>Citizen Data Science</h2>
 <p>This was a popular phrase a few years back. At the peak of the data science hype cycle we somehow managed to go beyond "everyone needs data science" and start convincing ourselves that, in fact, everyone needs to be a data scientist. There was also a lot of pushback on this. After all, why should Debbie from Finance learn Python? Why should our salesmen be able to tell the difference between supervised and unsupervised learning? Clearly this was one step too far, or so we thought. At the time something bugged me about this particular debate, but I wasn't sure what. I agreed that data science should largely be restricted to its own function, not "democratised" just because it was becoming popular. My motivation wasn't gatekeeping, but a separation of concern. </p>
 <p>What I've since realised though is that some of the skills necessary for data science, namely the ones that make a data scientist a good analyst, are actually useful across the board. Much like how computer literacy is a necessary part of life in the 21st century, knowing a few data science fundamentals will only become more important. Specifically, there are two areas where I believe widespread education would be helpful: data literacy and an automation mindset.</p>
@@ -93,35 +107,38 @@
 <h2>So what do we call this thing?</h2>
 <p>Let's not call it "citizen data science", that sounds patronising to me. It probably doesn't even need a name (but then how will it ever go viral, David??). After the somewhat misguided idea of citizen data science came and went we're left with some key takeaways. There is a reason to take elements of data science beyond the data science team. We don't want any gatekeeping ("only data scientists should analyse data") and everyone benefits from data literacy and some basic coding knowledge.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+            <div class="about-article-end">
+                <img src="/theme/images/David-Asboth-profile-image-square.jpg">
+                <p class="text-pre-heading">About David</p>
+                <p>I'm a freelance data scientist consultant and educator with an MSc. in Data Science and a background
+                    in software and web development. My previous roles have been a range of data science, software
+                    development, team management and software architecting jobs.</p>
+            </div>
+        </div>
+    </section>
+    <section id="suggested-articles">
+        <div class="container">
+            <h2>Related articles tagged Data science</h2>
+            <div class="flex-container">
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/citizen-data-science">Citizen Data Science</a></h3>
+                            <a class="tag" href="/category/data-science">Data science</a>
+                            <p><p>What does "citizen data science" mean beyond being a buzzword for "everyone should do data science" (which they most certainly shouldn't)?</p></p>
+                        </div>
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/get-started-with-data-science">How a business can get started with "doing data science"</a></h3>
+                            <a class="tag" href="/category/data-science">Data science</a>
+                            <p><p>How can a business get started once they've decided they want "data science"?</p></p>
+                        </div>
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/impostor-syndrome">How to use your impostor syndrome to learn anything</a></h3>
+                            <a class="tag" href="/category/data-science">Data science</a>
+                            <p><p>How can you harness your impostor syndrome? Get good at being able to learn anything.</p></p>
+                        </div>
+        </div>
         </div>
     </section>
 
-<section id="about">
-    <div class="container flex-container">
-      <div class="col-40 image-full">
-            <img src="/theme/images/David-Asboth-profile-image-square.jpg">
-        </div>
-      <div class="col-60">
-        <h2>About David</h2>
-        <p>I'm a freelance data scientist, consultant, and educator with an MSc. in Data Science and a background in software and web development. I'm a generalist; my previous roles have been a range of data science, software development, and software architecting jobs.</p>
-        <p class="text-pre-heading">Things I also do:</p>
-        <ul>
-          <li>
-            I co-host the <a href="https://halfstackdatascience.com">Half Stack Data Science podcast</a> where we talk about the realities of data science in the business world
-            </li>
-          <li>
-            I've written various <a href="/articles">articles and tutorials</a> about data science
-          </li>
-          <li>
-            I've given a selection of talks at large conferences and universities, all on similar topics of "real world data science"
-            </li>
-          <li>
-            I occasionally stream some data science over on <a href="https://www.twitch.tv/jazzsloth">Twitch</a>, where I take a vague project idea, a dataset, and try to come up with an answer in about an hour, explaining the code and thought process as I go.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
 <section id="contact">
 <div class="container flex-container">
   <div class="col-40 image-full">
@@ -154,7 +171,7 @@
 
 	<footer>
 		<div class="container flex-container">
-			<p>© 2023 David Asboth. Site designed with love by <a href="http://design.barbasboth.com/">Barbara Asboth</a>. All Rights Reserved.</p>
+			<p>© 2024 David Asboth. All Rights Reserved. Site designed with love by <a href="http://design.barbasboth.com/" target="_blank">Barbara Asboth</a>. All Rights Reserved.</p>
 			<p>hello@davidasboth.com</p>
 		</div>
 	</footer>
