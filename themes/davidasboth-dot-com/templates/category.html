@@ -10,7 +10,7 @@
 		  <section id="splash">
 			<div class="container">
 				<p class="text-pre-heading text-centered">Articles tagged with</p>
-				<h1 class="text-centered">"{{ category.name }}"</h1>
+				<h1 class="text-centered">{{ category.name }}</h1>
 				
 				<div class="text-centered padding-medium"><a href="/articles" class="button button-outline">Back to all articles</a></div>
 			 </div>
@@ -31,6 +31,8 @@
 			</div>
 		</section>
 			
+		{% include 'include/about.html' %}
+		
 		{% include 'include/contact.html' %}
 	</main>
 

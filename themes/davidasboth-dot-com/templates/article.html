@@ -10,20 +10,45 @@
     <section id="splash">
         <div class="container">
             <h1 class="text-centered">{{ article.title }}</h1>
-            <div class="text-centered padding-medium"><a class="tag" href="/category/{{ article.category.slug }}">{{ article.category }}</a></div>
+            <div class="text-centered padding-medium"><a class="tag text-light"
+                    href="/category/{{ article.category.slug }}">{{ article.category }}</a></div>
             <p class="text-centered">{{ article.summary }}</p>
-         </div>
+        </div>
     </section>
 
     <section id="article-content">
         <div class="container">
-            
+
             {{ article.content }}
 
+            <div class="about-article-end">
+                <img src="{{ SITEURL }}/theme/images/David-Asboth-profile-image-square.jpg">
+                <p class="text-pre-heading">About David</p>
+                <p>I'm a freelance data scientist consultant and educator with an MSc. in Data Science and a background
+                    in software and web development. My previous roles have been a range of data science, software
+                    development, team management and software architecting jobs.</p>
+            </div>
         </div>
     </section>
-
-    {% include 'include/about.html' %}
+    <section id="suggested-articles">
+        <div class="container">
+            <h2>Related articles tagged {{ article.category }}</h2>
+            <div class="flex-container">
+                {% set counter = namespace(value=0) %}
+                {% for other_article in articles if other_article.category == article.category %}
+                    {% if counter.value < 3 %}
+                        <div class="col-33 padding-medium">
+                            <h3><a href="/{{ other_article.slug }}">{{ other_article.title }}</a></h3>
+                            <a class="tag" href="/category/{{ other_article.category.slug }}">{{ other_article.category.name
+                                }}</a>
+                            <p>{{ other_article.summary }}</p>
+                        </div>
+                        {% set counter.value = counter.value + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        </div>
+    </section>
 
     {% include 'include/contact.html' %}
 </main>
