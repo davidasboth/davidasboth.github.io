@@ -32,7 +32,7 @@
 
 	<title>David Asboth - Data Solutions &amp; Consultancy</title>
 
-	<link rel="canonical" href="/connecting-to-google-sheets-in-python.html">
+	<link rel="canonical" href="/gardeners-guide-to-data-analysis.html">
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,53 +84,32 @@
 <main id="articles-tutorials">
     <section id="splash">
         <div class="container">
-            <h1 class="text-centered">How to Connect to Google Sheets in Python</h1>
+            <h1 class="text-centered">The gardener's guide to data analysis</h1>
             <div class="text-centered padding-medium"><a class="tag text-light"
-                    href="/category/data-science">Data science</a></div>
-            <p class="text-centered"><p>A quick tutorial on how to connect to Google Sheets in Python, so you can access it like a regular CSV file.</p></p>
+                    href="/category/learning">Learning</a></div>
+            <p class="text-centered"><p>How can you continue your journey as a data analyst after foundational training? Think of it as a long-term project, like tending to a garden.</p></p>
         </div>
     </section>
 
     <section id="article-content">
         <div class="container">
 
-            <p>In most data science and machine learning tutorials you typically
-encounter csv files. Either you connect to them locally, something like
-this:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;my_local_data.csv&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>Or you access them via a direct url like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;http://www.lotsofdata.com/hosted_data.csv&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>What I rarely see though is connecting to slightly more obscure data
-sources. You will probably end up doing this once you go out into the
-real world of data science.</p>
-<p>One useful data source is Google Sheets. If you have a spreadsheet
-hosted on Google Drive, which is made available for public access, and
-want to access it, it's not immediately clear how to do that.</p>
-<p>Let's go through an example of how to connect to one. I'll use a
-spreadsheet that has the <a href="https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/htmlview?usp=sharing&amp;sle=true">Hacker News salary survey results</a>
-from a couple of years ago.</p>
-<p>You can't use the url directly, because the url isn't just pointing to
-the data, it's pointing to the entire Google Sheets interface.</p>
-<p>Instead you need the sheet's export link.</p>
-<p>To do this simply take the url until the /d/ part, and the unique ID
-that comes after, so this much:</p>
-<p><a href="https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A">https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A</a></p>
-<p>and add <strong>/export</strong> at the end with some parameters.</p>
-<p>You can specify the sheet number (zero-indexed) using <strong>gid</strong>, and the
-format to be csv using <strong>format</strong>.</p>
-<p>The full url then becomes:</p>
-<p><a href="https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/export?gid=0&amp;format=csv">https://docs.google.com/spreadsheets/d/17Mr201gfDoOTe5ONLS6LYJi1wQbtT26srXeSwUjMK0A/<strong>export?gid=0&amp;format=csv</strong></a></p>
-<p>Try that in your browser and it will download the csv file directly.</p>
-<p>You can then read it into pandas and it will be treated as a regular csv
-file.</p>
-<p>Here is the <a href="https://github.com/davidasboth/blog-notebooks/blob/master/connecting-to-google-sheets/Connecting%20to%20a%20Google%20Sheet.ipynb">associated Jupyter notebook</a>
-to see it all in action.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <p>In her book <a href="https://www.penguin.co.uk/books/411088/the-gardener-and-the-carpenter-by-alison-gopnik">The Gardener and the Carpenter</a>, Alison Gopnik talks about how parents should think of raising children as gardening, not carpentry. The difference is that in carpentry you are aiming for a specific outcome from the start. Every decision you make takes you towards shaping your child into a version of themselves that you preconceive. In contrast, in the gardening model, your role is to provide a safe and loving environment and let children flourish and grow in their own way. There are a lot of parallels to how to continue learning analyst skills.</p>
+<h3>Gardening vs. carpentry</h3>
+<p>I love the gardening metaphor for improving as an analyst.</p>
+<p>The continued learning process makes more sense as activities to cultivate your skills rather than aiming for a targeted outcome, especially in an industry of constant change. The technologies you thought you needed five years ago are not the same ones you need now. Instead of spending your learning time on the specifics of any technology, most of it should be spent honing the lasting skills.</p>
+<p>Gardening in this context means that once you have done some foundational training in data analysis and have the necessary skills to work on real problems, you should immediately start working on real problems. Rather than narrowly focusing on learning more technical skills, you should adopt the gardening model and have faith that by working on realistic scenarios, you will learn the skills you actually need.</p>
+<p>There is a time and place for the carpentry model; sometimes, you just need to learn something, in which case your focus should be dedicated to that thing. In general, though, the gardening model is what optimises your learning towards a marketable skill set.</p>
+<h3>How to tend to your data garden</h3>
+<p>How do you actually adopt a gardening model of learning? The key, as I have alluded to, is working on real projects. Stop learning libraries, algorithms, and syntax for the sake of it and switch to a problem-first approach. This means solving problems that people actually have, even if that's just yourself, and trusting that you can and will pick up the necessary skills along the way.</p>
+<p>It also means ditching toy examples and tutorials for finding projects to work on. Solving another version of "predicting the survivors of the Titanic" will not get you closer to your goals. A crucial part of an analyst's skill set is defining a problem, so that's the first skill to work on. Find a question that can be answered or a problem that can be solved with data. It does not have to be "business relevant" either, and the solution does not need to be complicated. Sometimes questions can be usefully answered with a single bar chart. As an example, here are some questions I have asked in my daily life, all of which can be (and have been) answered with data:</p>
+<p>Which key signatures should I practise if I want to get better at learning jazz piano but also optimise for key signatures that actually occur in jazz?
+Based on my performance playing online chess on chess.com, which openings should I review to target my specific weaknesses?
+I wonder which pub name is the most common in the UK?</p>
+<p>As you can see, the problems that you work on do not have to be huge in scope. Each of these small projects taught me something beyond the answer to the question: a new piece of syntax, a new Python library, or data sources I didn't know existed.</p>
+<h3>Gardening is a long-term project</h3>
+<p>Just like gardening, improving as an analyst means constantly turning up and working on cultivating the foundations. It is a long-term process that requires consistency and trust. You will never be "done", but you are always improving. One side effect of doing lots of gardening beyond what grows in the garden is you get better at gardening itself. The side effect of solving lots of problems beyond finding solutions to the problems themselves is that you get better at solving problems. You are also learning how to learn things on the fly to solve a particular problem. Problem-solving and learning how to learn are the skills that will outlast any technology.</p>
+<p>Need more real-world inspiration? My book, <a href="https://www.manning.com/books/solve-any-data-analysis-problem">Solve Any Data Analysis Problem</a>, is a collection of projects for you to hone your skills. They are specifically designed to help you learn industry-relevant topics, such as data modelling or working with categorical data, which are not typically part of foundational training.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
             <div class="about-article-end">
                 <img src="/theme/images/David-Asboth-profile-image-square.jpg">
@@ -143,22 +122,22 @@ to see it all in action.</p><script src="//platform.twitter.com/widgets.js" char
     </section>
     <section id="suggested-articles">
         <div class="container">
-            <h2>Related articles tagged Data science</h2>
+            <h2>Related articles tagged Learning</h2>
             <div class="flex-container">
                         <div class="col-33 padding-medium">
-                            <h3><a href="/why-i-now-call-myself-a-data-generalist">Why I now call myself a "data generalist"</a></h3>
-                            <a class="tag" href="/category/data-science">Data science</a>
-                            <p><p>I've realised that pigeonholing myself as a data scientist, broad as that term is, doesn't work for me. Finding a good job title for myself is actually non-trivial. If you feel the same way, you may also be a "data generalist", and this post is for you.</p></p>
+                            <h3><a href="/gardeners-guide-to-data-analysis">The gardener's guide to data analysis</a></h3>
+                            <a class="tag" href="/category/learning">Learning</a>
+                            <p><p>How can you continue your journey as a data analyst after foundational training? Think of it as a long-term project, like tending to a garden.</p></p>
                         </div>
                         <div class="col-33 padding-medium">
-                            <h3><a href="/citizen-data-science">Citizen Data Science</a></h3>
-                            <a class="tag" href="/category/data-science">Data science</a>
-                            <p><p>What does "citizen data science" mean beyond being a buzzword for "everyone should do data science" (which they most certainly shouldn't)?</p></p>
+                            <h3><a href="/learning-data-like-jazz">Learn data science like you would learn jazz</a></h3>
+                            <a class="tag" href="/category/learning">Learning</a>
+                            <p><p>Aspiring analysts want to know how data analysis is done. As it turns out, there are similarities between learning how to analyse data and learning how to play music, especially jazz.</p></p>
                         </div>
                         <div class="col-33 padding-medium">
-                            <h3><a href="/impostor-syndrome">How to use your impostor syndrome to learn anything</a></h3>
-                            <a class="tag" href="/category/data-science">Data science</a>
-                            <p><p>How can you harness your impostor syndrome? Get good at being able to learn anything.</p></p>
+                            <h3><a href="/learning-as-a-data-generalist">How generalists learn</a></h3>
+                            <a class="tag" href="/category/learning">Learning</a>
+                            <p><p>One of the most common questions I get from students near the end of a data science course is "what next?". How do you keep learning once you have the basics, especially if you're a generalist?</p></p>
                         </div>
         </div>
         </div>
