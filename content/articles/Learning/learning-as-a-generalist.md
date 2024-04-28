@@ -1,7 +1,7 @@
-Title: Learning as a "data generalist"
+Title: How generalists learn
 Date: 2022-11-22 13:54
 Author: david
-Tags: featured
+Tags: learning-highlight
 Slug: learning-as-a-data-generalist
 Status: published
 Summary: One of the most common questions I get from students near the end of a data science course is "what next?". How do you keep learning once you have the basics, especially if you're a generalist?

@@ -1,7 +1,7 @@
 Title: Learn data science like you would learn jazz
 Date: 2023-06-17 19:00
 Author: david
-Tags: featured
+Tags: learning-highlight
 Slug: learning-data-like-jazz
 Status: published
 Summary: Aspiring analysts want to know how data analysis is done. As it turns out, there are similarities between learning how to analyse data and learning how to play music, especially jazz.

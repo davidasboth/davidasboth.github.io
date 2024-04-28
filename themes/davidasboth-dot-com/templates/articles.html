@@ -30,13 +30,12 @@
           {% endfor %}
         </div>
         <div class="col-33 highlight-box no-flex-bg">
-          <h3>Thinking of hiring a data person?
-            Start here.</h3>
+          <h3>Unsure how to start or continue your learning journey? Start here.</h3>
           <p>
-            Helpful articles about how to make the best decision for your business needs.
+            Explore ways to build enduring data skills beyond the basics.
           </p>
           <ul>
-            {% for article in articles if "data-science-highlight" in article.tags %}
+            {% for article in articles if "learning-highlight" in article.tags %}
             <li>
               <a href="/{{ article.slug }}">{{ article.title }}</a>
             </li>
