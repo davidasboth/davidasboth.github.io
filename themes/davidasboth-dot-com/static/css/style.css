@@ -21,6 +21,11 @@ ol, ul, menu {
     list-style: none;
 }
 
+/* Bit o' padding below lists */
+ol, ul {
+	margin-bottom: 2rem;
+}
+
 /* For images to not be able to exceed their container */
 img {
     max-width: 100%;
