@@ -6,6 +6,8 @@ Slug: the-junk-in-fallout-4
 Status: published
 Summary: This is a short web scraping tutorial based on a script I wrote to fetch and analyse data about junk in the game Fallout 4.
 
+_This post originally appeared on my blog in 2016_
+
 ## Introduction
 
 ### The Problem
@@ -215,5 +217,3 @@ if you want to analyse it yourself - if you do, let me know!
 ### Post-script
 
 Since writing this tutorial (in 2016) I discovered pandas has a `read_html()` method, which scans an entire HTML document and extracts all `<table>` elements as pandas DataFrames. You should definitely use that instead of looping over table rows and cells, but I'm keeping this tutorial as it was, since it's still instructive.
-
-_This post originally appeared on my blog in 2016_

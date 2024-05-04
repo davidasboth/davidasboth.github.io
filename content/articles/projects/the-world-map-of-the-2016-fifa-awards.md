@@ -5,6 +5,8 @@ Slug: the-world-map-of-the-2016-fifa-awards
 Status: published
 Summary: A mini project to visualise the votes for the 2016 FIFA Awards, to see which country voted for which player.
 
+_This post originally appeared on my blog in 2017_
+
 The "[Best FIFA Football Awards](http://www.fifa.com/the-best-fifa-football-awards/best-fifa-mens-player/index.html)"
 took place recently and while the final outcome was not surprising, I've
 always wanted to know which countries vote for which players.
@@ -88,5 +90,3 @@ folium, as it seems to be actively under development. Realistically, a
 tool like Tableau would be better suited to a visualisation like this,
 but the ability to embed maps in Jupyter notebooks makes folium a really
 good addition to my data science toolkit.
-
-_This post originally appeared on my blog in 2017_

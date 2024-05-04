@@ -5,6 +5,8 @@ Slug: visualising-the-worldwide-win-percentage-of-the-hungarian-national-footbal
 Status: published
 Summary: I've often read the advice that side projects should be solving problems or answering questions that you yourself are interested in. To that end, I've always wanted to know how well the Hungarian national team have done against various countries worldwide and to explore this question, I scraped the matches played by the Hungarian national team and made an interactive world map.
 
+_This post originally appeared on my blog in 2017_
+
 I've often read, and agreed with, the advice that side projects should
 be solving problems or answering questions that you yourself are
 interested in.
@@ -64,6 +66,4 @@ useful visualisation, which you can explore.
 
 There is [a Jupyter notebook](https://github.com/davidasboth/blog-notebooks/blob/master/hungarian-national-team/Mapping%20Records%20vs%20Countries.ipynb)
 where I aggregated the data, dealt with countries that don't exist
-anymore (the USSR, Yugoslavia, etc.) and made the final map.
-
-_This post originally appeared on my blog in 2017_
+anymore (the USSR, Yugoslavia, etc.) and made the final map

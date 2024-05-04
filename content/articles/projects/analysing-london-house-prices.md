@@ -5,6 +5,8 @@ Slug: analysing-london-house-prices
 Status: published
 Summary: London is expensive. So much so that it's a trope now for those of us who live here. But what does the data show? Are things getting better or worse? How did the 2008 recession affect behaviour for example? I wanted to find out. With data.
 
+_This post originally appeared on my blog in 2016_
+
 ## Introduction
 
 London is expensive. So much so that it's a trope now for those that live there. But what does the data show? Are things getting better or
@@ -186,5 +188,3 @@ coincidence.
 
 The next analysis on my list might be finding a new, more affordable
 city!
-
-_This post originally appeared on my blog in 2016_
