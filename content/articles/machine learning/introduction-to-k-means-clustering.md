@@ -195,16 +195,19 @@ each point by its assigned cluster (and mark the cluster centroids).
 
 We've gone from this plot of raw data:
 
-![Iris petal plot (no clusters)]({static}/images/introduction-to-k-means-clustering/kmeans_iris_1.png)
-
-Plot of raw data before clustering
+{% with image_path='{static}/images/introduction-to-k-means-clustering/kmeans_iris_1.png',
+        image_alt='Iris petal plot (no clusters)',
+        figcaption='Plot of raw data before clustering' %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 To this plot where we've clustered our points into 3 groups:
 
-![Iris data with 3 clusters]({static}/images/introduction-to-k-means-clustering/kmeans_iris_2.png)
-
-3 clusters after just 20 iterations
-
+{% with image_path='{static}/images/introduction-to-k-means-clustering/kmeans_iris_2.png',
+        image_alt='Iris data with 3 clusters',
+        figcaption='3 clusters after just 20 iterations' %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 There is still some overlap between the black and blue clusters, but
 just 20 iterations have quite effectively grouped our data into 3

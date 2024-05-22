@@ -50,7 +50,7 @@ The Markov assumption is when we assume the Markov property to be true.
 
 The Markov property (of a sequence) is typically formulated like so:
 
-*The future is independent of the past, given the present.*
+> The future is independent of the past, given the present.
 
 That sounds a bit like an old proverb but it's a simple concept.
 

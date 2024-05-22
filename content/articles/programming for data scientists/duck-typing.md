@@ -57,7 +57,7 @@ Say you have a function that makes a duck quack, like this:
 
     :::python
     def make_it_quack(something_duck_like):
-        something_duck_like.quack()
+        something_duck_like.quack()
 
 We've taken an object in and called its quack method. We don't care what
 type of object this is, only that it is able to quack. So if we had a
@@ -65,12 +65,12 @@ type of object this is, only that it is able to quack. So if we had a
 
     :::python
     class Duck(object):
-        def quack(self):
-            print("Quack quack")
+        def quack(self):
+            print("Quack quack")
 
     class Ferret(object):
-        # ferrets can't normally quack, but this one's cunning
-        def quack(self):
+        # ferrets can't normally quack, but this one's cunning
+        def quack(self):
             print("Quack quack")
 
     donald = Duck()

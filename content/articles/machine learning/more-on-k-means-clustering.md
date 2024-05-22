@@ -28,9 +28,13 @@ This is the example I'll run through today.
 
 We'll take this image of a puppy:
 
-![A puppy]({static}/images/more-on-k-means-clustering/puppy.jpg)
+{% with image_path='{static}/images/more-on-k-means-clustering/puppy.jpg',
+        image_alt='A puppy',
+        figcaption='Puppy image from Greg on Flickr (https://flic.kr/p/oaj46)' %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
-Puppy image from [Greg on Flickr](https://www.flickr.com/photos/gregcullen/250779651/in/photolist-oaj46-cTecd9-sHsHk-5WP7e-9jLY1e-dMrkp4-oak27-8LgQUd-72uozM-9N6oDE-4VoQq-fGnMUG-fkMAUo-hSg7Vm-9xukWa-7K3S2B-fz3KAH-aWe43R-HhRcz-4SZHdM-3d8eAm-Gh4ip-c3LHsG-y6YdK-e4Qn6h-y6U3M-48xfrF-qaZttJ-8MuTV2-aDsi2E-db1Ujw-oxFiuK-y6Ynf-oBGkqj-bVUar-5ft6bn-mwDdV-4BeWnC-itR65i-8d1bVK-5CSiqu-fNwmya-7kTing-7oySVC-boenVS-bBvADe-5fmmvh-4j3Q9U-53pHvi-4qFWve) and redraw it in much fewer colours using k-means clustering.
+ and redraw it in much fewer colours using k-means clustering.
 
 ### The Data
 
@@ -75,9 +79,11 @@ pixel by pixel to get the $k$-colour representation.
 
 The same image with only 3 colours looks like this:
 
-![A 3-colour puppy]({static}/images/more-on-k-means-clustering/puppy_3.jpg)
-
-The same puppy drawn with only 3 colours
+{% with image_path='{static}/images/more-on-k-means-clustering/puppy_3.jpg',
+        image_alt='A 3-colour puppy',
+        figcaption='The same puppy drawn with only 3 colours' %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 As you can clearly see, we've reduced the number of colours required,
 and incidentally also reduced the filesize threefold, without losing too
@@ -87,9 +93,11 @@ that we've only used 3 colours.
 When we use 16 colours the image starts to resemble the original in much
 more detail:
 
-![A 16-colour puppy]({static}/images/more-on-k-means-clustering/puppy_16.jpg)
-
-A 16-colour puppy 
+{% with image_path='{static}/images/more-on-k-means-clustering/puppy_16.jpg',
+        image_alt='A 16-colour puppy',
+        figcaption='The same puppy drawn with 16 colours' %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 You can still see the background isn't smooth but we're getting close.
 In fact, we would get to an image that is indistinguishable from the

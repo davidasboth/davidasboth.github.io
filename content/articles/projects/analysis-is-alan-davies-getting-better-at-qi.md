@@ -19,7 +19,7 @@ QI?*
 To sate my curiosity I tried to answer that question the best way I know
 how: with **data**.
 
-# The Data
+## The Data
 
 The data comes from [The British Comedy Guide](https://www.comedy.co.uk/), which has an exhaustive list of
 everything related to British comedy, including every episode of QI.
@@ -31,15 +31,17 @@ includes every episode with its title, broadcast date and each
 contestant and their scores.
 
 
-# The Analysis
+## The Analysis
 
 As with many data science projects, once the dataset was nice and clean
 the question was straightforward to answer. All it needed was a plot to
 show Alan's win ratio over time. Here's the accompanying [Jupyter notebook](https://github.com/davidasboth/blog-notebooks/blob/master/qi-analysis/QI%20Analysis.ipynb).
 
-![Alan Davies's QI performance over time]({static}/images/analysis-is-alan-davies-getting-better-at-qi/alan_davies_over_time.png)
-
-Alan's more or less consistently winning a quarter of shows now
+{% with image_path='{static}/images/analysis-is-alan-davies-getting-better-at-qi/alan_davies_over_time.png',
+        image_alt="Alan Davies's QI performance over time",
+        figcaption="Alan's more or less consistently winning a quarter of shows now" %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 So to answer the question: yes, Alan does appear to be getting better at
 QI, certainly since the first few series. It does however remain to be

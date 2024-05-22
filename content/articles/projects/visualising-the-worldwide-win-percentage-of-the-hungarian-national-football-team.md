@@ -24,9 +24,11 @@ interactive world map.
 I'll start with the final map, and you can read about some of the
 details beneath.
 
-![Hungarian National Team worldwide win percentage]({static}/images/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team/hungarian-nt-win-map.png)
-
-The worldwide win percentage of the national team
+{% with image_path='{static}/images/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team/hungarian-nt-win-map.png',
+        image_alt='Hungarian National Team worldwide win percentage',
+        figcaption='The worldwide win percentage of the national team' %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 There is [an interactive version](https://plot.ly/~dasboth/0.embed)
 where you can zoom and hover over each country to find out more. I

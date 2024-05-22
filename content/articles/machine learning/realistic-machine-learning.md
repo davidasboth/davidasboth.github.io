@@ -23,7 +23,7 @@ The "ML Hipster" [summed this up very well.](https://twitter.com/ML_Hipster/stat
 
 There's also this quote I've seen (source unknown):
 
-In data science, 80% of time is spent preparing data, and 20% of time is spent complaining about the need to prepare data
+> In data science, 80% of time is spent preparing data, and 20% of time is spent complaining about the need to prepare data
 
 What are the main reasons for this disconnect?
 
@@ -77,8 +77,7 @@ what makes sense for the business, not what is academically most
 interesting. The kind of work you do will by definition be different to
 what you're used to.
 
-
-# How can we better prepare?
+## How can we better prepare?
 
 The obvious way to smooth the transition between academia (or "learning"
 in general) and industry is to teach more realistic problems.

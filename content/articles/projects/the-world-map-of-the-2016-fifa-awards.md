@@ -16,9 +16,11 @@ team in FIFA, as well as a member of the media for each country, gets to
 vote for their top 3 players, giving them 5, 3, and 1 point(s)
 respectively. Like I said, the result was not surprising:
 
-![Top players in the FIFA awards]({static}/images/the-world-map-of-the-2016-fifa-awards/fifa_topplayers.png)
-
-The top 5 highest scoring players in the FIFA awards
+{% with image_path='{static}/images/the-world-map-of-the-2016-fifa-awards/fifa_topplayers.png',
+        image_alt='Top players in the FIFA awards',
+        figcaption='The top 5 highest scoring players in the FIFA awards' %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 FIFA routinely release all the votes, and I wanted to explore the data
 further. Specifically, I thought there might be some interesting
@@ -70,9 +72,11 @@ The code (hopefully) speaks for itself, you can view [the Jupyter notebook on Gi
 Here's a little preview of the final map, although [the HTML version](/fifa-awards/) is better for exploring
 different regions.
 
-![FIFA Awards World Map]({static}/images/the-world-map-of-the-2016-fifa-awards/fifa_awards_finalmap.png)
-
-That Griezmann sure is popular in Mongolia 
+{% with image_path='{static}/images/the-world-map-of-the-2016-fifa-awards/fifa_awards_finalmap.png',
+        image_alt='FIFA Awards World Map',
+        figcaption='That Griezmann sure is popular in Mongolia.' %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 ## Wrap-up 
 

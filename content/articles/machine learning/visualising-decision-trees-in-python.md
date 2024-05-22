@@ -68,7 +68,11 @@ output online by pasting its contents into the textbox at
 
 Our iris decision tree looks something like this:
 
-![Decision tree trained on the iris dataset]({static}/images/visualising-decision-trees-in-python/iris_tree.png)
+{% with image_path='{static}/images/visualising-decision-trees-in-python/iris_tree.png',
+        image_alt='Decision tree trained on the iris dataset',
+        figcaption='Decision tree trained on the iris dataset' %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 By providing the feature names we can label each decision point so it is
 obvious what's happening at each step.
