@@ -314,7 +314,7 @@ Putting that all together:
 
     :::python
     def calculate_influence(distance, radius):
-        return np.exp(-distance / (2* (radius**2))
+        return np.exp(-distance / (2* (radius**2)))
 
     # now we know the BMU, update its weight vector to move closer to input
     # and move its neighbours in 2-D space closer
@@ -346,7 +346,11 @@ colours, since they are just 3D vectors just like the inputs.
 To that end, we can visualise them and come up with our final colour
 map:
 
-<img alt="A self-organising colour map" title="A self-organising colour map" src="{static}/images/self-organising-maps-in-depth/som.png" style="background-color: white" />
+{% with image_path='{static}/images/self-organising-maps-in-depth/som.png',
+        image_alt='A self-organising colour map',
+        figcaption="A self-organising colour map" %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 None of those colours necessarily had to be in our dataset. By moving
 the 3D weight vectors to more closely match our input vectors, we've
@@ -374,7 +378,11 @@ Applying the iris data to a SOM and then retrospectively colouring each
 point with their true class (to see how good the SOM was at separating
 the irises into their distinct categories) we get something like this:
 
-<img alt="150 irises mapped onto a SOM, coloured by type" title="150 irises mapped onto a SOM, coloured by type" src="{static}/images/self-organising-maps-in-depth/iris_clusters.png" />
+{% with image_path='{static}/images/self-organising-maps-in-depth/iris_clusters.png',
+        image_alt='150 irises mapped onto a SOM, coloured by type',
+        figcaption="150 irises mapped onto a SOM, coloured by type" %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 This is a 10 by 10 SOM and each of the small points is one of the irises
 from the dataset (with added jitter to see multiple points on a single
@@ -398,7 +406,11 @@ and 255).
 Mapping them to a 20 by 20 SOM, and again retrospectively colouring them
 based on their true class (a number from 0 to 9) yields this:
 
-<img alt="A SOM of handwritten characters" title="Various handwritten numbers mapped to a 2D SOM" src="{static}/images/self-organising-maps-in-depth/mnist_som.png" />
+{% with image_path='{static}/images/self-organising-maps-in-depth/mnist_som.png',
+        image_alt='A SOM of handwritten characters',
+        figcaption="Various handwritten numbers mapped to a 2D SOM." %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 In this case the true classes are labelled according to the colours in
 the bottom left.

@@ -25,7 +25,7 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
 # Social widget
 SOCIAL = (('@davidasboth', 'https://twitter.com/davidasboth'),
           ('davidasboth', 'https://github.com/davidasboth'),
-	  ('LinkedIn', 'https://www.linkedin.com/in/david-asboth-9256772b'))
+	  ('LinkedIn', 'https://www.linkedin.com/in/david-asboth'))
 
 TWITTER_USERNAME = "davidasboth"
 
@@ -74,7 +74,8 @@ MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.codehilite': {
             "pygments_style": "rrt",
-            "noclasses": False
+            "noclasses": False,
+            "lineseparator": "<br />"
         },
         'markdown.extensions.extra': {}
     }

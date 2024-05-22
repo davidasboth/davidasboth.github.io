@@ -94,17 +94,21 @@ The easiest way to do this is directly on the website.
 
 Right click and choose "Inspect Element".
 
-![inspect element]({static}/images/the-junk-in-fallout-4/inspect_element.png)
-
-I'm using Firefox but this should be applicable to any browser.
+{% with image_path='{static}/images/the-junk-in-fallout-4/inspect_element.png',
+        image_alt='Inspecting an element',
+        figcaption="I'm using Firefox but this should be applicable to any browser." %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 This will open the Inspector, or Chrome Dev Tools or the equivalent,
 where we can inspect the raw HTML. Then we want to look at the
 &lt;table&gt; element to see its ID.
 
-![HTML table in the inspector]({static}/images/the-junk-in-fallout-4/tablehtml.png)
-
-Unlucky, no ID. 
+{% with image_path='{static}/images/the-junk-in-fallout-4/tablehtml.png',
+        image_alt='HTML table in the inspector',
+        figcaption="Unlucky, no ID." %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 OK, well it doesn't have an ID, so we need to find a way to uniquely
 select that element. It has a class "va-table-center" - we can check if
@@ -114,9 +118,11 @@ may differ). In the console you can type and evaluate arbitrary
 Javascript/jQuery expressions, so let's try selecting a table with the
 class *va-table-center*.
 
-![Selecting the table in the console]({static}/images/the-junk-in-fallout-4/junktable_selector.png)
-
-Apparently a script on the page finished "shamefully"... 
+{% with image_path='{static}/images/the-junk-in-fallout-4/junktable_selector.png',
+        image_alt='Selecting the table in the console',
+        figcaption="Apparently a script on the page finished 'shamefully'..." %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 It looks like that class isn't unique, there are 5 tables that match it
 on the page. What we can do is then figure out which one of those 5 is
@@ -127,9 +133,11 @@ You can highlight each of the 5 items and the corresponding table will
 be highlighted on the page. Doing this reveals we're after the second of
 those 5 tables.
 
-![table highlight]({static}/images/the-junk-in-fallout-4/table_highlight.png)
-
-Note the Halloween-themed adverts about The Exorcist 
+{% with image_path='{static}/images/the-junk-in-fallout-4/table_highlight.png',
+        image_alt='Table highlight',
+        figcaption="Note the Halloween-themed adverts about The Exorcist." %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 Great, now we've identified the HTML element we want to load in, and we
 can do the rest of the wrangling in Python.
@@ -142,12 +150,16 @@ table we need.
     :::python
     import requests
     from bs4 import BeautifulSoup
+
     # load the entire page
     req = requests.get('http://fallout.wikia.com/wiki/Fallout_4_junk_items')
+    
     # read the output as text
     raw = req.text
+
     # load it into BeautifulSoup for parsing
     soup = BeautifulSoup(raw, "html.parser")
+
     # select just the second table with the right class
     junk_table = soup.select("table.va-table-center")[1]
 
@@ -203,9 +215,11 @@ We now have our very own Fallout 4 junk dataset that we can analyse to
 our heart's content. For example we can plot the frequencies of each
 component to order them by rarity.
 
-<img alt="A bar chart showing the rarity of junk components" title="Rarity of junk components" src="{static}/images/the-junk-in-fallout-4/junkplot.png" style="background-color: white" />
-
-It's a strange world where concrete is so rare.
+{% with image_path='{static}/images/the-junk-in-fallout-4/junkplot.png',
+        image_alt='A bar chart showing the rarity of junk components',
+        figcaption="It's a strange world where concrete is so rare." %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 ## Conclusion
 

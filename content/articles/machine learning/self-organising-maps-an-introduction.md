@@ -45,10 +45,11 @@ first layer consists of your inputs, the last layer consists of your
 outputs, and there are any number of so-called *hidden* layers in
 between.
 
-![Simple neural network architecture]({static}/images/self-organising-maps-an-introduction/296px-Colored_neural_network.png)
-
-<small>By [Glosser.ca](//commons.wikimedia.org/wiki/User_talk:Glosser.ca "User talk:Glosser.ca") - [Own work], Derivative of [File:Artificial neural network.svg](//commons.wikimedia.org/wiki/File:Artificial_neural_network.svg "File:Artificial neural network.svg"), [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0 "Creative Commons Attribution-Share Alike 3.0"), [Link](https://commons.wikimedia.org/w/index.php?curid=24913461)</small>
- 
+{% with image_path='{static}/images/self-organising-maps-an-introduction/296px-Colored_neural_network.png',
+        image_alt='Simple neural network architecture',
+        figcaption="Neural network image from Wikipedia: https://commons.wikimedia.org/wiki/File:Colored_neural_network.svg" %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 The broad idea of an ANN is that you give it a dataset and a set of
 desired outputs, and it learns to map the inputs to the outputs. A
@@ -81,7 +82,6 @@ from a "standard" ANN:
     called **competitive learning**
 -   They deal with **unsupervised** machine learning problems
 
-
 Competitive learning in the case of a SOM refers to the fact that when
 an input is "presented" to the network, only one of the neurons in the
 grid will be activated. In a way the neurons on the grid "compete" for
@@ -90,7 +90,6 @@ each input.
 The unsupervised aspect of a SOM refers to the idea that you present
 your inputs to it without associating them with an output. Instead, a
 SOM is used to find structure in your data.
- 
 
 ## What is a SOM used for? 
 
@@ -126,25 +125,20 @@ By creating a (typically) 2D representation of your dataset you can also
 more easily visualise it, which you can't do if your data has more than
 3 dimensions.
 
-
 ## Summary
 
 To summarise, I'll quote an answer I gave on StackOverflow to a question
 about SOMs:
 
-The idea behind a SOM is that you're mapping high-dimensional vectors
-onto a smaller dimensional (typically 2D) space. You can think of it
-as clustering, like in K-means, with the added difference that vectors
-that are close in the high-dimensional space also end up being mapped
-to nodes that are close in 2D space.
+> The idea behind a SOM is that you're mapping high-dimensional vectors onto a smaller dimensional (typically 2D) space. You can think of itas clustering, like in K-means, with the added difference that vectors that are close in the high-dimensional space also end up being mapped to nodes that are close in 2D space.  
 
-SOMs therefore are said to "preserve the topology" of the original
+> SOMs therefore are said to "preserve the topology" of the original
 data, because the distances in 2D space reflect those in the
 high-dimensional space. K-means also clusters similar data points
 together, but its final "representation" is hard to visualise because
-it's not in a convenient 2D format.
+it's not in a convenient 2D format.  
 
-A typical example is with colours, where each of the data points are
+> A typical example is with colours, where each of the data points are
 3D vectors that represent R,G,B colours. When mapped to a 2D SOM you
 can see regions of similar colours begin to develop, which is the
 topology of the colour space.
@@ -161,6 +155,10 @@ visualise the "topology" of the 3D colour space.
 
 Something like this:
 
-<img alt="A self-organising colour map" title="A self-organising colour map" src="{static}/images/self-organising-maps-an-introduction/som.png" style="background-color: white" />
+{% with image_path='{static}/images/self-organising-maps-an-introduction/som.png',
+        image_alt='A self-organising colour map',
+        figcaption="A self-organising colour map" %}
+    {% include 'include/image.html' %}
+{% endwith %}
 
 In [Part 2](/self-organising-maps-in-depth), we'll look at an in-depth implementation of SOMs.
