@@ -123,16 +123,18 @@ account every single word that came before it.</p>
 <h3>The Markov Assumption</h3>
 <p>The Markov assumption is when we assume the Markov property to be true.</p>
 <p>The Markov property (of a sequence) is typically formulated like so:</p>
-<p><em>The future is independent of the past, given the present.</em></p>
+<blockquote>
+<p>The future is independent of the past, given the present.</p>
+</blockquote>
 <p>That sounds a bit like an old proverb but it's a simple concept.</p>
 <p>If a sequence has the Markov property it means that the value of the
-sequence at the next step <strong>depends only on the value at the past $n$ steps</strong>. The value of $n$ (how far back we assume we need to go) is
+sequence at the next step <strong>depends only on the value at the past <span class="math">\(n\)</span> steps</strong>. The value of <span class="math">\(n\)</span> (how far back we assume we need to go) is
 called the <strong>order</strong> of a Markov chain.</p>
 <p>So a second-order Markov chain is one where we use the current and the
 previous value to predict the next value. We are assuming that it does
 not matter what the rest of the text was before the previous word, we
 only need the current word and the one before it.</p>
-<p>In effect, the Markov chain has no "memory" beyond the last $n$ steps.</p>
+<p>In effect, the Markov chain has no "memory" beyond the last <span class="math">\(n\)</span> steps.</p>
 <p>The Markov assumption simply states that we believe this Markov property
 to hold for a given sequence.</p>
 <p>This is a simplifying assumption that means it is much easier to compute
@@ -181,24 +183,10 @@ even explicitly calculated the probabilities, but instead included each
 word as many times as it appears.</p>
 <p>Our "cat cat" example above would look like an entry in a Python
 dictionary like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span> <span class="s2">&quot;cat cat&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;fish&quot;</span> <span class="p">]</span> <span class="p">}</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span> <span class="s2">&quot;cat cat&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;fish&quot;</span> <span class="p">]</span> <span class="p">}</span><br /></code></pre></div>
 
 <p>To generate our transition probabilities we use a helper function:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_triples</span><span class="p">(</span><span class="n">word_list</span><span class="p">):</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="c1"># loop through the text and generate triples</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word_list</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">continue</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-                <span class="n">d</span><span class="p">[(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">d</span><span class="p">[(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="n">d</span><span class="p">[(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">d</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_triples</span><span class="p">(</span><span class="n">word_list</span><span class="p">):</span><br />    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span><br />    <span class="c1"># loop through the text and generate triples</span><br />    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word_list</span><span class="p">)):</span><br />        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><br />            <span class="k">continue</span><br />        <span class="k">else</span><span class="p">:</span><br />            <span class="k">if</span> <span class="p">(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span><br />                <span class="n">d</span><span class="p">[(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><br />            <span class="k">else</span><span class="p">:</span><br />                <span class="n">d</span><span class="p">[(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span> <span class="o">=</span> <span class="p">[]</span><br />                <span class="n">d</span><span class="p">[(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><br />    <span class="k">return</span> <span class="n">d</span><br /></code></pre></div>
 
 <p>So given a list of words (our entire text) we go through it word by
 word, creating dictionary entries for every pair we encounter, and
@@ -207,22 +195,7 @@ adding the next word into the list associated with that pair.</p>
 words, we randomly sample from the list associated with that pair.</p>
 <p>This function gives us the next word each time. This is part of a Markov
 class, where self.words is our previously trained dictionary.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_random_word</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phrase</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">phrase</span><span class="p">:</span>
-        <span class="c1"># find a phrase from the list of words associated with the last two words in the supplied phrase</span>
-        <span class="n">phrase_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">phrase</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)]</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">phrase_words</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">:</span>
-                <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[(</span><span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">()))]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">()))]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># no phrase supplied, return a word from our dict at random</span>
-        <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">()))]</span>
-    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">past</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_random_word</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phrase</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span><br />    <span class="k">if</span> <span class="n">phrase</span><span class="p">:</span><br />        <span class="c1"># find a phrase from the list of words associated with the last two words in the supplied phrase</span><br />        <span class="n">phrase_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">phrase</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)]</span><br />        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">phrase_words</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span><br />            <span class="k">if</span> <span class="p">(</span><span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">:</span><br />                <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[(</span><span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">phrase_words</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span><br />            <span class="k">else</span><span class="p">:</span><br />                <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">()))]</span><br />        <span class="k">else</span><span class="p">:</span><br />            <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">()))]</span><br />    <span class="k">else</span><span class="p">:</span><br />        <span class="c1"># no phrase supplied, return a word from our dict at random</span><br />        <span class="n">past</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">()))]</span><br />    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">past</span><span class="p">)</span><br /></code></pre></div>
 
 <p>The function will look at a phrase, check if it is at least two words
 long and for the last two words, it finds the appropriate dictionary
@@ -280,7 +253,69 @@ library, which <a href="https://github.com/davidasboth/markov-chain-for-text">yo
 action', this is <a href="http://setosa.io/ev/markov-chains/">a great resource</a>
 to start with.</p>
 <p>I glossed over a lot of the maths behind the algorithm, but if you're
-interested you could <a href="https://www.youtube.com/watch?v=WUjt98HcHlk">start here</a>.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+interested you could <a href="https://www.youtube.com/watch?v=WUjt98HcHlk">start here</a>.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
             <div class="about-article-end">
                 <img src="/theme/images/David-Asboth-profile-image-square.jpg">

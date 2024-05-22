@@ -9,7 +9,7 @@ routinely finished last, and certainly wasn't winning any shows.&lt;/p&gt;
 QI?&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;To sate my curiosity I tried to answer that question the best way I know
 how: with &lt;strong&gt;data&lt;/strong&gt;.&lt;/p&gt;
-&lt;h1&gt;The Data&lt;/h1&gt;
+&lt;h2&gt;The Data&lt;/h2&gt;
 &lt;p&gt;The data comes from &lt;a href="https://www.comedy.co.uk/"&gt;The British Comedy Guide&lt;/a&gt;, which has an exhaustive list of
 everything related to British comedy, including every episode of QI.
 There was a lot of laborious data cleaning involved, which you can see
@@ -17,12 +17,14 @@ for yourself in &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/m
 &lt;p&gt;The &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/qi-analysis/qi_episodes.csv"&gt;final dataset&lt;/a&gt;
 includes every episode with its title, broadcast date and each
 contestant and their scores.&lt;/p&gt;
-&lt;h1&gt;The Analysis&lt;/h1&gt;
+&lt;h2&gt;The Analysis&lt;/h2&gt;
 &lt;p&gt;As with many data science projects, once the dataset was nice and clean
 the question was straightforward to answer. All it needed was a plot to
 show Alan's win ratio over time. Here's the accompanying &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/qi-analysis/QI%20Analysis.ipynb"&gt;Jupyter notebook&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alan Davies's QI performance over time" src="/images/analysis-is-alan-davies-getting-better-at-qi/alan_davies_over_time.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Alan's more or less consistently winning a quarter of shows now&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Alan Davies's QI performance over time" src="/images/analysis-is-alan-davies-getting-better-at-qi/alan_davies_over_time.png" /&gt;
+        &lt;figcaption&gt;Alan's more or less consistently winning a quarter of shows now&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;So to answer the question: yes, Alan does appear to be getting better at
 QI, certainly since the first few series. It does however remain to be
 seen whether his win ratio will plateau at 25%, I guess we'll see in a
@@ -40,8 +42,10 @@ the Hungarian national team since 1907, aggregated it and made an
 interactive world map.&lt;/p&gt;
 &lt;p&gt;I'll start with the final map, and you can read about some of the
 details beneath.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Hungarian National Team worldwide win percentage" src="/images/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team/hungarian-nt-win-map.png" /&gt;&lt;/p&gt;
-&lt;p&gt;The worldwide win percentage of the national team&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Hungarian National Team worldwide win percentage" src="/images/visualising-the-worldwide-win-percentage-of-the-hungarian-national-football-team/hungarian-nt-win-map.png" /&gt;
+        &lt;figcaption&gt;The worldwide win percentage of the national team&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;There is &lt;a href="https://plot.ly/~dasboth/0.embed"&gt;an interactive version&lt;/a&gt;
 where you can zoom and hover over each country to find out more. I
 encourage you to look at it if you want to dive into the data and
@@ -78,8 +82,10 @@ always wanted to know which countries vote for which players.&lt;/p&gt;
 team in FIFA, as well as a member of the media for each country, gets to
 vote for their top 3 players, giving them 5, 3, and 1 point(s)
 respectively. Like I said, the result was not surprising:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Top players in the FIFA awards" src="/images/the-world-map-of-the-2016-fifa-awards/fifa_topplayers.png" /&gt;&lt;/p&gt;
-&lt;p&gt;The top 5 highest scoring players in the FIFA awards&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Top players in the FIFA awards" src="/images/the-world-map-of-the-2016-fifa-awards/fifa_topplayers.png" /&gt;
+        &lt;figcaption&gt;The top 5 highest scoring players in the FIFA awards&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;FIFA routinely release all the votes, and I wanted to explore the data
 further. Specifically, I thought there might be some interesting
 geographic patterns (e.g. all of South America voting for South American
@@ -116,8 +122,10 @@ data science!&lt;/p&gt;
 &lt;h2&gt;The Map&lt;/h2&gt;
 &lt;p&gt;Here's a little preview of the final map, although &lt;a href="/fifa-awards/"&gt;the HTML version&lt;/a&gt; is better for exploring
 different regions.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="FIFA Awards World Map" src="/images/the-world-map-of-the-2016-fifa-awards/fifa_awards_finalmap.png" /&gt;&lt;/p&gt;
-&lt;p&gt;That Griezmann sure is popular in Mongolia &lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="FIFA Awards World Map" src="/images/the-world-map-of-the-2016-fifa-awards/fifa_awards_finalmap.png" /&gt;
+        &lt;figcaption&gt;That Griezmann sure is popular in Mongolia.&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;h2&gt;Wrap-up&lt;/h2&gt;
 &lt;p&gt;Unsurprisingly, a lot of countries vote for their own players where they
 have players good enough. I'm looking at Sweden, Germany, or Poland
@@ -195,13 +203,17 @@ which will make things easier. What we want to do is isolate the table
 in the HTML so we can extract only that table.&lt;/p&gt;
 &lt;p&gt;The easiest way to do this is directly on the website.&lt;/p&gt;
 &lt;p&gt;Right click and choose "Inspect Element".&lt;/p&gt;
-&lt;p&gt;&lt;img alt="inspect element" src="/images/the-junk-in-fallout-4/inspect_element.png" /&gt;&lt;/p&gt;
-&lt;p&gt;I'm using Firefox but this should be applicable to any browser.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Inspecting an element" src="/images/the-junk-in-fallout-4/inspect_element.png" /&gt;
+        &lt;figcaption&gt;I'm using Firefox but this should be applicable to any browser.&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;This will open the Inspector, or Chrome Dev Tools or the equivalent,
 where we can inspect the raw HTML. Then we want to look at the
 &amp;lt;table&amp;gt; element to see its ID.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="HTML table in the inspector" src="/images/the-junk-in-fallout-4/tablehtml.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Unlucky, no ID. &lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="HTML table in the inspector" src="/images/the-junk-in-fallout-4/tablehtml.png" /&gt;
+        &lt;figcaption&gt;Unlucky, no ID.&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;OK, well it doesn't have an ID, so we need to find a way to uniquely
 select that element. It has a class "va-table-center" - we can check if
 that's unique on the page. To do this, go into the Console tab of the
@@ -209,8 +221,10 @@ Inspector (in the above screenshot it's the second tab, but your browser
 may differ). In the console you can type and evaluate arbitrary
 Javascript/jQuery expressions, so let's try selecting a table with the
 class &lt;em&gt;va-table-center&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Selecting the table in the console" src="/images/the-junk-in-fallout-4/junktable_selector.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Apparently a script on the page finished "shamefully"... &lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Selecting the table in the console" src="/images/the-junk-in-fallout-4/junktable_selector.png" /&gt;
+        &lt;figcaption&gt;Apparently a script on the page finished 'shamefully'...&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;It looks like that class isn't unique, there are 5 tables that match it
 on the page. What we can do is then figure out which one of those 5 is
 the one we need. We can expand the output on the console to help us find
@@ -218,24 +232,16 @@ it.&lt;/p&gt;
 &lt;p&gt;You can highlight each of the 5 items and the corresponding table will
 be highlighted on the page. Doing this reveals we're after the second of
 those 5 tables.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="table highlight" src="/images/the-junk-in-fallout-4/table_highlight.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Note the Halloween-themed adverts about The Exorcist &lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Table highlight" src="/images/the-junk-in-fallout-4/table_highlight.png" /&gt;
+        &lt;figcaption&gt;Note the Halloween-themed adverts about The Exorcist.&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;Great, now we've identified the HTML element we want to load in, and we
 can do the rest of the wrangling in Python.&lt;/p&gt;
 &lt;h3&gt;Step 2 - Clean and Wrangle&lt;/h3&gt;
 &lt;p&gt;Using requests and BeautifulSoup we read in the HTML and grab just the
 table we need.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bs4&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;
-&lt;span class="c1"&gt;# load the entire page&lt;/span&gt;
-&lt;span class="n"&gt;req&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;http://fallout.wikia.com/wiki/Fallout_4_junk_items&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;# read the output as text&lt;/span&gt;
-&lt;span class="n"&gt;raw&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;req&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;
-&lt;span class="c1"&gt;# load it into BeautifulSoup for parsing&lt;/span&gt;
-&lt;span class="n"&gt;soup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;html.parser&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;# select just the second table with the right class&lt;/span&gt;
-&lt;span class="n"&gt;junk_table&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;table.va-table-center&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;&lt;br /&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bs4&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class="c1"&gt;# load the entire page&lt;/span&gt;&lt;br /&gt;&lt;span class="n"&gt;req&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;http://fallout.wikia.com/wiki/Fallout_4_junk_items&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class="c1"&gt;# read the output as text&lt;/span&gt;&lt;br /&gt;&lt;span class="n"&gt;raw&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;req&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class="c1"&gt;# load it into BeautifulSoup for parsing&lt;/span&gt;&lt;br /&gt;&lt;span class="n"&gt;soup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;html.parser&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class="c1"&gt;# select just the second table with the right class&lt;/span&gt;&lt;br /&gt;&lt;span class="n"&gt;junk_table&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;table.va-table-center&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;br /&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Next step is to iterate over the table rows and extract what we need.
 For now, we'll focus on the item name and its components.&lt;/p&gt;
@@ -244,48 +250,21 @@ extract them individually. What you'll notice in the table is that each
 new material starts with a capital letter, so we can split on that with
 some regex. Then we'll create a dictionary where the key is the item and
 the value is a list of its components.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;junk_dict&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
-
-&lt;span class="c1"&gt;# start from the second table row (to skip the header)&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;junk_table&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findAll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;tr&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:]:&lt;/span&gt;
-    &lt;span class="c1"&gt;# select all the table cells&lt;/span&gt;
-    &lt;span class="n"&gt;cells&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;td&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="c1"&gt;# get item name and components cells&lt;/span&gt;
-    &lt;span class="n"&gt;item_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cells&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-    &lt;span class="n"&gt;components_cell&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cells&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-    &lt;span class="c1"&gt;# split components text at uppercase letters&lt;/span&gt;
-    &lt;span class="n"&gt;components&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[A-Z][^A-Z]*&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;components_cell&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-    &lt;span class="n"&gt;junk_dict&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;item_name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;components&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;junk_dict&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class="c1"&gt;# start from the second table row (to skip the header)&lt;/span&gt;&lt;br /&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;junk_table&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findAll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;tr&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:]:&lt;/span&gt;&lt;br /&gt;    &lt;span class="c1"&gt;# select all the table cells&lt;/span&gt;&lt;br /&gt;    &lt;span class="n"&gt;cells&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;td&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;br /&gt;    &lt;span class="c1"&gt;# get item name and components cells&lt;/span&gt;&lt;br /&gt;    &lt;span class="n"&gt;item_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cells&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;br /&gt;    &lt;span class="n"&gt;components_cell&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cells&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;br /&gt;    &lt;span class="c1"&gt;# split components text at uppercase letters&lt;/span&gt;&lt;br /&gt;    &lt;span class="n"&gt;components&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[A-Z][^A-Z]*&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;components_cell&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;&lt;br /&gt;    &lt;span class="n"&gt;junk_dict&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;item_name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;components&lt;/span&gt;&lt;br /&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Next we'll create a pandas DataFrame from the dictionary. The only quirk
 is some components have "x2" style additions if there are more than one
 units in the item, and the absence of this signifies 1 unit.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;item&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;component&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;quantity&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="n"&gt;row_idx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
-
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;junk_dict&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;junk_dict&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
-        &lt;span class="n"&gt;quantity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;# default unless otherwise specified&lt;/span&gt;
-        &lt;span class="c1"&gt;# extract the multiplier&lt;/span&gt;
-        &lt;span class="n"&gt;multiplier&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; ?x ?([0-9]*)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;component_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;
-        &lt;span class="c1"&gt;# if the multiplier is specified set the quantity to the right value&lt;/span&gt;
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;multiplier&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;multiplier&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-                &lt;span class="n"&gt;quantity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;multiplier&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-                &lt;span class="n"&gt;component_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="c1"&gt;# add as a row&lt;/span&gt;
-        &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;row_idx&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;component_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;quantity&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="n"&gt;row_idx&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;item&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;component&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;quantity&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;br /&gt;&lt;span class="n"&gt;row_idx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;junk_dict&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;br /&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;junk_dict&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;&lt;br /&gt;        &lt;span class="n"&gt;quantity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;# default unless otherwise specified&lt;/span&gt;&lt;br /&gt;        &lt;span class="c1"&gt;# extract the multiplier&lt;/span&gt;&lt;br /&gt;        &lt;span class="n"&gt;multiplier&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; ?x ?([0-9]*)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;br /&gt;        &lt;span class="n"&gt;component_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;br /&gt;        &lt;span class="c1"&gt;# if the multiplier is specified set the quantity to the right value&lt;/span&gt;&lt;br /&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;multiplier&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;br /&gt;            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;multiplier&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;br /&gt;                &lt;span class="n"&gt;quantity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;multiplier&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;br /&gt;                &lt;span class="n"&gt;component_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;br /&gt;        &lt;span class="c1"&gt;# add as a row&lt;/span&gt;&lt;br /&gt;        &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;row_idx&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;component_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;quantity&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;br /&gt;        &lt;span class="n"&gt;row_idx&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;br /&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;Step 3 - Plot&lt;/h3&gt;
 &lt;p&gt;We now have our very own Fallout 4 junk dataset that we can analyse to
 our heart's content. For example we can plot the frequencies of each
 component to order them by rarity.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A bar chart showing the rarity of junk components" title="Rarity of junk components" src="/images/the-junk-in-fallout-4/junkplot.png" style="background-color: white" /&gt;&lt;/p&gt;
-&lt;p&gt;It's a strange world where concrete is so rare.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="A bar chart showing the rarity of junk components" src="/images/the-junk-in-fallout-4/junkplot.png" /&gt;
+        &lt;figcaption&gt;It's a strange world where concrete is so rare.&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;There you have it - data-driven video gaming. Here's the whole thing in
 &lt;a href="https://github.com/davidasboth/blog-notebooks/blob/master/fallout-junk/Fallout%20Junk%20Data.ipynb"&gt;Jupyter notebook form&lt;/a&gt;,
@@ -345,17 +324,20 @@ is £1.26million. After that there are over 39,000 outliers with the
 highest house price at over £50 million. This suggests there may be two
 tiers of house prices in London: one for the 'average' person and one
 for the more wealthy.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Distribution of London house prices" src="/images/analysing-london-house-prices/Price-Box-Plot-and-Histogram.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Heavy right tails make box plots look ridiculous&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Distribution of London house prices" src="/images/analysing-london-house-prices/Price-Box-Plot-and-Histogram.png" /&gt;
+        &lt;figcaption&gt;Heavy right tails make box plots look ridiculous&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;At this point my hunch was that the buying patterns of people who can
 afford to pay millions for a house will be different to people buying
 houses for around the median price. To this end I created an "outliers"
 category and analysed those nearly 40,000 rows separately.&lt;/p&gt;
 &lt;h3&gt;Prices over Time&lt;/h3&gt;
 &lt;p&gt;So how have prices changed over the years in the "normal" and "outlier" categories?&lt;/p&gt;
-&lt;p&gt;&lt;img alt="London house prices over time" src="/images/analysing-london-house-prices/Price-Over-Time.png" /&gt;&lt;/p&gt;
-&lt;p&gt;At this point it might be cheaper to invest in a time machine and go
-back to 1996 to buy a house&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="London house prices over time" src="/images/analysing-london-house-prices/Price-Over-Time.png" /&gt;
+        &lt;figcaption&gt;At this point it might be cheaper to invest in a time machine and go back to 1996 to buy a house&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;It turns out prices have steadily been climbing for both categories, but
 the number of sales dipped during the 2008 recession, but only for the
 non-outlier category. That makes sense - you'd expect the most wealthy
@@ -364,26 +346,34 @@ to be unaffected by a recession.&lt;/p&gt;
 &lt;p&gt;Does this overall trend look the same in each borough? Let's find out.
 For borough-level figures I looked at the non-outlier category to make
 the analysis more relatable.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Median prices over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Price-over-Time.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Some boroughs have a small dip but even a recession couldn't make London more affordable&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Median prices over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Price-over-Time.png" /&gt;
+        &lt;figcaption&gt;Some boroughs have a small dip but even a recession couldn't make London more affordable&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;There is a more noticeable, but still very small, dip during the
 recession years (highlighted in dark red) but prices are climbing in all
 London boroughs. The dip in sales during the recession is also present
 in each borough, echoing the overall trend.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Sales over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Sales-over-Time.png" /&gt;&lt;/p&gt;
-&lt;p&gt;This graph would probably be a worrying EKG&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Sales over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Sales-over-Time.png" /&gt;
+        &lt;figcaption&gt;This graph would probably be a worrying EKG&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;h3&gt;Buying Behaviour&lt;/h3&gt;
 &lt;p&gt;Is buying a house seasonal or do people buy with the same frequency
 throughout the year?&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Monthly sales histogram" src="/images/analysing-london-house-prices/Month-Histogram.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Apparently people rarely buy houses as Christmas presents.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Monthly sales histogram" src="/images/analysing-london-house-prices/Month-Histogram.png" /&gt;
+        &lt;figcaption&gt;Apparently people rarely buy houses as Christmas presents.&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;The slight peak in March is interesting.&lt;/p&gt;
 &lt;p&gt;After I showed this to a few people, someone suggested it's because the
 tax year in the UK ends in April so people might end up buying with some
 urgency to keep the spending in the previous tax year. This general
 seasonal behaviour is also apparent in each borough.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Monthly sales heatmap by borough" src="/images/analysing-london-house-prices/Monthly-Heatmap-by-Borough.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Is it still a heatmap if it's blue? &lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Monthly sales heatmap by borough" src="/images/analysing-london-house-prices/Monthly-Heatmap-by-Borough.png" /&gt;
+        &lt;figcaption&gt;Is it still a heatmap if it's blue?&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;It looks like some of the boroughs have a bigger peak in March than
 others. Can we quantify which boroughs have this behaviour and which
 don't?&lt;/p&gt;
@@ -406,10 +396,11 @@ dataset, so they're arguably not that representative.&lt;/p&gt;
 boroughs that have a prominent peak in sales in March and those that
 don't. But which boroughs are which? Let's colour a map of London by
 cluster:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Clustered boroughs" src="/images/analysing-london-house-prices/Cluster-Dashboard-4.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Interestingly the different seasonal behaviour almost neatly splits
-London into East and West. The dataset unfortunately didn't have enough
-details to give any suggestions about whether this is a coincidence.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img alt="Clustered boroughs" src="/images/analysing-london-house-prices/Cluster-Dashboard-4.png" /&gt;
+        &lt;figcaption&gt;Interestingly the different seasonal behaviour almost neatly splits London into East and West.
+        The dataset unfortunately didn't have enough details to give any suggestions about whether this is a coincidence.&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Unsurprisingly, the data confirms what we all complain about - buying in
 London is expensive and it is only getting worse.&lt;/p&gt;

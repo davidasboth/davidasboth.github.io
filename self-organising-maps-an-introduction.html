@@ -121,9 +121,10 @@ between neurons in the brain.</p>
 first layer consists of your inputs, the last layer consists of your
 outputs, and there are any number of so-called <em>hidden</em> layers in
 between.</p>
-<p><img alt="Simple neural network architecture" src="/images/self-organising-maps-an-introduction/296px-Colored_neural_network.png" /></p>
-<p><small>By <a href="//commons.wikimedia.org/wiki/User_talk:Glosser.ca" title="User talk:Glosser.ca">Glosser.ca</a> - [Own work], Derivative of <a href="//commons.wikimedia.org/wiki/File:Artificial_neural_network.svg" title="File:Artificial neural network.svg">File:Artificial neural network.svg</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=24913461">Link</a></small>
- </p>
+<figure>
+    <img alt="Simple neural network architecture" src="/images/self-organising-maps-an-introduction/296px-Colored_neural_network.png" />
+        <figcaption>Neural network image from Wikipedia: https://commons.wikimedia.org/wiki/File:Colored_neural_network.svg</figcaption>
+</figure>
 <p>The broad idea of an ANN is that you give it a dataset and a set of
 desired outputs, and it learns to map the inputs to the outputs. A
 classic example is teaching an ANN to recognise handwritten characters
@@ -155,8 +156,7 @@ grid will be activated. In a way the neurons on the grid "compete" for
 each input.</p>
 <p>The unsupervised aspect of a SOM refers to the idea that you present
 your inputs to it without associating them with an output. Instead, a
-SOM is used to find structure in your data.
- </p>
+SOM is used to find structure in your data.</p>
 <h2>What is a SOM used for?</h2>
 <p>This last point about unsupervised learning brings me to an important
 question, because abstract concepts like neural networks are great to
@@ -184,20 +184,18 @@ more easily visualise it, which you can't do if your data has more than
 <h2>Summary</h2>
 <p>To summarise, I'll quote an answer I gave on StackOverflow to a question
 about SOMs:</p>
-<p>The idea behind a SOM is that you're mapping high-dimensional vectors
-onto a smaller dimensional (typically 2D) space. You can think of it
-as clustering, like in K-means, with the added difference that vectors
-that are close in the high-dimensional space also end up being mapped
-to nodes that are close in 2D space.</p>
+<blockquote>
+<p>The idea behind a SOM is that you're mapping high-dimensional vectors onto a smaller dimensional (typically 2D) space. You can think of itas clustering, like in K-means, with the added difference that vectors that are close in the high-dimensional space also end up being mapped to nodes that are close in 2D space.  </p>
 <p>SOMs therefore are said to "preserve the topology" of the original
 data, because the distances in 2D space reflect those in the
 high-dimensional space. K-means also clusters similar data points
 together, but its final "representation" is hard to visualise because
-it's not in a convenient 2D format.</p>
+it's not in a convenient 2D format.  </p>
 <p>A typical example is with colours, where each of the data points are
 3D vectors that represent R,G,B colours. When mapped to a 2D SOM you
 can see regions of similar colours begin to develop, which is the
 topology of the colour space.</p>
+</blockquote>
 <h3>Colours</h3>
 <p>I hope that sounds interesting, because in Part 2 of this post I'll
 discuss some concrete examples and walk through a Python implementation
@@ -206,7 +204,10 @@ of Self-Organising Maps.</p>
 (where the 3 dimensions are R, G and B) and producing a 2D SOM where we
 visualise the "topology" of the 3D colour space.</p>
 <p>Something like this:</p>
-<p><img alt="A self-organising colour map" title="A self-organising colour map" src="/images/self-organising-maps-an-introduction/som.png" style="background-color: white" /></p>
+<figure>
+    <img alt="A self-organising colour map" src="/images/self-organising-maps-an-introduction/som.png" />
+        <figcaption>A self-organising colour map</figcaption>
+</figure>
 <p>In <a href="/self-organising-maps-in-depth">Part 2</a>, we'll look at an in-depth implementation of SOMs.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
             <div class="about-article-end">

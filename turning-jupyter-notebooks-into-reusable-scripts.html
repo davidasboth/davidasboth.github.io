@@ -129,11 +129,7 @@ code on a smaller subset first.</p>
 dataset until you can prove that your script will run on a smaller
 version of it. That might be as easy as just restricting your dataframe
 to its first N rows:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;my_huge_file.csv&quot;</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># delete this line later, but only when you&#39;re ready!</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span><br /><br /><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;my_huge_file.csv&quot;</span><span class="p">)</span><br /><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># delete this line later, but only when you&#39;re ready!</span><br /></code></pre></div>
 
 <p>This might sound obvious but it's important to get into the habit of
 doing it.</p>
@@ -163,13 +159,10 @@ at a time.</p>
 <p>Seriously, whenever you have a value that is likely to change when you
 run the script multiple times, make it a variable.</p>
 <p>Turn this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;my_data_2016-01-01.csv&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;my_data_2016-01-01.csv&quot;</span><span class="p">)</span><br /></code></pre></div>
 
 <p>Into this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;my_data_2016-01-01.csv&quot;</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;my_data_2016-01-01.csv&quot;</span><br /><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span><br /></code></pre></div>
 
 <p>It's an extra line but you're going to have to do it if you want to
 automate your script, so get in the habit of starting out like this.</p>
@@ -183,30 +176,15 @@ them to command line arguments.</p>
 -&gt; Download as -&gt; Python) and replacing your parameters with
 command line arguments.</p>
 <p>Assuming your notebook looks something like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">date</span> <span class="o">=</span> <span class="s2">&quot;2016-01-01&quot;</span>
-<span class="n">other_parameter</span> <span class="o">=</span> <span class="mi">16</span>
-
-<span class="c1"># rest of your code here...</span>
-<span class="c1"># ...</span>
-<span class="c1"># ...</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">date</span> <span class="o">=</span> <span class="s2">&quot;2016-01-01&quot;</span><br /><span class="n">other_parameter</span> <span class="o">=</span> <span class="mi">16</span><br /><br /><span class="c1"># rest of your code here...</span><br /><span class="c1"># ...</span><br /><span class="c1"># ...</span><br /></code></pre></div>
 
 <p>Export it to Python, then amend the script slightly:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">date</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">other_parameter</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-
-    <span class="c1"># the rest of your code from the notebook</span>
-    <span class="c1"># can be pasted here UNEDITED</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span><br /><br /><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span><br />    <span class="n">date</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><br />    <span class="n">other_parameter</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><br /><br />    <span class="c1"># the rest of your code from the notebook</span><br />    <span class="c1"># can be pasted here UNEDITED</span><br /></code></pre></div>
 
 <p>All we've done is replace the hard-coded parameter values with arguments
 from the command line (remember <a href="http://stackoverflow.com/a/2626634/2039162">sys.argv[0] is the name of the script</a>), so now you can do
 this on the command line:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="n">my_automated_script</span><span class="o">.</span><span class="n">py</span> <span class="s2">&quot;2016-01-01&quot;</span> <span class="s2">&quot;15&quot;</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="n">my_automated_script</span><span class="o">.</span><span class="n">py</span> <span class="s2">&quot;2016-01-01&quot;</span> <span class="s2">&quot;15&quot;</span><br /></code></pre></div>
 
 <p>This is the "quick and dirty" way of doing it. For more robustness and
 better documentation of your arguments, use

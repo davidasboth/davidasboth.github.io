@@ -108,10 +108,7 @@ itself very nicely to visualisation.</p>
 <p>Our data will be a collection of random colours, so first we'll
 artificially create a dataset of 100. Each colour is a 3D vector
 representing R, G and B values:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">raw_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><br /><br /><span class="n">raw_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span><br /></code></pre></div>
 
 <p>That's simply 100 rows of 3D vectors all between the values of 0 and
 255.</p>
@@ -170,21 +167,7 @@ be any number).</p>
 <li>Setup the grid by creating a 5x5 array of random 3D weight vectors</li>
 </ul>
 <p>Here's the code:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">network_dimensions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="n">n_iterations</span> <span class="o">=</span> <span class="mi">2000</span>
-<span class="n">init_learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="c1"># establish size variables based on data</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="c1"># weight matrix (i.e. the SOM) needs to be one m-dimensional vector for each neuron in the SOM</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">network_dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">network_dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">m</span><span class="p">))</span>
-
-<span class="c1"># initial neighbourhood radius</span>
-<span class="n">init_radius</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">network_dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">network_dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="c1"># radius decay parameter</span>
-<span class="n">time_constant</span> <span class="o">=</span> <span class="n">n_iterations</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">init_radius</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">network_dimensions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span><br /><span class="n">n_iterations</span> <span class="o">=</span> <span class="mi">2000</span><br /><span class="n">init_learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span><br /><span class="c1"># establish size variables based on data</span><br /><span class="n">m</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><br /><span class="n">n</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><br /><br /><span class="c1"># weight matrix (i.e. the SOM) needs to be one m-dimensional vector for each neuron in the SOM</span><br /><span class="n">net</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">network_dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">network_dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">m</span><span class="p">))</span><br /><br /><span class="c1"># initial neighbourhood radius</span><br /><span class="n">init_radius</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">network_dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">network_dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><br /><span class="c1"># radius decay parameter</span><br /><span class="n">time_constant</span> <span class="o">=</span> <span class="n">n_iterations</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">init_radius</span><span class="p">)</span><br /></code></pre></div>
 
 <p>Those last two parameters relate to the 2D neighbourhood of each neuron
 in the SOM during training. We'll return to those in the learning phase.
@@ -206,25 +189,7 @@ on different scales we would have to do this column by column.</p>
 <p>I don't want this code to be entirely tailored to the colour dataset so
 I'll leave the normalisation options tied to a few Booleans that are
 easy to change.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">normalise_data</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="c1"># if True, assume all data is on common scale</span>
-<span class="c1"># if False, normalise to [0 1] range along each column</span>
-<span class="n">normalise_by_column</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="c1"># we want to keep a copy of the raw data for later</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">raw_data</span>
-
-<span class="c1"># check if data needs to be normalised</span>
-<span class="k">if</span> <span class="n">normalise_data</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">normalise_by_column</span><span class="p">:</span>
-        <span class="c1"># normalise along each column</span>
-        <span class="n">col_maxes</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">raw_data</span> <span class="o">/</span> <span class="n">col_maxes</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># normalise entire dataset</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">raw_data</span> <span class="o">/</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">normalise_data</span> <span class="o">=</span> <span class="kc">True</span><br /><br /><span class="c1"># if True, assume all data is on common scale</span><br /><span class="c1"># if False, normalise to [0 1] range along each column</span><br /><span class="n">normalise_by_column</span> <span class="o">=</span> <span class="kc">False</span><br /><br /><span class="c1"># we want to keep a copy of the raw data for later</span><br /><span class="n">data</span> <span class="o">=</span> <span class="n">raw_data</span><br /><br /><span class="c1"># check if data needs to be normalised</span><br /><span class="k">if</span> <span class="n">normalise_data</span><span class="p">:</span><br />    <span class="k">if</span> <span class="n">normalise_by_column</span><span class="p">:</span><br />        <span class="c1"># normalise along each column</span><br />        <span class="n">col_maxes</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><br />        <span class="n">data</span> <span class="o">=</span> <span class="n">raw_data</span> <span class="o">/</span> <span class="n">col_maxes</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span><br />    <span class="k">else</span><span class="p">:</span><br />        <span class="c1"># normalise entire dataset</span><br />        <span class="n">data</span> <span class="o">=</span> <span class="n">raw_data</span> <span class="o">/</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><br /></code></pre></div>
 
 <p>Now we're ready to start the learning process.</p>
 <h3>Learning</h3>
@@ -247,14 +212,10 @@ neighbours, we'll achieve the desired effect that <strong>colours that are close
 <p>Let's step through this in more detail, with code.</p>
 <h4>1. Select a Random Input Vector</h4>
 <p>This is straightforward:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># select a training example at random</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1"># select a training example at random</span><br /><span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span><br /></code></pre></div>
 
 <h4>2. Find the Best Matching Unit</h4>
-<div class="codehilite"><pre><span></span><code><span class="c1"># find its Best Matching Unit</span>
-<span class="n">bmu</span><span class="p">,</span> <span class="n">bmu_idx</span> <span class="o">=</span> <span class="n">find_bmu</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1"># find its Best Matching Unit</span><br /><span class="n">bmu</span><span class="p">,</span> <span class="n">bmu_idx</span> <span class="o">=</span> <span class="n">find_bmu</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span><br /></code></pre></div>
 
 <p>For that to work we need a function to find the BMU. It need to iterate
 through each neuron in the SOM, measure its Euclidean distance to our
@@ -262,29 +223,7 @@ input vector and return the one that's closest. Note the implementation
 trick of not actually measuring Euclidean distance, but the <strong>squared</strong>
 Euclidean distance, thereby avoiding an expensive square root
 computation.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">find_bmu</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Find the best matching unit for a given vector, t, in the SOM</span>
-<span class="sd">        Returns: a (bmu, bmu_idx) tuple where bmu is the high-dimensional BMU</span>
-<span class="sd">                 and bmu_idx is the index of this vector in the SOM</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">bmu_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="c1"># set the initial minimum distance to a huge number</span>
-    <span class="n">min_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span><span class="o">.</span><span class="n">max</span>    
-    <span class="c1"># calculate the high-dimensional distance between each neuron and the input</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-            <span class="n">w</span> <span class="o">=</span> <span class="n">net</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="c1"># don&#39;t bother with actual Euclidean distance, to avoid expensive sqrt operation</span>
-            <span class="n">sq_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">w</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">sq_dist</span> <span class="o">&lt;</span> <span class="n">min_dist</span><span class="p">:</span>
-                <span class="n">min_dist</span> <span class="o">=</span> <span class="n">sq_dist</span>
-                <span class="n">bmu_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
-    <span class="c1"># get vector corresponding to bmu_idx</span>
-    <span class="n">bmu</span> <span class="o">=</span> <span class="n">net</span><span class="p">[</span><span class="n">bmu_idx</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bmu_idx</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="c1"># return the (bmu, bmu_idx) tuple</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">bmu</span><span class="p">,</span> <span class="n">bmu_idx</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">find_bmu</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span><br /><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span><br /><span class="sd">        Find the best matching unit for a given vector, t, in the SOM</span><br /><span class="sd">        Returns: a (bmu, bmu_idx) tuple where bmu is the high-dimensional BMU</span><br /><span class="sd">                 and bmu_idx is the index of this vector in the SOM</span><br /><span class="sd">    &quot;&quot;&quot;</span><br />    <span class="n">bmu_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><br />    <span class="c1"># set the initial minimum distance to a huge number</span><br />    <span class="n">min_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span><span class="o">.</span><span class="n">max</span>    <br />    <span class="c1"># calculate the high-dimensional distance between each neuron and the input</span><br />    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><br />        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span><br />            <span class="n">w</span> <span class="o">=</span> <span class="n">net</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><br />            <span class="c1"># don&#39;t bother with actual Euclidean distance, to avoid expensive sqrt operation</span><br />            <span class="n">sq_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">w</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><br />            <span class="k">if</span> <span class="n">sq_dist</span> <span class="o">&lt;</span> <span class="n">min_dist</span><span class="p">:</span><br />                <span class="n">min_dist</span> <span class="o">=</span> <span class="n">sq_dist</span><br />                <span class="n">bmu_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span><br />    <span class="c1"># get vector corresponding to bmu_idx</span><br />    <span class="n">bmu</span> <span class="o">=</span> <span class="n">net</span><span class="p">[</span><span class="n">bmu_idx</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bmu_idx</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><br />    <span class="c1"># return the (bmu, bmu_idx) tuple</span><br />    <span class="k">return</span> <span class="p">(</span><span class="n">bmu</span><span class="p">,</span> <span class="n">bmu_idx</span><span class="p">)</span><br /></code></pre></div>
 
 <h4>3. Update the SOM Learning Parameters</h4>
 <p>As described above, we want to decay the learning rate over time to let
@@ -293,22 +232,14 @@ the SOM "settle" on a solution.</p>
 far we search for 2D neighbours when updating vectors in the SOM. We
 want to gradually reduce this over time, like the learning rate. We'll
 see this in a bit more detail in step 4.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># decay the SOM parameters</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">decay_radius</span><span class="p">(</span><span class="n">init_radius</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">time_constant</span><span class="p">)</span>
-<span class="n">l</span> <span class="o">=</span> <span class="n">decay_learning_rate</span><span class="p">(</span><span class="n">init_learning_rate</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">n_iterations</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1"># decay the SOM parameters</span><br /><span class="n">r</span> <span class="o">=</span> <span class="n">decay_radius</span><span class="p">(</span><span class="n">init_radius</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">time_constant</span><span class="p">)</span><br /><span class="n">l</span> <span class="o">=</span> <span class="n">decay_learning_rate</span><span class="p">(</span><span class="n">init_learning_rate</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">n_iterations</span><span class="p">)</span><br /></code></pre></div>
 
 <p>The functions to decay the radius and learning rate use exponential
 decay:</p>
-<p>$\sigma_{t} = \sigma_{0} \times \exp(\frac{-t}{\lambda})$</p>
-<p>Where $\lambda$ is the time constant (which controls the decay) and
-$\sigma$ is the value at various times $t$.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">decay_radius</span><span class="p">(</span><span class="n">initial_radius</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">time_constant</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">initial_radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span> <span class="o">/</span> <span class="n">time_constant</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">decay_learning_rate</span><span class="p">(</span><span class="n">initial_learning_rate</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">n_iterations</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">initial_learning_rate</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span> <span class="o">/</span> <span class="n">n_iterations</span><span class="p">)</span>
-</code></pre></div>
+<p><span class="math">\(\sigma_{t} = \sigma_{0} \times \exp(\frac{-t}{\lambda})\)</span></p>
+<p>Where <span class="math">\(\lambda\)</span> is the time constant (which controls the decay) and
+<span class="math">\(\sigma\)</span> is the value at various times <span class="math">\(t\)</span>.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">decay_radius</span><span class="p">(</span><span class="n">initial_radius</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">time_constant</span><span class="p">):</span><br />    <span class="k">return</span> <span class="n">initial_radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span> <span class="o">/</span> <span class="n">time_constant</span><span class="p">)</span><br /><br /><span class="k">def</span> <span class="nf">decay_learning_rate</span><span class="p">(</span><span class="n">initial_learning_rate</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">n_iterations</span><span class="p">):</span><br />    <span class="k">return</span> <span class="n">initial_learning_rate</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span> <span class="o">/</span> <span class="n">n_iterations</span><span class="p">)</span><br /></code></pre></div>
 
 <h4>4. Move the BMU and its Neighbours in 3D Space</h4>
 <p>Now that we have the BMU and the correct learning parameters, we'll
@@ -317,10 +248,10 @@ that mapped to it. We will also identify the neurons that are close to
 the BMU in 2D space and update their 3D vectors to move "inwards"
 towards the BMU.</p>
 <p>The formula to update the BMU's 3D vector is:</p>
-<p>$w_{t+1} = w_{t} + L_{t}(V_{t} - w_{t})$</p>
+<p><span class="math">\(w_{t+1} = w_{t} + L_{t}(V_{t} - w_{t})\)</span></p>
 <p>That is to say, the new weight vector will be the current vector plus
-the difference between the input vector $V$ and the weight vector,
-multiplied by a learning rate $L$ at time $t$.</p>
+the difference between the input vector <span class="math">\(V\)</span> and the weight vector,
+multiplied by a learning rate <span class="math">\(L\)</span> at time <span class="math">\(t\)</span>.</p>
 <p>We are literally just moving the weight vector closer to the input
 vector.</p>
 <p>We also identify all the neurons in the SOM that are closer in 2D space
@@ -330,33 +261,12 @@ than our current radius, and also move them closer to the input vector.</p>
 it's Gaussian. So imagine a bell shape centred around the BMU - that's
 how we decide how much to pull the neighbouring neurons in by.</p>
 <p>Concretely, this is the equation we'll use to calculate the influence
-$i$:</p>
-<p>$i_{t} = \exp(-\frac{d^{2}}{2\sigma_{t}^{2}})$</p>
-<p>where $d$ is the 2D distance and $\sigma$ is the current radius of
+<span class="math">\(i\)</span>:</p>
+<p><span class="math">\(i_{t} = \exp(-\frac{d^{2}}{2\sigma_{t}^{2}})\)</span></p>
+<p>where <span class="math">\(d\)</span> is the 2D distance and <span class="math">\(\sigma\)</span> is the current radius of
 our neighbourhood.</p>
 <p>Putting that all together:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_influence</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-
-<span class="c1"># now we know the BMU, update its weight vector to move closer to input</span>
-<span class="c1"># and move its neighbours in 2-D space closer</span>
-<span class="c1"># by a factor proportional to their 2-D distance from the BMU</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="n">w</span> <span class="o">=</span> <span class="n">net</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="c1"># get the 2-D distance (again, not the actual Euclidean distance)</span>
-        <span class="n">w_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span> <span class="o">-</span> <span class="n">bmu_idx</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="c1"># if the distance is within the current neighbourhood radius</span>
-        <span class="k">if</span> <span class="n">w_dist</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
-            <span class="c1"># calculate the degree of influence (based on the 2-D distance)</span>
-            <span class="n">influence</span> <span class="o">=</span> <span class="n">calculate_influence</span><span class="p">(</span><span class="n">w_dist</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-            <span class="c1"># now update the neuron&#39;s weight using the formula:</span>
-            <span class="c1"># new w = old w + (learning rate * influence * delta)</span>
-            <span class="c1"># where delta = input vector (t) - old w</span>
-            <span class="n">new_w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">+</span> <span class="p">(</span><span class="n">l</span> <span class="o">*</span> <span class="n">influence</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">w</span><span class="p">))</span>
-            <span class="c1"># commit the new weight</span>
-            <span class="n">net</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">new_w</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_influence</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span><br />    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span><br /><br /><span class="c1"># now we know the BMU, update its weight vector to move closer to input</span><br /><span class="c1"># and move its neighbours in 2-D space closer</span><br /><span class="c1"># by a factor proportional to their 2-D distance from the BMU</span><br /><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><br />    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span><br />        <span class="n">w</span> <span class="o">=</span> <span class="n">net</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><br />        <span class="c1"># get the 2-D distance (again, not the actual Euclidean distance)</span><br />        <span class="n">w_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span> <span class="o">-</span> <span class="n">bmu_idx</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><br />        <span class="c1"># if the distance is within the current neighbourhood radius</span><br />        <span class="k">if</span> <span class="n">w_dist</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span><br />            <span class="c1"># calculate the degree of influence (based on the 2-D distance)</span><br />            <span class="n">influence</span> <span class="o">=</span> <span class="n">calculate_influence</span><span class="p">(</span><span class="n">w_dist</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span><br />            <span class="c1"># now update the neuron&#39;s weight using the formula:</span><br />            <span class="c1"># new w = old w + (learning rate * influence * delta)</span><br />            <span class="c1"># where delta = input vector (t) - old w</span><br />            <span class="n">new_w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">+</span> <span class="p">(</span><span class="n">l</span> <span class="o">*</span> <span class="n">influence</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">w</span><span class="p">))</span><br />            <span class="c1"># commit the new weight</span><br />            <span class="n">net</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">new_w</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><br /></code></pre></div>
 
 <h3>Visualisation</h3>
 <p>Repeating the learning steps 1-4 for 2,000 iterations should be enough.
@@ -365,7 +275,10 @@ We can always run it for more iterations afterwards.</p>
 colours, since they are just 3D vectors just like the inputs.</p>
 <p>To that end, we can visualise them and come up with our final colour
 map:</p>
-<p><img alt="A self-organising colour map" title="A self-organising colour map" src="/images/self-organising-maps-in-depth/som.png" style="background-color: white" /></p>
+<figure>
+    <img alt="A self-organising colour map" src="/images/self-organising-maps-in-depth/som.png" />
+        <figcaption>A self-organising colour map</figcaption>
+</figure>
 <p>None of those colours necessarily had to be in our dataset. By moving
 the 3D weight vectors to more closely match our input vectors, we've
 created a 2D colour space which clearly shows the relationship between
@@ -383,7 +296,10 @@ length and we could use a SOM to find similar flowers.</p>
 <p>Applying the iris data to a SOM and then retrospectively colouring each
 point with their true class (to see how good the SOM was at separating
 the irises into their distinct categories) we get something like this:</p>
-<p><img alt="150 irises mapped onto a SOM, coloured by type" title="150 irises mapped onto a SOM, coloured by type" src="/images/self-organising-maps-in-depth/iris_clusters.png" /></p>
+<figure>
+    <img alt="150 irises mapped onto a SOM, coloured by type" src="/images/self-organising-maps-in-depth/iris_clusters.png" />
+        <figcaption>150 irises mapped onto a SOM, coloured by type</figcaption>
+</figure>
 <p>This is a 10 by 10 SOM and each of the small points is one of the irises
 from the dataset (with added jitter to see multiple points on a single
 SOM neuron). I added the colours after training, and you can quite
@@ -400,7 +316,10 @@ makes the inputs 784-dimensional (each dimension is a value between 0
 and 255).</p>
 <p>Mapping them to a 20 by 20 SOM, and again retrospectively colouring them
 based on their true class (a number from 0 to 9) yields this:</p>
-<p><img alt="A SOM of handwritten characters" title="Various handwritten numbers mapped to a 2D SOM" src="/images/self-organising-maps-in-depth/mnist_som.png" /></p>
+<figure>
+    <img alt="A SOM of handwritten characters" src="/images/self-organising-maps-in-depth/mnist_som.png" />
+        <figcaption>Various handwritten numbers mapped to a 2D SOM.</figcaption>
+</figure>
 <p>In this case the true classes are labelled according to the colours in
 the bottom left.</p>
 <p>What you can see is that the SOM has successfully divided the 2D space
@@ -418,7 +337,69 @@ for the colour map example.</p>
 <p>Mat Buckland's <a href="http://www.ai-junkie.com/ann/som/som1.html">excellent explanation and code walkthrough</a> of SOMs was
 instrumental in helping me learn. My code is more or less a Python port
 of his C++ implementation. Reading his posts should fill in any gaps I
-may have not covered.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+may have not covered.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
             <div class="about-article-end">
                 <img src="/theme/images/David-Asboth-profile-image-square.jpg">

@@ -113,46 +113,23 @@ of objects (whether they're integers, strings etc.) is checked at
 <strong>runtime, not compile time</strong>.</p>
 <p>A variable is allowed to have different types at different points of a
 program's execution. This is perfectly valid:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">my_variable</span> <span class="o">=</span> <span class="mi">42</span>
-<span class="c1"># do stuff with my_variable...</span>
-<span class="c1"># and later...</span>
-<span class="n">my_variable</span> <span class="o">=</span> <span class="s2">&quot;now it&#39;s a string!&quot;</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">my_variable</span> <span class="o">=</span> <span class="mi">42</span><br /><span class="c1"># do stuff with my_variable...</span><br /><span class="c1"># and later...</span><br /><span class="n">my_variable</span> <span class="o">=</span> <span class="s2">&quot;now it&#39;s a string!&quot;</span><br /></code></pre></div>
 
 <p>You can't do this in a statically-typed language. Once you declare a
 variable as a certain type, it stays that way. Take this example in C#:</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">my_variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// explicitly declare an integer</span>
-<span class="c1">// do stuff</span>
-<span class="n">my_variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;can I be a string?&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// this will produce a compiler error</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">my_variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// explicitly declare an integer</span><br /><span class="c1">// do stuff</span><br /><span class="n">my_variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;can I be a string?&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// this will produce a compiler error</span><br /></code></pre></div>
 
 <p><em>Actually there are <a href="https://msdn.microsoft.com/en-us/library/dd264736.aspx">dynamic types in C#</a> but we'll just gloss over that.</em></p>
 <p>The point is you can be quite liberal with types in Python.</p>
 <p>You can take this one step further with duck typing.</p>
 <h2>Duck Typing in Python</h2>
 <p>Say you have a function that makes a duck quack, like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">make_it_quack</span><span class="p">(</span><span class="n">something_duck_like</span><span class="p">):</span>
-    <span class="n">something_duck_like</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">make_it_quack</span><span class="p">(</span><span class="n">something_duck_like</span><span class="p">):</span><br />    <span class="n">something_duck_like</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span><br /></code></pre></div>
 
 <p>We've taken an object in and called its quack method. We don't care what
 type of object this is, only that it is able to quack. So if we had a
 "real" duck and an impostor, they'd both work with this method:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Duck</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack quack&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Ferret</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="c1"># ferrets can&#39;t normally quack, but this one&#39;s cunning</span>
-    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack quack&quot;</span><span class="p">)</span>
-
-<span class="n">donald</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span>
-<span class="n">fred</span> <span class="o">=</span> <span class="n">Ferret</span><span class="p">()</span>
-
-<span class="n">make_it_quack</span><span class="p">(</span><span class="n">donald</span><span class="p">)</span>
-<span class="n">make_it_quack</span><span class="p">(</span><span class="n">fred</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Duck</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span><br />    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><br />        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack quack&quot;</span><span class="p">)</span><br /><br /><span class="k">class</span> <span class="nc">Ferret</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span><br />    <span class="c1"># ferrets can&#39;t normally quack, but this one&#39;s cunning</span><br />    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><br />        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack quack&quot;</span><span class="p">)</span><br /><br /><span class="n">donald</span> <span class="o">=</span> <span class="n">Duck</span><span class="p">()</span><br /><span class="n">fred</span> <span class="o">=</span> <span class="n">Ferret</span><span class="p">()</span><br /><br /><span class="n">make_it_quack</span><span class="p">(</span><span class="n">donald</span><span class="p">)</span><br /><span class="n">make_it_quack</span><span class="p">(</span><span class="n">fred</span><span class="p">)</span><br /></code></pre></div>
 
 <p>Both of these will produce the output "Quack quack" because all we did
 was make it quack. If it can do that, then as far as we're concerned
@@ -167,49 +144,17 @@ predict function?</p>
 <p>You can create your own object and make use of duck typing by "quacking
 like a scikit-learn duck".</p>
 <p>First, create a class that has fit and predict methods:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MyFakeClassifier</span><span class="p">():</span>
-    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Working VERY HARD...&quot;</span><span class="p">)</span>
-    
-    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="c1"># predict 0 no matter what</span>
-        <span class="k">return</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))]</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MyFakeClassifier</span><span class="p">():</span><br />    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span><br />        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Working VERY HARD...&quot;</span><span class="p">)</span><br />    <br />    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span><br />        <span class="c1"># predict 0 no matter what</span><br />        <span class="k">return</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))]</span><br /></code></pre></div>
 
 <p>Now you can fit and predict the same way as you could with, say, a
 Random Forest.</p>
 <p>Imagine you already wrote a small function that takes in a machine
 learning classifier, does a train-test split and gets the accuracy and
 confusion matrix of the predictions.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
-
-<span class="c1"># write a function to give us a train-test accuracy score</span>
-<span class="k">def</span> <span class="nf">get_accuracy</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy: </span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span>
-                                    <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span><br /><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><br /><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><br /><br /><span class="c1"># write a function to give us a train-test accuracy score</span><br /><span class="k">def</span> <span class="nf">get_accuracy</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span><br />    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span><br />    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><br />    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span><br />    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy: </span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span><br />                                    <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span><br /></code></pre></div>
 
 <p>We can use this for a built-in classifier, but also our new estimator:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-
-<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
-
-<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
-<span class="n">random_model</span> <span class="o">=</span> <span class="n">MyFakeClassifier</span><span class="p">()</span>
-
-<span class="c1"># we can get the accuracy of our Random Forest</span>
-<span class="n">get_accuracy</span><span class="p">(</span><span class="n">rf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="c1"># and our new model!</span>
-<span class="n">get_accuracy</span><span class="p">(</span><span class="n">random_model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span><br /><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span><br /><br /><span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span><br /><span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><br /><span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><br /><br /><span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span><br /><span class="n">random_model</span> <span class="o">=</span> <span class="n">MyFakeClassifier</span><span class="p">()</span><br /><br /><span class="c1"># we can get the accuracy of our Random Forest</span><br /><span class="n">get_accuracy</span><span class="p">(</span><span class="n">rf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><br /><span class="c1"># and our new model!</span><br /><span class="n">get_accuracy</span><span class="p">(</span><span class="n">random_model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><br /></code></pre></div>
 
 <p>There you have it. All we had to do was create something that can "fit"
 and "predict" and Python doesn't need anything else for it to work.</p>

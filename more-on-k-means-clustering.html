@@ -108,8 +108,11 @@ the image, and re-draw it with fewer colours. This has uses in data
 compression for example.</p>
 <p>This is the example I'll run through today.</p>
 <p>We'll take this image of a puppy:</p>
-<p><img alt="A puppy" src="/images/more-on-k-means-clustering/puppy.jpg" /></p>
-<p>Puppy image from <a href="https://www.flickr.com/photos/gregcullen/250779651/in/photolist-oaj46-cTecd9-sHsHk-5WP7e-9jLY1e-dMrkp4-oak27-8LgQUd-72uozM-9N6oDE-4VoQq-fGnMUG-fkMAUo-hSg7Vm-9xukWa-7K3S2B-fz3KAH-aWe43R-HhRcz-4SZHdM-3d8eAm-Gh4ip-c3LHsG-y6YdK-e4Qn6h-y6U3M-48xfrF-qaZttJ-8MuTV2-aDsi2E-db1Ujw-oxFiuK-y6Ynf-oBGkqj-bVUar-5ft6bn-mwDdV-4BeWnC-itR65i-8d1bVK-5CSiqu-fNwmya-7kTing-7oySVC-boenVS-bBvADe-5fmmvh-4j3Q9U-53pHvi-4qFWve">Greg on Flickr</a> and redraw it in much fewer colours using k-means clustering.</p>
+<figure>
+    <img alt="A puppy" src="/images/more-on-k-means-clustering/puppy.jpg" />
+        <figcaption>Puppy image from Greg on Flickr (https://flic.kr/p/oaj46)</figcaption>
+</figure>
+<p>and redraw it in much fewer colours using k-means clustering.</p>
 <h3>The Data</h3>
 <p>Let's start by defining our data. To represent this problem, we take
 each pixel in the image as a data point whose 3 features are the R, G
@@ -126,34 +129,29 @@ much detail.</p>
 <p>Once we have our dataset (the details of extracting the pixel values
 will be in the accompanying Jupyter notebook) running the algorithm with
 scikit-learn is easy:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
-
-<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
-<span class="c1"># our dataframe (df) is the image data</span>
-<span class="n">clusters</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="c1"># &quot;clusters&quot; is a vector with a cluster assignment for each data point (pixel)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clusters</span>
-<span class="c1"># use the K cluster centroids as new colours to represent the image</span>
-<span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">]</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span><br /><br /><span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><br /><span class="c1"># our dataframe (df) is the image data</span><br /><span class="n">clusters</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><br /><span class="c1"># &quot;clusters&quot; is a vector with a cluster assignment for each data point (pixel)</span><br /><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clusters</span><br /><span class="c1"># use the K cluster centroids as new colours to represent the image</span><br /><span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">]</span><br /></code></pre></div>
 
 <p>In this instance the cluster centroids are points in 3D space, where the
 3 dimensions are R, G and B, so the centroids can be thought of as
 colours themselves.</p>
 <p>That means once we have the cluster assignment for each pixel, plus the
 centroid as the associated colour value, we can reconstruct our image
-pixel by pixel to get the $k$-colour representation.</p>
+pixel by pixel to get the <span class="math">\(k\)</span>-colour representation.</p>
 <p>The same image with only 3 colours looks like this:</p>
-<p><img alt="A 3-colour puppy" src="/images/more-on-k-means-clustering/puppy_3.jpg" /></p>
-<p>The same puppy drawn with only 3 colours</p>
+<figure>
+    <img alt="A 3-colour puppy" src="/images/more-on-k-means-clustering/puppy_3.jpg" />
+        <figcaption>The same puppy drawn with only 3 colours</figcaption>
+</figure>
 <p>As you can clearly see, we've reduced the number of colours required,
 and incidentally also reduced the filesize threefold, without losing too
 much information. The image is still clearly a puppy, despite the fact
 that we've only used 3 colours.</p>
 <p>When we use 16 colours the image starts to resemble the original in much
 more detail:</p>
-<p><img alt="A 16-colour puppy" src="/images/more-on-k-means-clustering/puppy_16.jpg" /></p>
-<p>A 16-colour puppy </p>
+<figure>
+    <img alt="A 16-colour puppy" src="/images/more-on-k-means-clustering/puppy_16.jpg" />
+        <figcaption>The same puppy drawn with 16 colours</figcaption>
+</figure>
 <p>You can still see the background isn't smooth but we're getting close.
 In fact, we would get to an image that is indistinguishable from the
 original by using far less than the original 10,000 colours.</p>
@@ -161,36 +159,36 @@ original by using far less than the original 10,000 colours.</p>
 <p>I have a couple of points left to raise, namely some practical tips when
 using clustering.</p>
 <h2>Choosing K</h2>
-<p>How would we know which point to stop at? When is $k$ at its optimal
+<p>How would we know which point to stop at? When is <span class="math">\(k\)</span> at its optimal
 value?</p>
 <p>As I mentioned in part 1, this is usually somewhat subjective, but there
 are some general heuristics.</p>
 <p>In this case we could do it by visual inspection. That is, we could say
-$k$ is high enough when we are no longer visually able to tell the
+<span class="math">\(k\)</span> is high enough when we are no longer visually able to tell the
 difference between the original and the redrawn images.</p>
 <p>Not all datasets will lend themselves to visual inspection like this
 though.</p>
 <p>We can use what's called the <em>elbow method</em> to evaluate when to stop.</p>
-<p>For each value of $k$ you want to evaluate how much of the variance in
-your data is explained by the configurations of those $k$ clusters.
-This value increases for each value of $k$, but the idea is that we
-stop increasing $k$ when increasing it gives us diminishing returns.</p>
-<p>Let's think of the two extremes. When $k$ = 1, it means every point
+<p>For each value of <span class="math">\(k\)</span> you want to evaluate how much of the variance in
+your data is explained by the configurations of those <span class="math">\(k\)</span> clusters.
+This value increases for each value of <span class="math">\(k\)</span>, but the idea is that we
+stop increasing <span class="math">\(k\)</span> when increasing it gives us diminishing returns.</p>
+<p>Let's think of the two extremes. When <span class="math">\(k\)</span> = 1, it means every point
 will belong to the <em>same</em> cluster. This configuration explains 0% of the
 variance in your data, because it says all your data points are the
-same. Then $k$ is equal to the number of data points you have, it
+same. Then <span class="math">\(k\)</span> is equal to the number of data points you have, it
 means every point will belong to <em>its own cluster</em>. This configuration
 explains 100% of the variation in your data because it says each of your
 data points is different from every other one. A value in between will
 explain some % of the variation, because it will say some data points
 are equal to some other data points, and different from some others.</p>
 <p><a href="https://bl.ocks.org/rpgove/0060ff3b656618e9136b">Here's a good explanation</a> of the
-elbow method, although it uses the "error" for each $k$ value, so the
+elbow method, although it uses the "error" for each <span class="math">\(k\)</span> value, so the
 graph is upside down compared to the "variance explained" metric I
 discussed above.</p>
 <p>Either way, there is usually an "elbow" where the increase/decrease is
 suddenly less sharp. That's usually a good point to stop and use that
-value for $k$.</p>
+value for <span class="math">\(k\)</span>.</p>
 <h2>Normalisation</h2>
 <p>As I mentioned in the Self-Organising Maps tutorial, in practice you
 will want to normalise your data so all features are on the same scale.
@@ -202,7 +200,69 @@ otherwise a feature with much larger values will dominate the others.</p>
 features will often be on different scales.</p>
 <p>See more information on this in Sebastian Raschka's <a href="http://sebastianraschka.com/faq/docs/when-to-standardize.html">machine learning FAQ</a>.</p>
 <p>K-means and clustering in general have many more uses, and I hope these
-puppies have piqued your interest!</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+puppies have piqued your interest!</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
             <div class="about-article-end">
                 <img src="/theme/images/David-Asboth-profile-image-square.jpg">

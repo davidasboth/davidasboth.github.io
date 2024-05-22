@@ -108,13 +108,7 @@ link to appropriate parts of the <a href="http://www.w3schools.com/sql/">w3schoo
 <p>SQL is a <a href="https://en.wikipedia.org/wiki/Declarative_programming">declarative language</a>. All
 that means is that when you write a SQL query, you're expressing <strong>what the result should look like, rather than how to achieve it</strong>.</p>
 <p>Let's look at a basic SQL query and see how that's the case.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span>
-<span class="w">    </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">height</span>
-<span class="k">FROM</span>
-<span class="w">    </span><span class="n">people</span>
-<span class="k">WHERE</span>
-<span class="w">    </span><span class="n">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;data scientist&quot;</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><br /><span class="w">    </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><br /><span class="k">FROM</span><br /><span class="w">    </span><span class="n">people</span><br /><span class="k">WHERE</span><br /><span class="w">    </span><span class="n">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;data scientist&quot;</span><br /></code></pre></div>
 
 <p>SQL is not case sensitive, but I capitalised the keywords (which is a
 typical thing to do anyway).</p>
@@ -157,23 +151,12 @@ compare.</p>
 them is a csv of people, with names, ages, heights and jobs. The other
 is a csv of phone numbers linked to people's names. The name column is
 common between both data sources.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;people.csv&quot;</span><span class="p">)</span>
-<span class="n">phone_numbers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;phone_numbers.csv&quot;</span><span class="p">)</span>
-
-<span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">phone_numbers</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span><br /><br /><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;people.csv&quot;</span><span class="p">)</span><br /><span class="n">phone_numbers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;phone_numbers.csv&quot;</span><span class="p">)</span><br /><br /><span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">phone_numbers</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span><br /></code></pre></div>
 
 <p>That <em>how</em> keyword corresponds to the type of join in SQL. The same
 operation in SQL looks like this (assuming we have a people and
 phone_numbers table in a database, rather than csv files):</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span>
-<span class="w">  </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="n">phone_numbers</span><span class="p">.</span><span class="n">phone_number</span>
-<span class="k">FROM</span>
-<span class="w">  </span><span class="n">people</span>
-<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">phone_numbers</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phone_numbers</span><span class="p">.</span><span class="n">name</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><br /><span class="w">  </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="n">phone_numbers</span><span class="p">.</span><span class="n">phone_number</span><br /><span class="k">FROM</span><br /><span class="w">  </span><span class="n">people</span><br /><span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">phone_numbers</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phone_numbers</span><span class="p">.</span><span class="n">name</span><br /></code></pre></div>
 
 <p>I've specifically stated in the SELECT clause where the columns come
 from, because both tables have a name column and SQL would have gotten

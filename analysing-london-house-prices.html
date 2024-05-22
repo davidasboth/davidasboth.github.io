@@ -147,17 +147,20 @@ is £1.26million. After that there are over 39,000 outliers with the
 highest house price at over £50 million. This suggests there may be two
 tiers of house prices in London: one for the 'average' person and one
 for the more wealthy.</p>
-<p><img alt="Distribution of London house prices" src="/images/analysing-london-house-prices/Price-Box-Plot-and-Histogram.png" /></p>
-<p>Heavy right tails make box plots look ridiculous</p>
+<figure>
+    <img alt="Distribution of London house prices" src="/images/analysing-london-house-prices/Price-Box-Plot-and-Histogram.png" />
+        <figcaption>Heavy right tails make box plots look ridiculous</figcaption>
+</figure>
 <p>At this point my hunch was that the buying patterns of people who can
 afford to pay millions for a house will be different to people buying
 houses for around the median price. To this end I created an "outliers"
 category and analysed those nearly 40,000 rows separately.</p>
 <h3>Prices over Time</h3>
 <p>So how have prices changed over the years in the "normal" and "outlier" categories?</p>
-<p><img alt="London house prices over time" src="/images/analysing-london-house-prices/Price-Over-Time.png" /></p>
-<p>At this point it might be cheaper to invest in a time machine and go
-back to 1996 to buy a house</p>
+<figure>
+    <img alt="London house prices over time" src="/images/analysing-london-house-prices/Price-Over-Time.png" />
+        <figcaption>At this point it might be cheaper to invest in a time machine and go back to 1996 to buy a house</figcaption>
+</figure>
 <p>It turns out prices have steadily been climbing for both categories, but
 the number of sales dipped during the 2008 recession, but only for the
 non-outlier category. That makes sense - you'd expect the most wealthy
@@ -166,26 +169,34 @@ to be unaffected by a recession.</p>
 <p>Does this overall trend look the same in each borough? Let's find out.
 For borough-level figures I looked at the non-outlier category to make
 the analysis more relatable.</p>
-<p><img alt="Median prices over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Price-over-Time.png" /></p>
-<p>Some boroughs have a small dip but even a recession couldn't make London more affordable</p>
+<figure>
+    <img alt="Median prices over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Price-over-Time.png" />
+        <figcaption>Some boroughs have a small dip but even a recession couldn't make London more affordable</figcaption>
+</figure>
 <p>There is a more noticeable, but still very small, dip during the
 recession years (highlighted in dark red) but prices are climbing in all
 London boroughs. The dip in sales during the recession is also present
 in each borough, echoing the overall trend.</p>
-<p><img alt="Sales over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Sales-over-Time.png" /></p>
-<p>This graph would probably be a worrying EKG</p>
+<figure>
+    <img alt="Sales over time by borough" src="/images/analysing-london-house-prices/Boroughs-Recession-Sales-over-Time.png" />
+        <figcaption>This graph would probably be a worrying EKG</figcaption>
+</figure>
 <h3>Buying Behaviour</h3>
 <p>Is buying a house seasonal or do people buy with the same frequency
 throughout the year?</p>
-<p><img alt="Monthly sales histogram" src="/images/analysing-london-house-prices/Month-Histogram.png" /></p>
-<p>Apparently people rarely buy houses as Christmas presents.</p>
+<figure>
+    <img alt="Monthly sales histogram" src="/images/analysing-london-house-prices/Month-Histogram.png" />
+        <figcaption>Apparently people rarely buy houses as Christmas presents.</figcaption>
+</figure>
 <p>The slight peak in March is interesting.</p>
 <p>After I showed this to a few people, someone suggested it's because the
 tax year in the UK ends in April so people might end up buying with some
 urgency to keep the spending in the previous tax year. This general
 seasonal behaviour is also apparent in each borough.</p>
-<p><img alt="Monthly sales heatmap by borough" src="/images/analysing-london-house-prices/Monthly-Heatmap-by-Borough.png" /></p>
-<p>Is it still a heatmap if it's blue? </p>
+<figure>
+    <img alt="Monthly sales heatmap by borough" src="/images/analysing-london-house-prices/Monthly-Heatmap-by-Borough.png" />
+        <figcaption>Is it still a heatmap if it's blue?</figcaption>
+</figure>
 <p>It looks like some of the boroughs have a bigger peak in March than
 others. Can we quantify which boroughs have this behaviour and which
 don't?</p>
@@ -208,10 +219,11 @@ dataset, so they're arguably not that representative.</p>
 boroughs that have a prominent peak in sales in March and those that
 don't. But which boroughs are which? Let's colour a map of London by
 cluster:</p>
-<p><img alt="Clustered boroughs" src="/images/analysing-london-house-prices/Cluster-Dashboard-4.png" /></p>
-<p>Interestingly the different seasonal behaviour almost neatly splits
-London into East and West. The dataset unfortunately didn't have enough
-details to give any suggestions about whether this is a coincidence.</p>
+<figure>
+    <img alt="Clustered boroughs" src="/images/analysing-london-house-prices/Cluster-Dashboard-4.png" />
+        <figcaption>Interestingly the different seasonal behaviour almost neatly splits London into East and West.
+        The dataset unfortunately didn't have enough details to give any suggestions about whether this is a coincidence.</figcaption>
+</figure>
 <h2>Conclusion</h2>
 <p>Unsurprisingly, the data confirms what we all complain about - buying in
 London is expensive and it is only getting worse.</p>

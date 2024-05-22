@@ -135,12 +135,12 @@ You can even use it <a href="/analysing-london-house-prices/">to find similar bo
 <h3>Potential Problems</h3>
 <h4>Choosing K</h4>
 <p>Before you start training your data to learn the clusters, you need to
-choose a value for $k$. That is, you have to decide beforehand how
+choose a value for <span class="math">\(k\)</span>. That is, you have to decide beforehand how
 many groups there are going to be. This sounds like it defeats the
 purpose of being unsupervised, and it is indeed something that you have
 to set manually.</p>
 <p>Due to the random nature of the initialisation of the algorithm, and the
-uncertainty in the correct value for $k$, you might find re-running
+uncertainty in the correct value for <span class="math">\(k\)</span>, you might find re-running
 the algorithm multiple times gives you different results.</p>
 <h4>Subjective Evaluation</h4>
 <p>As with unsupervised algorithms in general, evaluating the outcome is
@@ -163,13 +163,13 @@ that belong to it (hence, "k-means").</p>
 n is the number of features your data has.</p>
 <p>The basic idea behind the k-means clustering algorithm is simple:</p>
 <ol>
-<li>Start with a chosen value of $k$.</li>
-<li>Choose $k$ of your data points at random to be your starting
+<li>Start with a chosen value of <span class="math">\(k\)</span>.</li>
+<li>Choose <span class="math">\(k\)</span> of your data points at random to be your starting
     centroids.</li>
 <li>For each data point, assign it to a cluster based on which of the
-    $k$ centroids it is <em>closest</em> to. Closest can mean any distance
+    <span class="math">\(k\)</span> centroids it is <em>closest</em> to. Closest can mean any distance
     measure. The Euclidean distance is often used.</li>
-<li>Now you have $k$ groups of data points assigned to a cluster.
+<li>Now you have <span class="math">\(k\)</span> groups of data points assigned to a cluster.
     Re-calculate the position of each cluster centroid by taking the
     <em>mean</em> of the new points that are now associated with that cluster.</li>
 <li>Repeat steps 3 and 4 until convergence. You are typically done when
@@ -180,56 +180,10 @@ n is the number of features your data has.</p>
 <h2>The K-means Algorithm (with code)</h2>
 <p>Let's go through the steps again with code. Let's use <a href="http://archive.ics.uci.edu/ml/datasets/Iris">the iris dataset</a>.</p>
 <h3>Steps 1 &amp; 2 - Initialisation</h3>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iris.csv&#39;</span><span class="p">)</span> <span class="c1"># I&#39;ll supply this alongside the Jupyter notebook</span>
-<span class="c1"># we don&#39;t need the target variable</span>
-<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-
-<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">centroids</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">clusters</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># random initialisation of centroids = pick K data points at random as centroids</span>
-<span class="n">init_centroids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)),</span> <span class="n">size</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">init_centroids</span><span class="p">:</span>
-    <span class="c1"># get the data point at index i</span>
-    <span class="n">pt</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span>
-    <span class="c1"># append it to the centroids list</span>
-    <span class="n">centroids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span><br /><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><br /><br /><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iris.csv&#39;</span><span class="p">)</span> <span class="c1"># I&#39;ll supply this alongside the Jupyter notebook</span><br /><span class="c1"># we don&#39;t need the target variable</span><br /><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><br /><br /><br /><span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><br /><span class="n">centroids</span> <span class="o">=</span> <span class="p">[]</span><br /><span class="n">clusters</span> <span class="o">=</span> <span class="p">[]</span><br /><br /><span class="c1"># random initialisation of centroids = pick K data points at random as centroids</span><br /><span class="n">init_centroids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)),</span> <span class="n">size</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><br /><br /><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">init_centroids</span><span class="p">:</span><br />    <span class="c1"># get the data point at index i</span><br />    <span class="n">pt</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><br />    <span class="c1"># append it to the centroids list</span><br />    <span class="n">centroids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><br /></code></pre></div>
 
 <h3>Steps 3 &amp; 4 - Learning</h3>
-<div class="codehilite"><pre><span></span><code><span class="n">n_iterations</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">def</span> <span class="nf">assign_to_cluster</span><span class="p">(</span><span class="n">idx</span><span class="p">):</span>
-    <span class="n">point</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
-    <span class="c1"># calculate distance (without sqrt) to each centroid</span>
-    <span class="n">distances</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">centroids</span><span class="p">:</span>
-        <span class="n">distances</span><span class="o">.</span><span class="n">append</span><span class="p">(((</span><span class="n">point</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-    <span class="c1"># find index of closest cluster</span>
-    <span class="n">closest</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
-    <span class="c1"># assign point to that cluster</span>
-    <span class="n">clusters</span><span class="p">[</span><span class="n">closest</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">closest</span>
-
-<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iterations</span><span class="p">):</span>
-    <span class="c1"># first, reset the clusters</span>
-    <span class="n">clusters</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
-        <span class="n">clusters</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
-    <span class="c1"># assign each data point to nearest cluster</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
-        <span class="n">assign_to_cluster</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    
-    <span class="c1"># now, recalculate the centroids</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
-        <span class="n">centroids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">clusters</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">n_iterations</span> <span class="o">=</span> <span class="mi">10</span><br /><br /><span class="k">def</span> <span class="nf">assign_to_cluster</span><span class="p">(</span><span class="n">idx</span><span class="p">):</span><br />    <span class="n">point</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><br />    <span class="c1"># calculate distance (without sqrt) to each centroid</span><br />    <span class="n">distances</span> <span class="o">=</span> <span class="p">[]</span><br />    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">centroids</span><span class="p">:</span><br />        <span class="n">distances</span><span class="o">.</span><span class="n">append</span><span class="p">(((</span><span class="n">point</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><br />    <span class="c1"># find index of closest cluster</span><br />    <span class="n">closest</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span><br />    <span class="c1"># assign point to that cluster</span><br />    <span class="n">clusters</span><span class="p">[</span><span class="n">closest</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><br />    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">closest</span><br /><br /><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iterations</span><span class="p">):</span><br />    <span class="c1"># first, reset the clusters</span><br />    <span class="n">clusters</span> <span class="o">=</span> <span class="p">[]</span><br />    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span><br />        <span class="n">clusters</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span><br />    <span class="c1"># assign each data point to nearest cluster</span><br />    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span><br />        <span class="n">assign_to_cluster</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><br />    <br />    <span class="c1"># now, recalculate the centroids</span><br />    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span><br />        <span class="n">centroids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">clusters</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><br /></code></pre></div>
 
 <p>First we've defined a function that calculates the distance between a
 data point and each of the cluster centroids. We can use the
@@ -245,11 +199,15 @@ points have changed cluster since the last iteration.</p>
 <p>Once we've done that we can plot two of the data's dimensions and colour
 each point by its assigned cluster (and mark the cluster centroids).</p>
 <p>We've gone from this plot of raw data:</p>
-<p><img alt="Iris petal plot (no clusters)" src="/images/introduction-to-k-means-clustering/kmeans_iris_1.png" /></p>
-<p>Plot of raw data before clustering</p>
+<figure>
+    <img alt="Iris petal plot (no clusters)" src="/images/introduction-to-k-means-clustering/kmeans_iris_1.png" />
+        <figcaption>Plot of raw data before clustering</figcaption>
+</figure>
 <p>To this plot where we've clustered our points into 3 groups:</p>
-<p><img alt="Iris data with 3 clusters" src="/images/introduction-to-k-means-clustering/kmeans_iris_2.png" /></p>
-<p>3 clusters after just 20 iterations</p>
+<figure>
+    <img alt="Iris data with 3 clusters" src="/images/introduction-to-k-means-clustering/kmeans_iris_2.png" />
+        <figcaption>3 clusters after just 20 iterations</figcaption>
+</figure>
 <p>There is still some overlap between the black and blue clusters, but
 just 20 iterations have quite effectively grouped our data into 3
 clusters.</p>
@@ -257,7 +215,69 @@ clusters.</p>
 <p>Here is the <a href="https://github.com/davidasboth/blog-notebooks/blob/master/k-means/K-Means.ipynb">associated Jupyter notebook</a>.</p>
 <p>In Part 2, I'll talk about another practical application of the k-means
 algorithm (using scikit-learn this time) as well as some implementation
-details such as how to pick the value of $k$.</p><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+details such as how to pick the value of <span class="math">\(k\)</span>.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
             <div class="about-article-end">
                 <img src="/theme/images/David-Asboth-profile-image-square.jpg">
