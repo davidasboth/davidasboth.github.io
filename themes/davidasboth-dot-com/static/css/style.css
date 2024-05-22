@@ -30,6 +30,11 @@ ul {
 	margin-bottom: 2rem;
 }
 
+nav ol,
+nav ul {
+	margin-bottom: 0;
+}
+
 /* For images to not be able to exceed their container */
 img {
 	max-width: 100%;
