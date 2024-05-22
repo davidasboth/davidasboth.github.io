@@ -11,6 +11,7 @@ python = "^3.10"
 pelican = {extras = ["markdown"], version = "^4.8.0"}
 pelican-jinja2content = "^1.0.1"
 ghp-import = "^2.1.0"
+pelican-render-math = "^1.0.3"
 
 
 [build-system]
