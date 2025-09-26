@@ -743,3 +743,7 @@ figcaption {
 	font-style: italic;
 	background-color: #525252;
 }
+
+iframe {
+	margin-bottom: 1rem;
+}
